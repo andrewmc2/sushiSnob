@@ -17,7 +17,18 @@
 		9E9050C21760E93D0092807A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050C11760E93D0092807A /* Default@2x.png */; };
 		9E9050C41760E93D0092807A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050C31760E93D0092807A /* Default-568h@2x.png */; };
 		9E9050C71760E93D0092807A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050C51760E93D0092807A /* MainStoryboard.storyboard */; };
-		9E9050CA1760E93D0092807A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050C91760E93D0092807A /* ViewController.m */; };
+		9E9050D61760EB150092807A /* TabMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050D51760EB150092807A /* TabMapViewController.m */; };
+		9E9050D91760EB340092807A /* TabCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050D81760EB340092807A /* TabCompassViewController.m */; };
+		9E9050DC1760EB420092807A /* TabMySushiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050DB1760EB420092807A /* TabMySushiViewController.m */; };
+		9E9050DF1760EF3E0092807A /* MapVenueWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050DE1760EF3E0092807A /* MapVenueWebViewViewController.m */; };
+		9E9050E21760EFE60092807A /* CompassWebiViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050E11760EFE60092807A /* CompassWebiViewViewController.m */; };
+		9E9050E51760F09E0092807A /* AddSushiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050E41760F09E0092807A /* AddSushiViewController.m */; };
+		9E9050E81760F1AA0092807A /* SushiDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050E71760F1AA0092807A /* SushiDetailViewController.m */; };
+		9E9050EA1760F91D0092807A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050E91760F91D0092807A /* CoreLocation.framework */; };
+		9E9050EC1760F92A0092807A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050EB1760F92A0092807A /* MapKit.framework */; };
+		9E9050EE1760F9720092807A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050ED1760F9720092807A /* ImageIO.framework */; };
+		9E9050F01760F97C0092807A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050EF1760F97C0092807A /* Social.framework */; };
+		9E9050F21760F98E0092807A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050F11760F98E0092807A /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +46,25 @@
 		9E9050C11760E93D0092807A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9E9050C31760E93D0092807A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E9050C61760E93D0092807A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9E9050C81760E93D0092807A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9E9050C91760E93D0092807A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9E9050D41760EB150092807A /* TabMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabMapViewController.h; sourceTree = "<group>"; };
+		9E9050D51760EB150092807A /* TabMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabMapViewController.m; sourceTree = "<group>"; };
+		9E9050D71760EB340092807A /* TabCompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabCompassViewController.h; sourceTree = "<group>"; };
+		9E9050D81760EB340092807A /* TabCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabCompassViewController.m; sourceTree = "<group>"; };
+		9E9050DA1760EB420092807A /* TabMySushiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabMySushiViewController.h; sourceTree = "<group>"; };
+		9E9050DB1760EB420092807A /* TabMySushiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabMySushiViewController.m; sourceTree = "<group>"; };
+		9E9050DD1760EF3E0092807A /* MapVenueWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVenueWebViewViewController.h; sourceTree = "<group>"; };
+		9E9050DE1760EF3E0092807A /* MapVenueWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVenueWebViewViewController.m; sourceTree = "<group>"; };
+		9E9050E01760EFE60092807A /* CompassWebiViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompassWebiViewViewController.h; sourceTree = "<group>"; };
+		9E9050E11760EFE60092807A /* CompassWebiViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompassWebiViewViewController.m; sourceTree = "<group>"; };
+		9E9050E31760F09E0092807A /* AddSushiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSushiViewController.h; sourceTree = "<group>"; };
+		9E9050E41760F09E0092807A /* AddSushiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSushiViewController.m; sourceTree = "<group>"; };
+		9E9050E61760F1AA0092807A /* SushiDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiDetailViewController.h; sourceTree = "<group>"; };
+		9E9050E71760F1AA0092807A /* SushiDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiDetailViewController.m; sourceTree = "<group>"; };
+		9E9050E91760F91D0092807A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9E9050EB1760F92A0092807A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9E9050ED1760F9720092807A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		9E9050EF1760F97C0092807A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9E9050F11760F98E0092807A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E9050F21760F98E0092807A /* AssetsLibrary.framework in Frameworks */,
+				9E9050F01760F97C0092807A /* Social.framework in Frameworks */,
+				9E9050EE1760F9720092807A /* ImageIO.framework in Frameworks */,
+				9E9050EC1760F92A0092807A /* MapKit.framework in Frameworks */,
+				9E9050EA1760F91D0092807A /* CoreLocation.framework in Frameworks */,
 				9E9050AE1760E93D0092807A /* UIKit.framework in Frameworks */,
 				9E9050B01760E93D0092807A /* Foundation.framework in Frameworks */,
 				9E9050B21760E93D0092807A /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +89,11 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
+				9E9050F11760F98E0092807A /* AssetsLibrary.framework */,
+				9E9050EF1760F97C0092807A /* Social.framework */,
+				9E9050ED1760F9720092807A /* ImageIO.framework */,
+				9E9050EB1760F92A0092807A /* MapKit.framework */,
+				9E9050E91760F91D0092807A /* CoreLocation.framework */,
 				9E9050B31760E93D0092807A /* SushiSnob */,
 				9E9050AC1760E93D0092807A /* Frameworks */,
 				9E9050AB1760E93D0092807A /* Products */,
@@ -83,11 +121,10 @@
 		9E9050B31760E93D0092807A /* SushiSnob */ = {
 			isa = PBXGroup;
 			children = (
+				9E9050D21760EAB90092807A /* Tabs */,
 				9E9050BC1760E93D0092807A /* AppDelegate.h */,
 				9E9050BD1760E93D0092807A /* AppDelegate.m */,
 				9E9050C51760E93D0092807A /* MainStoryboard.storyboard */,
-				9E9050C81760E93D0092807A /* ViewController.h */,
-				9E9050C91760E93D0092807A /* ViewController.m */,
 				9E9050B41760E93D0092807A /* Supporting Files */,
 			);
 			path = SushiSnob;
@@ -105,6 +142,51 @@
 				9E9050C31760E93D0092807A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E9050D01760EA720092807A /* TabMap */ = {
+			isa = PBXGroup;
+			children = (
+				9E9050D41760EB150092807A /* TabMapViewController.h */,
+				9E9050D51760EB150092807A /* TabMapViewController.m */,
+				9E9050DD1760EF3E0092807A /* MapVenueWebViewViewController.h */,
+				9E9050DE1760EF3E0092807A /* MapVenueWebViewViewController.m */,
+			);
+			name = TabMap;
+			sourceTree = "<group>";
+		};
+		9E9050D11760EA9D0092807A /* TabCompass */ = {
+			isa = PBXGroup;
+			children = (
+				9E9050D71760EB340092807A /* TabCompassViewController.h */,
+				9E9050D81760EB340092807A /* TabCompassViewController.m */,
+				9E9050E01760EFE60092807A /* CompassWebiViewViewController.h */,
+				9E9050E11760EFE60092807A /* CompassWebiViewViewController.m */,
+			);
+			name = TabCompass;
+			sourceTree = "<group>";
+		};
+		9E9050D21760EAB90092807A /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				9E9050D01760EA720092807A /* TabMap */,
+				9E9050D11760EA9D0092807A /* TabCompass */,
+				9E9050D31760EAC40092807A /* TabMySushi */,
+			);
+			name = Tabs;
+			sourceTree = "<group>";
+		};
+		9E9050D31760EAC40092807A /* TabMySushi */ = {
+			isa = PBXGroup;
+			children = (
+				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
+				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
+				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
+				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
+				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
+				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
+			);
+			name = TabMySushi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +257,13 @@
 			files = (
 				9E9050BA1760E93D0092807A /* main.m in Sources */,
 				9E9050BE1760E93D0092807A /* AppDelegate.m in Sources */,
-				9E9050CA1760E93D0092807A /* ViewController.m in Sources */,
+				9E9050D61760EB150092807A /* TabMapViewController.m in Sources */,
+				9E9050D91760EB340092807A /* TabCompassViewController.m in Sources */,
+				9E9050DC1760EB420092807A /* TabMySushiViewController.m in Sources */,
+				9E9050DF1760EF3E0092807A /* MapVenueWebViewViewController.m in Sources */,
+				9E9050E21760EFE60092807A /* CompassWebiViewViewController.m in Sources */,
+				9E9050E51760F09E0092807A /* AddSushiViewController.m in Sources */,
+				9E9050E81760F1AA0092807A /* SushiDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +386,7 @@
 				9E9050CF1760E93D0092807A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

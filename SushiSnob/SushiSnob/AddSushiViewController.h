@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AddSushiViewController.h
 //  SushiSnob
 //
 //  Created by Andrew McCallum14 on 2013-06-06.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AddSushiViewController : UIViewController
 
 @end

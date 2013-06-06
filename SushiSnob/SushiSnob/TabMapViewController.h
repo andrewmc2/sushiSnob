@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-
 @interface TabMapViewController : UIViewController<MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *venueMapView;
+- (IBAction)showLocation:(id)sender;
 
 @end

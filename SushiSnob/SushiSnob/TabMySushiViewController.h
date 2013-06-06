@@ -10,4 +10,6 @@
 
 @interface TabMySushiViewController : UIViewController
 
+- (IBAction)showLocation:(id)sender;
+
 @end

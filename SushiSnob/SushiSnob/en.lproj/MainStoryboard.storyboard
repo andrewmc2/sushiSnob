@@ -19,6 +19,21 @@
                                     <outlet property="delegate" destination="NX3-kD-bh9" id="uqR-SG-fbD"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vLX-wq-nGi">
+                                <rect key="frame" x="118" y="67" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showLocation:" destination="NX3-kD-bh9" eventType="touchUpInside" id="mns-BF-nM3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -206,6 +221,11 @@
                                 <segue destination="9oe-W3-tlb" kind="modal" id="sS4-yO-Lvr"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="show" id="aDR-4f-J9h">
+                            <connections>
+                                <action selector="showLocation:" destination="9ko-oZ-8hj" id="rrp-cw-p92"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                 </viewController>
@@ -332,11 +352,15 @@
         <class className="TabMapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="showLocation:"/>
                 <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="TabMySushiViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showLocation:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

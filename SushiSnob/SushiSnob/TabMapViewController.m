@@ -7,6 +7,7 @@
 //
 
 #import "TabMapViewController.h"
+#import "LocationManagerSingleton.h"
 
 @interface TabMapViewController ()
 
@@ -27,6 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[LocationManagerSingleton sharedSingleton] describe];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showLocation:(id)sender {
+    NSLog(@"%@",[LocationManagerSingleton sharedSingleton].userLocation);
+}
 @end

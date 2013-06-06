@@ -7,6 +7,7 @@
 //
 
 #import "TabMySushiViewController.h"
+#import "LocationManagerSingleton.h"
 
 @interface TabMySushiViewController ()
 
@@ -35,4 +36,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showLocation:(id)sender {
+    NSLog(@"%@",[LocationManagerSingleton sharedSingleton].userLocation);
+}
 @end

@@ -36,6 +36,7 @@
 		9E90516A176161E60092807A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E905169176161E60092807A /* CoreData.framework */; };
 		9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */; };
 		9E905173176194790092807A /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905172176194790092807A /* Sushi.m */; };
+		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,8 @@
 		9E90516C176188F90092807A /* SushiSnob.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SushiSnob.xcdatamodel; sourceTree = "<group>"; };
 		9E905171176194790092807A /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
 		9E905172176194790092807A /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
+		C798614F1762A0C90007C71F /* VenueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueObject.h; sourceTree = "<group>"; };
+		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 			children = (
 				9E9050D41760EB150092807A /* TabMapViewController.h */,
 				9E9050D51760EB150092807A /* TabMapViewController.m */,
+				C798614F1762A0C90007C71F /* VenueObject.h */,
+				C79861501762A0C90007C71F /* VenueObject.m */,
 				9E9050DD1760EF3E0092807A /* MapVenueWebViewViewController.h */,
 				9E9050DE1760EF3E0092807A /* MapVenueWebViewViewController.m */,
 			);
@@ -318,6 +323,7 @@
 				9E905132176148720092807A /* SushiCell.m in Sources */,
 				9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */,
 				9E905173176194790092807A /* Sushi.m in Sources */,
+				C79861511762A0C90007C71F /* VenueObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,7 @@
 
 @implementation LocationManagerSingleton
 {
-    //float userLatitude;
-    //float userLongitude;
+   
 }
 
 -(id)init
@@ -48,8 +47,8 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     self.userLocation = [locations lastObject];
-    //userLatitude = userLocation.coordinate.latitude;
-    //userLongitude = userLocation.coordinate.longitude;
+    userLatitude = self.userLocation.coordinate.latitude;
+    userLongitude = self.userLocation.coordinate.longitude;
 }
 
 @end

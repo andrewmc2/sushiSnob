@@ -11,6 +11,10 @@
 
 @interface LocationManagerSingleton : NSObject <CLLocationManagerDelegate>
 
+{
+    float userLatitude;
+    float userLongitude;
+}
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *userLocation;
 

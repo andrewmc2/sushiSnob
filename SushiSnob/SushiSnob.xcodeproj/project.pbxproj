@@ -30,6 +30,9 @@
 		9E9050F01760F97C0092807A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050EF1760F97C0092807A /* Social.framework */; };
 		9E9050F21760F98E0092807A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050F11760F98E0092807A /* AssetsLibrary.framework */; };
 		9E9051281761212D0092807A /* LocationManagerSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9051271761212D0092807A /* LocationManagerSingleton.m */; };
+		9E90512B1761408E0092807A /* MySushiMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90512A1761408E0092807A /* MySushiMapViewController.m */; };
+		9E90512E176140FC0092807A /* AddSushiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90512D176140FC0092807A /* AddSushiCell.m */; };
+		9E905132176148720092807A /* SushiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905131176148720092807A /* SushiCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,12 @@
 		9E9050F11760F98E0092807A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		9E9051261761212D0092807A /* LocationManagerSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerSingleton.h; sourceTree = "<group>"; };
 		9E9051271761212D0092807A /* LocationManagerSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerSingleton.m; sourceTree = "<group>"; };
+		9E9051291761408E0092807A /* MySushiMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySushiMapViewController.h; sourceTree = "<group>"; };
+		9E90512A1761408E0092807A /* MySushiMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySushiMapViewController.m; sourceTree = "<group>"; };
+		9E90512C176140FC0092807A /* AddSushiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSushiCell.h; sourceTree = "<group>"; };
+		9E90512D176140FC0092807A /* AddSushiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSushiCell.m; sourceTree = "<group>"; };
+		9E905130176148720092807A /* SushiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiCell.h; sourceTree = "<group>"; };
+		9E905131176148720092807A /* SushiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,12 +192,13 @@
 		9E9050D31760EAC40092807A /* TabMySushi */ = {
 			isa = PBXGroup;
 			children = (
-				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
-				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
+				9E90512F176141130092807A /* TabMySushiViewController */,
 				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
 				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
 				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
+				9E9051291761408E0092807A /* MySushiMapViewController.h */,
+				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 			);
 			name = TabMySushi;
 			sourceTree = "<group>";
@@ -200,6 +210,19 @@
 				9E9051271761212D0092807A /* LocationManagerSingleton.m */,
 			);
 			name = Location;
+			sourceTree = "<group>";
+		};
+		9E90512F176141130092807A /* TabMySushiViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
+				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
+				9E905130176148720092807A /* SushiCell.h */,
+				9E905131176148720092807A /* SushiCell.m */,
+				9E90512C176140FC0092807A /* AddSushiCell.h */,
+				9E90512D176140FC0092807A /* AddSushiCell.m */,
+			);
+			name = TabMySushiViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +301,9 @@
 				9E9050E51760F09E0092807A /* AddSushiViewController.m in Sources */,
 				9E9050E81760F1AA0092807A /* SushiDetailViewController.m in Sources */,
 				9E9051281761212D0092807A /* LocationManagerSingleton.m in Sources */,
+				9E90512B1761408E0092807A /* MySushiMapViewController.m in Sources */,
+				9E90512E176140FC0092807A /* AddSushiCell.m in Sources */,
+				9E905132176148720092807A /* SushiCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

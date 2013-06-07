@@ -1,5 +1,5 @@
 //
-//  TabMySushiViewController.h
+//  MySushiMapViewController.h
 //  SushiSnob
 //
 //  Created by Andrew McCallum14 on 2013-06-06.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabMySushiViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MySushiMapViewController : UIViewController
 
 @end

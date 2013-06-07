@@ -8,6 +8,8 @@
 
 #import "TabMySushiViewController.h"
 #import "LocationManagerSingleton.h"
+#import "AddSushiCell.h"
+#import "SushiCell.h"
 
 @interface TabMySushiViewController ()
 
@@ -36,7 +38,54 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)showLocation:(id)sender {
-    NSLog(@"%@",[LocationManagerSingleton sharedSingleton].userLocation);
+#pragma UITableViewDataSourceMethods
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *sushiCell = @"sushiCell";
+    NSString *addSushiCellIdentifier = @"addSushiCell";
+    
+    if (indexPath.section == 0){
+        
+        SushiCell *cell = [tableView dequeueReusableCellWithIdentifier:sushiCell];
+        
+        if (cell == nil) {
+            cell = [[SushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sushiCell];
+        }
+        
+        cell.textLabel.text = @"Sushi";
+        
+        return cell;
+    }
+    
+    if (indexPath.section == 1){
+        
+        AddSushiCell *cell = [tableView dequeueReusableCellWithIdentifier:addSushiCellIdentifier];
+        
+        if (cell == nil) {
+            cell = [[AddSushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addSushiCellIdentifier];
+        }
+        
+        cell.textLabel.text = @"Add Sushi";
+        
+        return cell;
+    }
+    return nil;
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 10;
+    } else {
+        return 1;
+    }
+}
+
+
 @end

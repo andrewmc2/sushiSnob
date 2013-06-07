@@ -10,4 +10,7 @@
 
 @interface AddSushiViewController : UIViewController
 
+- (IBAction)doneAddingSushi:(id)sender;
+- (IBAction)cancelAddingSushi:(id)sender;
+
 @end

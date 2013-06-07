@@ -1,18 +1,18 @@
 //
-//  AddSushiViewController.m
+//  MySushiMapViewController.m
 //  SushiSnob
 //
 //  Created by Andrew McCallum14 on 2013-06-06.
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
-#import "AddSushiViewController.h"
+#import "MySushiMapViewController.h"
 
-@interface AddSushiViewController ()
+@interface MySushiMapViewController ()
 
 @end
 
-@implementation AddSushiViewController
+@implementation MySushiMapViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,10 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)doneAddingSushi:(id)sender {
-}
-
-- (IBAction)cancelAddingSushi:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 @end

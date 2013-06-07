@@ -10,4 +10,6 @@
 
 @interface SushiCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *sushiName;
+
 @end

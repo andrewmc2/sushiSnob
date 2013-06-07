@@ -36,9 +36,20 @@
 }
 
 - (IBAction)doneAddingSushi:(id)sender {
+    //do this later after all inputs are setup
+    
+//    [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:nil addSushiDate:[NSDate date] addSushiGoodOrNot:YES addSushiDescription:self.sushiDescription.text addSushiCityName:self.sushiCityName.text];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelAddingSushi:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)add4QVenue:(id)sender {
+}
+
+- (IBAction)sushiDescriptionRecordVoice:(id)sender {
 }
 @end

@@ -87,6 +87,7 @@
 		9E905172176194790092807A /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
 		C798614F1762A0C90007C71F /* VenueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueObject.h; sourceTree = "<group>"; };
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
+		9EEDB2EC176282B600266890 /* AddSushiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSushiDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +146,7 @@
 		9E9050B31760E93D0092807A /* SushiSnob */ = {
 			isa = PBXGroup;
 			children = (
+				9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */,
 				9E905125176121100092807A /* Location */,
 				9E9050D21760EAB90092807A /* Tabs */,
 				9E9050BC1760E93D0092807A /* AppDelegate.h */,
@@ -207,11 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				9E90512F176141130092807A /* TabMySushiViewController */,
+				9EEDB2EB1762824000266890 /* TabAddSushiViewController */,
 				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
-				9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */,
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
-				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
-				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
 				9E9051291761408E0092807A /* MySushiMapViewController.h */,
 				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 			);
@@ -240,6 +240,16 @@
 				9E90512D176140FC0092807A /* AddSushiCell.m */,
 			);
 			name = TabMySushiViewController;
+			sourceTree = "<group>";
+		};
+		9EEDB2EB1762824000266890 /* TabAddSushiViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
+				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
+				9EEDB2EC176282B600266890 /* AddSushiDelegate.h */,
+			);
+			name = TabAddSushiViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

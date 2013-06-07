@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
+#import "AddSushiDelegate.h"
+#import "AddSushiViewController.h"
 
-@interface TabMySushiViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TabMySushiViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddSushiDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+
 
 @end

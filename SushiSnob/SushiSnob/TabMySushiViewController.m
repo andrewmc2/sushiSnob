@@ -18,6 +18,15 @@
 
 @implementation TabMySushiViewController
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"addSushi"]) {
+        
+        ((AddSushiViewController*)segue.destinationViewController).addSushiDelegate = self;
+        
+    }
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -88,6 +97,22 @@
     }
 }
 
+-(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName
+{
+    //do this later
+}
+
+//-(void) addSushiName:(NSString *)sushiName
+//{
+//    NSLog(@"saved %@ to core data", sushiName);
+//    
+//    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+//    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
+//    [newSushi setValue:sushiName forKey:@"name"];
+//    NSError *error;
+//    
+//    [self.managedObjectContext save:&error];
+//}
 
 //- (IBAction)button:(id)sender {
 //    

@@ -10,6 +10,7 @@
 #import "LocationManagerSingleton.h"
 #import "AddSushiCell.h"
 #import "SushiCell.h"
+#import "Sushi.h"
 
 @interface TabMySushiViewController ()
 

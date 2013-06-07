@@ -8,11 +8,56 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate ()
+
+-(void)setupManagerContextModel;
+
+@end
+
+
 @implementation AppDelegate
+
+-(void)setupManagerContextModel
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsDirectoryURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+    NSURL *modelUrl = [[NSBundle mainBundle]URLForResource:@"SushiSnob" withExtension:@"momd"];
+    NSURL *persistentStoreDestinationUrl = [documentsDirectoryURL URLByAppendingPathComponent:@"SushiSnob.sqlite"];
+    
+    //pointing to the model -- what the data looks like -- not the actual data -- sort of like setting up the properties -- model holds data
+    self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelUrl];
+    //doesn't create the data -- it simply giving the persistanceStoreCoordinator access to the model
+    self.persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+    
+    NSError *error = nil;
+    //so this is where the actual lies
+    NSPersistentStore *persistenceStore = [self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:persistentStoreDestinationUrl options:nil error:&error];
+    
+    if (persistenceStore != nil) {
+        self.managedObjectContext = [[NSManagedObjectContext alloc] init];
+        self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self setupManagerContextModel];
+    
+//    TabMySushiViewController *tabMySushiViewController= (TabMySushiViewController*)self.window.rootViewController;
+//    tabMySushiViewController.managedObjectContext = self.managedObjectContext;
+//    //[_window addSubview:tabMySushiViewController.view];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    TabMapViewController *tabMapViewController = [[tabBarController viewControllers] objectAtIndex:0];
+    tabMapViewController.managedObjectContext = self.managedObjectContext;
+    
+    TabCompassViewController *tabCompassViewController = [[tabBarController viewControllers] objectAtIndex:1];
+    tabCompassViewController.managedObjectContext = self.managedObjectContext;
+    
+    TabMySushiViewController *tabSushiViewController = [[tabBarController viewControllers] objectAtIndex:2];
+    tabSushiViewController.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 							

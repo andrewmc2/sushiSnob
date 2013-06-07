@@ -33,6 +33,9 @@
 		9E90512B1761408E0092807A /* MySushiMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90512A1761408E0092807A /* MySushiMapViewController.m */; };
 		9E90512E176140FC0092807A /* AddSushiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E90512D176140FC0092807A /* AddSushiCell.m */; };
 		9E905132176148720092807A /* SushiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905131176148720092807A /* SushiCell.m */; };
+		9E90516A176161E60092807A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E905169176161E60092807A /* CoreData.framework */; };
+		9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */; };
+		9E905173176194790092807A /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905172176194790092807A /* Sushi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +80,10 @@
 		9E90512D176140FC0092807A /* AddSushiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSushiCell.m; sourceTree = "<group>"; };
 		9E905130176148720092807A /* SushiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiCell.h; sourceTree = "<group>"; };
 		9E905131176148720092807A /* SushiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiCell.m; sourceTree = "<group>"; };
+		9E905169176161E60092807A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9E90516C176188F90092807A /* SushiSnob.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SushiSnob.xcdatamodel; sourceTree = "<group>"; };
+		9E905171176194790092807A /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
+		9E905172176194790092807A /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E90516A176161E60092807A /* CoreData.framework in Frameworks */,
 				9E9050F21760F98E0092807A /* AssetsLibrary.framework in Frameworks */,
 				9E9050F01760F97C0092807A /* Social.framework in Frameworks */,
 				9E9050EE1760F9720092807A /* ImageIO.framework in Frameworks */,
@@ -101,6 +109,7 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
+				9E905169176161E60092807A /* CoreData.framework */,
 				9E9050F11760F98E0092807A /* AssetsLibrary.framework */,
 				9E9050EF1760F97C0092807A /* Social.framework */,
 				9E9050ED1760F9720092807A /* ImageIO.framework */,
@@ -194,6 +203,7 @@
 			children = (
 				9E90512F176141130092807A /* TabMySushiViewController */,
 				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
+				9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */,
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
 				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
 				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
@@ -215,6 +225,8 @@
 		9E90512F176141130092807A /* TabMySushiViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9E905171176194790092807A /* Sushi.h */,
+				9E905172176194790092807A /* Sushi.m */,
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
 				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
 				9E905130176148720092807A /* SushiCell.h */,
@@ -304,6 +316,8 @@
 				9E90512B1761408E0092807A /* MySushiMapViewController.m in Sources */,
 				9E90512E176140FC0092807A /* AddSushiCell.m in Sources */,
 				9E905132176148720092807A /* SushiCell.m in Sources */,
+				9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */,
+				9E905173176194790092807A /* Sushi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +443,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E90516C176188F90092807A /* SushiSnob.xcdatamodel */,
+			);
+			currentVersion = 9E90516C176188F90092807A /* SushiSnob.xcdatamodel */;
+			path = SushiSnob.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E9050A21760E93D0092807A /* Project object */;
 }

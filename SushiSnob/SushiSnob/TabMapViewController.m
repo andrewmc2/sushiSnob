@@ -8,6 +8,7 @@
 
 #import "TabMapViewController.h"
 #import "LocationManagerSingleton.h"
+#import "Sushi.h"
 
 @interface TabMapViewController ()
 

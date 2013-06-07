@@ -7,6 +7,8 @@
 //
 
 #import "TabCompassViewController.h"
+#import "Sushi.h"
+
 
 @interface TabCompassViewController ()
 

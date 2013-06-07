@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
 @interface TabCompassViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *arrowImage;
@@ -14,4 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *venueNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *venueSubtitleLabel;
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end

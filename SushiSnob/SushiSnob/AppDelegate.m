@@ -44,18 +44,17 @@
     // Override point for customization after application launch.
     [self setupManagerContextModel];
     
-//    TabMySushiViewController *tabMySushiViewController= (TabMySushiViewController*)self.window.rootViewController;
-//    tabMySushiViewController.managedObjectContext = self.managedObjectContext;
-//    //[_window addSubview:tabMySushiViewController.view];
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     
-    TabMapViewController *tabMapViewController = [[tabBarController viewControllers] objectAtIndex:0];
+    UINavigationController *navigationController0 = [[tabBarController viewControllers] objectAtIndex:0];
+    TabMapViewController *tabMapViewController = [[navigationController0 viewControllers] objectAtIndex:0];
     tabMapViewController.managedObjectContext = self.managedObjectContext;
-    
+
     TabCompassViewController *tabCompassViewController = [[tabBarController viewControllers] objectAtIndex:1];
     tabCompassViewController.managedObjectContext = self.managedObjectContext;
-    
-    TabMySushiViewController *tabSushiViewController = [[tabBarController viewControllers] objectAtIndex:2];
+
+    UINavigationController *navigationController2 = [[tabBarController viewControllers] objectAtIndex:2];
+    TabMySushiViewController *tabSushiViewController = [[navigationController2 viewControllers] objectAtIndex:0];
     tabSushiViewController.managedObjectContext = self.managedObjectContext;
     
     return YES;

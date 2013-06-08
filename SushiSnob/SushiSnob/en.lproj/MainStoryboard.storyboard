@@ -307,6 +307,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TZx-Jp-0zt" id="Beg-jb-uck"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iFu-Ac-MGb">
                                 <rect key="frame" x="45" y="131" width="43" height="21"/>
@@ -341,7 +344,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="R4y-X8-JwW">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="0.0" y="3" width="70" height="70"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -397,6 +400,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TZx-Jp-0zt" id="PLb-2f-D5t"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WBr-Ri-vxO">
                                 <rect key="frame" x="121" y="375" width="114" height="44"/>
@@ -437,7 +443,8 @@
                         <outlet property="sushiDescription" destination="UII-Ph-y2G" id="Yen-YR-Y0C"/>
                         <outlet property="sushiGoodOrNot" destination="D22-e7-fkd" id="23P-ar-4Ia"/>
                         <outlet property="sushiNameTextField" destination="gBC-b6-Y3e" id="0kb-72-8qv"/>
-                        <outlet property="sushiPicture" destination="QOv-hR-ukn" id="S5F-Fp-lCL"/>
+                        <outlet property="sushiPic" destination="R4y-X8-JwW" id="Um6-v5-11c"/>
+                        <outlet property="sushiPictureViewHolder" destination="QOv-hR-ukn" id="at9-ub-TnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0t-8A-HfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,7 +526,8 @@
                 <relationship kind="outlet" name="sushiDescription" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="sushiGoodOrNot" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiPicture" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="CompassWebiViewViewController" superclassName="UIViewController">

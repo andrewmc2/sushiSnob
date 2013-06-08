@@ -7,31 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
-@interface VenueObject : NSObject
+@interface VenueObject : NSObject <MKAnnotation>
 
-@property (strong, nonatomic) NSString  *title;
-@property (strong, nonatomic) NSString  *placeID;
-@property (strong, nonatomic) NSString  *subTitle;
+@property (strong, nonatomic) NSString  *venueName;
 @property (strong, nonatomic) NSString  *address;
-@property (strong, nonatomic) NSString  *placeLatitude;
-@property (strong, nonatomic) NSString  *placeLongitude;
+@property (strong, nonatomic) NSString  *venueLatitude;
+@property (strong, nonatomic) NSString  *venueLongitude;
 @property (strong, nonatomic) NSString  *distance;
-@property (strong, nonatomic) NSString  *imageURL;
-@property (strong, nonatomic) NSString  *iconURL;
-@property (strong, nonatomic) NSString  *venueURL;
-@property (strong, nonatomic) NSString  *venueCategory;
+@property (strong, nonatomic) NSString  *checkinsCount;
 @property (strong, nonatomic) NSString  *rating;
 @property (strong, nonatomic) NSString  *hours;
-@property (strong, nonatomic) NSString  *additionalInfo;
+@property (strong, nonatomic) NSString  *fourSquareVenuePage;
+@property (strong, nonatomic) NSString  *subtitle;
+@property (strong, nonatomic) NSString  *title;
 
-@property (strong, nonatomic) UIImage   *venueIcon;
-@property (strong, nonatomic) UIImage   *venueBigPic;
-@property (strong, nonatomic) NSData    *venueTypeIcon;
-@property (strong, nonatomic) NSData    *venuePic;
-
-@property (strong, nonatomic) NSMutableDictionary *hugeDictionary;
-//@property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
 
 
 

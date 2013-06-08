@@ -26,7 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSURL *url = [NSURL URLWithString:self.fourSquareVenueWebPage];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.venueFSWebView loadRequest:request];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

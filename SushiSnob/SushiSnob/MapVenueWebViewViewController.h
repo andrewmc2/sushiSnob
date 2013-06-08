@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface MapVenueWebViewViewController : UIViewController
+
+
 @property (strong, nonatomic) IBOutlet UIWebView *venueFSWebView;
+@property (strong, nonatomic) NSString *fourSquareVenueWebPage;
+@property (strong, nonatomic) id MKAnnotation;
+
+
+
 
 @end

@@ -10,6 +10,7 @@
 #import "LocationManagerSingleton.h"
 #import "Sushi.h"
 #import "VenueObject.h"
+#import "MapVenueWebViewViewController.h"
 
 @interface TabMapViewController ()
 
@@ -17,10 +18,8 @@
 
 float userLatitude;
 float userLongitude;
-NSString *userLatitudeString;
-NSString *userLongitudeString;
-NSArray *itemArray;
 NSMutableDictionary *listVenue;
+VenueObject *selectedVenue;
 
 
 @implementation TabMapViewController
@@ -37,16 +36,15 @@ NSMutableDictionary *listVenue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     [[LocationManagerSingleton sharedSingleton] describe];
-    
-       
+    // Do any additional setup after loading the view.
 
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
     [self setMapZoom];
+    [self fourSquareParsing];
     
 }
 
@@ -61,42 +59,56 @@ NSMutableDictionary *listVenue;
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
     self.venueMapView.region = region;
     self.venueMapView.showsUserLocation = YES;
-    
-    NSLog(@"%f", userLatitude);
-    
+        
 }
 
 
 
 -(void) fourSquareParsing
 {
+    listVenue = [[NSMutableDictionary alloc]init];
     
+    NSString *userLongitudeString = [NSString stringWithFormat:@"%.2f",userLongitude];
+    NSString *userLatitudeString = [NSString stringWithFormat:@"%.2f", userLatitude];
     
-   userLongitudeString = [NSString stringWithFormat:@"%f",userLongitude];
-    userLatitudeString = [NSString stringWithFormat:@"%f", userLatitude];
-    NSString *currentCoordinate = [NSString stringWithFormat:@"%@%@", userLatitudeString, userLongitudeString];
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", currentCoordinate];
+    NSString *currentCoordinate = [NSString stringWithFormat:@"%@,%@", userLatitudeString, userLongitudeString];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M&v=20130608", currentCoordinate];
+
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:urlRequest
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
                                NSDictionary *mainDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                               NSDictionary *venueDictionary = [mainDictionary objectForKey:@"response"];
-                               NSArray *groupsArray = [venueDictionary objectForKey:@"groups"];
-                               NSDictionary *subGroupDictionary = [groupsArray objectAtIndex:0];
-                               itemArray = [subGroupDictionary objectForKey:@"items"];
+                               NSDictionary *venueDictionary = [mainDictionary valueForKeyPath:@"response.venues"];
+                              
+                                NSLog(@"%@ venueDictionary", venueDictionary);
                                
-                               for (listVenue in itemArray) {
+                               for (listVenue in venueDictionary) {
+                                   
                                    VenueObject *venueObject = [[VenueObject alloc]init];
+                    
+                                   venueObject.venueName = listVenue [@"name"];
+                                   venueObject.address = listVenue [@"location"][@"address"];
+                                   venueObject.fourSquareVenuePage = listVenue [@"canonicalUrl"];
+                                   venueObject.venueLatitude = listVenue [@"location"][@"lat"];
+                                   venueObject.venueLongitude = listVenue [@"location"][@"lng"];
+                                   venueObject.distance = listVenue[@"location"][@"distance"];
+                                   venueObject.checkinsCount = listVenue[@"stats"][@"checkinsCount"];
+                                   
+                                   venueObject.title = venueObject.venueName;
+                                   venueObject.subtitle = venueObject.address;
+                                   
+                                   NSLog(@"address %@", venueObject.address);
+
+                                   venueObject.coordinate = CLLocationCoordinate2DMake([venueObject.venueLatitude floatValue],[venueObject.venueLongitude floatValue]);
+                                   
+                                   [self.venueMapView addAnnotation:venueObject];
                                }
-                               
                                
                            }];//end of Block
 
-    
-    
-    
+   // NSLog(@"%@, listVenue", listVenue);
     
 }
 
@@ -107,8 +119,45 @@ NSMutableDictionary *listVenue;
     // Dispose of any resources that can be recreated.
 }
 
+
+//Map Annotation
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    NSString *reuseIdentifier = @"myIdentifier";
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
+    
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+        annotationView.canShowCallout = YES;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        ((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
+    } else {
+        annotationView.annotation = annotation;
+    }
+    
+    return annotationView;
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    selectedVenue = ((VenueObject *)(view.annotation));
+    [self performSegueWithIdentifier:@"pushWebView" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MapVenueWebViewViewController *mapVenueWebViewController = segue.destinationViewController;
+    mapVenueWebViewController.MKAnnotation = [self.venueMapView selectedAnnotations][0];
+    mapVenueWebViewController.fourSquareVenueWebPage = selectedVenue.fourSquareVenuePage;
+    NSLog(@"%@ selected web page", selectedVenue.fourSquareVenuePage);
+    
+}
+
+
 - (IBAction)showLocation:(id)sender {
  NSLog(@"%f lat",[LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude);
     
 }
+
+
 @end

@@ -11,7 +11,7 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 
-@interface TabMapViewController : UIViewController<MKMapViewDelegate>
+@interface TabMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *venueMapView;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

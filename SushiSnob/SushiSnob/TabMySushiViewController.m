@@ -97,9 +97,29 @@
     }
 }
 
--(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName
+-(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName addLatitude:(float)latitude addLongitude:(float)longitude
 {
     //do this later
+    NSLog(@"sushiName: %@, picture: %@, date: %@, good or not: %c, description: %@, city name: %@", sushiName, sushiPicutre, sushiDate, sushiGoodOrNot, sushiDescription, sushiCityName);
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
+    [newSushi setValue:sushiName forKey:@"name"];
+    [newSushi setValue:sushiPicutre forKey:@"sushiImage"];
+    [newSushi setValue:sushiDate forKey:@"date"];
+    [newSushi setValue:[NSNumber numberWithBool:sushiGoodOrNot] forKey:@"isRatedGood"];
+    [newSushi setValue:sushiDescription forKey:@"sushiDescription"];
+    [newSushi setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
+    [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
+    
+//    add later
+//    [newSushi setValue:<#(id)#> forKey:@"cannonicalURL"];
+//    [newSushi setValue:<#(id)#> forKey:@"venue"];
+    
+    NSError *error;
+    
+    [self.managedObjectContext save:&error];
+
 }
 
 //-(void) addSushiName:(NSString *)sushiName

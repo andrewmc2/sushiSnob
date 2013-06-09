@@ -11,6 +11,7 @@
 #import "Sushi.h"
 #import "VenueObject.h"
 #import "MapVenueWebViewViewController.h"
+#import "VenueTableViewController.h"
 
 @interface TabMapViewController ()
 
@@ -18,8 +19,9 @@
 
 float userLatitude;
 float userLongitude;
-NSMutableDictionary *listVenue;
 VenueObject *selectedVenue;
+NSMutableDictionary *listVenue;
+
 
 
 @implementation TabMapViewController
@@ -67,6 +69,7 @@ VenueObject *selectedVenue;
 -(void) fourSquareParsing
 {
     listVenue = [[NSMutableDictionary alloc]init];
+    venueArray = [[NSMutableArray alloc]init];
     
     NSString *userLongitudeString = [NSString stringWithFormat:@"%.2f",userLongitude];
     NSString *userLatitudeString = [NSString stringWithFormat:@"%.2f", userLatitude];
@@ -81,9 +84,7 @@ VenueObject *selectedVenue;
                            completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
                                NSDictionary *mainDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                NSDictionary *venueDictionary = [mainDictionary valueForKeyPath:@"response.venues"];
-                              
-                                NSLog(@"%@ venueDictionary", venueDictionary);
-                               
+                                                             
                                for (listVenue in venueDictionary) {
                                    
                                    VenueObject *venueObject = [[VenueObject alloc]init];
@@ -99,18 +100,32 @@ VenueObject *selectedVenue;
                                    venueObject.title = venueObject.venueName;
                                    venueObject.subtitle = venueObject.address;
                                    
-                                   NSLog(@"address %@", venueObject.address);
-
                                    venueObject.coordinate = CLLocationCoordinate2DMake([venueObject.venueLatitude floatValue],[venueObject.venueLongitude floatValue]);
                                    
                                    [self.venueMapView addAnnotation:venueObject];
+                                   [venueArray addObject:venueObject];
+
                                }
+                               [self sortVenueDistanceArray];
+
                                
                            }];//end of Block
-
-   // NSLog(@"%@, listVenue", listVenue);
+    
+    NSLog(@"test");
     
 }
+
+-(void) sortVenueDistanceArray
+{
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distance"
+                                                ascending:YES];
+                      
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];    
+    distanceSortedArray = [venueArray sortedArrayUsingDescriptors:sortDescriptors];
+    NSLog(@"the array %@", [[distanceSortedArray objectAtIndex:0] valueForKeyPath:@"venueName"]);
+}
+
 
 
 - (void)didReceiveMemoryWarning
@@ -138,25 +153,26 @@ VenueObject *selectedVenue;
     return annotationView;
 }
 
+
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     selectedVenue = ((VenueObject *)(view.annotation));
     [self performSegueWithIdentifier:@"pushWebView" sender:self];
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    MapVenueWebViewViewController *mapVenueWebViewController = segue.destinationViewController;
-    mapVenueWebViewController.MKAnnotation = [self.venueMapView selectedAnnotations][0];
-    mapVenueWebViewController.fourSquareVenueWebPage = selectedVenue.fourSquareVenuePage;
-    NSLog(@"%@ selected web page", selectedVenue.fourSquareVenuePage);
+    if ([segue.identifier isEqualToString:@"pushWebView"]) {
+        MapVenueWebViewViewController *mapVenueWebViewController = segue.destinationViewController;
+        mapVenueWebViewController.mkAnnotation = [self.venueMapView selectedAnnotations][0];
+        mapVenueWebViewController.fourSquareVenueWebPage = selectedVenue.fourSquareVenuePage;
+    }
     
 }
-
-
 - (IBAction)showLocation:(id)sender {
- NSLog(@"%f lat",[LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude);
-    
+    NSLog(@"%f lat",[LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude);
+    NSLog(@"number of venue: %i", venueArray.count);
 }
 
 

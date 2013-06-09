@@ -16,6 +16,12 @@
 @property (strong, nonatomic) IBOutlet MKMapView *venueMapView;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+
 - (IBAction)showLocation:(id)sender;
 
 @end
+
+NSMutableArray* venueArray;
+NSArray *distanceSortedArray;
+
+

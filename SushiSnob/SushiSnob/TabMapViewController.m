@@ -111,8 +111,6 @@ NSMutableDictionary *listVenue;
                                
                            }];//end of Block
     
-    NSLog(@"test");
-    
 }
 
 -(void) sortVenueDistanceArray
@@ -123,7 +121,7 @@ NSMutableDictionary *listVenue;
                       
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];    
     distanceSortedArray = [venueArray sortedArrayUsingDescriptors:sortDescriptors];
-    NSLog(@"the array %@", [[distanceSortedArray objectAtIndex:0] valueForKeyPath:@"venueName"]);
+    NSLog(@"the nearest venue: %@", [[distanceSortedArray objectAtIndex:0] valueForKeyPath:@"venueName"]);
 }
 
 
@@ -170,6 +168,7 @@ NSMutableDictionary *listVenue;
     }
     
 }
+
 - (IBAction)showLocation:(id)sender {
     NSLog(@"%f lat",[LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude);
     NSLog(@"number of venue: %i", venueArray.count);

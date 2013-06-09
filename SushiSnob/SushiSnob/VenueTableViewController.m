@@ -13,6 +13,8 @@
 @interface VenueTableViewController ()
 
 @end
+VenueObject *selectedVenue;
+
 
 @implementation VenueTableViewController
 
@@ -46,7 +48,6 @@
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
     return distanceSortedArray.count;
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,10 +71,11 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"tableToWebView"]) {
-        VenueTableViewController *venueTableViewController = segue.destinationViewController;
+        MapVenueWebViewViewController *mapVenueWebViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [self.venueTableView indexPathForSelectedRow];
         VenueObject *selectedVenue = [distanceSortedArray objectAtIndex:indexPath.row];
-        [venueTableViewController setCurrentVenue:selectedVenue];
+        mapVenueWebViewController.fourSquareVenueWebPage = selectedVenue.fourSquareVenuePage;
+
     }
 }
 

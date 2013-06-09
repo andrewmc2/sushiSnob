@@ -10,12 +10,11 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "AddSushiDelegate.h"
-    #import "AddSushiViewController.h"
+#import "AddSushiViewController.h"
 
 @interface TabMySushiViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddSushiDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-
+@property (strong, nonatomic) NSArray *fetchedSushiResults;
 
 @end

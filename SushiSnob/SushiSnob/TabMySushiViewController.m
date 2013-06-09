@@ -12,6 +12,7 @@
 #import "SushiCell.h"
 #import "Sushi.h"
 
+
 @interface TabMySushiViewController ()
 
 @end
@@ -39,7 +40,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSLog(@"%i",self.fetchedSushiResults.count);
+//    NSLog(@"%@", self.fetchedSushiResults);
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +73,10 @@
             cell = [[SushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:sushiCell];
         }
         
-        cell.textLabel.text = @"Sushi";
+        if (self.fetchedSushiResults != 0) {
+            Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:indexPath.row];
+            cell.sushiName.text  = sushiInfo.name;
+        }
         
         return cell;
     }
@@ -91,7 +104,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 10;
+        NSLog(@"sections");
+        return self.fetchedSushiResults.count;
     } else {
         return 1;
     }
@@ -119,7 +133,7 @@
     NSError *error;
     
     [self.managedObjectContext save:&error];
-
+    
 }
 
 @end

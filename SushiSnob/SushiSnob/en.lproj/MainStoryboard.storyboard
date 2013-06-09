@@ -37,40 +37,106 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FEe-Ly-1fa"/>
+                    <navigationItem key="navigationItem" id="FEe-Ly-1fa">
+                        <barButtonItem key="rightBarButtonItem" title="List" id="UtO-iJ-NZC">
+                            <connections>
+                                <segue destination="tJX-Ec-zk8" kind="push" identifier="tableView" id="wMj-cG-a6d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
                         <outlet property="venueMapView" destination="LGW-Qh-jSz" id="Xzk-Au-8kt"/>
-                        <segue destination="h3a-9D-c8p" kind="modal" id="CKf-wm-ciy"/>
+                        <segue destination="h3a-9D-c8p" kind="push" identifier="pushWebView" id="CKf-wm-ciy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cc7-ys-q2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="871" y="-269"/>
         </scene>
+        <!--Venue Table View Controller-->
+        <scene sceneID="R7J-my-LxA">
+            <objects>
+                <viewController id="tJX-Ec-zk8" customClass="VenueTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jy9-wK-9ix">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHz-f8-KY0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="venue" textLabel="ozP-pu-Fa8" detailTextLabel="hi2-LU-Lbv" style="IBUITableViewCellStyleSubtitle" id="fnK-lf-N7N">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ozP-pu-Fa8">
+                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hi2-LU-Lbv">
+                                                    <rect key="frame" x="10" y="24" width="36" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="h3a-9D-c8p" kind="push" identifier="tableToWebView" id="fkm-tp-K0J"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tJX-Ec-zk8" id="Odv-fv-cLr"/>
+                                    <outlet property="delegate" destination="tJX-Ec-zk8" id="LZ8-zu-XUk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yrx-v8-7pB"/>
+                    <connections>
+                        <outlet property="venueTableView" destination="hHz-f8-KY0" id="efE-Em-MVl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eds-9G-oVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360" y="-861"/>
+        </scene>
         <!--Map Venue Web View View Controller-->
         <scene sceneID="onX-JR-W1a">
             <objects>
                 <viewController id="h3a-9D-c8p" customClass="MapVenueWebViewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Taw-2U-ccx">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="O3f-Gd-huU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Veu-Mz-r0P"/>
                     <connections>
                         <outlet property="venueFSWebView" destination="O3f-Gd-huU" id="4VP-Zu-7jg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJT-2d-dfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="-269"/>
+            <point key="canvasLocation" x="1725" y="-277"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y35-7e-F3b">
@@ -510,70 +576,6 @@
             <point key="canvasLocation" x="322" y="1112"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddSushiCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
-        </class>
-        <class className="AddSushiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="add4QVenue:"/>
-                <relationship kind="action" name="cancelAddingSushi:"/>
-                <relationship kind="action" name="doneAddingSushi:"/>
-                <relationship kind="action" name="sushiDescriptionRecordVoice:"/>
-                <relationship kind="outlet" name="sushiCityName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDescription" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiGoodOrNot" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="CompassWebiViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassWebiViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nearestVenueFSWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MapVenueWebViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MySushiMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapViewController.h"/>
-        </class>
-        <class className="SushiCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sushiName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SushiDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailViewController.h"/>
-        </class>
-        <class className="TabCompassViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="arrowImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="venueNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="venueSubtitleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TabMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showLocation:"/>
-                <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TabMySushiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -581,5 +583,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="jcM-Mz-ES5"/>
+        <segue reference="fkm-tp-K0J"/>
     </inferredMetricsTieBreakers>
 </document>

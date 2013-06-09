@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSString  *address;
 @property (strong, nonatomic) NSString  *venueLatitude;
 @property (strong, nonatomic) NSString  *venueLongitude;
-@property (strong, nonatomic) NSString  *distance;
+@property (strong, nonatomic) NSNumber  *distance;
 @property (strong, nonatomic) NSString  *checkinsCount;
 @property (strong, nonatomic) NSString  *rating;
 @property (strong, nonatomic) NSString  *hours;

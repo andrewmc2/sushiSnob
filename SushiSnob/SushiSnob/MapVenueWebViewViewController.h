@@ -13,8 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UIWebView *venueFSWebView;
 @property (strong, nonatomic) NSString *fourSquareVenueWebPage;
-@property (strong, nonatomic) id MKAnnotation;
-
+@property (strong, nonatomic) id mkAnnotation;
 
 
 

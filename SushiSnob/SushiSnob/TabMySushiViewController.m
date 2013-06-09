@@ -14,8 +14,14 @@
 //translate tools
 #import "MSTranslateAccessTokenRequester.h"
 #import "MSTranslateVendor.h"
+//to detail
+#import "SushiDetailViewController.h"
 
 @interface TabMySushiViewController ()
+{
+    //make global in order to toss over to SushiDetailViewController
+    UIImage *sushiCellImage;
+}
 
 @end
 
@@ -26,7 +32,14 @@
     if ([segue.identifier isEqualToString:@"addSushi"]) {
         
         ((AddSushiViewController*)segue.destinationViewController).addSushiDelegate = self;
+    }
+    
+    if ([segue.identifier isEqualToString:@"viewSushi"]) {
         
+//        ((AddSushiViewController*)segue.destinationViewController).addSushiDelegate = self;
+        SushiDetailViewController *sushiDetailViewController = [segue destinationViewController];
+        Sushi *selectedSushiCell = [self.fetchedSushiResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        [sushiDetailViewController setSelectedSushi:selectedSushiCell];
     }
 }
 
@@ -97,6 +110,11 @@
             }
             
             cell.sushiNameJapanese.text = sushiInfo.japaneseName;
+            
+            //image
+            sushiCellImage = [UIImage imageWithData:sushiInfo.sushiImage];
+            cell.sushiImageView.image = sushiCellImage;
+            
         }
         
         return cell;
@@ -140,18 +158,21 @@
 -(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName addLatitude:(float)latitude addLongitude:(float)longitude
 {
     //do this later
-    NSLog(@"sushiName: %@, picture: %@, date: %@, good or not: %c, description: %@, city name: %@", sushiName, sushiPicutre, sushiDate, sushiGoodOrNot, sushiDescription, sushiCityName);
+//    NSLog(@"sushiName: %@, picture: %@, date: %@, good or not: %c, description: %@, city name: %@", sushiName, sushiPicutre, sushiDate, sushiGoodOrNot, sushiDescription, sushiCityName);
     
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
     [newSushi setValue:sushiName forKey:@"name"];
-    [newSushi setValue:sushiPicutre forKey:@"sushiImage"];
+    //[newSushi setValue:sushiPicutre forKey:@"sushiImage"];
     [newSushi setValue:sushiDate forKey:@"date"];
     [newSushi setValue:[NSNumber numberWithBool:sushiGoodOrNot] forKey:@"isRatedGood"];
     [newSushi setValue:sushiDescription forKey:@"sushiDescription"];
     [newSushi setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
     
+    //save image
+    NSData *imageData = UIImagePNGRepresentation(sushiPicutre);
+    [newSushi setValue:imageData forKey:@"sushiImage"];
     
     //make japanese name
     [[MSTranslateAccessTokenRequester sharedRequester] requestSynchronousAccessToken:CLIENT_ID clientSecret:CLIENT_SECRET];

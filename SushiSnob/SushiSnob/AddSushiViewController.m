@@ -49,7 +49,7 @@
 
 - (IBAction)doneAddingSushi:(id)sender {
     //do this later after all inputs are setup
-    [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.sushiPic.image addSushiDate:[NSDate date] addSushiGoodOrNot:[self sushiIsGoodOrNot] addSushiDescription:self.sushiDescription.text addSushiCityName:self.sushiCityName.text addLatitude:picLatitude addLongitude:picLongitude];
+    [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:[self sushiIsGoodOrNot] addSushiDescription:self.sushiDescription.text addSushiCityName:self.sushiCityName.text addLatitude:picLatitude addLongitude:picLongitude];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

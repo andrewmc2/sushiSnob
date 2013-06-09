@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TabMapViewController.h"
 #import "VenueObject.h"
+#import "MapVenueWebViewViewController.h"
 
 @interface VenueTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *venueTableView;
-@property (strong, nonatomic) VenueObject *currentVenue;
+//@property (strong, nonatomic) VenueObject *venueFSWeb;
+
+
+
 
 @end

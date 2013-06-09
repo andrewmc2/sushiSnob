@@ -122,27 +122,4 @@
 
 }
 
-//-(void) addSushiName:(NSString *)sushiName
-//{
-//    NSLog(@"saved %@ to core data", sushiName);
-//    
-//    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
-//    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
-//    [newSushi setValue:sushiName forKey:@"name"];
-//    NSError *error;
-//    
-//    [self.managedObjectContext save:&error];
-//}
-
-//- (IBAction)button:(id)sender {
-//    
-//    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
-//    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
-//    [newSushi setValue:self.textField.text forKey:@"name"];
-//    
-//    NSError *error;
-//    [self.managedObjectContext save:&error];
-//    self.label.text = @"added";
-//    
-//}
 @end

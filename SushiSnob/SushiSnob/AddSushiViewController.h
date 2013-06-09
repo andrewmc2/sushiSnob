@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AddSushiDelegate.h"
+//for picture taking
+#import <CoreMedia/CoreMedia.h>
+#import <ImageIO/ImageIO.h>
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface AddSushiViewController : UIViewController <UITextFieldDelegate>
+@interface AddSushiViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *sushiPictureViewHolder;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiPic;
@@ -21,6 +25,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *sushiCityName;
 
 @property (nonatomic) BOOL sushiIsGood;
+
+//for pic taking
+@property (strong, nonatomic) UIImage *selectedImage;
 
 @property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
 

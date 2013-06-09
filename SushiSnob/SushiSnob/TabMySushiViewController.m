@@ -48,6 +48,8 @@
                                    entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    
     NSError *error;
     self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     NSLog(@"%i",self.fetchedSushiResults.count);
@@ -80,10 +82,20 @@
             cell.sushiName.text  = sushiInfo.name;
             cell.sushiRestauraunt.text = sushiInfo.venue;
             
-            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-             cell.sushiDate.text = [dateFormatter stringFromDate:
-                                    sushiInfo.date];
+            NSTimeInterval timeSinceSushiEntry = -[sushiInfo.date timeIntervalSinceNow];
+            NSLog(@"%f",timeSinceSushiEntry);
+            if (timeSinceSushiEntry < 86400 && timeSinceSushiEntry > 3600) {
+                int hours = timeSinceSushiEntry/60/60;
+                cell.sushiDate.text = [NSString stringWithFormat:@"%i hours ago", hours];
+            }
+            else if (timeSinceSushiEntry > 86400) {
+                int days = timeSinceSushiEntry/60/60/24;
+                cell.sushiDate.text = [NSString stringWithFormat:@"%i days ago ",days];
+            }
+            else if (timeSinceSushiEntry < 3600) {
+                cell.sushiDate.text = @"added recently";
+            }
+            
             cell.sushiNameJapanese.text = sushiInfo.japaneseName;
         }
         

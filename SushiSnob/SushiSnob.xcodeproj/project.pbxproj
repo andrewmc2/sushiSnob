@@ -36,6 +36,12 @@
 		9E90516A176161E60092807A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E905169176161E60092807A /* CoreData.framework */; };
 		9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */; };
 		9E905173176194790092807A /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905172176194790092807A /* Sushi.m */; };
+		9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F5391764EC3B0083E23E /* sushi.jpeg */; };
+		9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */; };
+		9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */; };
+		9E99F57D1764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5751764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m */; };
+		9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5781764F1CB0083E23E /* NSString+Extend.m */; };
+		9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F57A1764F1CB0083E23E /* NSXMLParser+Taged.m */; };
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
@@ -87,11 +93,20 @@
 		9E90516C176188F90092807A /* SushiSnob.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SushiSnob.xcdatamodel; sourceTree = "<group>"; };
 		9E905171176194790092807A /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
 		9E905172176194790092807A /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
+		9E99F5391764EC3B0083E23E /* sushi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpeg; sourceTree = "<group>"; };
+		9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateAccessTokenRequester.h; sourceTree = "<group>"; };
+		9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateAccessTokenRequester.m; sourceTree = "<group>"; };
+		9E99F5721764F1CB0083E23E /* MSTranslateVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateVendor.h; sourceTree = "<group>"; };
+		9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateVendor.m; sourceTree = "<group>"; };
+		9E99F5741764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+WebServiceExtend.h"; sourceTree = "<group>"; };
+		9E99F5751764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+WebServiceExtend.m"; sourceTree = "<group>"; };
+		9E99F5761764F1CB0083E23E /* NSObject+Subscripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Subscripts.h"; sourceTree = "<group>"; };
+		9E99F5771764F1CB0083E23E /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
+		9E99F5781764F1CB0083E23E /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
+		9E99F5791764F1CB0083E23E /* NSXMLParser+Taged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLParser+Taged.h"; sourceTree = "<group>"; };
+		9E99F57A1764F1CB0083E23E /* NSXMLParser+Taged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLParser+Taged.m"; sourceTree = "<group>"; };
 		9EEDB2EC176282B600266890 /* AddSushiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSushiDelegate.h; sourceTree = "<group>"; };
-
 		9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		C798614F1762A0C90007C71F /* VenueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueObject.h; sourceTree = "<group>"; };
-		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C798614F1762A0C90007C71F /* VenueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueObject.h; sourceTree = "<group>"; };
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C79861521763F2C90007C71F /* VenueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewController.h; sourceTree = "<group>"; };
@@ -170,6 +185,7 @@
 		9E9050B41760E93D0092807A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E99F5391764EC3B0083E23E /* sushi.jpeg */,
 				9E9050B51760E93D0092807A /* SushiSnob-Info.plist */,
 				9E9050B61760E93D0092807A /* InfoPlist.strings */,
 				9E9050B91760E93D0092807A /* main.m */,
@@ -242,6 +258,7 @@
 		9E90512F176141130092807A /* TabMySushiViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9E99F56F1764F1CB0083E23E /* MSTranslateVendor */,
 				9E905171176194790092807A /* Sushi.h */,
 				9E905172176194790092807A /* Sushi.m */,
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
@@ -252,6 +269,24 @@
 				9E90512D176140FC0092807A /* AddSushiCell.m */,
 			);
 			name = TabMySushiViewController;
+			sourceTree = "<group>";
+		};
+		9E99F56F1764F1CB0083E23E /* MSTranslateVendor */ = {
+			isa = PBXGroup;
+			children = (
+				9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */,
+				9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */,
+				9E99F5721764F1CB0083E23E /* MSTranslateVendor.h */,
+				9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */,
+				9E99F5741764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.h */,
+				9E99F5751764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m */,
+				9E99F5761764F1CB0083E23E /* NSObject+Subscripts.h */,
+				9E99F5771764F1CB0083E23E /* NSString+Extend.h */,
+				9E99F5781764F1CB0083E23E /* NSString+Extend.m */,
+				9E99F5791764F1CB0083E23E /* NSXMLParser+Taged.h */,
+				9E99F57A1764F1CB0083E23E /* NSXMLParser+Taged.m */,
+			);
+			path = MSTranslateVendor;
 			sourceTree = "<group>";
 		};
 		9EEDB2EB1762824000266890 /* TabAddSushiViewController */ = {
@@ -320,6 +355,7 @@
 				9E9050C21760E93D0092807A /* Default@2x.png in Resources */,
 				9E9050C41760E93D0092807A /* Default-568h@2x.png in Resources */,
 				9E9050C71760E93D0092807A /* MainStoryboard.storyboard in Resources */,
+				9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +383,11 @@
 				9E905173176194790092807A /* Sushi.m in Sources */,
 				C79861511762A0C90007C71F /* VenueObject.m in Sources */,
 				C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */,
+				9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */,
+				9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */,
+				9E99F57D1764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m in Sources */,
+				9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */,
+				9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

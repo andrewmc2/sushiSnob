@@ -11,7 +11,9 @@
 #import "AddSushiCell.h"
 #import "SushiCell.h"
 #import "Sushi.h"
-
+//translate tools
+#import "MSTranslateAccessTokenRequester.h"
+#import "MSTranslateVendor.h"
 
 @interface TabMySushiViewController ()
 
@@ -76,6 +78,13 @@
         if (self.fetchedSushiResults != 0) {
             Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:indexPath.row];
             cell.sushiName.text  = sushiInfo.name;
+            cell.sushiRestauraunt.text = sushiInfo.venue;
+            
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+             cell.sushiDate.text = [dateFormatter stringFromDate:
+                                    sushiInfo.date];
+            cell.sushiNameJapanese.text = sushiInfo.japaneseName;
         }
         
         return cell;
@@ -111,6 +120,11 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
 -(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName addLatitude:(float)latitude addLongitude:(float)longitude
 {
     //do this later
@@ -126,13 +140,27 @@
     [newSushi setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
     
+    
+    //make japanese name
+    [[MSTranslateAccessTokenRequester sharedRequester] requestSynchronousAccessToken:CLIENT_ID clientSecret:CLIENT_SECRET];
+    MSTranslateVendor *vendor = [[MSTranslateVendor alloc] init];
+    [vendor requestTranslate:sushiName from:@"en" to:@"ja" blockWithSuccess:^(NSString *translatedText) {
+        [newSushi setValue:translatedText forKey:@"japaneseName"];
+        NSLog(@"%@", translatedText);
+        NSLog(@"%@", sushiName);
+        NSError *error;
+        [self.managedObjectContext save:&error];
+        [self.tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        //error
+    }];
+    
+    
 //    add later
 //    [newSushi setValue:<#(id)#> forKey:@"cannonicalURL"];
 //    [newSushi setValue:<#(id)#> forKey:@"venue"];
-    
-    NSError *error;
-    
-    [self.managedObjectContext save:&error];
+
     
 }
 

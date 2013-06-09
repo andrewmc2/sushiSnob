@@ -16,5 +16,7 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSArray *fetchedSushiResults;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

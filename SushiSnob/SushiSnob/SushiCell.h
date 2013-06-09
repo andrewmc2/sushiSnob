@@ -11,5 +11,9 @@
 @interface SushiCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *sushiName;
+@property (strong, nonatomic) IBOutlet UILabel *sushiDate;
+@property (strong, nonatomic) IBOutlet UILabel *sushiRestauraunt;
+@property (strong, nonatomic) IBOutlet UILabel *sushiNameJapanese;
+@property (strong, nonatomic) IBOutlet UIImageView *sushiImageView;
 
 @end

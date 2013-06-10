@@ -36,9 +36,8 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     self.sushiDetailDate.text = [dateFormatter stringFromDate:self.selectedSushi.date];
     self.sushiDetailNotes.text = self.selectedSushi.sushiDescription;
+    
     //do city later after updating core data file
-    
-    
     if (self.selectedSushi.isRatedGood) {
         NSLog(@"%@",self.selectedSushi.isRatedGood);
         self.xImage.hidden = YES;

@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) NSString  *subtitle;
 @property (strong, nonatomic) NSString  *title;
-
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
 @end

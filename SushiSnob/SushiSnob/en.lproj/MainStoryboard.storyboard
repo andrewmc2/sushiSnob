@@ -156,7 +156,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Va2-3U-IEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="21"/>
+            <point key="canvasLocation" x="-239" y="427"/>
         </scene>
         <!--Tab Compass View Controller - Compass-->
         <scene sceneID="BUj-Kv-ddP">
@@ -637,10 +637,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="WiH-eT-SE9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9oe-W3-tlb" id="qlg-4H-b3E"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mySushiMapView" destination="WiH-eT-SE9" id="NCx-JL-Uxf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTj-gl-OYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -690,6 +696,98 @@
         <image name="sushi.jpeg" width="1920" height="1200"/>
         <image name="x.png" width="249" height="295"/>
     </resources>
+    <classes>
+        <class className="AddSushiCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
+        </class>
+        <class className="AddSushiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="add4QVenue:"/>
+                <relationship kind="action" name="cancelAddingSushi:"/>
+                <relationship kind="action" name="doneAddingSushi:"/>
+                <relationship kind="action" name="sushiDescriptionRecordVoice:"/>
+                <relationship kind="outlet" name="sushiCityName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDescription" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sushiGoodOrNot" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="CompassWebiViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassWebiViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nearestVenueFSWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MapVenueWebViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MySushiMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mySushiMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SushiCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiNameJapanese" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiRestauraunt" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SushiDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="checkMarkImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiDetailCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailGoodOrBad" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiDetailImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiDetailMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="sushiDetailName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailNotes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailVenue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="xImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TabCompassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="arrowImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueSubtitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TabMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showLocation:"/>
+                <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TabMySushiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="VenueTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

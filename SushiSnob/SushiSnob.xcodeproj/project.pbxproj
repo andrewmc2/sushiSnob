@@ -48,6 +48,7 @@
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
+		C79861B617654DDB0007C71F /* AddSushiVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861B517654DDB0007C71F /* AddSushiVenueVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,8 @@
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C79861521763F2C90007C71F /* VenueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewController.h; sourceTree = "<group>"; };
 		C79861531763F2C90007C71F /* VenueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewController.m; sourceTree = "<group>"; };
+		C79861B417654DDA0007C71F /* AddSushiVenueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSushiVenueVC.h; sourceTree = "<group>"; };
+		C79861B517654DDB0007C71F /* AddSushiVenueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSushiVenueVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +317,8 @@
 				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
 				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
 				9EEDB2EC176282B600266890 /* AddSushiDelegate.h */,
+				C79861B417654DDA0007C71F /* AddSushiVenueVC.h */,
+				C79861B517654DDB0007C71F /* AddSushiVenueVC.m */,
 			);
 			name = TabAddSushiViewController;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */,
 				9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */,
 				9E99F58317653B680083E23E /* SushiDetailMKAnnotation.m in Sources */,
+				C79861B617654DDB0007C71F /* AddSushiVenueVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

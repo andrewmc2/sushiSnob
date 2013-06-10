@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface MySushiMapViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet MKMapView *mySushiMapView;
 @end

@@ -16,14 +16,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="NX3-kD-bh9" id="w2J-xQ-2C2"/>
+                                    <outlet property="delegate" destination="NX3-kD-bh9" id="uqR-SG-fbD"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vLX-wq-nGi">
-                                <rect key="frame" x="237" y="392" width="56" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vLX-wq-nGi">
+                                <rect key="frame" x="118" y="67" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="15"/>
-                                <state key="normal" title="Reload">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eds-9G-oVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="-855"/>
+            <point key="canvasLocation" x="1360" y="-861"/>
         </scene>
         <!--Map Venue Web View View Controller-->
         <scene sceneID="onX-JR-W1a">
@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJT-2d-dfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725" y="-261"/>
+            <point key="canvasLocation" x="1725" y="-277"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y35-7e-F3b">
@@ -156,7 +156,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Va2-3U-IEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-777" y="387"/>
+            <point key="canvasLocation" x="-239" y="427"/>
         </scene>
         <!--Tab Compass View Controller - Compass-->
         <scene sceneID="BUj-Kv-ddP">
@@ -166,36 +166,44 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="japanesePlacemat.jpg" id="xPD-lC-9cX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="xPD-lC-9cX">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="stylizedsai.png" id="wsa-tc-jFU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TGD-iN-eQa">
+                                <rect key="frame" x="132" y="400" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="venue name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zpu-YK-NWp">
+                                <rect key="frame" x="132" y="353" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O4n-Jo-Ngu">
+                                <rect key="frame" x="132" y="310" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="wsa-tc-jFU">
+                                <rect key="frame" x="40" y="105" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Retrieving Location..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mTm-c1-Fze">
-                                <rect key="frame" x="10" y="420" width="310" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="バーベキューバー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="msF-dk-wDu">
-                                <rect key="frame" x="78" y="453" width="179" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Compass" id="bMa-9C-XOL"/>
                     <connections>
-                        <outlet property="closeSushiLabel" destination="mTm-c1-Fze" id="baT-hw-hJM"/>
-                        <outlet property="japaneseNameLabel" destination="msF-dk-wDu" id="KiY-ss-n9w"/>
-                        <outlet property="saiImage" destination="wsa-tc-jFU" id="pSl-yI-Q5Q"/>
+                        <outlet property="arrowImage" destination="wsa-tc-jFU" id="0I3-IU-j4d"/>
+                        <outlet property="distanceLabel" destination="O4n-Jo-Ngu" id="dMv-ND-TiS"/>
+                        <outlet property="venueNameLabel" destination="Zpu-YK-NWp" id="umC-TX-zUQ"/>
+                        <outlet property="venueSubtitleLabel" destination="TGD-iN-eQa" id="Ods-bD-lyv"/>
                         <segue destination="UAe-XH-zBK" kind="modal" identifier="fromCompassToFSWebView" id="Y57-ex-jCq"/>
                     </connections>
                 </viewController>
@@ -316,12 +324,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="yDH-Al-hGt">
-                        <barButtonItem key="leftBarButtonItem" title="Map" id="56m-gz-Ff3">
-                            <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="1eS-45-nXo"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yY6-mo-Oan">
+                            <rect key="frame" x="96" y="0.0" width="128" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="reload Table">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
-                                <segue destination="9oe-W3-tlb" kind="modal" identifier="sushiMap" id="sS4-yO-Lvr"/>
+                                <action selector="reloadThisStupidTable:" destination="9ko-oZ-8hj" eventType="touchUpInside" id="Zju-dB-c0s"/>
                             </connections>
-                        </barButtonItem>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="+" id="aDR-4f-J9h">
                             <connections>
                                 <segue destination="TZx-Jp-0zt" kind="modal" identifier="addSushi" id="jcM-Mz-ES5"/>
@@ -427,36 +446,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQY-Y6-f6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="1008"/>
+            <point key="canvasLocation" x="1301" y="1112"/>
         </scene>
-        <!--Add VenueVC-->
+        <!--Add Sushi VenueVC-->
         <scene sceneID="kwD-6G-6vV">
             <objects>
-                <viewController id="HIS-BQ-x4Z" customClass="AddVenueVC" sceneMemberID="viewController">
+                <viewController id="HIS-BQ-x4Z" customClass="AddSushiVenueVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rvx-lI-3w5">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vcF-b9-Aaz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3wd-UM-JSs">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="localVenue" textLabel="bu5-nc-ZCu" detailTextLabel="90q-aY-k5m" style="IBUITableViewCellStyleSubtitle" id="Uml-O4-TrN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="localSushiVenue" textLabel="qw4-tv-UlI" detailTextLabel="Cc9-VO-qXc" style="IBUITableViewCellStyleSubtitle" id="G0Q-HP-fHD">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bu5-nc-ZCu">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qw4-tv-UlI">
                                                     <rect key="frame" x="10" y="2" width="38" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="90q-aY-k5m">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cc9-VO-qXc">
                                                     <rect key="frame" x="10" y="24" width="47" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -469,20 +488,17 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="HIS-BQ-x4Z" id="Ex1-s4-rse"/>
-                                    <outlet property="delegate" destination="HIS-BQ-x4Z" id="S60-KO-Mti"/>
+                                    <outlet property="dataSource" destination="HIS-BQ-x4Z" id="OrU-7m-mgQ"/>
+                                    <outlet property="delegate" destination="HIS-BQ-x4Z" id="ytt-rO-HJf"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="vcF-b9-Aaz" id="Waw-wP-1ix"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zOS-VU-29C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="1716"/>
+            <point key="canvasLocation" x="1774" y="1796"/>
         </scene>
         <!--Add Sushi View Controller - Title-->
         <scene sceneID="2h1-lf-h3e">
@@ -566,10 +582,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="X5B-kH-jn8">
-                                <rect key="frame" x="245" y="213" width="55" height="44"/>
+                                <rect key="frame" x="106" y="209" width="99" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="add ">
+                                <state key="normal" title="add venue">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -578,7 +594,7 @@
                                 </state>
                                 <connections>
                                     <action selector="add4QVenue:" destination="TZx-Jp-0zt" eventType="touchUpInside" id="tOZ-3u-vbK"/>
-                                    <segue destination="HIS-BQ-x4Z" kind="modal" identifier="add4SSushiVenue" modalTransitionStyle="partialCurl" id="n5a-H1-TYl"/>
+                                    <segue destination="HIS-BQ-x4Z" kind="modal" identifier="addSushiVenue" modalTransitionStyle="partialCurl" id="n5a-H1-TYl"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="D22-e7-fkd">
@@ -641,13 +657,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="venue label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HkE-51-QwD">
-                                <rect key="frame" x="109" y="224" width="134" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -660,12 +669,11 @@
                         <outlet property="sushiNameTextField" destination="gBC-b6-Y3e" id="0kb-72-8qv"/>
                         <outlet property="sushiPic" destination="R4y-X8-JwW" id="Um6-v5-11c"/>
                         <outlet property="sushiPictureViewHolder" destination="QOv-hR-ukn" id="at9-ub-TnR"/>
-                        <outlet property="venueLabel" destination="HkE-51-QwD" id="k2H-99-4C7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0t-8A-HfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381" y="1756"/>
+            <point key="canvasLocation" x="1301" y="1796"/>
         </scene>
         <!--My Sushi Map View Controller-->
         <scene sceneID="fOb-6d-DTH">
@@ -691,7 +699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTj-gl-OYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1469" y="2548"/>
+            <point key="canvasLocation" x="1301" y="2484"/>
         </scene>
         <!--Navigation Controller - Map-->
         <scene sceneID="uia-Zd-8GV">
@@ -710,7 +718,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHQ-7n-XgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="-453"/>
+            <point key="canvasLocation" x="329" y="-269"/>
         </scene>
         <!--Navigation Controller - MySushi-->
         <scene sceneID="ld5-w7-3Iy">
@@ -729,19 +737,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nL2-J7-LFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="1184"/>
+            <point key="canvasLocation" x="322" y="1112"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkMark.png" width="258" height="297"/>
-        <image name="japanesePlacemat.jpg" width="730" height="1178"/>
-        <image name="stylizedsai.png" width="171" height="271"/>
         <image name="sushi.jpeg" width="1920" height="1200"/>
         <image name="x.png" width="249" height="295"/>
     </resources>
     <classes>
         <class className="AddSushiCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
+        </class>
+        <class className="AddSushiVenueVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiVenueVC.h"/>
         </class>
         <class className="AddSushiViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
@@ -757,13 +766,6 @@
                 <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
-                <relationship kind="outlet" name="venueLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AddVenueVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddVenueVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="CompassWebiViewViewController" superclassName="UIViewController">
@@ -812,10 +814,10 @@
         <class className="TabCompassViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="closeSushiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="arrowImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="japaneseNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="saiImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="venueNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueSubtitleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="TabMapViewController" superclassName="UIViewController">
@@ -828,6 +830,7 @@
         <class className="TabMySushiViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
             <relationships>
+                <relationship kind="action" name="reloadThisStupidTable:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -844,7 +847,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jcM-Mz-ES5"/>
+        <segue reference="tlb-Mf-aNV"/>
         <segue reference="fkm-tp-K0J"/>
     </inferredMetricsTieBreakers>
 </document>

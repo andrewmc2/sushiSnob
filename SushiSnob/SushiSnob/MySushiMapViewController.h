@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MySushiMapViewController : UIViewController
+@interface MySushiMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mySushiMapView;
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSArray *fetchedSushiResults;
+
+@property (strong, nonatomic) NSFileManager *fileManager;
+@property (strong, nonatomic) NSURL *documentsDirectory;
+
 @end

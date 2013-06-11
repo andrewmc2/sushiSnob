@@ -23,9 +23,6 @@
     UIImage *sushiCellImage;
 }
 
-//for writing pics to disk
-@property (strong, nonatomic) NSFileManager *fileManager;
-@property (strong, nonatomic) NSURL *documentsDirectory;
 
 @end
 
@@ -44,6 +41,12 @@
         SushiDetailViewController *sushiDetailViewController = [segue destinationViewController];
         Sushi *selectedSushiCell = [self.fetchedSushiResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         [sushiDetailViewController setSelectedSushi:selectedSushiCell];
+    }
+    
+    if ([segue.identifier isEqualToString:@"sushiMap"]) {
+        MySushiMapViewController *mySushiMapViewController = [segue destinationViewController];
+        mySushiMapViewController.managedObjectContext = self.managedObjectContext;
+        mySushiMapViewController.fetchedSushiResults = self.fetchedSushiResults;
     }
 }
 

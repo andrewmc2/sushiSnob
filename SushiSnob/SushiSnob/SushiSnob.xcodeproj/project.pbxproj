@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E30333E1767912E00DD4579 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E30333D1767912E00DD4579 /* Sushi.m */; };
-		9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3033401767C55300DD4579 /* SushiAnnotationView.m */; };
-		9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3033421767C6D800DD4579 /* checkMarkSmall.png */; };
 		9E9050AE1760E93D0092807A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AD1760E93D0092807A /* UIKit.framework */; };
 		9E9050B01760E93D0092807A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AF1760E93D0092807A /* Foundation.framework */; };
 		9E9050B21760E93D0092807A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050B11760E93D0092807A /* CoreGraphics.framework */; };
@@ -38,6 +35,7 @@
 		9E905132176148720092807A /* SushiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905131176148720092807A /* SushiCell.m */; };
 		9E90516A176161E60092807A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E905169176161E60092807A /* CoreData.framework */; };
 		9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */; };
+		9E905173176194790092807A /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905172176194790092807A /* Sushi.m */; };
 		9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F5391764EC3B0083E23E /* sushi.jpeg */; };
 		9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */; };
 		9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */; };
@@ -50,29 +48,10 @@
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
-		C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861EF17678A0F0007C71F /* AddVenueVC.m */; };
-		DD6179271767759E00FA67FE /* japanesePlacemat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD6179261767759E00FA67FE /* japanesePlacemat.jpg */; };
-		DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D9C7176620D900D08E0F /* QuartzCore.framework */; };
-		DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E11766B34700D08E0F /* stylizedsai.png */; };
-		DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */; };
-		DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */; };
-		DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */; };
-		DDB0D9F21766BB5D00D08E0F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */; };
-		DDB0D9F31766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */; };
-		DDB0D9F41766BB5D00D08E0F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */; };
-		DDB0D9F51766BB5D00D08E0F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */; };
-		DDB0D9F61766BB5D00D08E0F /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */; };
-		DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */; };
-		DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */; };
-		DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */; };
+		C79861B617654DDB0007C71F /* AddSushiVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861B517654DDB0007C71F /* AddSushiVenueVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9E30333C1767912E00DD4579 /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
-		9E30333D1767912E00DD4579 /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
-		9E30333F1767C55200DD4579 /* SushiAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiAnnotationView.h; sourceTree = "<group>"; };
-		9E3033401767C55300DD4579 /* SushiAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiAnnotationView.m; sourceTree = "<group>"; };
-		9E3033421767C6D800DD4579 /* checkMarkSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMarkSmall.png; sourceTree = "<group>"; };
 		9E9050AA1760E93D0092807A /* SushiSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9050AD1760E93D0092807A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E9050AF1760E93D0092807A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +95,8 @@
 		9E905131176148720092807A /* SushiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiCell.m; sourceTree = "<group>"; };
 		9E905169176161E60092807A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9E90516C176188F90092807A /* SushiSnob.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SushiSnob.xcdatamodel; sourceTree = "<group>"; };
+		9E905171176194790092807A /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
+		9E905172176194790092807A /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
 		9E99F5391764EC3B0083E23E /* sushi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpeg; sourceTree = "<group>"; };
 		9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateAccessTokenRequester.h; sourceTree = "<group>"; };
 		9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateAccessTokenRequester.m; sourceTree = "<group>"; };
@@ -138,23 +119,9 @@
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C79861521763F2C90007C71F /* VenueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewController.h; sourceTree = "<group>"; };
 		C79861531763F2C90007C71F /* VenueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewController.m; sourceTree = "<group>"; };
-		C79861EE17678A0F0007C71F /* AddVenueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddVenueVC.h; path = ../AddVenueVC.h; sourceTree = "<group>"; };
-		C79861EF17678A0F0007C71F /* AddVenueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddVenueVC.m; path = ../AddVenueVC.m; sourceTree = "<group>"; };
-		C79861F117678A2D0007C71F /* VenueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VenueDelegate.h; path = ../VenueDelegate.h; sourceTree = "<group>"; };
-		DD6179261767759E00FA67FE /* japanesePlacemat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = japanesePlacemat.jpg; sourceTree = "<group>"; };
-		DDB0D9C7176620D900D08E0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DDB0D9E11766B34700D08E0F /* stylizedsai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stylizedsai.png; sourceTree = "<group>"; };
-		DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License Version 2.txt"; sourceTree = "<group>"; };
-		DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
-		DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
-		DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
-		DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		C79861B417654DDA0007C71F /* AddSushiVenueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSushiVenueVC.h; sourceTree = "<group>"; };
+		C79861B517654DDB0007C71F /* AddSushiVenueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSushiVenueVC.m; sourceTree = "<group>"; };
+		C79861B7176662F50007C71F /* SushiTableUpdateDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SushiTableUpdateDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */,
 				9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */,
 				9E90516A176161E60092807A /* CoreData.framework in Frameworks */,
 				9E9050F21760F98E0092807A /* AssetsLibrary.framework in Frameworks */,
@@ -182,7 +148,6 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
-				DDB0D9C7176620D900D08E0F /* QuartzCore.framework */,
 				9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */,
 				9E905169176161E60092807A /* CoreData.framework */,
 				9E9050F11760F98E0092807A /* AssetsLibrary.framework */,
@@ -223,7 +188,6 @@
 				9E9050BC1760E93D0092807A /* AppDelegate.h */,
 				9E9050BD1760E93D0092807A /* AppDelegate.m */,
 				9E9050C51760E93D0092807A /* MainStoryboard.storyboard */,
-				DD6179261767759E00FA67FE /* japanesePlacemat.jpg */,
 				9E9050B41760E93D0092807A /* Supporting Files */,
 			);
 			path = SushiSnob;
@@ -232,7 +196,6 @@
 		9E9050B41760E93D0092807A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E3033421767C6D800DD4579 /* checkMarkSmall.png */,
 				9E99F58417653F690083E23E /* x.png */,
 				9E99F58517653F690083E23E /* checkMark.png */,
 				9E99F5391764EC3B0083E23E /* sushi.jpeg */,
@@ -267,8 +230,6 @@
 			children = (
 				9E9050D71760EB340092807A /* TabCompassViewController.h */,
 				9E9050D81760EB340092807A /* TabCompassViewController.m */,
-				DDB0D9E31766BB5D00D08E0F /* open-sans */,
-				DDB0D9E11766B34700D08E0F /* stylizedsai.png */,
 				9E9050E01760EFE60092807A /* CompassWebiViewViewController.h */,
 				9E9050E11760EFE60092807A /* CompassWebiViewViewController.m */,
 			);
@@ -291,6 +252,8 @@
 				9E90512F176141130092807A /* TabMySushiViewController */,
 				9EEDB2EB1762824000266890 /* TabAddSushiViewController */,
 				9E99F58017652B2E0083E23E /* SushiDetailViewController */,
+				9E9051291761408E0092807A /* MySushiMapViewController.h */,
+				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 			);
 			name = TabMySushi;
 			sourceTree = "<group>";
@@ -308,8 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				9E99F56F1764F1CB0083E23E /* MSTranslateVendor */,
-				9E30333C1767912E00DD4579 /* Sushi.h */,
-				9E30333D1767912E00DD4579 /* Sushi.m */,
+				9E905171176194790092807A /* Sushi.h */,
+				9E905172176194790092807A /* Sushi.m */,
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
 				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
 				9E905130176148720092807A /* SushiCell.h */,
@@ -345,10 +308,6 @@
 				9E99F58217653B680083E23E /* SushiDetailMKAnnotation.m */,
 				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
-				9E9051291761408E0092807A /* MySushiMapViewController.h */,
-				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
-				9E30333F1767C55200DD4579 /* SushiAnnotationView.h */,
-				9E3033401767C55300DD4579 /* SushiAnnotationView.m */,
 			);
 			name = SushiDetailViewController;
 			sourceTree = "<group>";
@@ -359,29 +318,11 @@
 				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
 				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
 				9EEDB2EC176282B600266890 /* AddSushiDelegate.h */,
-				C79861EE17678A0F0007C71F /* AddVenueVC.h */,
-				C79861EF17678A0F0007C71F /* AddVenueVC.m */,
-				C79861F117678A2D0007C71F /* VenueDelegate.h */,
+				C79861B7176662F50007C71F /* SushiTableUpdateDelegate.h */,
+				C79861B417654DDA0007C71F /* AddSushiVenueVC.h */,
+				C79861B517654DDB0007C71F /* AddSushiVenueVC.m */,
 			);
 			name = TabAddSushiViewController;
-			sourceTree = "<group>";
-		};
-		DDB0D9E31766BB5D00D08E0F /* open-sans */ = {
-			isa = PBXGroup;
-			children = (
-				DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */,
-				DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */,
-				DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */,
-				DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */,
-				DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */,
-				DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */,
-				DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */,
-				DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */,
-				DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */,
-				DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */,
-				DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */,
-			);
-			path = "open-sans";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,20 +384,6 @@
 				9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */,
 				9E99F58617653F690083E23E /* x.png in Resources */,
 				9E99F58717653F690083E23E /* checkMark.png in Resources */,
-				DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */,
-				DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */,
-				DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */,
-				DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */,
-				DDB0D9F21766BB5D00D08E0F /* OpenSans-ExtraBold.ttf in Resources */,
-				DDB0D9F31766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				DDB0D9F41766BB5D00D08E0F /* OpenSans-Italic.ttf in Resources */,
-				DDB0D9F51766BB5D00D08E0F /* OpenSans-Light.ttf in Resources */,
-				DDB0D9F61766BB5D00D08E0F /* OpenSans-LightItalic.ttf in Resources */,
-				DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */,
-				DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */,
-				DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */,
-				DD6179271767759E00FA67FE /* japanesePlacemat.jpg in Resources */,
-				9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +408,7 @@
 				9E90512E176140FC0092807A /* AddSushiCell.m in Sources */,
 				9E905132176148720092807A /* SushiCell.m in Sources */,
 				9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */,
+				9E905173176194790092807A /* Sushi.m in Sources */,
 				C79861511762A0C90007C71F /* VenueObject.m in Sources */,
 				C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */,
 				9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */,
@@ -489,9 +417,7 @@
 				9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */,
 				9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */,
 				9E99F58317653B680083E23E /* SushiDetailMKAnnotation.m in Sources */,
-				C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */,
-				9E30333E1767912E00DD4579 /* Sushi.m in Sources */,
-				9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */,
+				C79861B617654DDB0007C71F /* AddSushiVenueVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

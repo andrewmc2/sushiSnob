@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E30333E1767912E00DD4579 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E30333D1767912E00DD4579 /* Sushi.m */; };
 		9E9050AE1760E93D0092807A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AD1760E93D0092807A /* UIKit.framework */; };
 		9E9050B01760E93D0092807A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AF1760E93D0092807A /* Foundation.framework */; };
 		9E9050B21760E93D0092807A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050B11760E93D0092807A /* CoreGraphics.framework */; };
@@ -35,7 +36,6 @@
 		9E905132176148720092807A /* SushiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905131176148720092807A /* SushiCell.m */; };
 		9E90516A176161E60092807A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E905169176161E60092807A /* CoreData.framework */; };
 		9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E90516B176188F90092807A /* SushiSnob.xcdatamodeld */; };
-		9E905173176194790092807A /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E905172176194790092807A /* Sushi.m */; };
 		9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F5391764EC3B0083E23E /* sushi.jpeg */; };
 		9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */; };
 		9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */; };
@@ -48,7 +48,6 @@
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
-		C79861B617654DDB0007C71F /* AddSushiVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861B517654DDB0007C71F /* AddSushiVenueVC.m */; };
 		DD6179271767759E00FA67FE /* japanesePlacemat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD6179261767759E00FA67FE /* japanesePlacemat.jpg */; };
 		DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D9C7176620D900D08E0F /* QuartzCore.framework */; };
 		DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E11766B34700D08E0F /* stylizedsai.png */; };
@@ -66,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E30333C1767912E00DD4579 /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
+		9E30333D1767912E00DD4579 /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
 		9E9050AA1760E93D0092807A /* SushiSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9050AD1760E93D0092807A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E9050AF1760E93D0092807A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,8 +110,6 @@
 		9E905131176148720092807A /* SushiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiCell.m; sourceTree = "<group>"; };
 		9E905169176161E60092807A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9E90516C176188F90092807A /* SushiSnob.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SushiSnob.xcdatamodel; sourceTree = "<group>"; };
-		9E905171176194790092807A /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
-		9E905172176194790092807A /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
 		9E99F5391764EC3B0083E23E /* sushi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpeg; sourceTree = "<group>"; };
 		9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateAccessTokenRequester.h; sourceTree = "<group>"; };
 		9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateAccessTokenRequester.m; sourceTree = "<group>"; };
@@ -133,8 +132,6 @@
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C79861521763F2C90007C71F /* VenueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewController.h; sourceTree = "<group>"; };
 		C79861531763F2C90007C71F /* VenueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewController.m; sourceTree = "<group>"; };
-		C79861B417654DDA0007C71F /* AddSushiVenueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSushiVenueVC.h; sourceTree = "<group>"; };
-		C79861B517654DDB0007C71F /* AddSushiVenueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSushiVenueVC.m; sourceTree = "<group>"; };
 		DD6179261767759E00FA67FE /* japanesePlacemat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = japanesePlacemat.jpg; sourceTree = "<group>"; };
 		DDB0D9C7176620D900D08E0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DDB0D9E11766B34700D08E0F /* stylizedsai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stylizedsai.png; sourceTree = "<group>"; };
@@ -301,8 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				9E99F56F1764F1CB0083E23E /* MSTranslateVendor */,
-				9E905171176194790092807A /* Sushi.h */,
-				9E905172176194790092807A /* Sushi.m */,
+				9E30333C1767912E00DD4579 /* Sushi.h */,
+				9E30333D1767912E00DD4579 /* Sushi.m */,
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
 				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
 				9E905130176148720092807A /* SushiCell.h */,
@@ -350,8 +347,6 @@
 				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
 				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
 				9EEDB2EC176282B600266890 /* AddSushiDelegate.h */,
-				C79861B417654DDA0007C71F /* AddSushiVenueVC.h */,
-				C79861B517654DDB0007C71F /* AddSushiVenueVC.m */,
 			);
 			name = TabAddSushiViewController;
 			sourceTree = "<group>";
@@ -470,7 +465,6 @@
 				9E90512E176140FC0092807A /* AddSushiCell.m in Sources */,
 				9E905132176148720092807A /* SushiCell.m in Sources */,
 				9E90516D176188F90092807A /* SushiSnob.xcdatamodeld in Sources */,
-				9E905173176194790092807A /* Sushi.m in Sources */,
 				C79861511762A0C90007C71F /* VenueObject.m in Sources */,
 				C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */,
 				9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */,
@@ -479,7 +473,7 @@
 				9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */,
 				9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */,
 				9E99F58317653B680083E23E /* SushiDetailMKAnnotation.m in Sources */,
-				C79861B617654DDB0007C71F /* AddSushiVenueVC.m in Sources */,
+				9E30333E1767912E00DD4579 /* Sushi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

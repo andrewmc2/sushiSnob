@@ -23,6 +23,10 @@
     UIImage *sushiCellImage;
 }
 
+//for writing pics to disk
+@property (strong, nonatomic) NSFileManager *fileManager;
+@property (strong, nonatomic) NSURL *documentsDirectory;
+
 @end
 
 @implementation TabMySushiViewController
@@ -57,6 +61,16 @@
     [super viewDidLoad];
     
     
+    self.fileManager = [NSFileManager defaultManager];
+    self.documentsDirectory = [self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+    
+    [self setupFetchedResults];
+
+//    NSLog(@"%@", self.fetchedSushiResults);
+}
+
+-(void)setupFetchedResults
+{
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -66,7 +80,6 @@
     NSError *error;
     self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     NSLog(@"%i",self.fetchedSushiResults.count);
-//    NSLog(@"%@", self.fetchedSushiResults);
 }
 
 - (void)didReceiveMemoryWarning
@@ -112,9 +125,13 @@
             cell.sushiNameJapanese.text = sushiInfo.japaneseName;
             
             //image
-            sushiCellImage = [UIImage imageWithData:sushiInfo.sushiImage];
-            cell.sushiImageView.image = sushiCellImage;
-            
+            NSString *fileName = sushiInfo.sushiImageURL;
+            if (fileName != nil) {
+                NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+                cell.sushiImageView.image = [UIImage imageWithContentsOfFile:[localImageURL path]];
+            } else {
+                cell.sushiImageView.image = [UIImage imageNamed:@"sushi.jpeg"];
+            }            
         }
         
         return cell;
@@ -171,8 +188,15 @@
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
     
     //save image
+    //NSData *imageData = UIImagePNGRepresentation(sushiPicutre);
+    //[newSushi setValue:imageData forKey:@"sushiImage"];
+    NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];
+    NSString *fileName = [sushiImageURL lastPathComponent];
+    [newSushi setValue:fileName forKey:@"sushiImageURL"];
+    NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
     NSData *imageData = UIImagePNGRepresentation(sushiPicutre);
-    [newSushi setValue:imageData forKey:@"sushiImage"];
+    [imageData writeToURL:localImageURL atomically:YES];
     
     //make japanese name
     [[MSTranslateAccessTokenRequester sharedRequester] requestSynchronousAccessToken:CLIENT_ID clientSecret:CLIENT_SECRET];
@@ -183,6 +207,7 @@
         NSLog(@"%@", sushiName);
         NSError *error;
         [self.managedObjectContext save:&error];
+        [self setupFetchedResults];
         [self.tableView reloadData];
         
     } failure:^(NSError *error) {

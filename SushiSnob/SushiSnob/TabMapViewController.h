@@ -18,10 +18,12 @@
 
 
 - (IBAction)showLocation:(id)sender;
+-(void) fourSquareParsing;
 
 @end
 
 NSMutableArray* venueArray;
 NSArray *distanceSortedArray;
+
 
 

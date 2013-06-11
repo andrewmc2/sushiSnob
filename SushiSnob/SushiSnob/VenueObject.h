@@ -15,13 +15,20 @@
 @property (strong, nonatomic) NSString  *address;
 @property (strong, nonatomic) NSString  *venueLatitude;
 @property (strong, nonatomic) NSString  *venueLongitude;
-@property (strong, nonatomic) NSNumber  *distance;
+@property (strong, nonatomic) NSString  *distance;
 @property (strong, nonatomic) NSString  *checkinsCount;
 @property (strong, nonatomic) NSString  *rating;
 @property (strong, nonatomic) NSString  *hours;
 @property (strong, nonatomic) NSString  *fourSquareVenuePage;
 @property (strong, nonatomic) NSString  *subtitle;
 @property (strong, nonatomic) NSString  *title;
+@property (strong, nonatomic) UIImage *venueIcon;
+
+@property (strong, nonatomic) UIImage *venueBigPic;
+@property (strong, nonatomic) NSData *venueTypeIcon;
+@property (strong, nonatomic) NSData *venuePic;
+@property (strong, nonatomic) NSString *iconURL;
+@property (strong, nonatomic) NSString *venueCategory;
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 

@@ -50,6 +50,20 @@
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
+		DD6179271767759E00FA67FE /* japanesePlacemat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD6179261767759E00FA67FE /* japanesePlacemat.jpg */; };
+		DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D9C7176620D900D08E0F /* QuartzCore.framework */; };
+		DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E11766B34700D08E0F /* stylizedsai.png */; };
+		DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */; };
+		DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */; };
+		DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */; };
+		DDB0D9F21766BB5D00D08E0F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */; };
+		DDB0D9F31766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */; };
+		DDB0D9F41766BB5D00D08E0F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */; };
+		DDB0D9F51766BB5D00D08E0F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */; };
+		DDB0D9F61766BB5D00D08E0F /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */; };
+		DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */; };
+		DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */; };
+		DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +138,20 @@
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C79861521763F2C90007C71F /* VenueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewController.h; sourceTree = "<group>"; };
 		C79861531763F2C90007C71F /* VenueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewController.m; sourceTree = "<group>"; };
+		DD6179261767759E00FA67FE /* japanesePlacemat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = japanesePlacemat.jpg; sourceTree = "<group>"; };
+		DDB0D9C7176620D900D08E0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DDB0D9E11766B34700D08E0F /* stylizedsai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stylizedsai.png; sourceTree = "<group>"; };
+		DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License Version 2.txt"; sourceTree = "<group>"; };
+		DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */,
 				9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */,
 				9E90516A176161E60092807A /* CoreData.framework in Frameworks */,
 				9E9050F21760F98E0092807A /* AssetsLibrary.framework in Frameworks */,
@@ -150,6 +179,7 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
+				DDB0D9C7176620D900D08E0F /* QuartzCore.framework */,
 				9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */,
 				9E905169176161E60092807A /* CoreData.framework */,
 				9E9050F11760F98E0092807A /* AssetsLibrary.framework */,
@@ -190,6 +220,7 @@
 				9E9050BC1760E93D0092807A /* AppDelegate.h */,
 				9E9050BD1760E93D0092807A /* AppDelegate.m */,
 				9E9050C51760E93D0092807A /* MainStoryboard.storyboard */,
+				DD6179261767759E00FA67FE /* japanesePlacemat.jpg */,
 				9E9050B41760E93D0092807A /* Supporting Files */,
 			);
 			path = SushiSnob;
@@ -232,6 +263,8 @@
 			children = (
 				9E9050D71760EB340092807A /* TabCompassViewController.h */,
 				9E9050D81760EB340092807A /* TabCompassViewController.m */,
+				DDB0D9E31766BB5D00D08E0F /* open-sans */,
+				DDB0D9E11766B34700D08E0F /* stylizedsai.png */,
 				9E9050E01760EFE60092807A /* CompassWebiViewViewController.h */,
 				9E9050E11760EFE60092807A /* CompassWebiViewViewController.m */,
 			);
@@ -336,6 +369,24 @@
 			name = TabAddSushiViewController;
 			sourceTree = "<group>";
 		};
+		DDB0D9E31766BB5D00D08E0F /* open-sans */ = {
+			isa = PBXGroup;
+			children = (
+				DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */,
+				DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */,
+				DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */,
+				DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */,
+				DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */,
+				DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */,
+				DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */,
+				DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */,
+				DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */,
+				DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */,
+				DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = "open-sans";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +446,19 @@
 				9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */,
 				9E99F58617653F690083E23E /* x.png in Resources */,
 				9E99F58717653F690083E23E /* checkMark.png in Resources */,
+				DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */,
+				DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */,
+				DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */,
+				DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */,
+				DDB0D9F21766BB5D00D08E0F /* OpenSans-ExtraBold.ttf in Resources */,
+				DDB0D9F31766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				DDB0D9F41766BB5D00D08E0F /* OpenSans-Italic.ttf in Resources */,
+				DDB0D9F51766BB5D00D08E0F /* OpenSans-Light.ttf in Resources */,
+				DDB0D9F61766BB5D00D08E0F /* OpenSans-LightItalic.ttf in Resources */,
+				DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */,
+				DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */,
+				DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */,
+				DD6179271767759E00FA67FE /* japanesePlacemat.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

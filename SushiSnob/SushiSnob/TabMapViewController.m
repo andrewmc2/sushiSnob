@@ -6,6 +6,14 @@
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
+//
+//  TabMapViewController.m
+//  SushiSnob
+//
+//  Created by Andrew McCallum14 on 2013-06-06.
+//  Copyright (c) 2013 Andrew McCallum. All rights reserved.
+//
+
 #import "TabMapViewController.h"
 #import "LocationManagerSingleton.h"
 #import "Sushi.h"
@@ -38,9 +46,9 @@ NSMutableDictionary *listVenue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[LocationManagerSingleton sharedSingleton] describe];
+  [[LocationManagerSingleton sharedSingleton] describe];
     // Do any additional setup after loading the view.
-
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -60,14 +68,17 @@ NSMutableDictionary *listVenue;
     MKCoordinateSpan span = MKCoordinateSpanMake(.05, .05);
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
     self.venueMapView.region = region;
-    self.venueMapView.showsUserLocation = YES;
-        
+    //self.venueMapView.showsUserLocation = YES;
+    
 }
 
 
 
 -(void) fourSquareParsing
 {
+    
+
+    
     listVenue = [[NSMutableDictionary alloc]init];
     venueArray = [[NSMutableArray alloc]init];
     
@@ -76,7 +87,7 @@ NSMutableDictionary *listVenue;
     
     NSString *currentCoordinate = [NSString stringWithFormat:@"%@,%@", userLatitudeString, userLongitudeString];
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M&v=20130608", currentCoordinate];
-
+    
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:urlRequest
@@ -84,11 +95,11 @@ NSMutableDictionary *listVenue;
                            completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
                                NSDictionary *mainDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                NSDictionary *venueDictionary = [mainDictionary valueForKeyPath:@"response.venues"];
-                                                             
+                               
                                for (listVenue in venueDictionary) {
                                    
                                    VenueObject *venueObject = [[VenueObject alloc]init];
-                    
+                                   
                                    venueObject.venueName = listVenue [@"name"];
                                    venueObject.address = listVenue [@"location"][@"address"];
                                    venueObject.fourSquareVenuePage = listVenue [@"canonicalUrl"];
@@ -104,10 +115,10 @@ NSMutableDictionary *listVenue;
                                    
                                    [self.venueMapView addAnnotation:venueObject];
                                    [venueArray addObject:venueObject];
-
+                                   
                                }
                                [self sortVenueDistanceArray];
-
+                               
                                
                            }];//end of Block
     
@@ -118,8 +129,8 @@ NSMutableDictionary *listVenue;
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distance"
                                                 ascending:YES];
-                      
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];    
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [venueArray sortedArrayUsingDescriptors:sortDescriptors];
     NSLog(@"the nearest venue: %@", [[distanceSortedArray objectAtIndex:0] valueForKeyPath:@"venueName"]);
 }
@@ -176,3 +187,4 @@ NSMutableDictionary *listVenue;
 
 
 @end
+

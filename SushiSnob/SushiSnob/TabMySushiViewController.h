@@ -18,5 +18,4 @@
 @property (strong, nonatomic) NSArray *fetchedSushiResults;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-
 @end

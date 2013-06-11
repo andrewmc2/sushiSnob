@@ -2,7 +2,7 @@
 //  Sushi.m
 //  SushiSnob
 //
-//  Created by Andrew McCallum14 on 2013-06-06.
+//  Created by Andrew McCallum14 on 2013-06-11.
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
@@ -11,15 +11,16 @@
 
 @implementation Sushi
 
-@dynamic name;
-@dynamic japaneseName;
-@dynamic sushiDescription;
-@dynamic date;
-@dynamic sushiImage;
-@dynamic isRatedGood;
-@dynamic venue;
 @dynamic cannonicalURL;
+@dynamic date;
+@dynamic isRatedGood;
+@dynamic japaneseName;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic name;
+@dynamic sushiDescription;
+@dynamic sushiImage;
+@dynamic venue;
+@dynamic sushiImageURL;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSData * sushiImage;
 @property (nonatomic, retain) NSNumber * isRatedGood;
 @property (nonatomic, retain) NSString * venue;
-@property (nonatomic, retain) NSData * cannonicalURL;
+@property (nonatomic, retain) NSString * cannonicalURL;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;
 

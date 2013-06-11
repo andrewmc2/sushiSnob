@@ -16,6 +16,8 @@
 #import "MSTranslateVendor.h"
 //to detail
 #import "SushiDetailViewController.h"
+//to MySushiMap
+#import "MySushiMapViewController.h"
 
 @interface TabMySushiViewController ()
 {
@@ -41,6 +43,10 @@
         Sushi *selectedSushiCell = [self.fetchedSushiResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         [sushiDetailViewController setSelectedSushi:selectedSushiCell];
     }
+    
+    if ([segue.identifier isEqualToString:@"sushiMap"]) {
+        ((MySushiMapViewController*)segue.destinationViewController).managedObjectContext = self.managedObjectContext;
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -55,8 +61,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
+    [self fetchRequest];
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+-(void)fetchRequest
+{
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -66,8 +76,15 @@
     NSError *error;
     self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     NSLog(@"%i",self.fetchedSushiResults.count);
-//    NSLog(@"%@", self.fetchedSushiResults);
+    //    NSLog(@"%@", self.fetchedSushiResults);
 }
+
+
+-(void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    _managedObjectContext = managedObjectContext;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -183,6 +200,7 @@
         NSLog(@"%@", sushiName);
         NSError *error;
         [self.managedObjectContext save:&error];
+        [self fetchRequest];
         [self.tableView reloadData];
         
     } failure:^(NSError *error) {

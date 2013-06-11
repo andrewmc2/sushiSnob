@@ -251,8 +251,6 @@
 				9E90512F176141130092807A /* TabMySushiViewController */,
 				9EEDB2EB1762824000266890 /* TabAddSushiViewController */,
 				9E99F58017652B2E0083E23E /* SushiDetailViewController */,
-				9E9051291761408E0092807A /* MySushiMapViewController.h */,
-				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 			);
 			name = TabMySushi;
 			sourceTree = "<group>";
@@ -307,6 +305,8 @@
 				9E99F58217653B680083E23E /* SushiDetailMKAnnotation.m */,
 				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
+				9E9051291761408E0092807A /* MySushiMapViewController.h */,
+				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 			);
 			name = SushiDetailViewController;
 			sourceTree = "<group>";

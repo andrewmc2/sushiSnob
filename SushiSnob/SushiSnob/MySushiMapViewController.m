@@ -27,6 +27,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    
+    NSError *error;
+    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSLog(@"%i",self.fetchedSushiResults.count);
 }
 
 - (void)didReceiveMemoryWarning

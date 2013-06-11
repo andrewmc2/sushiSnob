@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreData/CoreData.h>
 
 @interface MySushiMapViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet MKMapView *mySushiMapView;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSArray *fetchedSushiResults;
+
 @end

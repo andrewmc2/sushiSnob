@@ -14,23 +14,20 @@
 #import <MapKit/MapKit.h>
 #import "VenueObject.h"
 
-@interface TabCompassViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate>
+@interface TabCompassViewController : UIViewController<CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+    float thisVenueLat;
+    float thisVenueLong;
+}
 
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *saiImage;
-
 @property (strong, nonatomic) IBOutlet UILabel *closeSushiLabel;
-
 @property (strong, nonatomic) IBOutlet UILabel *japaneseNameLabel;
 
-
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-@property(strong, nonatomic) NSMutableArray *FUCKYOU;
 @end
 
 
-CLLocationManager *locationManager;
-float thisVenueLat;
-float thisVenueLong;
 

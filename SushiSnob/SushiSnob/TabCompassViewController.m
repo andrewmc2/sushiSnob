@@ -10,9 +10,7 @@
 #import "VenueObject.h"
 #import "AppDelegate.h"
 
-
 @interface TabCompassViewController ()
-
 
 {
     VenueObject* oneVenue;
@@ -26,16 +24,12 @@
     NSMutableArray * allItems1;
 }
 
-
-
 #define degreesToRadians(x) (M_PI * x / 180.0)
 #define radiandsToDegrees(x) (x * 180.0 / M_PI)
 
-
-
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
-@property (strong, nonatomic)CLLocationManager*locationManager;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -45,9 +39,7 @@
 {
     self = [super initWithCoder:(NSCoder *)aDecoder];
     
-    //    [self StartStandardLocationServices];
     return self;
-    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -59,24 +51,18 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
     [self startStandardLocationServices];
     
 }
 
-
 -(void) startStandardLocationServices
 {
-    
     locationManager=[[CLLocationManager alloc] init];
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 	locationManager.headingFilter = 1;
 	locationManager.delegate=self;
-    
     
     [locationManager startUpdatingLocation];
     
@@ -86,11 +72,7 @@
         [locationManager startUpdatingHeading];
     } else {
         NSLog(@"Location Heading/Compass FAIL");
-        
-        
     }
-    
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {

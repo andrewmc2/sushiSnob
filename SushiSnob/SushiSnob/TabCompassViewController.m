@@ -22,6 +22,7 @@
     float ourPhoneFloatLong;
     VenueObject *selectedVenue;
     NSMutableArray * allItems1;
+    AppDelegate *appDelegate ;
 }
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
@@ -30,6 +31,7 @@
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) BOOL headingDidStartUpdating;
 
 @end
 
@@ -55,17 +57,34 @@
     [super viewDidLoad];
     [self startStandardLocationServices];
     
+
+
+    
+}
+
+-(void)setupCompassObjectsAndLabels
+
+{
+    VenueObject * thisNearPlace = [[VenueObject alloc] init];
+    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    thisNearPlace = appDelegate.closestVenue;
+    
+    NSString *nearPlaceName = thisNearPlace.title;
+    NSLog(@"%@", nearPlaceName);
+    self.closeSushiLabel.text = nearPlaceName;
+
+
 }
 
 -(void) startStandardLocationServices
 {
     locationManager=[[CLLocationManager alloc] init];
-	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
 	locationManager.headingFilter = 1;
 	locationManager.delegate=self;
     
     [locationManager startUpdatingLocation];
-    
     
     if([CLLocationManager headingAvailable]) {
         
@@ -78,27 +97,33 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     // If it's a relatively recent event, turn off updates to save power
     CLLocation* startLocation = [locations lastObject];
-    NSDate* eventDate = startLocation.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
+//    NSDate* eventDate = startLocation.timestamp;
+//    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+//    if (abs(howRecent) < 15.0) {
         ourPhoneFloatLat = startLocation.coordinate.latitude;
         ourPhoneFloatLong = startLocation.coordinate.longitude;
         self.strLatitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.latitude];
         self.strLongitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.longitude];
-        
-    }
+//    }
     
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    if (!self.headingDidStartUpdating) {
+//        [self setupCompassObjectsAndLabels];
+//        self.headingDidStartUpdating = YES;
+//    }
+    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     VenueObject * thisNearPlace = [[VenueObject alloc] init];
+    
+    
     thisNearPlace = appDelegate.closestVenue;
     
     NSString *nearPlaceName = thisNearPlace.title;
     NSLog(@"%@", nearPlaceName);
+    self.closeSushiLabel.text = nearPlaceName;
     
     thisVenueLat = [appDelegate.closestVenue.venueLatitude floatValue];
     thisVenueLong = [appDelegate.closestVenue.venueLongitude floatValue];
@@ -151,13 +176,13 @@
     //float currentPointerDeg =
     
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    self.closeSushiLabel.text = nearPlaceName;
+    
     
     
     NSLog(@"magnetic heading now is %f", newHeading.magneticHeading);
-    
-    
 }
+
+
 
 - (void)viewDidAppear:(BOOL)animated {
     

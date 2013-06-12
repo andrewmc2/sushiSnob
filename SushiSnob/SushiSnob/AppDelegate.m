@@ -82,6 +82,8 @@
     TabMySushiViewController *tabSushiViewController = [[navigationController2 viewControllers] objectAtIndex:0];
     tabSushiViewController.managedObjectContext = self.managedObjectContext;
     
+    [tabBarController setSelectedIndex:1];
+    
     [self startStandardLocationServices];
     
     return YES;
@@ -181,6 +183,8 @@
     NSArray *distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [self.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
     self.closestVenue = [distanceSortedArray objectAtIndex:0];
+    [self.locationManager stopUpdatingLocation];
+    [self.locationManager stopUpdatingHeading];
 //    NSLog(@"%@", distanceSortedArray);
 //    NSLog(@"%@", self.closestVenue);
 }

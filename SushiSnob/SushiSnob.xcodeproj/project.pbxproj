@@ -10,6 +10,7 @@
 		9E30333E1767912E00DD4579 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E30333D1767912E00DD4579 /* Sushi.m */; };
 		9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3033401767C55300DD4579 /* SushiAnnotationView.m */; };
 		9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3033421767C6D800DD4579 /* checkMarkSmall.png */; };
+		9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */; };
 		9E9050AE1760E93D0092807A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AD1760E93D0092807A /* UIKit.framework */; };
 		9E9050B01760E93D0092807A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AF1760E93D0092807A /* Foundation.framework */; };
 		9E9050B21760E93D0092807A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050B11760E93D0092807A /* CoreGraphics.framework */; };
@@ -73,6 +74,8 @@
 		9E30333F1767C55200DD4579 /* SushiAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiAnnotationView.h; sourceTree = "<group>"; };
 		9E3033401767C55300DD4579 /* SushiAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiAnnotationView.m; sourceTree = "<group>"; };
 		9E3033421767C6D800DD4579 /* checkMarkSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMarkSmall.png; sourceTree = "<group>"; };
+		9E4C66F41767FF2B00CD2027 /* MySushiMapPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySushiMapPictureViewController.h; path = ../MySushiMapPictureViewController.h; sourceTree = "<group>"; };
+		9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySushiMapPictureViewController.m; path = ../MySushiMapPictureViewController.m; sourceTree = "<group>"; };
 		9E9050AA1760E93D0092807A /* SushiSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9050AD1760E93D0092807A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E9050AF1760E93D0092807A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -347,6 +350,8 @@
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
 				9E9051291761408E0092807A /* MySushiMapViewController.h */,
 				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
+				9E4C66F41767FF2B00CD2027 /* MySushiMapPictureViewController.h */,
+				9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */,
 				9E30333F1767C55200DD4579 /* SushiAnnotationView.h */,
 				9E3033401767C55300DD4579 /* SushiAnnotationView.m */,
 			);
@@ -492,6 +497,7 @@
 				C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */,
 				9E30333E1767912E00DD4579 /* Sushi.m in Sources */,
 				9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */,
+				9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

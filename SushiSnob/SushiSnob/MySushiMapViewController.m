@@ -10,12 +10,27 @@
 #import "SushiDetailMKAnnotation.h"
 #import "Sushi.h"
 #import "SushiAnnotationView.h"
+//throw pic over
+#import "MySushiMapPictureViewController.h"
 
 @interface MySushiMapViewController ()
-
+{
+    SushiDetailMKAnnotation *selectedSushiDetailMKAnnotation;
+}
 @end
 
 @implementation MySushiMapViewController
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"mapBigPic"]) {
+        MySushiMapPictureViewController *mySushiMapViewController = [segue destinationViewController];
+        mySushiMapViewController.fileName = selectedSushiDetailMKAnnotation.selectedFileName;
+        NSLog(@"yoy");
+        
+        
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,11 +71,9 @@
         
         NSString *fileName = currentSushi.sushiImageURL;
         if (fileName != nil) {
-            NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-//            sushiDetailMKAnnotation.image = [UIImage imageWithContentsOfFile:localImageURL.path];
-            sushiDetailMKAnnotation.image = [UIImage imageNamed:@"sushi.jpg"];
+            sushiDetailMKAnnotation.selectedFileName = fileName;
         } else {
-            sushiDetailMKAnnotation.image = [UIImage imageNamed:@"sushi.jpeg"];
+            sushiDetailMKAnnotation.selectedFileName = @"sushi.jpeg";
         }
         
         [self.mySushiMapView addAnnotation:sushiDetailMKAnnotation];
@@ -75,12 +88,14 @@
     if (annotationView == nil) {
         annotationView = [[SushiAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseID];
         annotationView.canShowCallout = YES;
-        
-        UIImageView *myImageView = [[UIImageView alloc] initWithImage:annotationView.image];
-        myImageView.frame = CGRectMake(0, 0, 31, 31);
-        annotationView.leftCalloutAccessoryView = myImageView;
-        
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:((SushiDetailMKAnnotation*)(annotation)).selectedFileName];
+        UIImageView *myImageView = [[UIImageView alloc] init];
+        myImageView.frame = CGRectMake(0, 0, 31, 31);
+        myImageView.image = [UIImage imageWithContentsOfFile:localImageURL.path];
+        annotationView.leftCalloutAccessoryView = myImageView;
+
     } else {
         annotationView.annotation = annotation;
     }
@@ -90,8 +105,10 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"%@",NSStringFromSelector(_cmd));
-    
+    selectedSushiDetailMKAnnotation = ((SushiDetailMKAnnotation*)(view.annotation));
+    NSLog(@"%@",selectedSushiDetailMKAnnotation);
+    [self performSegueWithIdentifier:@"mapBigPic" sender:self];
+    //selectedBusStop.everythingAboutStop);
 }
 
 @end

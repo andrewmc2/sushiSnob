@@ -14,5 +14,8 @@
 @property (strong, nonatomic) NSString  *subtitle;
 @property (strong, nonatomic) NSString  *title;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSString *selectedFileName;
+
 
 @end

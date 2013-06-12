@@ -28,7 +28,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.sushiDetailImage.image = [UIImage imageWithData:self.selectedSushi.sushiImage];
+    self.fileManager = [NSFileManager defaultManager];
+    self.documentsDirectory = [self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+    
+    NSString *fileName = self.selectedSushi.sushiImageURL;
+    if (fileName != nil) {
+        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+        self.sushiDetailImage.image = [UIImage imageWithContentsOfFile:localImageURL.path];
+    } else {
+        self.sushiDetailImage.image = [UIImage imageNamed:@"sushi.jpeg"];
+    }
     
     self.sushiDetailName.text = self.selectedSushi.name;
     self.sushiDetailVenue.text = self.selectedSushi.venue;
@@ -62,7 +71,6 @@
     SushiDetailMKAnnotation *sushiDetailMKAnnotation = [[SushiDetailMKAnnotation alloc] init];
     sushiDetailMKAnnotation.coordinate = CLLocationCoordinate2DMake([self.selectedSushi.latitude doubleValue], [self.selectedSushi.longitude doubleValue]);
     [self.sushiDetailMapView addAnnotation:sushiDetailMKAnnotation];
-    
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

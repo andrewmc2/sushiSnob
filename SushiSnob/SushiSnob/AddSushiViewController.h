@@ -12,9 +12,12 @@
 #import <CoreMedia/CoreMedia.h>
 #import <ImageIO/ImageIO.h>
 #import <CoreLocation/CoreLocation.h>
+#import "AddVenueVC.h"
+#import "VenueDelegate.h"
 
 
-@interface AddSushiViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+
+@interface AddSushiViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, VenueDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *sushiPictureViewHolder;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiPic;
@@ -30,6 +33,7 @@
 @property (strong, nonatomic) UIImage *selectedImage;
 
 @property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
+@property (strong, nonatomic) IBOutlet UILabel *venueLabel;
 
 - (IBAction)doneAddingSushi:(id)sender;
 - (IBAction)cancelAddingSushi:(id)sender;
@@ -41,3 +45,5 @@
 - (IBAction)sushiDescriptionRecordVoice:(id)sender;
 
 @end
+
+//NSArray *distanceSortedArray;

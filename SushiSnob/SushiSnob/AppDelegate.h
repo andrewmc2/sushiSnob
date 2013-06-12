@@ -28,10 +28,6 @@
 @property (strong, nonatomic) NSMutableArray * theItems;
 @property (strong, nonatomic) VenueObject * closestVenue;
 
-
-
-
-
 - (void) startStandardLocationServices;
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
 

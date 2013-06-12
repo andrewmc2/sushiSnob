@@ -46,6 +46,7 @@ VenueObject *selectedVenue;
 
 NSMutableArray *arrayWithDistance;
 TabMapViewController *TBTel;//NSArray *distanceSortedArray;
+//NSArray *distanceSortedArray;
 
 -(void)setupManagerContextModel
 {
@@ -123,7 +124,6 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
 //    TMAPTest = [[TabMapViewController alloc] init];
 //    [TMAPTest fourSquareParsing];
     
-    
     NSDate* eventDate = ourlocation.timestamp;
     NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
     NSLog(@"this is from location manager: %f", ourlocation.coordinate.latitude);
@@ -139,6 +139,7 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
     allItems1 = [[NSMutableArray alloc] init];
     self.theItems = [[NSMutableArray alloc] init];
     //TBTel.teleportationArray = [[NSMutableArray alloc] init];
+
     //self.venueMapView = [[MKMapView alloc]init];
     TabCompassViewController * VCData = [[TabCompassViewController alloc] init];
     
@@ -207,6 +208,9 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
     
     
   //  NSLog(@"tel array %@", TBTel.teleportationArray);
+
+//             [self.venueMapView addAnnotation:oneVenue];
+             
 }
 
 -(void) sortArray {
@@ -221,6 +225,8 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
     self.closestVenue = [distanceSortedArray objectAtIndex:0];
     //NSLog(@"%@", distanceSortedArray);
     //NSLog(@"%@", self.closestVenue);
+    NSLog(@"%@", distanceSortedArray);
+    NSLog(@"%@", self.closestVenue);
     
     
     

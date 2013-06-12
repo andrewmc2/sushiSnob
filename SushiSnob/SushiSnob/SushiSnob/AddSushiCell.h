@@ -1,13 +1,13 @@
 //
-//  AddSushiVenueVC.h
+//  AddSushiCell.h
 //  SushiSnob
 //
-//  Created by Craig on 6/9/13.
+//  Created by Andrew McCallum14 on 2013-06-06.
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AddSushiVenueVC : UIViewController
+@interface AddSushiCell : UITableViewCell
 
 @end

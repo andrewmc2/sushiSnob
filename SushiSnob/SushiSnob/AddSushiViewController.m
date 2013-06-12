@@ -8,17 +8,37 @@
 
 #import "AddSushiViewController.h"
 #import "LocationManagerSingleton.h"
+
 //for pic taking
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @interface AddSushiViewController ()
+
 {
     float picLatitude;
     float picLongitude;
+
 }
+
 @end
 
+
+
+
+
 @implementation AddSushiViewController
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"add4SSushiVenue"]) {
+        
+        ((AddVenueVC*)segue.destinationViewController).venueDelegate = self;
+    }
+}
+
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +57,8 @@
     [self.sushiGoodOrNot setTitle:@"Bad!" forSegmentAtIndex:1];
     picLatitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude;
     picLongitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.longitude;
+    
+        
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,6 +100,7 @@
 }
 
 - (IBAction)add4QVenue:(id)sender {
+
 }
 
 - (IBAction)sushiDescriptionRecordVoice:(id)sender {
@@ -256,6 +279,20 @@
     }
     
     return gps;
+}
+
+
+
+-(void)updateVenueLabel
+{
+    
+    
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//   VenueObject *selectedVenue = [distanceSortedArray objectAtIndex:indexPath.row];
+    self.venueLabel.text = selectedSushiVenue;
+    
+    
+    NSLog(@"made it to delegate method");
 }
 
 @end

@@ -1,18 +1,20 @@
 //
-//  AddSushiVenueVC.m
+//  TabCompassViewController.m
 //  SushiSnob
 //
-//  Created by Craig on 6/9/13.
+//  Created by Andrew McCallum14 on 2013-06-06.
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
-#import "AddSushiVenueVC.h"
+#import "TabCompassViewController.h"
+#import "Sushi.h"
 
-@interface AddSushiVenueVC ()
+
+@interface TabCompassViewController ()
 
 @end
 
-@implementation AddSushiVenueVC
+@implementation TabCompassViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

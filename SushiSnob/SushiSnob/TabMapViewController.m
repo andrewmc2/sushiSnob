@@ -81,7 +81,7 @@ NSMutableArray * parsedAnnotations;
     AppDelegate *appDelegate1 = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     
-    [self.venueMapView addAnnotations:appDelegate1.theItems];
+    [self.venueMapView addAnnotations:appDelegate1.fourSquareVenueObjectsArray];
   //appDelegate1.theItems = [[NSMutableArray alloc] init];
     
    // NSMutableArray * parsedAnnotations = [[NSMutableArray alloc] init];

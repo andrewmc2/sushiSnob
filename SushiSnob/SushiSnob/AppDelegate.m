@@ -14,39 +14,33 @@
 
 @interface AppDelegate ()
 {
-
-NSDictionary* firstDictionary;
-//NSArray* itemArray;
-NSDictionary *itemDictionary;
-NSMutableDictionary*
-listVenue;
-VenueObject* oneVenue;
-NSDictionary *categoryDictionary;
-NSMutableArray *categoryArray;
-NSMutableDictionary *categoryInfo;
-NSMutableDictionary * checkinStats;
-NSString *latitudeWithCurrentCoordinates;
-NSString *longitudeWithCurrentCoordinates;
-float ourFloatLat;
-float ourFloatLong;
-VenueObject *selectedVenue;
+    //location variables
+    float startingUserLocationFloatLat;
+    float startingUserLocationFloatLong;
+    NSString *latitudeWithCurrentCoordinates;
+    NSString *longitudeWithCurrentCoordinates;
+    VenueObject *selectedVenue;
+    
+    //parse variables
+    NSMutableArray * fourSquareVenueResultsArray;
+    NSMutableDictionary *listVenue;
+    VenueObject* fourSquareVenueObject;
+    NSDictionary *categoryDictionary;
+    NSMutableArray *categoryArray;
+    NSMutableDictionary *categoryInfo;
+    NSMutableDictionary * checkinStats;
+    NSMutableArray *arrayWithDistance;
 }
-
--(void)setupManagerContextModel;
 
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
+
+-(void)setupManagerContextModel;
 
 @end
 
 
 @implementation AppDelegate
-
-
-
-NSMutableArray *arrayWithDistance;
-TabMapViewController *TBTel;//NSArray *distanceSortedArray;
-//NSArray *distanceSortedArray;
 
 -(void)setupManagerContextModel
 {
@@ -87,6 +81,7 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
     UINavigationController *navigationController2 = [[tabBarController viewControllers] objectAtIndex:2];
     TabMySushiViewController *tabSushiViewController = [[navigationController2 viewControllers] objectAtIndex:0];
     tabSushiViewController.managedObjectContext = self.managedObjectContext;
+    
     [self startStandardLocationServices];
     
     return YES;
@@ -95,6 +90,7 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
 
 -(void) startStandardLocationServices
 {
+    //if you can't find a location -- then find one...
     if (nil == self.locationManager)
     {
         self.locationManager = [[CLLocationManager alloc] init];
@@ -112,124 +108,81 @@ TabMapViewController *TBTel;//NSArray *distanceSortedArray;
         } else {
             NSLog(@"No Compass -- You're lost");
         }
-        
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-   self.location = [locations objectAtIndex:0];
     
-    CLLocation * ourlocation = [locations lastObject];
-//    TabMapViewController * TMAPTest;
-//    TMAPTest = [[TabMapViewController alloc] init];
-//    [TMAPTest fourSquareParsing];
+    self.location = [locations objectAtIndex:0];
     
-    NSDate* eventDate = ourlocation.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    NSLog(@"this is from location manager: %f", ourlocation.coordinate.latitude);
-    ourFloatLat = ourlocation.coordinate.latitude;
-    ourFloatLong = ourlocation.coordinate.longitude;
-    self.strLatitude = [NSString stringWithFormat: @"%f", ourlocation.coordinate.latitude];
-    self.strLongitude = [NSString stringWithFormat: @"%f", ourlocation.coordinate.longitude];
+    CLLocation * startingUserLocation = [locations lastObject];
+    //NSLog(@"this is from location manager: %f", startingUserLocation.coordinate.latitude);
     
-    NSLog(@"this is from viewDidLoad");
+    startingUserLocationFloatLat = startingUserLocation.coordinate.latitude;
+    startingUserLocationFloatLong = startingUserLocation.coordinate.longitude;
+    self.strLatitude = [NSString stringWithFormat: @"%f", startingUserLocation.coordinate.latitude];
+    self.strLongitude = [NSString stringWithFormat: @"%f", startingUserLocation.coordinate.longitude];
     
-    NSString *CurrentCoord = [NSString stringWithFormat:@"%@,%@", self.strLatitude, self.strLongitude];
+    NSString *currentUserCoordForURL = [NSString stringWithFormat:@"%@,%@", self.strLatitude, self.strLongitude];
     
-    allItems1 = [[NSMutableArray alloc] init];
-    self.theItems = [[NSMutableArray alloc] init];
-    //TBTel.teleportationArray = [[NSMutableArray alloc] init];
+    self.fourSquareVenueObjectsArray = [[NSMutableArray alloc] init];
 
-    //self.venueMapView = [[MKMapView alloc]init];
-    TabCompassViewController * VCData = [[TabCompassViewController alloc] init];
-    
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", CurrentCoord];
+    //searches 4S for nearby sushi restaurants based on the current location
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", currentUserCoordForURL];
     NSLog(@"The search URL is%@", urlString);
-    
     NSURL *url = [NSURL URLWithString: urlString];
-    
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    
     [NSURLConnection sendAsynchronousRequest:urlRequest queue: [NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error)
      
      {
-         
-         
-         NSDictionary *bigDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-         NSDictionary * venueDictionary = [bigDictionary objectForKey:@"response"];
+         NSDictionary *fourSquareInitialDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+         NSDictionary * venueDictionary = [fourSquareInitialDictionary objectForKey:@"response"];
          NSArray *groupsArray = [venueDictionary objectForKey:@"groups"];
-         NSDictionary* subgroupDictionary = [groupsArray objectAtIndex:0];
-         itemArray = [subgroupDictionary objectForKey:@"items"];
+         NSDictionary *subgroupDictionary = [groupsArray objectAtIndex:0];
+         fourSquareVenueResultsArray = [subgroupDictionary objectForKey:@"items"];
          
-         
-         
-         for (listVenue in itemArray)
-             
+         for (listVenue in fourSquareVenueResultsArray)
          {
-             oneVenue = [[VenueObject alloc]init] ;
-             
-             
-             oneVenue.title = [listVenue objectForKey:@"name"];
-             oneVenue.fourSquareVenuePage = listVenue [@"canonicalUrl"];
-             oneVenue.venueLatitude = listVenue [@"location"][@"lat"];
-             oneVenue.venueLongitude = listVenue [@"location"][@"lng"];
-             oneVenue.coordinate = CLLocationCoordinate2DMake([oneVenue.venueLatitude floatValue], [oneVenue.venueLongitude floatValue]);
+             fourSquareVenueObject = [[VenueObject alloc]init] ;
+             fourSquareVenueObject.title = [listVenue objectForKey:@"name"];
+             fourSquareVenueObject.fourSquareVenuePage = listVenue [@"canonicalUrl"];
+             fourSquareVenueObject.venueLatitude = listVenue [@"location"][@"lat"];
+             fourSquareVenueObject.venueLongitude = listVenue [@"location"][@"lng"];
+             fourSquareVenueObject.coordinate = CLLocationCoordinate2DMake([fourSquareVenueObject.venueLatitude floatValue], [fourSquareVenueObject.venueLongitude floatValue]);
              if (listVenue [@"stats"][@"checkinsCount"] == nil || listVenue [@"stats"][@"checkinsCount"] == NULL)
              {
-                 oneVenue.subtitle = @"0";
+                 fourSquareVenueObject.subtitle = @"0";
              } else {
                  NSString * subtitlecheckinPart = [listVenue[@"stats"][@"checkinsCount"] stringValue];
-                 oneVenue.subtitle = [NSString stringWithFormat:@"%@ checkins", subtitlecheckinPart];
+                 fourSquareVenueObject.subtitle = [NSString stringWithFormat:@"%@ checkins", subtitlecheckinPart];
              }
              categoryArray = [listVenue objectForKey: @"categories"];
              if (categoryArray == nil || categoryArray == NULL || [categoryArray count] == 0)
              {
-                 oneVenue.venueCategory = @"Public Space";
+                 fourSquareVenueObject.venueCategory = @"Public Space";
              } else {
-                 
                  categoryInfo = [categoryArray objectAtIndex:0];
-                 oneVenue.venueCategory = [categoryInfo objectForKey:@"name"];
+                 fourSquareVenueObject.venueCategory = [categoryInfo objectForKey:@"name"];
              }
-             oneVenue.iconURL = [categoryInfo objectForKey: @"icon"];
-             NSURL *NSiconURL = [NSURL URLWithString:oneVenue.iconURL];
-             oneVenue.venueTypeIcon = [NSData dataWithContentsOfURL:NSiconURL];
-             oneVenue.venueIcon = [[UIImage alloc] initWithData:oneVenue.venueTypeIcon];
-             oneVenue.distance = listVenue[@"location"][@"distance"];
-             [allItems1 addObject:oneVenue];
-             [self.theItems addObject:oneVenue];
-             //TBTel.teleportationArray = self.theItems;
-    
-             
-          //   [VCData.FUCKYOU addObject:oneVenue];
+             fourSquareVenueObject.distance = listVenue[@"location"][@"distance"];
+             [self.fourSquareVenueObjectsArray addObject:fourSquareVenueObject];
          }
-         [self sortArray];
+         //this method call the sortArray method which will sort the venue objects by distance
+         [self sortVenuesByDistance];
      }];
-    
-    
-  //  NSLog(@"tel array %@", TBTel.teleportationArray);
-
-//             [self.venueMapView addAnnotation:oneVenue];
-             
 }
 
--(void) sortArray {
-    
+-(void) sortVenuesByDistance {
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance"
                                                  ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     NSArray *distanceSortedArray = [[NSArray alloc] init];
-    distanceSortedArray = [self.theItems sortedArrayUsingDescriptors:sortDescriptors];
-    //self.closestVenue =
+    distanceSortedArray = [self.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
     self.closestVenue = [distanceSortedArray objectAtIndex:0];
-    //NSLog(@"%@", distanceSortedArray);
-    //NSLog(@"%@", self.closestVenue);
-    NSLog(@"%@", distanceSortedArray);
-    NSLog(@"%@", self.closestVenue);
-    
-    
-    
+//    NSLog(@"%@", distanceSortedArray);
+//    NSLog(@"%@", self.closestVenue);
 }
 
 

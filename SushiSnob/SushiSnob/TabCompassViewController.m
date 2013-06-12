@@ -163,8 +163,6 @@
     float radAngleCalc = angleCalc * M_PI / 180.0f;
     CABasicAnimation *theAnimation;
     theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-    //theAnimation.fromValue = [NSNumber numberWithFloat:0];
-    //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
     theAnimation.duration = .8f;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     
@@ -172,10 +170,6 @@
     
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
     self.closeSushiLabel.text = nearPlaceName;
-    
-    //CLLocation * remainingDist =
-    //	//NSLog(@"%f (%f) => %f (%f)", manager.heading.trueHeading, oldRad, newHeading.trueHeading, newRad);
-    //    //NSLog(@"%f true heading (%f oldRadian) => %f newHeading (%f) newRadian", manager.heading.trueHeading, oldRadian, newHeading.trueHeading, newRadian);
     
     
     NSLog(@"magnetic heading now is %f", newHeading.magneticHeading);
@@ -208,10 +202,6 @@
     AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     [self locationManager:nil didUpdateLocations:[NSArray arrayWithObject:appDelegate.location]];
     
-    
-}
-
-- (IBAction)try:(id)sender {
     
 }
 

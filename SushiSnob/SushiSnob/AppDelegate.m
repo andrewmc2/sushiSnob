@@ -7,15 +7,45 @@
 //
 
 #import "AppDelegate.h"
+#import "VenueObject.h"
+#import "TabCompassViewController.h"
+#import "TabCompassViewController.h"
+#import "TabMapViewController.h"
 
 @interface AppDelegate ()
+{
+
+NSDictionary* firstDictionary;
+//NSArray* itemArray;
+NSDictionary *itemDictionary;
+NSMutableDictionary*
+listVenue;
+VenueObject* oneVenue;
+NSDictionary *categoryDictionary;
+NSMutableArray *categoryArray;
+NSMutableDictionary *categoryInfo;
+NSMutableDictionary * checkinStats;
+NSString *latitudeWithCurrentCoordinates;
+NSString *longitudeWithCurrentCoordinates;
+float ourFloatLat;
+float ourFloatLong;
+VenueObject *selectedVenue;
+}
 
 -(void)setupManagerContextModel;
+
+@property (nonatomic, strong) NSString * strLatitude;
+@property (nonatomic, strong) NSString * strLongitude;
 
 @end
 
 
 @implementation AppDelegate
+
+
+
+NSMutableArray *arrayWithDistance;
+TabMapViewController *TBTel;//NSArray *distanceSortedArray;
 
 -(void)setupManagerContextModel
 {
@@ -56,10 +86,147 @@
     UINavigationController *navigationController2 = [[tabBarController viewControllers] objectAtIndex:2];
     TabMySushiViewController *tabSushiViewController = [[navigationController2 viewControllers] objectAtIndex:0];
     tabSushiViewController.managedObjectContext = self.managedObjectContext;
+    [self startStandardLocationServices];
     
     return YES;
 }
-							
+
+
+-(void) startStandardLocationServices
+{
+    if (nil == self.locationManager)
+    {
+        self.locationManager = [[CLLocationManager alloc] init];
+        
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        
+        // Set a movement threshold for new events.
+        self.locationManager.distanceFilter = 500;
+        
+        [self.locationManager startUpdatingLocation];
+        
+        if([CLLocationManager headingAvailable]) {
+            [self.locationManager startUpdatingHeading];
+        } else {
+            NSLog(@"No Compass -- You're lost");
+        }
+        
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+   self.location = [locations objectAtIndex:0];
+    
+    CLLocation * ourlocation = [locations lastObject];
+//    TabMapViewController * TMAPTest;
+//    TMAPTest = [[TabMapViewController alloc] init];
+//    [TMAPTest fourSquareParsing];
+    
+    
+    NSDate* eventDate = ourlocation.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    NSLog(@"this is from location manager: %f", ourlocation.coordinate.latitude);
+    ourFloatLat = ourlocation.coordinate.latitude;
+    ourFloatLong = ourlocation.coordinate.longitude;
+    self.strLatitude = [NSString stringWithFormat: @"%f", ourlocation.coordinate.latitude];
+    self.strLongitude = [NSString stringWithFormat: @"%f", ourlocation.coordinate.longitude];
+    
+    NSLog(@"this is from viewDidLoad");
+    
+    NSString *CurrentCoord = [NSString stringWithFormat:@"%@,%@", self.strLatitude, self.strLongitude];
+    
+    allItems1 = [[NSMutableArray alloc] init];
+    self.theItems = [[NSMutableArray alloc] init];
+    //TBTel.teleportationArray = [[NSMutableArray alloc] init];
+    //self.venueMapView = [[MKMapView alloc]init];
+    TabCompassViewController * VCData = [[TabCompassViewController alloc] init];
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", CurrentCoord];
+    NSLog(@"The search URL is%@", urlString);
+    
+    NSURL *url = [NSURL URLWithString: urlString];
+    
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue: [NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error)
+     
+     {
+         
+         
+         NSDictionary *bigDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+         NSDictionary * venueDictionary = [bigDictionary objectForKey:@"response"];
+         NSArray *groupsArray = [venueDictionary objectForKey:@"groups"];
+         NSDictionary* subgroupDictionary = [groupsArray objectAtIndex:0];
+         itemArray = [subgroupDictionary objectForKey:@"items"];
+         
+         
+         
+         for (listVenue in itemArray)
+             
+         {
+             oneVenue = [[VenueObject alloc]init] ;
+             
+             
+             oneVenue.title = [listVenue objectForKey:@"name"];
+             oneVenue.fourSquareVenuePage = listVenue [@"canonicalUrl"];
+             oneVenue.venueLatitude = listVenue [@"location"][@"lat"];
+             oneVenue.venueLongitude = listVenue [@"location"][@"lng"];
+             oneVenue.coordinate = CLLocationCoordinate2DMake([oneVenue.venueLatitude floatValue], [oneVenue.venueLongitude floatValue]);
+             if (listVenue [@"stats"][@"checkinsCount"] == nil || listVenue [@"stats"][@"checkinsCount"] == NULL)
+             {
+                 oneVenue.subtitle = @"0";
+             } else {
+                 NSString * subtitlecheckinPart = [listVenue[@"stats"][@"checkinsCount"] stringValue];
+                 oneVenue.subtitle = [NSString stringWithFormat:@"%@ checkins", subtitlecheckinPart];
+             }
+             categoryArray = [listVenue objectForKey: @"categories"];
+             if (categoryArray == nil || categoryArray == NULL || [categoryArray count] == 0)
+             {
+                 oneVenue.venueCategory = @"Public Space";
+             } else {
+                 
+                 categoryInfo = [categoryArray objectAtIndex:0];
+                 oneVenue.venueCategory = [categoryInfo objectForKey:@"name"];
+             }
+             oneVenue.iconURL = [categoryInfo objectForKey: @"icon"];
+             NSURL *NSiconURL = [NSURL URLWithString:oneVenue.iconURL];
+             oneVenue.venueTypeIcon = [NSData dataWithContentsOfURL:NSiconURL];
+             oneVenue.venueIcon = [[UIImage alloc] initWithData:oneVenue.venueTypeIcon];
+             oneVenue.distance = listVenue[@"location"][@"distance"];
+             [allItems1 addObject:oneVenue];
+             [self.theItems addObject:oneVenue];
+             //TBTel.teleportationArray = self.theItems;
+    
+             
+          //   [VCData.FUCKYOU addObject:oneVenue];
+         }
+         [self sortArray];
+     }];
+    
+    
+  //  NSLog(@"tel array %@", TBTel.teleportationArray);
+}
+
+-(void) sortArray {
+    
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance"
+                                                 ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *distanceSortedArray = [[NSArray alloc] init];
+    distanceSortedArray = [self.theItems sortedArrayUsingDescriptors:sortDescriptors];
+    //self.closestVenue =
+    self.closestVenue = [distanceSortedArray objectAtIndex:0];
+    //NSLog(@"%@", distanceSortedArray);
+    //NSLog(@"%@", self.closestVenue);
+    
+    
+    
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

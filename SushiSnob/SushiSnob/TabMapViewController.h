@@ -15,13 +15,16 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *venueMapView;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSMutableArray * teleportationArray;
 
 
 - (IBAction)showLocation:(id)sender;
+-(void) fourSquareParsing;
 
 @end
 
 NSMutableArray* venueArray;
 NSArray *distanceSortedArray;
+
 
 

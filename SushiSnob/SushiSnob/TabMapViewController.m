@@ -6,12 +6,21 @@
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
+//
+//  TabMapViewController.m
+//  SushiSnob
+//
+//  Created by Andrew McCallum14 on 2013-06-06.
+//  Copyright (c) 2013 Andrew McCallum. All rights reserved.
+//
+
 #import "TabMapViewController.h"
 #import "LocationManagerSingleton.h"
 #import "Sushi.h"
 #import "VenueObject.h"
 #import "MapVenueWebViewViewController.h"
 #import "VenueTableViewController.h"
+#import "AppDelegate.h"
 
 @interface TabMapViewController ()
 
@@ -21,6 +30,7 @@ float userLatitude;
 float userLongitude;
 VenueObject *selectedVenue;
 NSMutableDictionary *listVenue;
+NSMutableArray * parsedAnnotations;
 
 
 
@@ -38,15 +48,20 @@ NSMutableDictionary *listVenue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[LocationManagerSingleton sharedSingleton] describe];
-    // Do any additional setup after loading the view.
-
-}
+  [[LocationManagerSingleton sharedSingleton] describe];
+    
+  
+    
+  }
 
 -(void) viewDidAppear:(BOOL)animated
 {
     [self setMapZoom];
-    [self fourSquareParsing];
+    //[self fourSquareParsing];
+   
+
+    
+  
     
 }
 
@@ -60,69 +75,97 @@ NSMutableDictionary *listVenue;
     MKCoordinateSpan span = MKCoordinateSpanMake(.05, .05);
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
     self.venueMapView.region = region;
-    self.venueMapView.showsUserLocation = YES;
+    
+    AppDelegate *appDelegate1 = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    
+    [self.venueMapView addAnnotations:appDelegate1.theItems];
+  //appDelegate1.theItems = [[NSMutableArray alloc] init];
+    
+   // NSMutableArray * parsedAnnotations = [[NSMutableArray alloc] init];
+    //NSMutableArray *testArray = [[NSMutableArray alloc] init];
+
+    parsedAnnotations = [[NSMutableArray alloc]init];
+    //parsedAnnotations = appDelegate1.theItems;
+    NSLog(@"%@", parsedAnnotations);
+    
+    //for (int i = 0; i< parsedAnnotations.count; i++) {
         
-}
+   // VenueObject * aTestVenueAnnotation = [[VenueObject alloc] init];
+   // aTestVenueAnnotation = appDelegate.theItems[0];
+    //self.teleportationArray;
+    //    aTestVenueAnnotation = [parsedAnnotations objectAtIndex:i];
+  //  [self.venueMapView addAnnotation:self.teleportationArray];
+    }
+   
+      //  [self.venueMapView addAnnotation:aTestVenueAnnotation];
+
+    //self.venueMapView.showsUserLocation = YES;
+    
 
 
 
 -(void) fourSquareParsing
-{
-    listVenue = [[NSMutableDictionary alloc]init];
-    venueArray = [[NSMutableArray alloc]init];
-    
-    NSString *userLongitudeString = [NSString stringWithFormat:@"%.2f",userLongitude];
-    NSString *userLatitudeString = [NSString stringWithFormat:@"%.2f", userLatitude];
-    
-    NSString *currentCoordinate = [NSString stringWithFormat:@"%@,%@", userLatitudeString, userLongitudeString];
-    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M&v=20130608", currentCoordinate];
 
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:urlRequest
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-                               NSDictionary *mainDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                               NSDictionary *venueDictionary = [mainDictionary valueForKeyPath:@"response.venues"];
-                                                             
-                               for (listVenue in venueDictionary) {
-                                   
-                                   VenueObject *venueObject = [[VenueObject alloc]init];
-                    
-                                   venueObject.venueName = listVenue [@"name"];
-                                   venueObject.address = listVenue [@"location"][@"address"];
-                                   venueObject.fourSquareVenuePage = listVenue [@"canonicalUrl"];
-                                   venueObject.venueLatitude = listVenue [@"location"][@"lat"];
-                                   venueObject.venueLongitude = listVenue [@"location"][@"lng"];
-                                   venueObject.distance = listVenue[@"location"][@"distance"];
-                                   venueObject.checkinsCount = listVenue[@"stats"][@"checkinsCount"];
-                                   
-                                   venueObject.title = venueObject.venueName;
-                                   venueObject.subtitle = venueObject.address;
-                                   
-                                   venueObject.coordinate = CLLocationCoordinate2DMake([venueObject.venueLatitude floatValue],[venueObject.venueLongitude floatValue]);
-                                   
-                                   [self.venueMapView addAnnotation:venueObject];
-                                   [venueArray addObject:venueObject];
 
-                               }
-                               [self sortVenueDistanceArray];
-
-                               
-                           }];//end of Block
-    
+{  
+//
+//    
+//    listVenue = [[NSMutableDictionary alloc]init];
+//    venueArray = [[NSMutableArray alloc]init];
+//    
+//    NSString *userLongitudeString = [NSString stringWithFormat:@"%.2f",userLongitude];
+//    NSString *userLatitudeString = [NSString stringWithFormat:@"%.2f", userLatitude];
+//    
+//    NSString *currentCoordinate = [NSString stringWithFormat:@"%@,%@", userLatitudeString, userLongitudeString];
+//    NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M&v=20130608", currentCoordinate];
+//    
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+//    [NSURLConnection sendAsynchronousRequest:urlRequest
+//                                       queue:[NSOperationQueue mainQueue]
+//                           completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+//                               NSDictionary *mainDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//                               NSDictionary *venueDictionary = [mainDictionary valueForKeyPath:@"response.venues"];
+//                               
+//                               for (listVenue in venueDictionary) {
+//                                   
+//                                   VenueObject *venueObject = [[VenueObject alloc]init];
+//                                   
+//                                   venueObject.venueName = listVenue [@"name"];
+//                                   venueObject.address = listVenue [@"location"][@"address"];
+//                                   venueObject.fourSquareVenuePage = listVenue [@"canonicalUrl"];
+//                                   venueObject.venueLatitude = listVenue [@"location"][@"lat"];
+//                                   venueObject.venueLongitude = listVenue [@"location"][@"lng"];
+//                                   venueObject.distance = listVenue[@"location"][@"distance"];
+//                                   venueObject.checkinsCount = listVenue[@"stats"][@"checkinsCount"];
+//                                   
+//                                   venueObject.title = venueObject.venueName;
+//                                   venueObject.subtitle = venueObject.address;
+//                                   
+//                                   venueObject.coordinate = CLLocationCoordinate2DMake([venueObject.venueLatitude floatValue],[venueObject.venueLongitude floatValue]);
+//                                   
+//                                   [self.venueMapView addAnnotation:venueObject];
+//                                   [venueArray addObject:venueObject];
+//                                   
+//                               }
+//                               [self sortVenueDistanceArray];
+//                               
+//                               
+//                           }];//end of Block
+//    
 }
-
--(void) sortVenueDistanceArray
-{
-    NSSortDescriptor *sortDescriptor;
-    sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distance"
-                                                ascending:YES];
-                      
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];    
-    distanceSortedArray = [venueArray sortedArrayUsingDescriptors:sortDescriptors];
-    NSLog(@"the nearest venue: %@", [[distanceSortedArray objectAtIndex:0] valueForKeyPath:@"venueName"]);
-}
+//
+//-(void) sortVenueDistanceArray
+//{
+//    NSSortDescriptor *sortDescriptor;
+//    sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"distance"
+//                                                ascending:YES];
+//    
+//    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+//    distanceSortedArray = [venueArray sortedArrayUsingDescriptors:sortDescriptors];
+//    NSLog(@"the nearest venue: %@", [[distanceSortedArray objectAtIndex:0] valueForKeyPath:@"venueName"]);
+//}
 
 
 
@@ -176,3 +219,4 @@ NSMutableDictionary *listVenue;
 
 
 @end
+

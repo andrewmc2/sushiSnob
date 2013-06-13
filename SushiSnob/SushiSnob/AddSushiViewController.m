@@ -286,9 +286,6 @@
 -(void)updateVenueLabel
 {
     
-    
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//   VenueObject *selectedVenue = [distanceSortedArray objectAtIndex:indexPath.row];
     self.venueLabel.text = selectedSushiVenue;
     
     

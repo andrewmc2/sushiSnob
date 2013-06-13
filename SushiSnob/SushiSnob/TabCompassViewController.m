@@ -167,46 +167,10 @@
     theAnimation.duration = 1.2f;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     
-    //float currentPointerDeg =
     
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    
-    NSLog(@"true heading now is %f", newHeading.trueHeading);
+    NSLog(@"magnetic heading now is %f", newHeading.magneticHeading);
 }
-
-
-
-//- (void)viewDidAppear:(BOOL)animated {
-//    
-//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(locationUpdated)
-//                                                 name:@"locationUpdated"
-//                                               object:nil];
-//    NSLog(@"We're subscribed.");
-//    // NSLog(@"%@", appDelegate.theItems);
-//    
-//    
-//    if (appDelegate.location) {
-//        [self locationUpdated];
-//        NSLog(@"Already had the location.");
-//    }
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated {
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"locationUpdated" object:nil];
-//}
-//
-//- (void)locationUpdated {
-//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//    [self locationManager:nil didUpdateLocations:[NSArray arrayWithObject:appDelegate.location]];
-//    
-//    
-//}
-//
-//- (IBAction)try:(id)sender {
-//    
-//}
 
 
 - (void)didReceiveMemoryWarning

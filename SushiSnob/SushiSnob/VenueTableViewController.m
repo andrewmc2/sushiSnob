@@ -31,6 +31,7 @@ VenueObject *selectedVenue;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +49,7 @@ VenueObject *selectedVenue;
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
     return distanceSortedArray.count;
+    NSLog(@"%i count", distanceSortedArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -57,14 +59,16 @@ VenueObject *selectedVenue;
     UITableViewCell* tableViewCell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"venue" forIndexPath:indexPath];
     
     if (tableViewCell == nil) {
-        tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
 
     VenueObject *venueObject = [distanceSortedArray objectAtIndex:indexPath.row];
     
-    tableViewCell.textLabel.text = venueObject.venueName;
-    tableViewCell.detailTextLabel.text = venueObject.address;
+    tableViewCell.textLabel.text = venueObject.title;
+    tableViewCell.detailTextLabel.text = venueObject.subtitle;
     return tableViewCell;
+    NSLog(@"the array: %@", venueObject.title);
+    NSLog(@"test");
 
 }
 

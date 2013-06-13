@@ -14,8 +14,14 @@
 #import "TabMySushiViewController.h"
 #import "VenueObject.h"
 
-
 @class TabMySushiViewController;
+
+
+    NSArray *distanceSortedArray;
+float startingUserLocationFloatLat;
+float startingUserLocationFloatLong;
+
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -30,6 +36,8 @@
 @property (strong, nonatomic)CLLocationManager*locationManager;
 @property (strong, nonatomic) NSMutableArray * fourSquareVenueObjectsArray;
 @property (strong, nonatomic) VenueObject * closestVenue;
+
+
 
 - (void) startStandardLocationServices;
 - (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;

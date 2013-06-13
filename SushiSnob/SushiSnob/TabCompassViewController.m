@@ -165,10 +165,9 @@
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
     theAnimation.duration = 1.2f;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
-    
-    
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
     NSLog(@"true heading is %f", newHeading.trueHeading);
+
 }
 
 

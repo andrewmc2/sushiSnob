@@ -28,6 +28,7 @@
     NSMutableDictionary *categoryInfo;
     NSMutableDictionary * checkinStats;
     NSMutableArray *arrayWithDistance;
+    BOOL didRunFourSquareParse;
 }
 
 @property (nonatomic, strong) NSString * strLatitude;
@@ -60,6 +61,7 @@
         self.managedObjectContext = [[NSManagedObjectContext alloc] init];
         self.managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     }
+    didRunFourSquareParse = NO;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -125,6 +127,8 @@
     
     NSString *currentUserCoordForURL = [NSString stringWithFormat:@"%@,%@", self.strLatitude, self.strLongitude];
     
+    if (didRunFourSquareParse == NO) {
+        NSLog(@"starting the parse");
     self.fourSquareVenueObjectsArray = [[NSMutableArray alloc] init];
 
     //searches 4S for nearby sushi restaurants based on the current location
@@ -171,8 +175,15 @@
          }
          //this method call the sortArray method which will sort the venue objects by distance
          [self sortVenuesByDistance];
+         
      }];
-}
+        didRunFourSquareParse = YES;
+    } else {NSLog(@"array already ran");};
+} 
+
+
+
+
 
 -(void) sortVenuesByDistance {
     NSSortDescriptor *sortDescriptor;
@@ -184,7 +195,7 @@
     self.closestVenue = [distanceSortedArray objectAtIndex:0];
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
-   // NSLog(@"%@", distanceSortedArray);
+   //NSLog(@"%@", distanceSortedArray);
    NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
 
 }

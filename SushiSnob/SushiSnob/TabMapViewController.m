@@ -23,12 +23,13 @@
 #import "AppDelegate.h"
 
 @interface TabMapViewController ()
-
+@property (strong, nonatomic) CLLocationManager *mapLocationManager;
 @end
 
 //float userLatitude;
 //float userLongitude;
 VenueObject *selectedVenue;
+
 //NSMutableDictionary *listVenue;
 //NSMutableArray * parsedAnnotations;
 //float startingUserLocationFloatLat;
@@ -50,6 +51,8 @@ VenueObject *selectedVenue;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
    
 }
 

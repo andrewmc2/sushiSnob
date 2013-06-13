@@ -151,9 +151,7 @@
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    self.doneButton.enabled = YES;
-    
+{    
     UIImage *imageTaken = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.selectedImage = imageTaken;
     self.sushiPic.image = imageTaken;
@@ -201,24 +199,24 @@
     }];
     
     [self dismissViewControllerAnimated:YES completion:^{
-        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
-        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        
-        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSMutableArray *resultsArray = [NSMutableArray array];
-            resultsArray = [objectsDict objectForKey:@"results"];
-            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
-            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
-            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
-            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
-            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
-            NSString *cityName = [cityDict objectForKey:@"long_name"];
-            self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
-            
-        }];
-
+//        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
+//        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
+//        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+//        
+//        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+//            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//            NSMutableArray *resultsArray = [NSMutableArray array];
+//            resultsArray = [objectsDict objectForKey:@"results"];
+//            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
+//            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
+//            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
+//            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
+//            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
+//            NSString *cityName = [cityDict objectForKey:@"long_name"];
+//            self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
+//            self.doneButton.enabled = YES;
+//        }];
+    self.doneButton.enabled = YES;
     }];
 }
 

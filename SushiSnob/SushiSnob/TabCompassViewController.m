@@ -169,7 +169,7 @@
     
     
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    NSLog(@"magnetic heading now is %f", newHeading.magneticHeading);
+    //NSLog(@"magnetic heading now is %f", newHeading.magneticHeading);
 }
 
 

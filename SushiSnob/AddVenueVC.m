@@ -56,13 +56,13 @@
     UITableViewCell* tableViewCell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     if (tableViewCell == nil) {
-        tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        tableViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
     VenueObject *venueObject = [distanceSortedArray objectAtIndex:indexPath.row];
     
-    tableViewCell.textLabel.text = venueObject.venueName;
-    tableViewCell.detailTextLabel.text = venueObject.address;
+    tableViewCell.textLabel.text = venueObject.title;
+    tableViewCell.detailTextLabel.text = venueObject.subtitle;
     return tableViewCell;
     
     
@@ -75,7 +75,7 @@
    
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     VenueObject *selectedVenue = [distanceSortedArray objectAtIndex:indexPath.row];
-    selectedSushiVenue = selectedVenue.venueName;
+    selectedSushiVenue = selectedVenue.title;
     
     
     [self.venueDelegate updateVenueLabel];

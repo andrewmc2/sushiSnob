@@ -189,19 +189,19 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(locationUpdated)
-                                                 name:@"locationUpdated"
-                                               object:nil];
-    NSLog(@"We're subscribed.");
-    // NSLog(@"%@", appDelegate.theItems);
-    
-    
-    if (appDelegate.location) {
-        [self locationUpdated];
-        NSLog(@"Already had the location.");
-    }
+//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(locationUpdated)
+//                                                 name:@"locationUpdated"
+//                                               object:nil];
+//    NSLog(@"We're subscribed.");
+//    // NSLog(@"%@", appDelegate.theItems);
+//    
+//    
+//    if (appDelegate.location) {
+//        [self locationUpdated];
+//        NSLog(@"Already had the location.");
+//    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -209,10 +209,10 @@
 }
 
 - (void)locationUpdated {
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    [self locationManager:nil didUpdateLocations:[NSArray arrayWithObject:appDelegate.location]];
-    
-    
+//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    [self locationManager:nil didUpdateLocations:[NSArray arrayWithObject:appDelegate.location]];
+//    
+//    
 }
 
 - (IBAction)try:(id)sender {

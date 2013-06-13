@@ -14,9 +14,7 @@
 
 @interface AppDelegate ()
 {
-    //location variables
-    float startingUserLocationFloatLat;
-    float startingUserLocationFloatLong;
+
     NSString *latitudeWithCurrentCoordinates;
     NSString *longitudeWithCurrentCoordinates;
     VenueObject *selectedVenue;
@@ -108,7 +106,7 @@
         if([CLLocationManager headingAvailable]) {
             [self.locationManager startUpdatingHeading];
         } else {
-            NSLog(@"No Compass -- You're lost");
+            //NSLog(@"No Compass -- You're lost");
         }
     }
 }
@@ -152,13 +150,14 @@
              fourSquareVenueObject.venueLatitude = listVenue [@"location"][@"lat"];
              fourSquareVenueObject.venueLongitude = listVenue [@"location"][@"lng"];
              fourSquareVenueObject.coordinate = CLLocationCoordinate2DMake([fourSquareVenueObject.venueLatitude floatValue], [fourSquareVenueObject.venueLongitude floatValue]);
-             if (listVenue [@"stats"][@"checkinsCount"] == nil || listVenue [@"stats"][@"checkinsCount"] == NULL)
-             {
-                 fourSquareVenueObject.subtitle = @"0";
-             } else {
-                 NSString * subtitlecheckinPart = [listVenue[@"stats"][@"checkinsCount"] stringValue];
-                 fourSquareVenueObject.subtitle = [NSString stringWithFormat:@"%@ checkins", subtitlecheckinPart];
-             }
+             fourSquareVenueObject.subtitle = listVenue [@"location"][@"address"];
+//             if (listVenue [@"stats"][@"checkinsCount"] == nil || listVenue [@"stats"][@"checkinsCount"] == NULL)
+//             {
+//                 fourSquareVenueObject.subtitle = @"0";
+//             } else {
+//                 //NSString * subtitlecheckinPart = [listVenue[@"stats"][@"checkinsCount"] stringValue];
+//                 fourSquareVenueObject.subtitle = fourSquareVenueObject.address;
+//             }
              categoryArray = [listVenue objectForKey: @"categories"];
              if (categoryArray == nil || categoryArray == NULL || [categoryArray count] == 0)
              {
@@ -180,13 +179,14 @@
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance"
                                                  ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    NSArray *distanceSortedArray = [[NSArray alloc] init];
+    distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [self.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
     self.closestVenue = [distanceSortedArray objectAtIndex:0];
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
-//    NSLog(@"%@", distanceSortedArray);
-//    NSLog(@"%@", self.closestVenue);
+   // NSLog(@"%@", distanceSortedArray);
+   NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
+
 }
 
 

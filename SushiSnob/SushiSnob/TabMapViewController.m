@@ -69,6 +69,10 @@ NSMutableArray * parsedAnnotations;
 
 -(void) setMapZoom
 {
+    AppDelegate *appDelegate1 = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    //[appDelegate1 did
+
     
     userLatitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude;
     userLongitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.longitude;
@@ -78,7 +82,7 @@ NSMutableArray * parsedAnnotations;
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
     self.venueMapView.region = region;
     
-    AppDelegate *appDelegate1 = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    //AppDelegate *appDelegate1 = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     
     [self.venueMapView addAnnotations:appDelegate1.fourSquareVenueObjectsArray];

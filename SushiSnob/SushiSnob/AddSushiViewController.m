@@ -17,7 +17,7 @@
 {
     float picLatitude;
     float picLongitude;
-
+    int countForDoneButton;
 }
 
 @end
@@ -57,8 +57,7 @@
     [self.sushiGoodOrNot setTitle:@"Bad!" forSegmentAtIndex:1];
     picLatitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude;
     picLongitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.longitude;
-    
-        
+    self.doneButton.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,6 +152,8 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    self.doneButton.enabled = YES;
+    
     UIImage *imageTaken = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.selectedImage = imageTaken;
     self.sushiPic.image = imageTaken;
@@ -215,6 +216,7 @@
             NSString *boroughName = [boroughDict objectForKey:@"long_name"];
             NSString *cityName = [cityDict objectForKey:@"long_name"];
             self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
+            
         }];
 
     }];

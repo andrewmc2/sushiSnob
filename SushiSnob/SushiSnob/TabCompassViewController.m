@@ -80,8 +80,8 @@
 -(void) startStandardLocationServices
 {
     locationManager=[[CLLocationManager alloc] init];
-	locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-	locationManager.headingFilter = 1;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+	locationManager.headingFilter = 15;
 	locationManager.delegate=self;
     
     [locationManager startUpdatingLocation];
@@ -110,20 +110,10 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
-//    if (!self.headingDidStartUpdating) {
-//        [self setupCompassObjectsAndLabels];
-//        self.headingDidStartUpdating = YES;
-//    }
-    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    
-    VenueObject * thisNearPlace = [[VenueObject alloc] init];
-    
-    
-    thisNearPlace = appDelegate.closestVenue;
-    
-    NSString *nearPlaceName = thisNearPlace.title;
-    NSLog(@"%@", nearPlaceName);
-    self.closeSushiLabel.text = nearPlaceName;
+    if (!self.headingDidStartUpdating) {
+        [self setupCompassObjectsAndLabels];
+        self.headingDidStartUpdating = YES;
+    }
     
     thisVenueLat = [appDelegate.closestVenue.venueLatitude floatValue];
     thisVenueLong = [appDelegate.closestVenue.venueLongitude floatValue];
@@ -132,7 +122,7 @@
     float radcurrentLong = degreesToRadians(ourPhoneFloatLong);
     float radthisVenueLat = degreesToRadians(thisVenueLat);
     float radthisVenueLong = degreesToRadians(thisVenueLong);
-    float deltLat = (radthisVenueLat - radcurrentLat);
+    //float deltLat = (radthisVenueLat - radcurrentLat);
     float deltLong = (radthisVenueLong - radcurrentLong);
     
     float y = sinf(deltLong) * cosf(radthisVenueLat);
@@ -151,17 +141,19 @@
     };
     
     NSLog(@"Initial bearing/initial angle rotation in degrees is = %f", VenueBearDeg);
-    float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
+    
+    //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
+   // float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
     //
-    float newRad =  newHeading.trueHeading * M_PI / 180.0f;
-    float managerheadRad = manager.heading.trueHeading * M_PI/180.0f;
-    float newHeadingRad = newHeading.trueHeading * M_PI /180.0f;
+    //float newRad =  newHeading.trueHeading * M_PI / 180.0f;
+    //float managerheadRad = manager.heading.trueHeading * M_PI/180.0f;
+    //float newHeadingRad = newHeading.trueHeading * M_PI /180.0f;
     float angleCalc;
-    if (newHeading.magneticHeading > VenueBearDeg)
-    {angleCalc = -(newHeading.magneticHeading - VenueBearDeg);
+    if (newHeading.trueHeading > VenueBearDeg)
+    {angleCalc = -(newHeading.trueHeading - VenueBearDeg);
     }
     else
-    { angleCalc = VenueBearDeg - newHeading.magneticHeading;
+    { angleCalc = VenueBearDeg - newHeading.trueHeading;
         
     }
     //float angleCalc = (VenueBearDeg - newHeading.magneticHeading);
@@ -172,51 +164,12 @@
     theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     //theAnimation.fromValue = [NSNumber numberWithFloat:0];
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
-    theAnimation.duration = .8f;
+    theAnimation.duration = 1.2f;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     
-    //float currentPointerDeg =
     
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    
-    
-    
-    
     NSLog(@"magnetic heading now is %f", newHeading.magneticHeading);
-}
-
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    
-//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(locationUpdated)
-//                                                 name:@"locationUpdated"
-//                                               object:nil];
-//    NSLog(@"We're subscribed.");
-//    // NSLog(@"%@", appDelegate.theItems);
-//    
-//    
-//    if (appDelegate.location) {
-//        [self locationUpdated];
-//        NSLog(@"Already had the location.");
-//    }
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"locationUpdated" object:nil];
-}
-
-- (void)locationUpdated {
-//    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-//    [self locationManager:nil didUpdateLocations:[NSArray arrayWithObject:appDelegate.location]];
-//    
-//    
-}
-
-- (IBAction)try:(id)sender {
-    
 }
 
 

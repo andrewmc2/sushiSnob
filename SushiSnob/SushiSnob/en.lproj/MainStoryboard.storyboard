@@ -246,7 +246,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="sushiCell" rowHeight="100" id="MaZ-uJ-esW" customClass="SushiCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sushiCell" rowHeight="100" id="MaZ-uJ-esW" customClass="SushiCell">
                                         <rect key="frame" x="0.0" y="22" width="322" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -297,7 +297,7 @@
                                             <segue destination="qvo-4g-th6" kind="push" identifier="viewSushi" id="B1O-GG-I2N"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="addSushiCell" rowHeight="100" id="25N-Wp-A51" customClass="AddSushiCell">
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="addSushiCell" rowHeight="100" id="25N-Wp-A51" customClass="AddSushiCell">
                                         <rect key="frame" x="0.0" y="122" width="322" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -656,6 +656,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="CPm-wc-kzB"/>
                     <connections>
+                        <outlet property="doneButton" destination="PhE-S2-BB4" id="h0e-If-TS2"/>
                         <outlet property="sushiCityName" destination="uGd-RW-SY5" id="TeG-Jk-DI4"/>
                         <outlet property="sushiDate" destination="ZiZ-tZ-P6E" id="nLW-Ob-TCa"/>
                         <outlet property="sushiDescription" destination="UII-Ph-y2G" id="Yen-YR-Y0C"/>

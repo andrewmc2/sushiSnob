@@ -35,6 +35,9 @@
 @property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+
 - (IBAction)doneAddingSushi:(id)sender;
 - (IBAction)cancelAddingSushi:(id)sender;
 

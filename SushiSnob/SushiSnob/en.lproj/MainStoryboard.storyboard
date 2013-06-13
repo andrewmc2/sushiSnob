@@ -246,7 +246,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="sushiCell" rowHeight="100" id="MaZ-uJ-esW" customClass="SushiCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sushiCell" rowHeight="100" id="MaZ-uJ-esW" customClass="SushiCell">
                                         <rect key="frame" x="0.0" y="22" width="322" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -297,7 +297,7 @@
                                             <segue destination="qvo-4g-th6" kind="push" identifier="viewSushi" id="B1O-GG-I2N"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="addSushiCell" rowHeight="100" id="25N-Wp-A51" customClass="AddSushiCell">
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="addSushiCell" rowHeight="100" id="25N-Wp-A51" customClass="AddSushiCell">
                                         <rect key="frame" x="0.0" y="122" width="322" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -656,6 +656,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="CPm-wc-kzB"/>
                     <connections>
+                        <outlet property="doneButton" destination="PhE-S2-BB4" id="h0e-If-TS2"/>
                         <outlet property="sushiCityName" destination="uGd-RW-SY5" id="TeG-Jk-DI4"/>
                         <outlet property="sushiDate" destination="ZiZ-tZ-P6E" id="nLW-Ob-TCa"/>
                         <outlet property="sushiDescription" destination="UII-Ph-y2G" id="Yen-YR-Y0C"/>
@@ -767,112 +768,6 @@
         <image name="sushi.jpeg" width="1920" height="1200"/>
         <image name="x.png" width="249" height="295"/>
     </resources>
-    <classes>
-        <class className="AddSushiCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
-        </class>
-        <class className="AddSushiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="add4QVenue:"/>
-                <relationship kind="action" name="cancelAddingSushi:"/>
-                <relationship kind="action" name="doneAddingSushi:"/>
-                <relationship kind="action" name="sushiDescriptionRecordVoice:"/>
-                <relationship kind="outlet" name="sushiCityName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDescription" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiGoodOrNot" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
-                <relationship kind="outlet" name="venueLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AddVenueVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddVenueVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CompassWebiViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassWebiViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nearestVenueFSWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MapVenueWebViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MySushiMapPictureViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapPictureViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MySushiMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mySushiMapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SushiCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiNameJapanese" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiRestauraunt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SushiDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkMarkImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiDetailCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDetailDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDetailGoodOrBad" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sushiDetailImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiDetailMapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="sushiDetailName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDetailNotes" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDetailVenue" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="xImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TabCompassViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="try:"/>
-                <relationship kind="outlet" name="closeSushiLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="japaneseNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="saiImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TabMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showLocation:"/>
-                <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TabMySushiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="VenueTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

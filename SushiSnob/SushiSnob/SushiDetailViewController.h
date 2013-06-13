@@ -26,6 +26,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *xImage;
 @property (strong, nonatomic) IBOutlet MKMapView *sushiDetailMapView;
 
+
+
 @property (strong, nonatomic) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *documentsDirectory;
 

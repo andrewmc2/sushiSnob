@@ -11,19 +11,19 @@
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 
-@interface TabMapViewController : UIViewController <MKMapViewDelegate>
+@interface TabMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+
 
 @property (strong, nonatomic) IBOutlet MKMapView *venueMapView;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong, nonatomic) NSMutableArray * teleportationArray;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
-- (IBAction)showLocation:(id)sender;
+- (IBAction)refreshLocationButton:(id)sender;
 
 @end
 
-NSMutableArray* venueArray;
-//NSArray *distanceSortedArray;
+
 
 
 

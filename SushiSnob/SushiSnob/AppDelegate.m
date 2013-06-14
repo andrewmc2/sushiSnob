@@ -15,8 +15,7 @@
 @interface AppDelegate ()
 {
 
-    NSString *latitudeWithCurrentCoordinates;
-    NSString *longitudeWithCurrentCoordinates;
+   
     VenueObject *selectedVenue;
     
     //parse variables
@@ -199,6 +198,71 @@
    NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
 
 }
+
+
+-(void) reparseFourSquare
+{
+    
+    NSString *currentUserCoordForURL = [NSString stringWithFormat:@"%@,%@", self.strLatitude, self.strLongitude];
+    
+   
+        NSLog(@"starting the parse");
+        self.fourSquareVenueObjectsArray = [[NSMutableArray alloc] init];
+        
+        //searches 4S for nearby sushi restaurants based on the current location
+        NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", currentUserCoordForURL];
+        NSLog(@"The search URL is%@", urlString);
+        NSURL *url = [NSURL URLWithString: urlString];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        [NSURLConnection sendAsynchronousRequest:urlRequest queue: [NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error)
+         
+         {
+             NSDictionary *fourSquareInitialDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+             NSDictionary * venueDictionary = [fourSquareInitialDictionary objectForKey:@"response"];
+             NSArray *groupsArray = [venueDictionary objectForKey:@"groups"];
+             NSDictionary *subgroupDictionary = [groupsArray objectAtIndex:0];
+             fourSquareVenueResultsArray = [subgroupDictionary objectForKey:@"items"];
+             
+             for (listVenue in fourSquareVenueResultsArray)
+             {
+                 fourSquareVenueObject = [[VenueObject alloc]init] ;
+                 fourSquareVenueObject.title = [listVenue objectForKey:@"name"];
+                 fourSquareVenueObject.fourSquareVenuePage = listVenue [@"canonicalUrl"];
+                 fourSquareVenueObject.venueLatitude = listVenue [@"location"][@"lat"];
+                 fourSquareVenueObject.venueLongitude = listVenue [@"location"][@"lng"];
+                 fourSquareVenueObject.coordinate = CLLocationCoordinate2DMake([fourSquareVenueObject.venueLatitude floatValue], [fourSquareVenueObject.venueLongitude floatValue]);
+                 fourSquareVenueObject.subtitle = listVenue [@"location"][@"address"];
+                 //             if (listVenue [@"stats"][@"checkinsCount"] == nil || listVenue [@"stats"][@"checkinsCount"] == NULL)
+                 //             {
+                 //                 fourSquareVenueObject.subtitle = @"0";
+                 //             } else {
+                 //                 //NSString * subtitlecheckinPart = [listVenue[@"stats"][@"checkinsCount"] stringValue];
+                 //                 fourSquareVenueObject.subtitle = fourSquareVenueObject.address;
+                 //             }
+                 categoryArray = [listVenue objectForKey: @"categories"];
+                 if (categoryArray == nil || categoryArray == NULL || [categoryArray count] == 0)
+                 {
+                     fourSquareVenueObject.venueCategory = @"Public Space";
+                 } else {
+                     categoryInfo = [categoryArray objectAtIndex:0];
+                     fourSquareVenueObject.venueCategory = [categoryInfo objectForKey:@"name"];
+                 }
+                 fourSquareVenueObject.distance = listVenue[@"location"][@"distance"];
+                 [self.fourSquareVenueObjectsArray addObject:fourSquareVenueObject];
+             }
+             //this method call the sortArray method which will sort the venue objects by distance
+             [self sortVenuesByDistance];
+             
+         }];
+       
+
+} 
+
+
+
+
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -54,6 +54,7 @@ float refreshedLongitude;
 
 -(void) setMapZoom
 {
+
     CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake (startingUserLocationFloatLat, startingUserLocationFloatLong);
     MKCoordinateSpan span = MKCoordinateSpanMake(.05, .05);
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);

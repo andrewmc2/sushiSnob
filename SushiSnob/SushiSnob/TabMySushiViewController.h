@@ -12,6 +12,7 @@
 #import "AddSushiDelegate.h"
 #import "AddSushiViewController.h"
 #import "MySushiMapViewController.h"
+#import <dispatch/dispatch.h>
 
 @interface TabMySushiViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AddSushiDelegate>
 
@@ -22,4 +23,6 @@
 //for writing pics to disk
 @property (strong, nonatomic) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *documentsDirectory;
+
+@property (strong, nonatomic) NSMutableArray *imageArray;
 @end

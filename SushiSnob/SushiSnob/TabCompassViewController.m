@@ -140,11 +140,13 @@
         VenueBearDeg = initialVenueBearingDegrees;
     };
     
-    NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
+
+   // NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
     VenueObject * thisNearPlace = [[VenueObject alloc] init];
     appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     thisNearPlace = appDelegate.closestVenue;
+
     
     NSString *nearPlaceName = thisNearPlace.title;
     NSLog(@"%@", nearPlaceName);
@@ -175,7 +177,7 @@
     self.closeSushiLabel.text = nearPlaceName;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    NSLog(@"true heading is %f", newHeading.trueHeading);
+    //NSLog(@"true heading is %f", newHeading.trueHeading);
 
 }
 

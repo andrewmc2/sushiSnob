@@ -162,6 +162,7 @@ float refreshedLongitude;
 
     appDelegate1.fourSquareVenueObjectsArray = [[NSMutableArray alloc] init];
     
+    
     //searches 4S for nearby sushi restaurants based on the current location
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", currentUserCoordForURL];
     NSLog(@"The search URL is%@", urlString);

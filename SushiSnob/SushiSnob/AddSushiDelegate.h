@@ -14,6 +14,7 @@
 addSushiPicture: (UIImage*) sushiPicutre
         addSushiDate: (NSDate*) sushiDate
    addSushiGoodOrNot: (BOOL) sushiGoodOrNot
+addSushiVenue: (NSString*)sushiVenue
  addSushiDescription: (NSString*) sushiDescription
 addSushiCityName: (NSString*) sushiCityName
          addLatitude: (float) latitude

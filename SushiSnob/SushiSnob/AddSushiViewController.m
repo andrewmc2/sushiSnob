@@ -18,11 +18,9 @@
     float picLatitude;
     float picLongitude;
     int countForDoneButton;
-    
 }
 
-
-
+- (IBAction)getLatLong:(id)sender;
 
 
 @end
@@ -35,8 +33,6 @@ static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
 static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
 static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
-
-
 @implementation AddSushiViewController
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -47,9 +43,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         ((AddVenueVC*)segue.destinationViewController).venueDelegate = self;
     }
 }
-
-
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,10 +59,10 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 	// Do any additional setup after loading the view.
     [self.sushiGoodOrNot setTitle:@"Good!" forSegmentAtIndex:0];
     [self.sushiGoodOrNot setTitle:@"Bad!" forSegmentAtIndex:1];
-    picLatitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude;
-    picLongitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.longitude;
+    [LocationManagerSingleton sharedSingleton];
+    
     self.doneButton.enabled = NO;
-    NSLog(@"user latitude %f", picLatitude);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,33 +75,29 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (IBAction)doneAddingSushi:(id)sender {
     //do this later after all inputs are setup
-    [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:[self sushiIsGoodOrNot] addSushiDescription:self.sushiDescription.text addSushiCityName:self.sushiCityName.text addLatitude:picLatitude addLongitude:picLongitude];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
+
+    dispatch_queue_t delegateQueue = dispatch_queue_create("for delegate", NULL);
+    dispatch_async(delegateQueue, ^{
+        [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsBad addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription.text addSushiCityName:self.sushiCityName.text addLatitude:picLatitude addLongitude:picLongitude];
+    });
 }
 
 - (IBAction)cancelAddingSushi:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//- (IBAction)changeSushiGoodOrNot:(id)sender {
-//    if (self.sushiGoodOrNot.selectedSegmentIndex == 0) {
-//        self.sushiIsGood = YES;
-//    } else {
-//        self.sushiIsGood = NO;
-//    }
-//}
-
-#pragma mark UI elements
-
--(BOOL)sushiIsGoodOrNot
-{
-    if (self.sushiGoodOrNot.selectedSegmentIndex == 0) {
-        return TRUE;
+- (IBAction)changeSushiGoodOrNot:(id)sender {
+    if (self.sushiGoodOrNot.selectedSegmentIndex == 1) {
+        self.sushiIsBad = NO;
+        NSLog(@"sushi is good");
     } else {
-        return FALSE;
+        self.sushiIsBad = YES;
+        NSLog(@"sushi is bad");
     }
 }
+
+#pragma mark UI elements
 
 - (IBAction)add4QVenue:(id)sender {
 
@@ -153,9 +142,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     }
 }
 
-
-
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     CGRect viewFrame = self.view.frame;
@@ -168,6 +154,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [self.view setFrame:viewFrame];
     
     [UIView commitAnimations];
+    
+    if (textField == self.sushiNameTextField) {
+        if (self.sushiNameTextField != nil) {
+            self.doneButton.enabled = YES;
+        }
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -175,12 +167,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [textField resignFirstResponder];
     return YES;
 }
-
-
-
-
-
-
 
 #pragma mark take picture
 
@@ -230,70 +216,85 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {    
     UIImage *imageTaken = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.selectedImage = imageTaken;
     self.sushiPic.image = imageTaken;
     
-    CLLocationDegrees pictureLatitude = picLatitude;
-    CLLocationDegrees pictureLongitude = picLongitude;
-    CLLocation *clLocation = [[CLLocation alloc] initWithLatitude:pictureLatitude longitude:pictureLongitude];
+    dispatch_queue_t addGeolocationQueue = dispatch_queue_create("add geolocation to pic", NULL);
     
-    NSMutableDictionary *pictureOriginalMetadata = [info objectForKey:UIImagePickerControllerMediaMetadata];
-    NSDictionary *gpsDataDictionary = [self getGPSDictionaryForLocation:clLocation];
-    
-    [pictureOriginalMetadata setObject:gpsDataDictionary forKey:(NSString*)kCGImagePropertyGPSDictionary];
-    
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-    [library addAssetsGroupAlbumWithName:@"Sushi" resultBlock:^(ALAssetsGroup *group) {
-
-    } failureBlock:^(NSError *error) {
-
-    }];
-    
-    //why?
-    __block ALAssetsGroup *assetsGroup;
-    
-    [library enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-        if ([[group valueForProperty:ALAssetsGroupPropertyName] isEqualToString:@"Sushi"]) {
-            assetsGroup = group;
-        }
-    } failureBlock:^(NSError *error) {
-        NSLog(@"fail");
-    }];
-    
-    CGImageRef img = [imageTaken CGImage];
-    
-    [library writeImageToSavedPhotosAlbum:img metadata:pictureOriginalMetadata completionBlock:^(NSURL *assetURL, NSError *error) {
+    dispatch_async(addGeolocationQueue, ^{
+        self.selectedImage = imageTaken;
+        CLLocationDegrees pictureLatitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude;
+        CLLocationDegrees pictureLongitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.longitude;
+        picLatitude = pictureLatitude;
+        picLongitude = pictureLongitude;
+        CLLocation *clLocation = [[CLLocation alloc] initWithLatitude:pictureLatitude longitude:pictureLongitude];
         
-        if (error.code == 0) {
-            [library assetForURL:assetURL resultBlock:^(ALAsset *asset) {
-                [assetsGroup addAsset:asset];
-            } failureBlock:^(NSError *error) {
-                NSLog(@"fail");
-            }];
-        } else {
+        NSMutableDictionary *pictureOriginalMetadata = [info objectForKey:UIImagePickerControllerMediaMetadata];
+        NSDictionary *gpsDataDictionary = [self getGPSDictionaryForLocation:clLocation];
+        
+        [pictureOriginalMetadata setObject:gpsDataDictionary forKey:(NSString*)kCGImagePropertyGPSDictionary];
+        
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        [library addAssetsGroupAlbumWithName:@"Sushi" resultBlock:^(ALAssetsGroup *group) {
+            
+        } failureBlock:^(NSError *error) {
+            
+        }];
+        
+        //why?
+        __block ALAssetsGroup *assetsGroup;
+        
+        [library enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+            if ([[group valueForProperty:ALAssetsGroupPropertyName] isEqualToString:@"Sushi"]) {
+                assetsGroup = group;
+            }
+        } failureBlock:^(NSError *error) {
             NSLog(@"fail");
-        }
-    }];
+        }];
+        
+        CGImageRef img = [imageTaken CGImage];
+        
+        [library writeImageToSavedPhotosAlbum:img metadata:pictureOriginalMetadata completionBlock:^(NSURL *assetURL, NSError *error) {
+            if (error.code == 0) {
+                [library assetForURL:assetURL resultBlock:^(ALAsset *asset) {
+                    [assetsGroup addAsset:asset];
+                    NSLog(@"picGeoDone");
+                } failureBlock:^(NSError *error) {
+                    NSLog(@"fail");
+                    
+                }];
+            } else {
+                NSLog(@"fail");
+            }
+        }];
+    
+        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
+        NSLog(@"%@",stringForGoogleAPI);
+        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        
+        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSMutableArray *resultsArray = [NSMutableArray array];
+            resultsArray = [objectsDict objectForKey:@"results"];
+            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
+            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
+            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
+            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
+            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
+            NSString *cityName = [cityDict objectForKey:@"long_name"];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
+                NSLog(@"city added to add VC");
+            });
+        }];
+        
+    });//dispatch end
+    
+    NSLog(@"log after dispatch");
     
     [self dismissViewControllerAnimated:YES completion:^{
-//        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
-//        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
-//        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-//        
-//        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-//            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//            NSMutableArray *resultsArray = [NSMutableArray array];
-//            resultsArray = [objectsDict objectForKey:@"results"];
-//            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
-//            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
-//            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
-//            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
-//            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
-//            NSString *cityName = [cityDict objectForKey:@"long_name"];
-//            self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
-//            self.doneButton.enabled = YES;
-//        }];
-    self.doneButton.enabled = YES;
+        [self.sushiNameTextField becomeFirstResponder];
     }];
 }
 
@@ -358,15 +359,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     return gps;
 }
 
-
-
 -(void)updateVenueLabel
 {
-    
     self.venueLabel.text = selectedSushiVenue;
-    
-    
     NSLog(@"made it to delegate method");
 }
 
+- (IBAction)getLatLong:(id)sender {
+}
 @end

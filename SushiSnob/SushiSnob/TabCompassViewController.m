@@ -140,7 +140,7 @@
         VenueBearDeg = initialVenueBearingDegrees;
     };
     
-    NSLog(@"Initial bearing/initial angle rotation in degrees is = %f", VenueBearDeg);
+    //NSLog(@"Initial bearing/initial angle rotation in degrees is = %f", VenueBearDeg);
     
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
    // float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
@@ -166,7 +166,7 @@
     theAnimation.duration = 1.2f;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    NSLog(@"true heading is %f", newHeading.trueHeading);
+    //NSLog(@"true heading is %f", newHeading.trueHeading);
 
 }
 

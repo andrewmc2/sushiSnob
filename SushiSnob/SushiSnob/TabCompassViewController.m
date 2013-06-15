@@ -81,7 +81,7 @@
 {
     locationManager=[[CLLocationManager alloc] init];
 	locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-	locationManager.headingFilter = 15;
+	locationManager.headingFilter = kCLHeadingFilterNone;
 	locationManager.delegate=self;
     
     [locationManager startUpdatingLocation];
@@ -140,7 +140,7 @@
         VenueBearDeg = initialVenueBearingDegrees;
     };
     
-    NSLog(@"Initial bearing/initial angle rotation in degrees is = %f", VenueBearDeg);
+    NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
     
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
    // float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
@@ -168,6 +168,13 @@
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
     NSLog(@"true heading is %f", newHeading.trueHeading);
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [locationManager stopUpdatingHeading];
+    [locationManager pausesLocationUpdatesAutomatically];// Or pause
 }
 
 

@@ -76,6 +76,7 @@ VenueObject *selectedVenue;
     
     //CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake (userLatitude, userLongitude);
     CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake (startingUserLocationFloatLat, startingUserLocationFloatLong);
+    NSLog(@"%f", startingUserLocationFloatLong);
     MKCoordinateSpan span = MKCoordinateSpanMake(.05, .05);
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
     self.venueMapView.region = region;

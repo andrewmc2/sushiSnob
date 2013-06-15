@@ -21,6 +21,7 @@
 #import "MapVenueWebViewViewController.h"
 #import "VenueTableViewController.h"
 #import "AppDelegate.h"
+#import "SushiVenueAnnotationView.h"
 
 @interface TabMapViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -63,7 +64,6 @@ float refreshedLongitude;
     
     AppDelegate *appDelegate1 = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
-    
     [self.venueMapView addAnnotations:appDelegate1.fourSquareVenueObjectsArray];
 }
    
@@ -89,10 +89,10 @@ float refreshedLongitude;
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
     
     if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
+        annotationView = [[SushiVenueAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
         annotationView.canShowCallout = YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        ((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
+        //((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
     } else {
         annotationView.annotation = annotation;
     }
@@ -100,6 +100,42 @@ float refreshedLongitude;
     return annotationView;
 }
 
+-(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    MKAnnotationView *annotationView;
+    
+    for (annotationView in views) {
+        if ([annotationView.annotation isKindOfClass:[MKUserLocation class]]) {
+            continue;
+        }
+        
+        //check if current annotation is insider visible map rect, else go to next one
+        MKMapPoint point =  MKMapPointForCoordinate(annotationView.annotation.coordinate);
+        if (!MKMapRectContainsPoint(mapView.visibleMapRect, point)) {
+            continue;
+        }
+        
+        CGRect endFrame = annotationView.frame;
+        
+        //move annotation out of view
+        annotationView.frame = CGRectMake(annotationView.frame.origin.x, annotationView.frame.origin.y - self.view.frame.size.height, annotationView.frame.size.width, annotationView.frame.size.height);
+        
+        //animate drop
+        [UIView animateWithDuration:0.5 delay:0.04 * [views indexOfObject:annotationView] options:UIViewAnimationCurveLinear animations:^{
+            annotationView.frame = endFrame;
+        } completion:^(BOOL finished) {
+            if (finished) {
+                [UIView animateWithDuration:0.05 animations:^{
+                    annotationView.transform = CGAffineTransformMake(1.0, 0, 0, 0.8, 0, + annotationView.frame.size.height*0.1);
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:0.1 animations:^{
+                        annotationView.transform = CGAffineTransformIdentity;
+                    }];
+                }];
+            }
+        }];
+    }
+}
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
@@ -135,7 +171,6 @@ float refreshedLongitude;
 
 -(void)refreshVenueLocations
 {
-    
     self.locationManager = [[CLLocationManager alloc] init];
 
     self.locationManager.delegate = self;
@@ -143,7 +178,6 @@ float refreshedLongitude;
     
     // Set a movement threshold for new events.
     self.locationManager.distanceFilter = 500;
-    
     
     self.venueMapView.delegate = self;
     [self.locationManager startUpdatingLocation];
@@ -204,6 +238,7 @@ float refreshedLongitude;
     MKCoordinateSpan span = MKCoordinateSpanMake(.05, .05);
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
     self.venueMapView.region = region;
+//    [self.venueMapView setRegion:region animated:YES];
     self.venueMapView.showsUserLocation = YES;
     [self.locationManager stopUpdatingLocation];
 

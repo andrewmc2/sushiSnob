@@ -45,6 +45,28 @@
 		9E939C53176C06CA00F45B87 /* appIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C52176C06CA00F45B87 /* appIconRetina.png */; };
 		9E939C56176C0AB600F45B87 /* menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C54176C0AB600F45B87 /* menubar.png */; };
 		9E939C57176C0AB600F45B87 /* menubar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C55176C0AB600F45B87 /* menubar@2x.png */; };
+		9E939C5D176CE5E100F45B87 /* tabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C59176CE5E100F45B87 /* tabBar.png */; };
+		9E939C5E176CE5E100F45B87 /* tabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C5A176CE5E100F45B87 /* tabBar@2x.png */; };
+		9E939C62176CE7B300F45B87 /* MySushi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C60176CE7B300F45B87 /* MySushi.png */; };
+		9E939C63176CE7B300F45B87 /* MySushi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C61176CE7B300F45B87 /* MySushi@2x.png */; };
+		9E939C6A176CE98900F45B87 /* MySushi_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C68176CE98900F45B87 /* MySushi_selected.png */; };
+		9E939C6B176CE98900F45B87 /* MySushi_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C69176CE98900F45B87 /* MySushi_selected@2x.png */; };
+		9E939C7B176CF5CA00F45B87 /* tabBarSelected1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C7A176CF5CA00F45B87 /* tabBarSelected1.png */; };
+		9E939C7E176CFB2E00F45B87 /* SushiVenueAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E939C7D176CFB2E00F45B87 /* SushiVenueAnnotationView.m */; };
+		9E939C87176D00CA00F45B87 /* sushiPin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C85176D00C900F45B87 /* sushiPin.png */; };
+		9E939C88176D00CA00F45B87 /* sushiPin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C86176D00C900F45B87 /* sushiPin@2x.png */; };
+		9E939C91176D088A00F45B87 /* MapTabIcon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C89176D088900F45B87 /* MapTabIcon_selected@2x.png */; };
+		9E939C92176D088A00F45B87 /* MapTabIcon_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C8A176D088900F45B87 /* MapTabIcon_selected.png */; };
+		9E939C93176D088A00F45B87 /* MapTabIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C8B176D088900F45B87 /* MapTabIcon@2x.png */; };
+		9E939C94176D088A00F45B87 /* MapTabIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C8C176D088900F45B87 /* MapTabIcon.png */; };
+		9E939C95176D088A00F45B87 /* Compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C8D176D088900F45B87 /* Compass@2x.png */; };
+		9E939C96176D088A00F45B87 /* Compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C8E176D088A00F45B87 /* Compass.png */; };
+		9E939C97176D088A00F45B87 /* Compass_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C8F176D088A00F45B87 /* Compass_selected@2x.png */; };
+		9E939C98176D088A00F45B87 /* Compass_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C90176D088A00F45B87 /* Compass_selected.png */; };
+		9E939C9D176D0B6E00F45B87 /* button_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C9C176D0B6E00F45B87 /* button_normal.png */; };
+		9E939CA1176D107A00F45B87 /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939CA0176D107A00F45B87 /* button_back.png */; };
+		9E939CA8176D27EA00F45B87 /* currentLocation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939CA6176D27EA00F45B87 /* currentLocation@2x.png */; };
+		9E939CA9176D27EA00F45B87 /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939CA7176D27EA00F45B87 /* currentLocation.png */; };
 		9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F5391764EC3B0083E23E /* sushi.jpeg */; };
 		9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */; };
 		9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */; };
@@ -133,6 +155,29 @@
 		9E939C52176C06CA00F45B87 /* appIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIconRetina.png; path = ../appIconRetina.png; sourceTree = "<group>"; };
 		9E939C54176C0AB600F45B87 /* menubar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubar.png; sourceTree = "<group>"; };
 		9E939C55176C0AB600F45B87 /* menubar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar@2x.png"; sourceTree = "<group>"; };
+		9E939C59176CE5E100F45B87 /* tabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar.png; sourceTree = "<group>"; };
+		9E939C5A176CE5E100F45B87 /* tabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar@2x.png"; sourceTree = "<group>"; };
+		9E939C60176CE7B300F45B87 /* MySushi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MySushi.png; sourceTree = "<group>"; };
+		9E939C61176CE7B300F45B87 /* MySushi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MySushi@2x.png"; sourceTree = "<group>"; };
+		9E939C68176CE98900F45B87 /* MySushi_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MySushi_selected.png; sourceTree = "<group>"; };
+		9E939C69176CE98900F45B87 /* MySushi_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MySushi_selected@2x.png"; sourceTree = "<group>"; };
+		9E939C7A176CF5CA00F45B87 /* tabBarSelected1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarSelected1.png; sourceTree = "<group>"; };
+		9E939C7C176CFB2E00F45B87 /* SushiVenueAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiVenueAnnotationView.h; sourceTree = "<group>"; };
+		9E939C7D176CFB2E00F45B87 /* SushiVenueAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiVenueAnnotationView.m; sourceTree = "<group>"; };
+		9E939C85176D00C900F45B87 /* sushiPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sushiPin.png; sourceTree = "<group>"; };
+		9E939C86176D00C900F45B87 /* sushiPin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sushiPin@2x.png"; sourceTree = "<group>"; };
+		9E939C89176D088900F45B87 /* MapTabIcon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapTabIcon_selected@2x.png"; sourceTree = "<group>"; };
+		9E939C8A176D088900F45B87 /* MapTabIcon_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapTabIcon_selected.png; sourceTree = "<group>"; };
+		9E939C8B176D088900F45B87 /* MapTabIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MapTabIcon@2x.png"; sourceTree = "<group>"; };
+		9E939C8C176D088900F45B87 /* MapTabIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapTabIcon.png; sourceTree = "<group>"; };
+		9E939C8D176D088900F45B87 /* Compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass@2x.png"; sourceTree = "<group>"; };
+		9E939C8E176D088A00F45B87 /* Compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compass.png; sourceTree = "<group>"; };
+		9E939C8F176D088A00F45B87 /* Compass_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Compass_selected@2x.png"; sourceTree = "<group>"; };
+		9E939C90176D088A00F45B87 /* Compass_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compass_selected.png; sourceTree = "<group>"; };
+		9E939C9C176D0B6E00F45B87 /* button_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_normal.png; sourceTree = "<group>"; };
+		9E939CA0176D107A00F45B87 /* button_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_back.png; sourceTree = "<group>"; };
+		9E939CA6176D27EA00F45B87 /* currentLocation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currentLocation@2x.png"; sourceTree = "<group>"; };
+		9E939CA7176D27EA00F45B87 /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		9E99F5391764EC3B0083E23E /* sushi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpeg; sourceTree = "<group>"; };
 		9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateAccessTokenRequester.h; sourceTree = "<group>"; };
 		9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateAccessTokenRequester.m; sourceTree = "<group>"; };
@@ -253,14 +298,13 @@
 		9E9050B41760E93D0092807A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E939C99176D089200F45B87 /* Pictures */,
 				9E939C52176C06CA00F45B87 /* appIconRetina.png */,
 				9E939C50176C06A800F45B87 /* appIcon.png */,
 				9E3033421767C6D800DD4579 /* checkMarkSmall.png */,
 				9E939C4C176C027100F45B87 /* chopsticks.png */,
 				9E99F58417653F690083E23E /* x.png */,
 				9E939C4E176C042A00F45B87 /* plate.png */,
-				9E939C54176C0AB600F45B87 /* menubar.png */,
-				9E939C55176C0AB600F45B87 /* menubar@2x.png */,
 				9E99F58517653F690083E23E /* checkMark.png */,
 				9E99F5391764EC3B0083E23E /* sushi.jpeg */,
 				9E9050B51760E93D0092807A /* SushiSnob-Info.plist */,
@@ -285,6 +329,8 @@
 				9E9050DE1760EF3E0092807A /* MapVenueWebViewViewController.m */,
 				C79861521763F2C90007C71F /* VenueTableViewController.h */,
 				C79861531763F2C90007C71F /* VenueTableViewController.m */,
+				9E939C7C176CFB2E00F45B87 /* SushiVenueAnnotationView.h */,
+				9E939C7D176CFB2E00F45B87 /* SushiVenueAnnotationView.m */,
 			);
 			name = TabMap;
 			sourceTree = "<group>";
@@ -346,6 +392,52 @@
 				9E90512D176140FC0092807A /* AddSushiCell.m */,
 			);
 			name = TabMySushiViewController;
+			sourceTree = "<group>";
+		};
+		9E939C99176D089200F45B87 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				9E939C9B176D0B1C00F45B87 /* Nav Bar */,
+				9E939C9A176D089A00F45B87 /* Tab Bar */,
+			);
+			name = Pictures;
+			sourceTree = "<group>";
+		};
+		9E939C9A176D089A00F45B87 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				9E939C60176CE7B300F45B87 /* MySushi.png */,
+				9E939C61176CE7B300F45B87 /* MySushi@2x.png */,
+				9E939C68176CE98900F45B87 /* MySushi_selected.png */,
+				9E939C69176CE98900F45B87 /* MySushi_selected@2x.png */,
+				9E939C59176CE5E100F45B87 /* tabBar.png */,
+				9E939C5A176CE5E100F45B87 /* tabBar@2x.png */,
+				9E939C7A176CF5CA00F45B87 /* tabBarSelected1.png */,
+				9E939C85176D00C900F45B87 /* sushiPin.png */,
+				9E939C86176D00C900F45B87 /* sushiPin@2x.png */,
+				9E939C89176D088900F45B87 /* MapTabIcon_selected@2x.png */,
+				9E939C8A176D088900F45B87 /* MapTabIcon_selected.png */,
+				9E939C8B176D088900F45B87 /* MapTabIcon@2x.png */,
+				9E939C8C176D088900F45B87 /* MapTabIcon.png */,
+				9E939C8D176D088900F45B87 /* Compass@2x.png */,
+				9E939C8E176D088A00F45B87 /* Compass.png */,
+				9E939C8F176D088A00F45B87 /* Compass_selected@2x.png */,
+				9E939C90176D088A00F45B87 /* Compass_selected.png */,
+			);
+			name = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		9E939C9B176D0B1C00F45B87 /* Nav Bar */ = {
+			isa = PBXGroup;
+			children = (
+				9E939C54176C0AB600F45B87 /* menubar.png */,
+				9E939C55176C0AB600F45B87 /* menubar@2x.png */,
+				9E939C9C176D0B6E00F45B87 /* button_normal.png */,
+				9E939CA0176D107A00F45B87 /* button_back.png */,
+				9E939CA6176D27EA00F45B87 /* currentLocation@2x.png */,
+				9E939CA7176D27EA00F45B87 /* currentLocation.png */,
+			);
+			name = "Nav Bar";
 			sourceTree = "<group>";
 		};
 		9E99F56F1764F1CB0083E23E /* MSTranslateVendor */ = {
@@ -506,6 +598,27 @@
 				9E939C53176C06CA00F45B87 /* appIconRetina.png in Resources */,
 				9E939C56176C0AB600F45B87 /* menubar.png in Resources */,
 				9E939C57176C0AB600F45B87 /* menubar@2x.png in Resources */,
+				9E939C5D176CE5E100F45B87 /* tabBar.png in Resources */,
+				9E939C5E176CE5E100F45B87 /* tabBar@2x.png in Resources */,
+				9E939C62176CE7B300F45B87 /* MySushi.png in Resources */,
+				9E939C63176CE7B300F45B87 /* MySushi@2x.png in Resources */,
+				9E939C6A176CE98900F45B87 /* MySushi_selected.png in Resources */,
+				9E939C6B176CE98900F45B87 /* MySushi_selected@2x.png in Resources */,
+				9E939C7B176CF5CA00F45B87 /* tabBarSelected1.png in Resources */,
+				9E939C87176D00CA00F45B87 /* sushiPin.png in Resources */,
+				9E939C88176D00CA00F45B87 /* sushiPin@2x.png in Resources */,
+				9E939C91176D088A00F45B87 /* MapTabIcon_selected@2x.png in Resources */,
+				9E939C92176D088A00F45B87 /* MapTabIcon_selected.png in Resources */,
+				9E939C93176D088A00F45B87 /* MapTabIcon@2x.png in Resources */,
+				9E939C94176D088A00F45B87 /* MapTabIcon.png in Resources */,
+				9E939C95176D088A00F45B87 /* Compass@2x.png in Resources */,
+				9E939C96176D088A00F45B87 /* Compass.png in Resources */,
+				9E939C97176D088A00F45B87 /* Compass_selected@2x.png in Resources */,
+				9E939C98176D088A00F45B87 /* Compass_selected.png in Resources */,
+				9E939C9D176D0B6E00F45B87 /* button_normal.png in Resources */,
+				9E939CA1176D107A00F45B87 /* button_back.png in Resources */,
+				9E939CA8176D27EA00F45B87 /* currentLocation@2x.png in Resources */,
+				9E939CA9176D27EA00F45B87 /* currentLocation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +657,7 @@
 				9E30333E1767912E00DD4579 /* Sushi.m in Sources */,
 				9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */,
 				9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */,
+				9E939C7E176CFB2E00F45B87 /* SushiVenueAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

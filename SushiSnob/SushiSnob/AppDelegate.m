@@ -90,8 +90,35 @@
     
     //Change @"menubar.png" to the file name of your image.
     UIImage *navBar = [UIImage imageNamed:@"menubar.png"];
-    
     [[UINavigationBar appearance] setBackgroundImage:navBar forBarMetrics:UIBarMetricsDefault];
+    // Change the appearance of other navigation button
+    UIImage *barButtonImage = [[UIImage imageNamed:@"button_normal"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 6, 0, 6)];
+    [[UIBarButtonItem appearance] setBackgroundImage:barButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    // Change the appearance of back button
+    UIImage *backButtonImage = [[UIImage imageNamed:@"button_back"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 6)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-100, -100) forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage* tabBarBackground = [UIImage imageNamed:@"tabBar.png"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabBarSelected1.png"]];
+    
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    
+    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"MapTabIcon_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"MapTabIcon.png"]];
+    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"Compass_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"Compass.png"]];
+    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"MySushi_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"MySushi.png"]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor colorWithRed:250/255.0 green:239/255.0 blue:207/255.0 alpha:1.0], UITextAttributeTextColor,
+                                                       nil] forState:UIControlStateNormal];
+    UIColor *titleHighlightedColor = [UIColor colorWithRed:239/255.0 green:109/255.0 blue:34/255.0 alpha:1.0];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       titleHighlightedColor, UITextAttributeTextColor,
+                                                       nil] forState:UIControlStateHighlighted];
     
     return YES;
 }

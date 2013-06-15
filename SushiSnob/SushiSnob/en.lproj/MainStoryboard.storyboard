@@ -12,6 +12,11 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="y60-nT-MmH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="LGW-Qh-jSz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,9 +35,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="refreshLocationButton:" destination="NX3-kD-bh9" eventType="touchUpInside" id="ny3-XH-hg1"/>
-                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Yjj-Rx-dvp">
                                 <rect key="frame" x="142" y="61" width="37" height="37"/>
@@ -42,6 +44,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FEe-Ly-1fa">
+                        <barButtonItem key="leftBarButtonItem" image="currentLocation.png" width="30" style="plain" id="kpT-Uv-YGT">
+                            <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <connections>
+                                <action selector="refreshLocationButton:" destination="NX3-kD-bh9" id="7p6-Q6-xCy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="List" id="UtO-iJ-NZC">
                             <connections>
                                 <segue destination="tJX-Ec-zk8" kind="push" identifier="tableView" id="wMj-cG-a6d"/>
@@ -67,35 +75,37 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHz-f8-KY0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHz-f8-KY0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.1764705882" green="0.25098039220000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="venue" textLabel="ozP-pu-Fa8" detailTextLabel="hi2-LU-Lbv" style="IBUITableViewCellStyleSubtitle" id="fnK-lf-N7N">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="venue" textLabel="ozP-pu-Fa8" detailTextLabel="hi2-LU-Lbv" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="fnK-lf-N7N">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="53"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ozP-pu-Fa8">
-                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                    <rect key="frame" x="10" y="4" width="36" height="27"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                                    <color key="textColor" red="0.1019607843" green="0.14901960780000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hi2-LU-Lbv">
-                                                    <rect key="frame" x="10" y="24" width="36" height="18"/>
+                                                    <rect key="frame" x="10" y="31" width="34" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
+                                                    <color key="textColor" red="0.93725490199999995" green="0.42745098040000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.1764705882" green="0.25098039220000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="h3a-9D-c8p" kind="push" identifier="tableToWebView" id="fkm-tp-K0J"/>
                                         </connections>
@@ -445,30 +455,30 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vcF-b9-Aaz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="48" sectionHeaderHeight="22" sectionFooterHeight="22" id="vcF-b9-Aaz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="localVenue" textLabel="bu5-nc-ZCu" detailTextLabel="90q-aY-k5m" style="IBUITableViewCellStyleSubtitle" id="Uml-O4-TrN">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="localVenue" textLabel="bu5-nc-ZCu" detailTextLabel="90q-aY-k5m" rowHeight="48" style="IBUITableViewCellStyleSubtitle" id="Uml-O4-TrN">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bu5-nc-ZCu">
-                                                    <rect key="frame" x="10" y="2" width="38" height="22"/>
+                                                    <rect key="frame" x="10" y="1" width="36" height="27"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                                    <color key="textColor" red="0.1019607843" green="0.14901960780000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="90q-aY-k5m">
-                                                    <rect key="frame" x="10" y="24" width="47" height="18"/>
+                                                    <rect key="frame" x="10" y="28" width="46" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
+                                                    <color key="textColor" red="0.93725490199999995" green="0.42745098040000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -787,6 +797,7 @@
     <resources>
         <image name="checkMark.png" width="258" height="297"/>
         <image name="chopsticks.png" width="100" height="300"/>
+        <image name="currentLocation.png" width="30" height="30"/>
         <image name="plate.png" width="300" height="300"/>
         <image name="sushi.jpeg" width="1920" height="1200"/>
         <image name="x.png" width="249" height="295"/>
@@ -800,6 +811,7 @@
             <relationships>
                 <relationship kind="action" name="add4QVenue:"/>
                 <relationship kind="action" name="cancelAddingSushi:"/>
+                <relationship kind="action" name="changeSushiGoodOrNot:"/>
                 <relationship kind="action" name="doneAddingSushi:"/>
                 <relationship kind="action" name="getLatLong:"/>
                 <relationship kind="action" name="sushiDescriptionRecordVoice:"/>

@@ -20,6 +20,8 @@
     NSArray *distanceSortedArray;
 float startingUserLocationFloatLat;
 float startingUserLocationFloatLong;
+NSString *latitudeWithCurrentCoordinates;
+NSString *longitudeWithCurrentCoordinates;
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate,MKMapViewDelegate>

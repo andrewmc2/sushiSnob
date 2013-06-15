@@ -21,8 +21,11 @@
 {
     //make global in order to toss over to SushiDetailViewController
     UIImage *sushiCellImage;
+    SushiCell *sushiCellClass;
+    dispatch_queue_t queue;
 }
 
+@property (strong, nonatomic) NSOperationQueue *backgroundOperationQueue;
 
 @end
 
@@ -36,8 +39,7 @@
     }
     
     if ([segue.identifier isEqualToString:@"viewSushi"]) {
-        
-//        ((AddSushiViewController*)segue.destinationViewController).addSushiDelegate = self;
+
         SushiDetailViewController *sushiDetailViewController = [segue destinationViewController];
         Sushi *selectedSushiCell = [self.fetchedSushiResults objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         [sushiDetailViewController setSelectedSushi:selectedSushiCell];
@@ -62,27 +64,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.backgroundOperationQueue = [[NSOperationQueue alloc] init];
+    [self.backgroundOperationQueue setMaxConcurrentOperationCount:4];
     
     self.fileManager = [NSFileManager defaultManager];
     self.documentsDirectory = [self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
     
+    self.imageArray = [[NSMutableArray alloc]init];
     [self setupFetchedResults];
-
-//    NSLog(@"%@", self.fetchedSushiResults);
+    
+    sushiCellClass = [[SushiCell alloc] init];
 }
 
 -(void)setupFetchedResults
 {
-    //NSEntityDescription *entity = [NSEntityDescription
-//                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    [fetchRequest setEntity:entity];
-//    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
     
-//    NSError *error;
-//    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    NSLog(@"%i",self.fetchedSushiResults.count);
+    NSError *error;
+    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (int i = 0; i < self.fetchedSushiResults.count; i++) {
+        Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
+        NSString *fileName = sushiInfo.sushiImageURL;
+        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+        UIImage *image = [UIImage imageWithContentsOfFile:[localImageURL path]];
+        [self.imageArray addObject:image];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,14 +140,9 @@
             
             cell.sushiNameJapanese.text = sushiInfo.japaneseName;
             
-            //image
-            NSString *fileName = sushiInfo.sushiImageURL;
-            if (fileName != nil) {
-                NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-                cell.sushiImageView.image = [UIImage imageWithContentsOfFile:[localImageURL path]];
-            } else {
-                cell.sushiImageView.image = [UIImage imageNamed:@"sushi.jpeg"];
-            }            
+            cell.sushiImageView.image = [self.imageArray objectAtIndex:indexPath.row];
+//            [self addPictureToCell:cell atIndexPath:indexPath];
+            //[sushiCellClass addPicture:sushiInfo atIndexPath:indexPath];
         }
         
         return cell;
@@ -143,16 +151,21 @@
     if (indexPath.section == 1){
         
         AddSushiCell *cell = [tableView dequeueReusableCellWithIdentifier:addSushiCellIdentifier];
-        
         if (cell == nil) {
             cell = [[AddSushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addSushiCellIdentifier];
         }
-        
+
         cell.textLabel.text = @"Add Sushi";
         
         return cell;
     }
     return nil;
+}
+
+-(void)addPictureToCell: (SushiCell*)sushiCell
+            atIndexPath:(NSIndexPath*)indexpath
+{
+    sushiCell.imageView.image = [self.imageArray objectAtIndex:indexpath.row];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -177,9 +190,7 @@
 
 -(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName addLatitude:(float)latitude addLongitude:(float)longitude
 {
-    //do this later
-//    NSLog(@"sushiName: %@, picture: %@, date: %@, good or not: %c, description: %@, city name: %@", sushiName, sushiPicutre, sushiDate, sushiGoodOrNot, sushiDescription, sushiCityName);
-    
+    //save coreData
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
     [newSushi setValue:sushiName forKey:@"name"];
@@ -191,14 +202,12 @@
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
     
     //save image
-    //NSData *imageData = UIImagePNGRepresentation(sushiPicutre);
-    //[newSushi setValue:imageData forKey:@"sushiImage"];
     NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];
     NSString *fileName = [sushiImageURL lastPathComponent];
     [newSushi setValue:fileName forKey:@"sushiImageURL"];
     NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-    NSData *imageData = UIImagePNGRepresentation(sushiPicutre);
+    NSData *imageData = UIImageJPEGRepresentation(sushiPicutre, 0.005);
     [imageData writeToURL:localImageURL atomically:YES];
     
     //make japanese name
@@ -208,21 +217,15 @@
         [newSushi setValue:translatedText forKey:@"japaneseName"];
         NSLog(@"%@", translatedText);
         NSLog(@"%@", sushiName);
-        NSError *error;
-        [self.managedObjectContext save:&error];
-        [self setupFetchedResults];
-        [self.tableView reloadData];
-        
     } failure:^(NSError *error) {
         //error
     }];
     
+    NSError *error;
+    [self.managedObjectContext save:&error];
     
-//    add later
-//    [newSushi setValue:<#(id)#> forKey:@"cannonicalURL"];
-//    [newSushi setValue:<#(id)#> forKey:@"venue"];
-
-    
+    [self setupFetchedResults];
+   
 }
 
 @end

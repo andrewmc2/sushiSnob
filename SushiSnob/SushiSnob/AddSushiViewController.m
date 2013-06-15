@@ -18,11 +18,22 @@
     float picLatitude;
     float picLongitude;
     int countForDoneButton;
+    
 }
+
+
+
+
 
 @end
 
-
+//textFieldAnimation
+CGFloat animatedDistance;
+static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
+static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
+static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
+static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
+static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 
 
@@ -58,6 +69,7 @@
     picLatitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.latitude;
     picLongitude = [LocationManagerSingleton sharedSingleton].userLocation.coordinate.longitude;
     self.doneButton.enabled = NO;
+    NSLog(@"user latitude %f", picLatitude);
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,10 +117,70 @@
 - (IBAction)sushiDescriptionRecordVoice:(id)sender {
 }
 
+#pragma TEXTFIELD DELEGATES
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    {
+        CGRect textFieldRect =
+        [self.view.window convertRect:textField.bounds fromView:textField];
+        CGRect viewRect = [self.view.window convertRect:self.view.bounds fromView:self.view];
+        CGFloat midline = textFieldRect.origin.y + 0.5 * textFieldRect.size.height;
+        CGFloat numerator = midline - viewRect.origin.y - MINIMUM_SCROLL_FRACTION * viewRect.size.height;
+        CGFloat denominator = (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION) * viewRect.size.height;
+        CGFloat heightFraction = numerator / denominator;
+        
+        
+        if (heightFraction < 0.0)
+        {
+            heightFraction = 0.0;
+        } else if (heightFraction > 1.0) {
+            heightFraction = 1.0;
+        }
+        
+        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+        
+        
+        CGRect viewFrame = self.view.frame;
+        viewFrame.origin.y -= animatedDistance;
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+        
+        [self.view setFrame:viewFrame];
+        
+        [UIView commitAnimations];
+    }
+}
+
+
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y += animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    
+    [UIView commitAnimations];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    return [textField resignFirstResponder];
+    [textField resignFirstResponder];
+    return YES;
 }
+
+
+
+
+
+
 
 #pragma mark take picture
 
@@ -119,6 +191,11 @@
     if (touch.view == self.sushiPictureViewHolder) {
         [self createActionSheet];
     }
+    
+    //touch on screen to resign keyboard
+    [self.sushiNameTextField resignFirstResponder];
+    [self.sushiDescription resignFirstResponder];
+
 }
 
 -(void)createActionSheet

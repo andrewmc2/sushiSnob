@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Sushi.h"
+#import <CoreData/CoreData.h>
 
 @interface SushiCell : UITableViewCell
 
@@ -15,5 +17,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *sushiRestauraunt;
 @property (strong, nonatomic) IBOutlet UILabel *sushiNameJapanese;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiImageView;
+
+-(void)addPicture:(Sushi*)sushi
+      atIndexPath:(NSIndexPath*)indexPath;
 
 @end

@@ -76,30 +76,30 @@
 {
     self.imageArray = [[NSMutableArray alloc]init];
     
-//    NSEntityDescription *entity = [NSEntityDescription
-//                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    [fetchRequest setEntity:entity];
-//    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
-//    
-//    NSError *error;
-//    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    
-//    for (int i = 0; i < self.fetchedSushiResults.count; i++) {
-//        Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
-//        NSString *fileName = sushiInfo.sushiImageURL;
-//        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-//        UIImage *image = [UIImage imageWithContentsOfFile:[localImageURL path]];
-//        [self.imageArray addObject:image];
-//    }
-//    
-//    [self.tableView reloadData];
-//}
-//
-//- (void)didReceiveMemoryWarning
-//{
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    
+    NSError *error;
+    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (int i = 0; i < self.fetchedSushiResults.count; i++) {
+        Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
+        NSString *fileName = sushiInfo.sushiImageURL;
+        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+        UIImage *image = [UIImage imageWithContentsOfFile:[localImageURL path]];
+        [self.imageArray addObject:image];
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma UITableViewDataSourceMethods

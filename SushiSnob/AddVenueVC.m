@@ -60,7 +60,6 @@
     }
     
     VenueObject *venueObject = [distanceSortedArray objectAtIndex:indexPath.row];
-    
     tableViewCell.textLabel.text = venueObject.title;
     tableViewCell.detailTextLabel.text = venueObject.subtitle;
     return tableViewCell;
@@ -77,15 +76,38 @@
     VenueObject *selectedVenue = [distanceSortedArray objectAtIndex:indexPath.row];
     selectedSushiVenue = selectedVenue.title;
     
-    
-    [self.venueDelegate updateVenueLabel];
+    self.venueTextField.text = selectedSushiVenue;
+
+    [self.venueDelegate updateVenueLabel:self.venueTextField.text];
 
     NSLog(@"the selected object is: %@", selectedSushiVenue);
  
 
     [self dismissViewControllerAnimated:YES completion:nil];
 
+
+}
+
+
+
+- (IBAction)addVenueWithButton:(id)sender {
+    [self.venueDelegate updateVenueLabel:self.venueTextField.text];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+
+//get rid of keyboard
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.venueTextField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation LocationManagerSingleton
 {
-   
+    int count;
 }
 
 -(id)init
@@ -23,6 +23,7 @@
         [self.locationManager setDelegate:self];
         [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
         [self.locationManager setHeadingFilter:kCLHeadingFilterNone];
+        NSLog(@"singleton");
         [self.locationManager startUpdatingLocation];
         //do more customization if needed
     }
@@ -44,11 +45,22 @@
     NSLog(@"yo");
 }
 
+-(void)turnOffLocations
+{
+    
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     self.userLocation = [locations lastObject];
     userLatitude = self.userLocation.coordinate.latitude;
     userLongitude = self.userLocation.coordinate.longitude;
+    count++;
+    if (count==3) {
+        [self.locationManager stopUpdatingLocation];
+        NSLog(@"singletonLocation stop");
+    }
+    NSLog(@"%@",locations);
 }
 
 @end

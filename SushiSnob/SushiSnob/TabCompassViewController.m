@@ -81,7 +81,7 @@
 {
     locationManager=[[CLLocationManager alloc] init];
 	locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-	locationManager.headingFilter = 15;
+	locationManager.headingFilter = kCLHeadingFilterNone;
 	locationManager.delegate=self;
     
     [locationManager startUpdatingLocation];
@@ -140,8 +140,18 @@
         VenueBearDeg = initialVenueBearingDegrees;
     };
     
-    NSLog(@"Initial bearing/initial angle rotation in degrees is = %f", VenueBearDeg);
+
+   // NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
+    VenueObject * thisNearPlace = [[VenueObject alloc] init];
+    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
+    thisNearPlace = appDelegate.closestVenue;
+
+    
+    NSString *nearPlaceName = thisNearPlace.title;
+    NSLog(@"%@", nearPlaceName);
+    self.closeSushiLabel.text = nearPlaceName;
+
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
    // float oldRad =  -manager.heading.trueHeading * M_PI / 180.0f;
     //
@@ -164,10 +174,18 @@
     //theAnimation.fromValue = [NSNumber numberWithFloat:0];
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
     theAnimation.duration = 1.2f;
+    self.closeSushiLabel.text = nearPlaceName;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
-    NSLog(@"true heading is %f", newHeading.trueHeading);
+    //NSLog(@"true heading is %f", newHeading.trueHeading);
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    //[locationManager stopUpdatingHeading];
+    [locationManager pausesLocationUpdatesAutomatically];// Or pause
 }
 
 

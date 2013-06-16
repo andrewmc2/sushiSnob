@@ -20,6 +20,8 @@
 
 -(void)describe;
 
+-(void)turnOffLocations;
+
 +(LocationManagerSingleton*)sharedSingleton;
 
 @end

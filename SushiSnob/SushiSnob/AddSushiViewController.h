@@ -27,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *sushiDescription;
 @property (strong, nonatomic) IBOutlet UILabel *sushiCityName;
 
-@property (nonatomic) BOOL sushiIsGood;
+@property (nonatomic) BOOL sushiIsBad;
 
 //for pic taking
 @property (strong, nonatomic) UIImage *selectedImage;

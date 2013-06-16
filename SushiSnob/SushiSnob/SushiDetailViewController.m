@@ -47,9 +47,12 @@
     self.sushiDetailNotes.text = self.selectedSushi.sushiDescription;
     
     //do city later after updating core data file
-    if (self.selectedSushi.isRatedGood) {
-        NSLog(@"%@",self.selectedSushi.isRatedGood);
+    NSString *boolString = [NSString stringWithFormat:@"%@", self.selectedSushi.isRatedGood];
+    
+    if ([boolString isEqualToString:@"1"]) {
         self.xImage.hidden = YES;
+    } else {
+        self.xImage.hidden = NO;
     }
     
     [self setMapZoom];

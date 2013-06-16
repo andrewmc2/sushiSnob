@@ -12,10 +12,12 @@
 #import "TabMapViewController.h"
 #import "VenueDelegate.h"
 
-@interface AddVenueVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface AddVenueVC : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (retain, nonatomic) id<VenueDelegate>venueDelegate;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITextField *venueTextField;
+- (IBAction)addVenueWithButton:(id)sender;
 
 
 

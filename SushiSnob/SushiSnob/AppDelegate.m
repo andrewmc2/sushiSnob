@@ -85,6 +85,14 @@
     
     [self startStandardLocationServices];
     
+    //Set the status bar to black color.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
+    
+    //Change @"menubar.png" to the file name of your image.
+    UIImage *navBar = [UIImage imageNamed:@"menubar.png"];
+    
+    [[UINavigationBar appearance] setBackgroundImage:navBar forBarMetrics:UIBarMetricsDefault];
+    
     return YES;
 }
 

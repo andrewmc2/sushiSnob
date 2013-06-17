@@ -70,6 +70,7 @@
     [self setupFetchedResults];
     
     //sushiCellClass = [[SushiCell alloc] init];
+    [self createOriginalSushiEntries];
 }
 
 -(void)setupFetchedResults
@@ -138,7 +139,7 @@
             
             cell.sushiNameJapanese.text = sushiInfo.japaneseName;
             
-            cell.sushiImageView.image = [self.imageArray objectAtIndex:indexPath.row];
+            //cell.sushiImageView.image = [self.imageArray objectAtIndex:indexPath.row];
         }
         
         return cell;
@@ -222,6 +223,33 @@
     } failure:^(NSError *error) {
         //error
     }];
+}
+
+-(void)createOriginalSushiEntries
+{
+    //first entry
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
+    [newSushi setValue:@"California Roll" forKey:@"name"];
+    [newSushi setValue:[NSDate date] forKey:@"date"];
+    [newSushi setValue:@"Union Sushi" forKey:@"venue"];
+    [newSushi setValue:[NSNumber numberWithBool:0] forKey:@"isRatedGood"];
+    [newSushi setValue:@"great rolls!" forKey:@"sushiDescription"];
+    [newSushi setValue:[NSNumber numberWithFloat:41.938846] forKey:@"latitude"];
+    [newSushi setValue:[NSNumber numberWithFloat:-87.642625] forKey:@"longitude"];
+    [newSushi setValue:@"カリフォルニアロール" forKey:@"japaneseName"];
+    //image
+    NSString *sushiImageURLString = @"caliRoll";
+    NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];
+    NSString *fileName = [sushiImageURL lastPathComponent];
+    [newSushi setValue:fileName forKey:@"sushiImageURL"];
+    NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"californiaRollSmall.png"]);
+    [imageData writeToURL:localImageURL atomically:YES];
+    
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    [self setupFetchedResults];
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SushiDetailViewController.h"
 #import "SushiDetailMKAnnotation.h"
+#import "SushiVenueAnnotationView.h"
 
 @interface SushiDetailViewController ()
 
@@ -28,9 +29,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 700)];
+    
+    //title
+    self.title = self.selectedSushi.name;
+    //image
     self.fileManager = [NSFileManager defaultManager];
     self.documentsDirectory = [self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-    
     NSString *fileName = self.selectedSushi.sushiImageURL;
     if (fileName != nil) {
         NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
@@ -38,15 +43,22 @@
     } else {
         self.sushiDetailImage.image = [UIImage imageNamed:@"sushi.jpeg"];
     }
+    //small image sushi type and thumbs
+    self.sushiType.image = [UIImage imageNamed:@"thumbsUp.png"];
+//    self.sushiThumbsUp.image = [UIImage imageNamed:@"thumbsUp.png"];
     
-    self.sushiDetailName.text = self.selectedSushi.name;
+    //venue
     self.sushiDetailVenue.text = self.selectedSushi.venue;
+    
+    //date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy:MM:dd"];
     self.sushiDetailDate.text = [dateFormatter stringFromDate:self.selectedSushi.date];
-    self.sushiDetailNotes.text = self.selectedSushi.sushiDescription;
     
     //do city later after updating core data file
+    self.sushiDetailCity.text = @"Chicago";
+    
+    
     NSString *boolString = [NSString stringWithFormat:@"%@", self.selectedSushi.isRatedGood];
     
     if ([boolString isEqualToString:@"1"]) {
@@ -55,6 +67,7 @@
         self.xImage.hidden = NO;
     }
     
+    self.sushiDetailMapView.userInteractionEnabled = NO;
     [self setMapZoom];
 }
 
@@ -82,8 +95,7 @@
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
     
     if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-        ((MKPinAnnotationView *)(annotationView)).animatesDrop = YES;
+        annotationView = [[SushiVenueAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     } else {
         annotationView.annotation = annotation;
     }

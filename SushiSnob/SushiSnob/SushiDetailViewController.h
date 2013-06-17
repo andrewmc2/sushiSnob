@@ -14,19 +14,22 @@
 
 @property (strong, nonatomic) Sushi *selectedSushi;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (strong, nonatomic) IBOutlet UIView *sushiDetailGoodOrBad;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiDetailImage;
-@property (strong, nonatomic) IBOutlet UILabel *sushiDetailName;
+@property (weak, nonatomic) IBOutlet UIImageView *sushiType;
+@property (weak, nonatomic) IBOutlet UIImageView *sushiThumbsUp;
+
 @property (strong, nonatomic) IBOutlet UILabel *sushiDetailVenue;
 @property (strong, nonatomic) IBOutlet UILabel *sushiDetailDate;
-@property (strong, nonatomic) IBOutlet UILabel *sushiDetailNotes;
+
 @property (strong, nonatomic) IBOutlet UILabel *sushiDetailCity;
-@property (strong, nonatomic) IBOutlet UIView *sushiDetailGoodOrBad;
+
 @property (strong, nonatomic) IBOutlet UIImageView *checkMarkImage;
 @property (strong, nonatomic) IBOutlet UIImageView *xImage;
+
 @property (strong, nonatomic) IBOutlet MKMapView *sushiDetailMapView;
-
-
 
 @property (strong, nonatomic) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *documentsDirectory;

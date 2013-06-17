@@ -22,8 +22,6 @@
 @property (strong, nonatomic) IBOutlet UIView *sushiPictureViewHolder;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiPic;
 
-@property (strong, nonatomic) IBOutlet UILabel *sushiDate;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *sushiGoodOrNot;
 @property (strong, nonatomic) IBOutlet UITextField *sushiDescription;
 @property (strong, nonatomic) IBOutlet UILabel *sushiCityName;
 @property (nonatomic) BOOL sushiIsBad;
@@ -42,19 +40,20 @@
 
 //for venue
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;
+@property (weak, nonatomic) IBOutlet UIView *addVenueView;
+@property (weak, nonatomic) IBOutlet UIImageView *addVenueViewImageView;
+
+//good or bad
+
+
+//type
+
 
 
 @property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
 
+//nav bar
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
-
-
-@property (weak, nonatomic) IBOutlet UIView *addVenueView;
-@property (weak, nonatomic) IBOutlet UIImageView *addVenueViewImageView;
-
-
-
-
 
 
 

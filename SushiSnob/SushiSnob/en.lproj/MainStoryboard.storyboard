@@ -1054,7 +1054,6 @@
                 <relationship kind="action" name="addName:"/>
                 <relationship kind="action" name="addVenue:"/>
                 <relationship kind="action" name="cancelAddingSushi:"/>
-                <relationship kind="action" name="changeSushiGoodOrNot:"/>
                 <relationship kind="action" name="doneAddingSushi:"/>
                 <relationship kind="action" name="getLatLong:"/>
                 <relationship kind="action" name="takePicture:"/>
@@ -1065,9 +1064,7 @@
                 <relationship kind="outlet" name="addVenueViewImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="sushiCityName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sushiDescription" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiGoodOrNot" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="sushiNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>

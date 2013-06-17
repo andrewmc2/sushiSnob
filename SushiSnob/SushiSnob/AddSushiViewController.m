@@ -63,8 +63,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.sushiGoodOrNot setTitle:@"Good!" forSegmentAtIndex:0];
-    [self.sushiGoodOrNot setTitle:@"Bad!" forSegmentAtIndex:1];
     [LocationManagerSingleton sharedSingleton];
     
     self.sushiIsBad = YES;
@@ -78,6 +76,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     UITapGestureRecognizer *singleTapVenue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addVenue:)];
     [self.addVenueView addGestureRecognizer:singleTapVenue];
+    
+    UITapGestureRecognizer *singleTapGood = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goodTapped:)];
+    //[self.addVenueView addGestureRecognizer:<#(UIGestureRecognizer *)#>]
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,16 +101,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (IBAction)cancelAddingSushi:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)changeSushiGoodOrNot:(id)sender {
-    if (self.sushiGoodOrNot.selectedSegmentIndex == 1) {
-        self.sushiIsBad = NO;
-        NSLog(@"sushi is good");
-    } else {
-        self.sushiIsBad = YES;
-        NSLog(@"sushi is bad");
-    }
 }
 
 #pragma mark UI elements
@@ -138,7 +129,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         }
         
         animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
-        
         
         CGRect viewFrame = self.view.frame;
         viewFrame.origin.y -= animatedDistance;
@@ -176,15 +166,15 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    self.addSushiNameImageView.image = [UIImage imageNamed:@"soySauceGreen.png"];
-    self.sushiNameLabel.text = self.sushiNameTextField.text;
-    self.sushiNameLabel.textColor = [UIColor colorWithRed:45 green:64 blue:34 alpha:1];
-    self.sushiNameLabel.hidden = NO;
-    self.sushiNameTextField.hidden = YES;
+//    self.sushiNameLabel.hidden = NO;
+//    self.sushiNameTextField.hidden = YES;
 //    self.sushiNameTextField.text = @"shit";
     
-    if (![self.sushiNameLabel.text isEqualToString:@"add sushi name"]) {
+    if (![self.sushiNameTextField.text isEqualToString:@""]) {
         //
+        self.addSushiNameImageView.image = [UIImage imageNamed:@"soySaucePink.png"];
+        self.sushiNameLabel.text = self.sushiNameTextField.text;
+        self.sushiNameTextField.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
     }
     
     return YES;
@@ -199,11 +189,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     if (touch.view == self.sushiPictureViewHolder) {
         [self createActionSheet];
     }
-    
     //touch on screen to resign keyboard
     [self.sushiNameTextField resignFirstResponder];
     [self.sushiDescription resignFirstResponder];
-
 }
 
 -(void)createActionSheet
@@ -318,7 +306,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     [self dismissViewControllerAnimated:YES completion:^{
         self.addSushiPictureLabel.text = @"picture added";
-        self.addSushiPictureLabel.textColor = [UIColor colorWithRed:239 green:109 blue:34 alpha:1];
+        self.addSushiPictureLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
         
         if (![self.sushiNameLabel.text isEqual: @"add sushi name"]) {
             [self.sushiNameTextField becomeFirstResponder];
@@ -390,7 +378,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 -(void)updateVenueLabel:(NSString *)venue;
 {
     self.venueLabel.text = venue;
-    
+    self.venueLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+    self.addVenueViewImageView.image = [UIImage imageNamed:@"compassPink.png"];
 }
 
 - (IBAction)getLatLong:(id)sender {

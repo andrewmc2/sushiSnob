@@ -19,12 +19,16 @@
     CLLocationManager *locationManager;
     float thisVenueLat;
     float thisVenueLong;
+    float thisDistVenueLat;
+    float thisDistVenueLong;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *saiImage;
 @property (strong, nonatomic) IBOutlet UILabel *closeSushiLabel;
 @property (strong, nonatomic) IBOutlet UILabel *japaneseNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *theDistanceLabel;
+@property (strong, nonatomic) NSString * theDistance;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

@@ -73,6 +73,7 @@
     NSString *nearPlaceName = thisNearPlace.title;
     NSLog(@"%@", nearPlaceName);
     self.closeSushiLabel.text = nearPlaceName;
+    
 
 
 }
@@ -81,6 +82,7 @@
 {
     locationManager=[[CLLocationManager alloc] init];
 	locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    locationManager.distanceFilter =  kCLDistanceFilterNone;
 	locationManager.headingFilter = kCLHeadingFilterNone;
 	locationManager.delegate=self;
     
@@ -104,6 +106,61 @@
         ourPhoneFloatLong = startLocation.coordinate.longitude;
         self.strLatitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.latitude];
         self.strLongitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.longitude];
+    
+    
+    thisDistVenueLat = [appDelegate.closestVenue.venueLatitude floatValue];
+    thisDistVenueLong = [appDelegate.closestVenue.venueLongitude floatValue];
+  //  give latitude2,lang of destination   and latitude,longitude of first place.
+    
+    //this function return distance in kilometer.
+    
+    float DistRadCurrentLat = degreesToRadians(startLocation.coordinate.latitude);
+    float DistRadCurrentLong = degreesToRadians(startLocation.coordinate.longitude);
+    float DistRadthisVenueLat = degreesToRadians(thisDistVenueLat);
+    float DistRadthisVenueLong = degreesToRadians(thisDistVenueLong);
+    //float deltLat = (radthisVenueLat - radcurrentLat);
+    float deltDistLat = (DistRadthisVenueLat - DistRadCurrentLat);
+    float deltDistLong = (DistRadthisVenueLong - DistRadCurrentLong);
+    
+    float a = (sinf(deltDistLat/2) * sinf(deltDistLat/2)) + ((sinf(deltDistLong/2) * sinf(deltDistLong/2)) * cosf(DistRadCurrentLat) * cosf(DistRadthisVenueLat));
+    NSLog(@"%f", a);
+    
+    float srootA = sqrtf(a);
+    float srootoneMinusA = sqrtf((1-a));
+    
+    float c = (2 * atan2f(srootA, srootoneMinusA));
+    
+    float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
+    NSLog (@"%f", distBetweenStartandVenueKilometers);
+    
+    float distBetweenStartandVenueFeet = (distBetweenStartandVenueKilometers/3281);
+    
+    NSLog (@"%f", distBetweenStartandVenueFeet);
+    self.theDistance = [[NSString alloc] init];
+    self.theDistance = [NSString stringWithFormat:@"%f", distBetweenStartandVenueKilometers];
+    
+    self.theDistanceLabel.text = self.theDistance;
+    
+    //    var R = 6371; // km
+//    var dLat = (lat2-lat1).toRad();
+//    var dLon = (lon2-lon1).toRad();
+//    var lat1 = lat1.toRad();
+//    var lat2 = lat2.toRad();
+//    
+//    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+//    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+//    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+//    var d = R * c;
+//    
+//    //(acos(sin()));
+//    
+    
+//    -(double)distanceFilter:(double) latitude2 :(double)lang{
+//        double distance=(((acos(sin((latitude*M_PI/180)) * sin((latitude2*M_PI/180))+cos((latitude*M_PI/180)) * cos((latitude2*M_PI/180)) * cos(((longitude- lang)*M_PI/180))))*180/M_PI)*60*1.1515*1.609344);
+//        
+//        return distance;
+//    }
+//    
 //    }
     
 }

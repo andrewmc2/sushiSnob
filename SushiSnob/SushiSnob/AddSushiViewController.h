@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *sushiPictureViewHolder;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiPic;
-@property (strong, nonatomic) IBOutlet UITextField *sushiNameTextField;
+
 @property (strong, nonatomic) IBOutlet UILabel *sushiDate;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sushiGoodOrNot;
 @property (strong, nonatomic) IBOutlet UITextField *sushiDescription;
@@ -30,15 +30,25 @@
 
 //for pic taking
 @property (strong, nonatomic) UIImage *selectedImage;
-
-@property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
-@property (strong, nonatomic) IBOutlet UILabel *venueLabel;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *addSushiPictureLabel;
 @property (weak, nonatomic) IBOutlet UIView *takePictureView;
 @property (weak, nonatomic) IBOutlet UIImageView *takePictureViewImageView;
+
+//for sushi name
+@property (strong, nonatomic) IBOutlet UITextField *sushiNameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *sushiNameLabel;
 @property (weak, nonatomic) IBOutlet UIView *addSushiNameView;
 @property (weak, nonatomic) IBOutlet UIImageView *addSushiNameImageView;
+
+//for venue
+@property (strong, nonatomic) IBOutlet UILabel *venueLabel;
+
+
+@property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+
 @property (weak, nonatomic) IBOutlet UIView *addVenueView;
 @property (weak, nonatomic) IBOutlet UIImageView *addVenueViewImageView;
 

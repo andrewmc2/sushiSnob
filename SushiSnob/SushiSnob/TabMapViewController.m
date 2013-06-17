@@ -237,8 +237,8 @@ float refreshedLongitude;
     CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake (location.coordinate.latitude, location.coordinate.longitude);
     MKCoordinateSpan span = MKCoordinateSpanMake(.05, .05);
     MKCoordinateRegion region = MKCoordinateRegionMake(mapCenter, span);
-    self.venueMapView.region = region;
-//    [self.venueMapView setRegion:region animated:YES];
+//    self.venueMapView.region = region;
+    [self.venueMapView setRegion:region animated:YES];
     self.venueMapView.showsUserLocation = YES;
     [self.locationManager stopUpdatingLocation];
 

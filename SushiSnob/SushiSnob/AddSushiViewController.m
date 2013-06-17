@@ -176,6 +176,17 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    self.addSushiNameImageView.image = [UIImage imageNamed:@"soySauceGreen.png"];
+    self.sushiNameLabel.text = self.sushiNameTextField.text;
+    self.sushiNameLabel.textColor = [UIColor colorWithRed:45 green:64 blue:34 alpha:1];
+    self.sushiNameLabel.hidden = NO;
+    self.sushiNameTextField.hidden = YES;
+//    self.sushiNameTextField.text = @"shit";
+    
+    if (![self.sushiNameLabel.text isEqualToString:@"add sushi name"]) {
+        //
+    }
+    
     return YES;
 }
 
@@ -306,7 +317,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     NSLog(@"log after dispatch");
     
     [self dismissViewControllerAnimated:YES completion:^{
-        [self.sushiNameTextField becomeFirstResponder];
+        self.addSushiPictureLabel.text = @"picture added";
+        self.addSushiPictureLabel.textColor = [UIColor colorWithRed:239 green:109 blue:34 alpha:1];
+        
+        if (![self.sushiNameLabel.text isEqual: @"add sushi name"]) {
+            [self.sushiNameTextField becomeFirstResponder];
+        } 
     }];
 }
 
@@ -373,9 +389,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 -(void)updateVenueLabel:(NSString *)venue;
 {
-    
     self.venueLabel.text = venue;
-
+    
 }
 
 - (IBAction)getLatLong:(id)sender {
@@ -389,6 +404,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 -(IBAction)addName:(id)sender
 {
     NSLog(@"%@",NSStringFromSelector(_cmd));
+    self.sushiNameTextField.hidden = NO;
+    self.sushiNameLabel.hidden = YES;
+    [self.sushiNameTextField becomeFirstResponder];
 }
 
 -(IBAction)addVenue:(id)sender

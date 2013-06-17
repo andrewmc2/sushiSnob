@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (strong, nonatomic) IBOutlet UIView *sushiDetailGoodOrBad;
+
+
+@property (weak, nonatomic) IBOutlet UIView *viewTest;
+
 @property (strong, nonatomic) IBOutlet UIImageView *sushiDetailImage;
 @property (weak, nonatomic) IBOutlet UIImageView *sushiType;
 @property (weak, nonatomic) IBOutlet UIImageView *sushiThumbsUp;
@@ -33,5 +37,8 @@
 
 @property (strong, nonatomic) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *documentsDirectory;
+
+- (IBAction)tapTapped:(id)sender;
+
 
 @end

@@ -192,14 +192,13 @@
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
     [newSushi setValue:sushiName forKey:@"name"];
-    //[newSushi setValue:sushiPicutre forKey:@"sushiImage"];
     [newSushi setValue:sushiDate forKey:@"date"];
-    NSLog(@"sushigood: %c",sushiGoodOrNot);
     [newSushi setValue:sushiVenue forKey:@"venue"];
     [newSushi setValue:[NSNumber numberWithBool:sushiGoodOrNot] forKey:@"isRatedGood"];
     [newSushi setValue:sushiDescription forKey:@"sushiDescription"];
     [newSushi setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
+    [newSushi setValue:sushiCityName forKey:@"city"];
     
     //save image
     NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
@@ -227,17 +226,19 @@
 
 -(void)createOriginalSushiEntries
 {
+    
     //first entry
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
-    [newSushi setValue:@"California Roll" forKey:@"name"];
+    [newSushi setValue:@"Spider Roll" forKey:@"name"];
     [newSushi setValue:[NSDate date] forKey:@"date"];
     [newSushi setValue:@"Union Sushi" forKey:@"venue"];
     [newSushi setValue:[NSNumber numberWithBool:0] forKey:@"isRatedGood"];
-    [newSushi setValue:@"great rolls!" forKey:@"sushiDescription"];
     [newSushi setValue:[NSNumber numberWithFloat:41.938846] forKey:@"latitude"];
     [newSushi setValue:[NSNumber numberWithFloat:-87.642625] forKey:@"longitude"];
     [newSushi setValue:@"カリフォルニアロール" forKey:@"japaneseName"];
+    [newSushi setValue:@"Los Angeles" forKey:@"city"];
+    
     //image
     NSString *sushiImageURLString = @"caliRoll";
     NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];

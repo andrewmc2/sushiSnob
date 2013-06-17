@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E30333E1767912E00DD4579 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E30333D1767912E00DD4579 /* Sushi.m */; };
 		9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3033401767C55300DD4579 /* SushiAnnotationView.m */; };
 		9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3033421767C6D800DD4579 /* checkMarkSmall.png */; };
 		9E397B41176E4E630021DB65 /* sashimiTV@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B3B176E4E630021DB65 /* sashimiTV@2x.png */; };
@@ -18,11 +17,17 @@
 		9E397B46176E4E630021DB65 /* sushiRollTV.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B40176E4E630021DB65 /* sushiRollTV.png */; };
 		9E397B49176E50900021DB65 /* chopsticksTV@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B47176E50900021DB65 /* chopsticksTV@2x.png */; };
 		9E397B4A176E50900021DB65 /* chopsticksTV.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B48176E50900021DB65 /* chopsticksTV.png */; };
-		9E397B80176E7E6B0021DB65 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B7F176E7E6B0021DB65 /* background.png */; };
 		9E397B85176E86100021DB65 /* thumbsDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B81176E860F0021DB65 /* thumbsDown.png */; };
 		9E397B86176E86100021DB65 /* thumbsDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B82176E860F0021DB65 /* thumbsDown@2x.png */; };
 		9E397B87176E86100021DB65 /* thumbsUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B83176E860F0021DB65 /* thumbsUp.png */; };
 		9E397B88176E86100021DB65 /* thumbsUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B84176E860F0021DB65 /* thumbsUp@2x.png */; };
+		9E397B8B176E902E0021DB65 /* SushiSnob.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E397B89176E902C0021DB65 /* SushiSnob.xcdatamodeld */; };
+		9E397B8E176E911F0021DB65 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E397B8D176E91150021DB65 /* Sushi.m */; };
+		9E397B91176E97DC0021DB65 /* SushiDetailFullPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E397B90176E97DB0021DB65 /* SushiDetailFullPictureViewController.m */; };
+		9E397B94176EB0150021DB65 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B92176EB0140021DB65 /* camera@2x.png */; };
+		9E397B95176EB0150021DB65 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B93176EB0140021DB65 /* camera.png */; };
+		9E397B98176EB20A0021DB65 /* soySauce.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B96176EB2090021DB65 /* soySauce.png */; };
+		9E397B99176EB20A0021DB65 /* soySauce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B97176EB2090021DB65 /* soySauce@2x.png */; };
 		9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */; };
 		9E7CBE4E176D42CF00082F60 /* californiaRollSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7CBE4D176D42CF00082F60 /* californiaRollSmall.png */; };
 		9E7CBE51176D556800082F60 /* darkWoodBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7CBE4F176D556800082F60 /* darkWoodBG.png */; };
@@ -99,7 +104,6 @@
 		C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861EF17678A0F0007C71F /* AddVenueVC.m */; };
 		C7E4853E176D1A4500D9AAFB /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4853D176D1A4500D9AAFB /* VenueCell.m */; };
 		DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D9C7176620D900D08E0F /* QuartzCore.framework */; };
-		DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E11766B34700D08E0F /* stylizedsai.png */; };
 		DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */; };
 		DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */; };
 		DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */; };
@@ -114,8 +118,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9E30333C1767912E00DD4579 /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
-		9E30333D1767912E00DD4579 /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
 		9E30333F1767C55200DD4579 /* SushiAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiAnnotationView.h; sourceTree = "<group>"; };
 		9E3033401767C55300DD4579 /* SushiAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiAnnotationView.m; sourceTree = "<group>"; };
 		9E3033421767C6D800DD4579 /* checkMarkSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMarkSmall.png; sourceTree = "<group>"; };
@@ -127,11 +129,19 @@
 		9E397B40176E4E630021DB65 /* sushiRollTV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sushiRollTV.png; sourceTree = "<group>"; };
 		9E397B47176E50900021DB65 /* chopsticksTV@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chopsticksTV@2x.png"; sourceTree = "<group>"; };
 		9E397B48176E50900021DB65 /* chopsticksTV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chopsticksTV.png; sourceTree = "<group>"; };
-		9E397B7F176E7E6B0021DB65 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		9E397B81176E860F0021DB65 /* thumbsDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsDown.png; sourceTree = "<group>"; };
 		9E397B82176E860F0021DB65 /* thumbsDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbsDown@2x.png"; sourceTree = "<group>"; };
 		9E397B83176E860F0021DB65 /* thumbsUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUp.png; sourceTree = "<group>"; };
 		9E397B84176E860F0021DB65 /* thumbsUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbsUp@2x.png"; sourceTree = "<group>"; };
+		9E397B8A176E902E0021DB65 /* SushiSnob.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SushiSnob.xcdatamodel; sourceTree = "<group>"; };
+		9E397B8C176E91130021DB65 /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
+		9E397B8D176E91150021DB65 /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
+		9E397B8F176E97DB0021DB65 /* SushiDetailFullPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiDetailFullPictureViewController.h; sourceTree = "<group>"; };
+		9E397B90176E97DB0021DB65 /* SushiDetailFullPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiDetailFullPictureViewController.m; sourceTree = "<group>"; };
+		9E397B92176EB0140021DB65 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		9E397B93176EB0140021DB65 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9E397B96176EB2090021DB65 /* soySauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soySauce.png; sourceTree = "<group>"; };
+		9E397B97176EB2090021DB65 /* soySauce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soySauce@2x.png"; sourceTree = "<group>"; };
 		9E4C66F41767FF2B00CD2027 /* MySushiMapPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySushiMapPictureViewController.h; path = ../MySushiMapPictureViewController.h; sourceTree = "<group>"; };
 		9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySushiMapPictureViewController.m; path = ../MySushiMapPictureViewController.m; sourceTree = "<group>"; };
 		9E7CBE4D176D42CF00082F60 /* californiaRollSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = californiaRollSmall.png; sourceTree = "<group>"; };
@@ -240,7 +250,6 @@
 		C7E4853C176D1A4500D9AAFB /* VenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueCell.h; path = ../VenueCell.h; sourceTree = "<group>"; };
 		C7E4853D176D1A4500D9AAFB /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueCell.m; path = ../VenueCell.m; sourceTree = "<group>"; };
 		DDB0D9C7176620D900D08E0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		DDB0D9E11766B34700D08E0F /* stylizedsai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stylizedsai.png; sourceTree = "<group>"; };
 		DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License Version 2.txt"; sourceTree = "<group>"; };
 		DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -288,6 +297,10 @@
 		9E7CBE4C176D421300082F60 /* Original Sushi Pics */ = {
 			isa = PBXGroup;
 			children = (
+				9E397B97176EB2090021DB65 /* soySauce@2x.png */,
+				9E397B96176EB2090021DB65 /* soySauce.png */,
+				9E397B92176EB0140021DB65 /* camera@2x.png */,
+				9E397B93176EB0140021DB65 /* camera.png */,
 				9E397B81176E860F0021DB65 /* thumbsDown.png */,
 				9E397B82176E860F0021DB65 /* thumbsDown@2x.png */,
 				9E397B83176E860F0021DB65 /* thumbsUp.png */,
@@ -343,6 +356,7 @@
 		9E9050B31760E93D0092807A /* SushiSnob */ = {
 			isa = PBXGroup;
 			children = (
+				9E397B89176E902C0021DB65 /* SushiSnob.xcdatamodeld */,
 				9E905125176121100092807A /* Location */,
 				9E9050D21760EAB90092807A /* Tabs */,
 				9E9050BC1760E93D0092807A /* AppDelegate.h */,
@@ -401,7 +415,6 @@
 				9E9050D71760EB340092807A /* TabCompassViewController.h */,
 				9E9050D81760EB340092807A /* TabCompassViewController.m */,
 				DDB0D9E31766BB5D00D08E0F /* open-sans */,
-				DDB0D9E11766B34700D08E0F /* stylizedsai.png */,
 				9E9050E01760EFE60092807A /* CompassWebiViewViewController.h */,
 				9E9050E11760EFE60092807A /* CompassWebiViewViewController.m */,
 			);
@@ -442,8 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				9E99F56F1764F1CB0083E23E /* MSTranslateVendor */,
-				9E30333C1767912E00DD4579 /* Sushi.h */,
-				9E30333D1767912E00DD4579 /* Sushi.m */,
+				9E397B8C176E91130021DB65 /* Sushi.h */,
+				9E397B8D176E91150021DB65 /* Sushi.m */,
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
 				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
 				9E905130176148720092807A /* SushiCell.h */,
@@ -523,11 +536,12 @@
 		9E99F58017652B2E0083E23E /* SushiDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9E397B7F176E7E6B0021DB65 /* background.png */,
 				9E99F58117653B670083E23E /* SushiDetailMKAnnotation.h */,
 				9E99F58217653B680083E23E /* SushiDetailMKAnnotation.m */,
 				9E9050E61760F1AA0092807A /* SushiDetailViewController.h */,
 				9E9050E71760F1AA0092807A /* SushiDetailViewController.m */,
+				9E397B8F176E97DB0021DB65 /* SushiDetailFullPictureViewController.h */,
+				9E397B90176E97DB0021DB65 /* SushiDetailFullPictureViewController.m */,
 				9E9051291761408E0092807A /* MySushiMapViewController.h */,
 				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 				9E4C66F41767FF2B00CD2027 /* MySushiMapPictureViewController.h */,
@@ -641,7 +655,6 @@
 				9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */,
 				9E99F58617653F690083E23E /* x.png in Resources */,
 				9E99F58717653F690083E23E /* checkMark.png in Resources */,
-				DDB0D9E21766B34800D08E0F /* stylizedsai.png in Resources */,
 				DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */,
 				DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */,
 				DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */,
@@ -692,11 +705,14 @@
 				9E397B46176E4E630021DB65 /* sushiRollTV.png in Resources */,
 				9E397B49176E50900021DB65 /* chopsticksTV@2x.png in Resources */,
 				9E397B4A176E50900021DB65 /* chopsticksTV.png in Resources */,
-				9E397B80176E7E6B0021DB65 /* background.png in Resources */,
 				9E397B85176E86100021DB65 /* thumbsDown.png in Resources */,
 				9E397B86176E86100021DB65 /* thumbsDown@2x.png in Resources */,
 				9E397B87176E86100021DB65 /* thumbsUp.png in Resources */,
 				9E397B88176E86100021DB65 /* thumbsUp@2x.png in Resources */,
+				9E397B94176EB0150021DB65 /* camera@2x.png in Resources */,
+				9E397B95176EB0150021DB65 /* camera.png in Resources */,
+				9E397B98176EB20A0021DB65 /* soySauce.png in Resources */,
+				9E397B99176EB20A0021DB65 /* soySauce@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,11 +747,13 @@
 				9E99F58B17657F2F0083E23E /* MySushiMapMKAnnotation.m in Sources */,
 				9E99F58E176581AB0083E23E /* PictureAnnotationView.m in Sources */,
 				C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */,
-				9E30333E1767912E00DD4579 /* Sushi.m in Sources */,
 				9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */,
 				9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */,
 				C7E4853E176D1A4500D9AAFB /* VenueCell.m in Sources */,
 				9E939C7E176CFB2E00F45B87 /* SushiVenueAnnotationView.m in Sources */,
+				9E397B8B176E902E0021DB65 /* SushiSnob.xcdatamodeld in Sources */,
+				9E397B8E176E911F0021DB65 /* Sushi.m in Sources */,
+				9E397B91176E97DC0021DB65 /* SushiDetailFullPictureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,6 +879,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E397B89176E902C0021DB65 /* SushiSnob.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E397B8A176E902E0021DB65 /* SushiSnob.xcdatamodel */,
+			);
+			currentVersion = 9E397B8A176E902E0021DB65 /* SushiSnob.xcdatamodel */;
+			path = SushiSnob.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E9050A21760E93D0092807A /* Project object */;
 }

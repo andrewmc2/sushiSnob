@@ -8,6 +8,7 @@
 
 #import "AddSushiViewController.h"
 #import "LocationManagerSingleton.h"
+#import "AddVenueVC.h"
 
 //for pic taking
 #import <AssetsLibrary/AssetsLibrary.h>
@@ -22,6 +23,9 @@
 
 - (IBAction)getLatLong:(id)sender;
 
+-(IBAction)takePicture:(id)sender;
+-(IBAction)addName:(id)sender;
+-(IBAction)addVenue:(id)sender;
 
 @end
 
@@ -40,7 +44,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     if ([segue.identifier isEqualToString:@"add4SSushiVenue"]) {
         
-        ((AddVenueVC*)segue.destinationViewController).venueDelegate = self;
+        //((AddVenueVC*)segue.destinationViewController).venueDelegate = self;
+        AddVenueVC *addVenueVC = [segue destinationViewController];
+        addVenueVC.venueDelegate = self;
     }
 }
 
@@ -61,8 +67,17 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [self.sushiGoodOrNot setTitle:@"Bad!" forSegmentAtIndex:1];
     [LocationManagerSingleton sharedSingleton];
     
+    self.sushiIsBad = YES;
     self.doneButton.enabled = NO;
-
+    
+    UITapGestureRecognizer *singleTapPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takePicture:)];
+    [self.takePictureView addGestureRecognizer:singleTapPicture];
+    
+    UITapGestureRecognizer *singleTapName = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addName:)];
+    [self.addSushiNameView addGestureRecognizer:singleTapName];
+    
+    UITapGestureRecognizer *singleTapVenue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addVenue:)];
+    [self.addVenueView addGestureRecognizer:singleTapVenue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,9 +116,6 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (IBAction)add4QVenue:(id)sender {
 
-}
-
-- (IBAction)sushiDescriptionRecordVoice:(id)sender {
 }
 
 #pragma TEXTFIELD DELEGATES
@@ -215,7 +227,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {    
     UIImage *imageTaken = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.sushiPic.image = imageTaken;
+    self.takePictureViewImageView.image = imageTaken;
     
     dispatch_queue_t addGeolocationQueue = dispatch_queue_create("add geolocation to pic", NULL);
     
@@ -277,13 +289,14 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             resultsArray = [objectsDict objectForKey:@"results"];
             NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
             NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
-            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
+//            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
             NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
-            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
+//            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
             NSString *cityName = [cityDict objectForKey:@"long_name"];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
+//                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
+                self.sushiCityName.text = [NSString stringWithFormat:@"%@", cityName];
                 NSLog(@"city added to add VC");
             });
         }];
@@ -367,4 +380,21 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
 - (IBAction)getLatLong:(id)sender {
 }
+
+-(IBAction)takePicture:(id)sender
+{
+    [self createActionSheet];
+}
+
+-(IBAction)addName:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+}
+
+-(IBAction)addVenue:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    [self performSegueWithIdentifier: @"add4SSushiVenue" sender: self];
+}
+
 @end

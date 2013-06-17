@@ -9,12 +9,21 @@
 #import "SushiDetailViewController.h"
 #import "SushiDetailMKAnnotation.h"
 #import "SushiVenueAnnotationView.h"
+#import "SushiDetailFullPictureViewController.h"
 
 @interface SushiDetailViewController ()
 
 @end
 
 @implementation SushiDetailViewController
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"viewFullPicture"]){
+        SushiDetailFullPictureViewController *sushiDetailFullPictureViewController = [segue destinationViewController];
+        [sushiDetailFullPictureViewController setSushiImage:self.sushiDetailImage.image];
+    }
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,7 +53,13 @@
         self.sushiDetailImage.image = [UIImage imageNamed:@"sushi.jpeg"];
     }
     //small image sushi type and thumbs
-    self.sushiType.image = [UIImage imageNamed:@"thumbsUp.png"];
+    NSString *boolString = [NSString stringWithFormat:@"%@", self.selectedSushi.isRatedGood];
+    
+    if ([boolString isEqualToString:@"1"]) {
+        self.sushiType.image = [UIImage imageNamed:@"thumbsUp.png"];
+    } else if ([boolString isEqualToString:@"0"])  {
+        self.sushiType.image = [UIImage imageNamed:@"thumbsDown.png"];
+    }
 //    self.sushiThumbsUp.image = [UIImage imageNamed:@"thumbsUp.png"];
     
     //venue
@@ -56,19 +71,13 @@
     self.sushiDetailDate.text = [dateFormatter stringFromDate:self.selectedSushi.date];
     
     //do city later after updating core data file
-    self.sushiDetailCity.text = @"Chicago";
-    
-    
-    NSString *boolString = [NSString stringWithFormat:@"%@", self.selectedSushi.isRatedGood];
-    
-    if ([boolString isEqualToString:@"1"]) {
-        self.xImage.hidden = YES;
-    } else {
-        self.xImage.hidden = NO;
-    }
+    self.sushiDetailCity.text = self.selectedSushi.city;
     
     self.sushiDetailMapView.userInteractionEnabled = NO;
     [self setMapZoom];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTapped:)];
+    [self.sushiDetailImage addGestureRecognizer:singleTap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,5 +112,8 @@
     return annotationView;
 }
 
-
+- (IBAction)tapTapped:(id)sender {
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    [self performSegueWithIdentifier: @"viewFullPicture" sender: self];
+}
 @end

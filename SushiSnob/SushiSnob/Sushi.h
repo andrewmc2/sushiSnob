@@ -2,7 +2,7 @@
 //  Sushi.h
 //  SushiSnob
 //
-//  Created by Andrew McCallum14 on 2013-06-11.
+//  Created by Andrew McCallum14 on 2013-06-16.
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
@@ -21,7 +21,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * sushiDescription;
 @property (nonatomic, retain) NSData * sushiImage;
-@property (nonatomic, retain) NSString * venue;
 @property (nonatomic, retain) NSString * sushiImageURL;
+@property (nonatomic, retain) NSString * venue;
+@property (nonatomic, retain) NSString * city;
 
 @end

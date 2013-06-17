@@ -26,7 +26,6 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sushiGoodOrNot;
 @property (strong, nonatomic) IBOutlet UITextField *sushiDescription;
 @property (strong, nonatomic) IBOutlet UILabel *sushiCityName;
-
 @property (nonatomic) BOOL sushiIsBad;
 
 //for pic taking
@@ -34,8 +33,20 @@
 
 @property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+
+@property (weak, nonatomic) IBOutlet UIView *takePictureView;
+@property (weak, nonatomic) IBOutlet UIImageView *takePictureViewImageView;
+@property (weak, nonatomic) IBOutlet UIView *addSushiNameView;
+@property (weak, nonatomic) IBOutlet UIImageView *addSushiNameImageView;
+@property (weak, nonatomic) IBOutlet UIView *addVenueView;
+@property (weak, nonatomic) IBOutlet UIImageView *addVenueViewImageView;
+
+
+
+
+
+
 
 
 - (IBAction)doneAddingSushi:(id)sender;
@@ -43,9 +54,7 @@
 
 //- (IBAction)changeSushiGoodOrNot:(id)sender;
 
-
 - (IBAction)add4QVenue:(id)sender;
-- (IBAction)sushiDescriptionRecordVoice:(id)sender;
 
 @end
 

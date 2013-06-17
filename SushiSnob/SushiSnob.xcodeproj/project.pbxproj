@@ -98,6 +98,14 @@
 		9E99F58717653F690083E23E /* checkMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F58517653F690083E23E /* checkMark.png */; };
 		9E99F58B17657F2F0083E23E /* MySushiMapMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F58A17657F2F0083E23E /* MySushiMapMKAnnotation.m */; };
 		9E99F58E176581AB0083E23E /* PictureAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F58D176581AB0083E23E /* PictureAnnotationView.m */; };
+		9E9CD7FF176F4AA40061F57B /* lineForTableCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD7FD176F4AA40061F57B /* lineForTableCell.png */; };
+		9E9CD800176F4AA40061F57B /* lineForTableCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD7FE176F4AA40061F57B /* lineForTableCell@2x.png */; };
+		9E9CD803176F4D9B0061F57B /* plusSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD801176F4D9B0061F57B /* plusSign.png */; };
+		9E9CD804176F4D9B0061F57B /* plusSign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD802176F4D9B0061F57B /* plusSign@2x.png */; };
+		9E9CD807176F50880061F57B /* plusSignThin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD805176F50880061F57B /* plusSignThin.png */; };
+		9E9CD808176F50880061F57B /* plusSignThin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD806176F50880061F57B /* plusSignThin@2x.png */; };
+		9E9CD80B176F6BF50061F57B /* soySauceGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD809176F6BF50061F57B /* soySauceGreen.png */; };
+		9E9CD80C176F6BF50061F57B /* soySauceGreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD80A176F6BF50061F57B /* soySauceGreen@2x.png */; };
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
@@ -238,6 +246,14 @@
 		9E99F58A17657F2F0083E23E /* MySushiMapMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySushiMapMKAnnotation.m; sourceTree = "<group>"; };
 		9E99F58C176581AB0083E23E /* PictureAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAnnotationView.h; sourceTree = "<group>"; };
 		9E99F58D176581AB0083E23E /* PictureAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAnnotationView.m; sourceTree = "<group>"; };
+		9E9CD7FD176F4AA40061F57B /* lineForTableCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineForTableCell.png; sourceTree = "<group>"; };
+		9E9CD7FE176F4AA40061F57B /* lineForTableCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineForTableCell@2x.png"; sourceTree = "<group>"; };
+		9E9CD801176F4D9B0061F57B /* plusSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusSign.png; sourceTree = "<group>"; };
+		9E9CD802176F4D9B0061F57B /* plusSign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plusSign@2x.png"; sourceTree = "<group>"; };
+		9E9CD805176F50880061F57B /* plusSignThin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusSignThin.png; sourceTree = "<group>"; };
+		9E9CD806176F50880061F57B /* plusSignThin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plusSignThin@2x.png"; sourceTree = "<group>"; };
+		9E9CD809176F6BF50061F57B /* soySauceGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soySauceGreen.png; sourceTree = "<group>"; };
+		9E9CD80A176F6BF50061F57B /* soySauceGreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soySauceGreen@2x.png"; sourceTree = "<group>"; };
 		9EEDB2EC176282B600266890 /* AddSushiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSushiDelegate.h; sourceTree = "<group>"; };
 		9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		C798614F1762A0C90007C71F /* VenueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueObject.h; sourceTree = "<group>"; };
@@ -297,6 +313,12 @@
 		9E7CBE4C176D421300082F60 /* Original Sushi Pics */ = {
 			isa = PBXGroup;
 			children = (
+				9E9CD809176F6BF50061F57B /* soySauceGreen.png */,
+				9E9CD80A176F6BF50061F57B /* soySauceGreen@2x.png */,
+				9E9CD7FD176F4AA40061F57B /* lineForTableCell.png */,
+				9E9CD7FE176F4AA40061F57B /* lineForTableCell@2x.png */,
+				9E9CD801176F4D9B0061F57B /* plusSign.png */,
+				9E9CD802176F4D9B0061F57B /* plusSign@2x.png */,
 				9E397B97176EB2090021DB65 /* soySauce@2x.png */,
 				9E397B96176EB2090021DB65 /* soySauce.png */,
 				9E397B92176EB0140021DB65 /* camera@2x.png */,
@@ -314,6 +336,8 @@
 				9E397B3F176E4E630021DB65 /* sushiRollTV@2x.png */,
 				9E397B40176E4E630021DB65 /* sushiRollTV.png */,
 				9E7CBE4D176D42CF00082F60 /* californiaRollSmall.png */,
+				9E9CD805176F50880061F57B /* plusSignThin.png */,
+				9E9CD806176F50880061F57B /* plusSignThin@2x.png */,
 			);
 			name = "Original Sushi Pics";
 			sourceTree = "<group>";
@@ -713,6 +737,14 @@
 				9E397B95176EB0150021DB65 /* camera.png in Resources */,
 				9E397B98176EB20A0021DB65 /* soySauce.png in Resources */,
 				9E397B99176EB20A0021DB65 /* soySauce@2x.png in Resources */,
+				9E9CD7FF176F4AA40061F57B /* lineForTableCell.png in Resources */,
+				9E9CD800176F4AA40061F57B /* lineForTableCell@2x.png in Resources */,
+				9E9CD803176F4D9B0061F57B /* plusSign.png in Resources */,
+				9E9CD804176F4D9B0061F57B /* plusSign@2x.png in Resources */,
+				9E9CD807176F50880061F57B /* plusSignThin.png in Resources */,
+				9E9CD808176F50880061F57B /* plusSignThin@2x.png in Resources */,
+				9E9CD80B176F6BF50061F57B /* soySauceGreen.png in Resources */,
+				9E9CD80C176F6BF50061F57B /* soySauceGreen@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

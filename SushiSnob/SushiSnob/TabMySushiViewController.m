@@ -152,7 +152,7 @@
             cell = [[AddSushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addSushiCellIdentifier];
         }
 
-        cell.textLabel.text = @"Add Sushi";
+//        cell.textLabel.text = @"Add Sushi";
         
         return cell;
     }

@@ -132,10 +132,10 @@
         self.locationManager = [[CLLocationManager alloc] init];
         
         self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
         // Set a movement threshold for new events.
-        self.locationManager.distanceFilter = 500;
+        self.locationManager.distanceFilter = kCLDistanceFilterNone;
         
         [self.locationManager startUpdatingLocation];
         
@@ -226,7 +226,7 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [self.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
-    self.closestVenue = [distanceSortedArray objectAtIndex:0];
+    self.closestVenue = [distanceSortedArray objectAtIndex:1];
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
    //NSLog(@"%@", distanceSortedArray);

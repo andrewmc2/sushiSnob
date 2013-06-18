@@ -31,6 +31,7 @@
 @property (strong, nonatomic) NSString * theDistance;
 @property (strong, nonatomic) CLLocation *currentLoc;
 
+
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end
 

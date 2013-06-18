@@ -58,7 +58,8 @@
 }
 
 - (void)viewDidLoad{
-     [super viewDidLoad];;
+     [super viewDidLoad];
+    [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
     
 
@@ -75,7 +76,15 @@
     thisNearPlace = appDelegate.closestVenue;
     
     NSString *nearPlaceName = thisNearPlace.title;
-    self.closeSushiLabel.text = nearPlaceName;
+//    NSNumber *temporaryDistancefromFS = thisNearPlace.distance;
+//    NSString *distLabel = [NSString stringWithFormat:@"%@",temporaryDistancefromFS];
+   
+    self.theDistanceLabel.text = @"Calculating";
+    self.theDistanceLabel.text = @"Calculating.";
+    self.theDistanceLabel.text = @"Calculating..";
+    self.theDistanceLabel.text = @"Calculating...";
+//    self.theDistanceLabel.text = distLabel;
+    //self.c//nearPlaceName;
     //self.theDistanceLabel.text = distLabel;
     
 

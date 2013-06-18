@@ -43,6 +43,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Yjj-Rx-dvp" id="xVS-Ek-o9A"/>
+                        <outlet property="refreshButton" destination="kpT-Uv-YGT" id="9jk-Jg-S4g"/>
                         <outlet property="venueMapView" destination="LGW-Qh-jSz" id="Xzk-Au-8kt"/>
                         <segue destination="h3a-9D-c8p" kind="push" identifier="pushWebView" id="CKf-wm-ciy"/>
                     </connections>
@@ -65,14 +66,15 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHz-f8-KY0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell alpha="0.99999999999999989" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="venue" rowHeight="67" id="fnK-lf-N7N" customClass="VenueCell">
+                                    <tableViewCell alpha="0.99999999999999989" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="venue" rowHeight="67" id="fnK-lf-N7N" customClass="VenueCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="VenueName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sp1-Ie-xzw">
@@ -141,6 +143,9 @@
                             <webView contentMode="scaleToFill" id="O3f-Gd-huU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="h3a-9D-c8p" id="TYO-vO-ZNH"/>
+                                </connections>
                             </webView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="gray" id="ShM-YG-Cc5">
                                 <rect key="frame" x="150" y="131" width="20" height="20"/>
@@ -177,7 +182,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Va2-3U-IEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-777" y="387"/>
+            <point key="canvasLocation" x="-225" y="435"/>
         </scene>
         <!--Tab Compass View Controller - Compass-->
         <scene sceneID="BUj-Kv-ddP">
@@ -595,7 +600,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1982" y="1716"/>
+            <point key="canvasLocation" x="1854" y="1820"/>
         </scene>
         <!--Add Sushi View Controller - Title-->
         <scene sceneID="2h1-lf-h3e">
@@ -1065,6 +1070,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="webActivityIndicator" candidateClass="UIActivityIndicatorView"/>
             </relationships>
         </class>
         <class className="MySushiMapPictureViewController" superclassName="UIViewController">
@@ -1129,6 +1135,7 @@
             <relationships>
                 <relationship kind="action" name="refreshLocationButton:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
             </relationships>
         </class>

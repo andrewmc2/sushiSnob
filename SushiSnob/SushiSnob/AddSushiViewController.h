@@ -19,16 +19,11 @@
 
 @interface AddSushiViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, VenueDelegate>
 
-@property (strong, nonatomic) IBOutlet UIView *sushiPictureViewHolder;
-@property (strong, nonatomic) IBOutlet UIImageView *sushiPic;
 
-@property (strong, nonatomic) IBOutlet UILabel *sushiDate;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *sushiGoodOrNot;
-@property (strong, nonatomic) IBOutlet UITextField *sushiDescription;
-@property (strong, nonatomic) IBOutlet UILabel *sushiCityName;
-@property (nonatomic) BOOL sushiIsBad;
 
 //for pic taking
+@property (strong, nonatomic) IBOutlet UIView *sushiPictureViewHolder;
+@property (strong, nonatomic) IBOutlet UIImageView *sushiPic;
 @property (strong, nonatomic) UIImage *selectedImage;
 @property (weak, nonatomic) IBOutlet UILabel *addSushiPictureLabel;
 @property (weak, nonatomic) IBOutlet UIView *takePictureView;
@@ -42,22 +37,36 @@
 
 //for venue
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;
-
-
-@property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
-
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
-
-
 @property (weak, nonatomic) IBOutlet UIView *addVenueView;
 @property (weak, nonatomic) IBOutlet UIImageView *addVenueViewImageView;
 
+//good or bad
+@property (weak, nonatomic) IBOutlet UIView *thumbsUpView;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbsUpImageView;
+@property (weak, nonatomic) IBOutlet UIView *thumbsDownView;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbsDownImageView;
+@property (weak, nonatomic) IBOutlet UILabel *enjoyItLabel;
+@property (nonatomic) BOOL sushiIsGood;
 
+//type
+@property (weak, nonatomic) IBOutlet UIView *rollView;
+@property (weak, nonatomic) IBOutlet UIImageView *rollImageView;
+@property (weak, nonatomic) IBOutlet UIView *sushiView;
+@property (weak, nonatomic) IBOutlet UIImageView *sushiImageView;
+@property (weak, nonatomic) IBOutlet UIView *sashimiView;
+@property (weak, nonatomic) IBOutlet UIImageView *sashimiImageView;
+@property (weak, nonatomic) IBOutlet UIView *otherView;
+@property (weak, nonatomic) IBOutlet UIImageView *otherImageView;
+@property (weak, nonatomic) IBOutlet UILabel *sushiTypeLabel;
 
+@property (strong, nonatomic) NSString *sushiDescription;
 
+@property (strong, nonatomic) id <AddSushiDelegate> addSushiDelegate;
 
+//nav bar
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
-
+@property (strong, nonatomic) IBOutlet NSString *sushiCityName;
 
 - (IBAction)doneAddingSushi:(id)sender;
 - (IBAction)cancelAddingSushi:(id)sender;

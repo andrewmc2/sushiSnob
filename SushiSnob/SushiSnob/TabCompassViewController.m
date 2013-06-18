@@ -23,6 +23,7 @@
     VenueObject *selectedVenue;
     NSMutableArray * allItems1;
     AppDelegate *appDelegate ;
+
 }
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
@@ -38,6 +39,7 @@
 
 @implementation TabCompassViewController
 
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:(NSCoder *)aDecoder];
@@ -51,14 +53,12 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
+ 
     return self;
 }
 
 - (void)viewDidLoad{
-    [super viewDidLoad];
+     [super viewDidLoad];;
     [self startStandardLocationServices];
     
 
@@ -75,7 +75,6 @@
     thisNearPlace = appDelegate.closestVenue;
     
     NSString *nearPlaceName = thisNearPlace.title;
-      
     self.closeSushiLabel.text = nearPlaceName;
     //self.theDistanceLabel.text = distLabel;
     
@@ -97,7 +96,7 @@
         
         [locationManager startUpdatingHeading];
     } else {
-        NSLog(@"Location Heading/Compass FAIL");
+//        NSLog(@"Location Heading/Compass FAIL");
     }
 }
 
@@ -133,8 +132,6 @@
     float deltDistLong = (DistRadthisVenueLong - DistRadCurrentLong);
     
     float a = (sinf(deltDistLat/2) * sinf(deltDistLat/2)) + ((sinf(deltDistLong/2) * sinf(deltDistLong/2)) * cosf(DistRadCurrentLat) * cosf(DistRadthisVenueLat));
-    //NSLog(@"%f", a);
-    
     float srootA = sqrtf(a);
     float srootoneMinusA = sqrtf((1-a));
     
@@ -145,6 +142,11 @@
     
     float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters*3.281);
     NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
+   // float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
+//    NSLog (@"%f", distBetweenStartandVenueKilometers);
+    
+    //float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters/3281);
+    
 //    NSLog (@"%f", distBetweenStartandVenueFeet);
     self.theDistance = [[NSString alloc] init];
     
@@ -153,36 +155,6 @@
     
     NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
     self.theDistance = distLabel;
-    
-    
-    //self.theDistance = [NSString stringWithFormat:@"%f", distBetweenStartandVenueFeet];
-    
-   // self.theDistanceLabel.text = @" ";
-    
-    
-    //self.theDistanceLabel.text = [NSString stringWithFormat:@"%f", appDelegate.closestVenue.distance];
-    
-    //    var R = 6371; // km
-//    var dLat = (lat2-lat1).toRad();
-//    var dLon = (lon2-lon1).toRad();
-//    var lat1 = lat1.toRad();
-//    var lat2 = lat2.toRad();
-//    
-//    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-//    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-//    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-//    var d = R * c;
-//    
-//    //(acos(sin()));
-//    
-    
-//    -(double)distanceFilter:(double) latitude2 :(double)lang{
-//        double distance=(((acos(sin((latitude*M_PI/180)) * sin((latitude2*M_PI/180))+cos((latitude*M_PI/180)) * cos((latitude2*M_PI/180)) * cos(((longitude- lang)*M_PI/180))))*180/M_PI)*60*1.1515*1.609344);
-//        
-//        return distance;
-//    }
-//    
-//    }
     
 }
 
@@ -227,7 +199,6 @@
 
     
     NSString *nearPlaceName = thisNearPlace.title;
-    //NSLog(@"%@", nearPlaceName);
     self.closeSushiLabel.text = nearPlaceName;
 
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).

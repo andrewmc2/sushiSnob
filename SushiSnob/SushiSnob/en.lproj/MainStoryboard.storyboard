@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MVI-yA-KVy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MVI-yA-KVy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -331,6 +331,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="sushiDate" destination="aEf-Rw-Pc0" id="mQN-jP-UNr"/>
+                                            <outlet property="sushiIconView" destination="gGK-oA-nYB" id="2HZ-zP-tXS"/>
                                             <outlet property="sushiImageView" destination="gGK-oA-nYB" id="6hJ-yR-ppC"/>
                                             <outlet property="sushiName" destination="5DT-Ff-SuY" id="QUW-v2-sfr"/>
                                             <outlet property="sushiNameJapanese" destination="CgX-aX-1rz" id="XZ1-d4-DPk"/>
@@ -932,10 +933,24 @@
                         <outlet property="addVenueView" destination="QpQ-1T-Kwi" id="BaZ-cy-kF6"/>
                         <outlet property="addVenueViewImageView" destination="OD3-nk-5e0" id="p8D-mI-51z"/>
                         <outlet property="doneButton" destination="PhE-S2-BB4" id="h0e-If-TS2"/>
+                        <outlet property="enjoyItLabel" destination="czy-2m-cNS" id="T3G-ST-cT7"/>
+                        <outlet property="otherImageView" destination="tTK-Dh-nNm" id="L7h-cg-2df"/>
+                        <outlet property="otherView" destination="09t-go-uLP" id="CQ8-aS-nwm"/>
+                        <outlet property="rollImageView" destination="Op2-lP-Hfi" id="kB4-C0-slA"/>
+                        <outlet property="rollView" destination="LrT-NF-hr0" id="CFP-xS-81d"/>
+                        <outlet property="sashimiImageView" destination="aaV-aY-HGf" id="C9T-PZ-BIC"/>
+                        <outlet property="sashimiView" destination="0Ke-t1-y5y" id="bcI-22-b17"/>
+                        <outlet property="sushiImageView" destination="9mU-tH-OrB" id="bwf-lh-ScM"/>
                         <outlet property="sushiNameLabel" destination="ecr-PF-e4H" id="2PE-6Q-pYW"/>
                         <outlet property="sushiNameTextField" destination="sPb-Jn-mks" id="beU-V9-dxS"/>
+                        <outlet property="sushiTypeLabel" destination="UQD-TO-Xre" id="anL-EY-0m1"/>
+                        <outlet property="sushiView" destination="mbe-Dc-41V" id="ahd-Zp-Hly"/>
                         <outlet property="takePictureView" destination="jhS-Os-qO4" id="8Iv-Ec-w56"/>
                         <outlet property="takePictureViewImageView" destination="fxj-tg-L2d" id="7Z1-rw-CPb"/>
+                        <outlet property="thumbsDownImageView" destination="hEq-D3-eBL" id="DJa-56-oW6"/>
+                        <outlet property="thumbsDownView" destination="c4h-q2-Qdh" id="AlV-e0-eCJ"/>
+                        <outlet property="thumbsUpImageView" destination="Xfo-Ut-5YQ" id="WaV-oz-A6a"/>
+                        <outlet property="thumbsUpView" destination="WlQ-H5-UPO" id="Tz0-y0-iQ5"/>
                         <outlet property="venueLabel" destination="Rg1-Eg-ZrD" id="nfS-DQ-QBS"/>
                         <segue destination="HIS-BQ-x4Z" kind="modal" identifier="add4SSushiVenue" id="CSq-Aj-hLH"/>
                     </connections>
@@ -979,7 +994,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="qre-b8-BRh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="qre-b8-BRh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -1051,6 +1066,162 @@
         <image name="thumbsDown.png" width="60" height="60"/>
         <image name="thumbsUp.png" width="60" height="60"/>
     </resources>
+    <classes>
+        <class className="AddSushiCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
+        </class>
+        <class className="AddSushiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="add4QVenue:"/>
+                <relationship kind="action" name="addName:"/>
+                <relationship kind="action" name="addVenue:"/>
+                <relationship kind="action" name="cancelAddingSushi:"/>
+                <relationship kind="action" name="doneAddingSushi:"/>
+                <relationship kind="action" name="getLatLong:"/>
+                <relationship kind="action" name="otherViewTapped:"/>
+                <relationship kind="action" name="rollViewTapped:"/>
+                <relationship kind="action" name="sashimiViewTapped:"/>
+                <relationship kind="action" name="sushiViewTapped:"/>
+                <relationship kind="action" name="takePicture:"/>
+                <relationship kind="action" name="thumbsDownViewTapped:"/>
+                <relationship kind="action" name="thumbsUpViewTapped:"/>
+                <relationship kind="outlet" name="addSushiNameImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="addSushiNameView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="addSushiPictureLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="addVenueView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="addVenueViewImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="enjoyItLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="otherImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="otherView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rollImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rollView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sashimiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sashimiView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiCityName" candidateClass="NSString"/>
+                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="takePictureView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="takePictureViewImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbsDownImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbsDownView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="thumbsUpImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbsUpView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="venueLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="AddVenueVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddVenueVC.h"/>
+            <relationships>
+                <relationship kind="action" name="addVenueWithButton:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="venueTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CompassWebiViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassWebiViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nearestVenueFSWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MapVenueWebViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MySushiMapPictureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapPictureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MySushiMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mySushiMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SushiCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiIconView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiNameJapanese" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiRestauraunt" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SushiDetailFullPictureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailFullPictureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SushiDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tapTapped:"/>
+                <relationship kind="outlet" name="checkMarkImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sushiDetailCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailGoodOrBad" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiDetailImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiDetailMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="sushiDetailVenue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiThumbsUp" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiType" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="viewTest" candidateClass="UIView"/>
+                <relationship kind="outlet" name="xImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TabCompassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="closeSushiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="japaneseNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="saiImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TabMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshLocationButton:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TabMySushiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="VenueCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueDistance" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="VenueTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

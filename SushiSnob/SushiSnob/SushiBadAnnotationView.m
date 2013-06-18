@@ -1,21 +1,21 @@
 //
-//  SushiAnnotationView.m
+//  SushiBadAnnotationView.m
 //  SushiSnob
 //
-//  Created by Andrew McCallum14 on 2013-06-11.
+//  Created by Andrew McCallum14 on 2013-06-17.
 //  Copyright (c) 2013 Andrew McCallum. All rights reserved.
 //
 
-#import "SushiAnnotationView.h"
+#import "SushiBadAnnotationView.h"
 
-@implementation SushiAnnotationView
+@implementation SushiBadAnnotationView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.image = [UIImage imageNamed:@"sushiPin.png"];
+        self.image = [UIImage imageNamed:@"thumbsDownPink.png"];
     }
     return self;
 }

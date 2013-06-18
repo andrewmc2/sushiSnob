@@ -174,10 +174,10 @@ float refreshedLongitude;
     self.locationManager = [[CLLocationManager alloc] init];
 
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
     // Set a movement threshold for new events.
-    self.locationManager.distanceFilter = 500;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
     
     self.venueMapView.delegate = self;
     [self.locationManager startUpdatingLocation];
@@ -256,7 +256,7 @@ float refreshedLongitude;
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [appDelegate1.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
-    appDelegate1.closestVenue = [distanceSortedArray objectAtIndex:0];
+    appDelegate1.closestVenue = [distanceSortedArray objectAtIndex:1];
         //NSLog(@"%@", distanceSortedArray);
     NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
     [self.venueMapView addAnnotations:appDelegate1.fourSquareVenueObjectsArray];

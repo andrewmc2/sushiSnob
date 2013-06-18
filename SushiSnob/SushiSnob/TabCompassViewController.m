@@ -161,8 +161,22 @@
     
    // float distPlaceHolder = [thisNearPlace.distance floatValue];
     int rounding = (distBetweenStartandVenueFeet);
+    NSString *distLabel = [[NSString alloc] init];
+    if (distBetweenStartandVenueFeet > 10000) {
+        distLabel = [NSString stringWithFormat:@"Calculating..."];
+                     }
     
-    NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
+   // if (distBetweenStartandVenueFeet < 75) {
+     //   distLabel = [NSString stringWithFormat: @"Less than 100 feet, you're here, look up."];
+        
+   // }
+        else
+     
+        {
+            distLabel = [NSString stringWithFormat:@"%i feet", rounding];
+    }
+    
+   // NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
     self.theDistance = distLabel;
     
 }
@@ -231,7 +245,7 @@
     theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     //theAnimation.fromValue = [NSNumber numberWithFloat:0];
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
-    theAnimation.duration = 1.2f;
+    theAnimation.duration = .8f;
     self.closeSushiLabel.text = nearPlaceName;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);

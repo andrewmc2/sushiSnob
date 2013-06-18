@@ -13,6 +13,9 @@
 #import "TabCompassViewController.h"
 #import "TabMySushiViewController.h"
 #import "VenueObject.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
+
 
 @class TabMySushiViewController;
 

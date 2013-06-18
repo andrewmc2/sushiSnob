@@ -40,6 +40,15 @@
 @implementation TabCompassViewController
 
 
+
+- (BOOL)connected
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return !(networkStatus == NotReachable);
+}
+
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:(NSCoder *)aDecoder];
@@ -57,12 +66,31 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self viewDidLoad];
+}
+
 - (void)viewDidLoad{
+    
+    if (![self connected]) {
+        self.theDistanceLabel.text = @"No Signal";
+        self.closeSushiLabel.text = @":(";
+        self.saiImage.alpha = 0;
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        self.theDistanceLabel.text = @"No Signal";
+        self.closeSushiLabel.text = @":(";
+        
+    }
+    else {
      [super viewDidLoad];
+        self.saiImage.alpha = 1;
     [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
     
-
+    }
 
     
 }
@@ -70,6 +98,7 @@
 -(void)setupCompassObjectsAndLabels
 
 {
+    
     VenueObject * thisNearPlace = [[VenueObject alloc] init];
 //    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
@@ -83,6 +112,7 @@
     self.theDistanceLabel.text = @"Calculating.";
     self.theDistanceLabel.text = @"Calculating..";
     self.theDistanceLabel.text = @"Calculating...";
+    return;
 //    self.theDistanceLabel.text = distLabel;
     //self.c//nearPlaceName;
     //self.theDistanceLabel.text = distLabel;

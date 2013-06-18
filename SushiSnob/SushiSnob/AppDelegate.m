@@ -63,6 +63,13 @@
     didRunFourSquareParse = NO;
 }
 
+- (BOOL)connected
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return !(networkStatus == NotReachable);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -226,7 +233,7 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [self.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
-    self.closestVenue = [distanceSortedArray objectAtIndex:0];
+    self.closestVenue = [distanceSortedArray objectAtIndex:1];
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
    //NSLog(@"%@", distanceSortedArray);

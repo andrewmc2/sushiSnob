@@ -144,6 +144,8 @@
 		DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */; };
 		DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */; };
 		DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */; };
+		DDB377E117710BDC00CE19FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */; };
+		DDB377EA177111CD00CE19FA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB377E9177111CD00CE19FA /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -320,6 +322,9 @@
 		DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DDB377E8177111CD00CE19FA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DDB377E9177111CD00CE19FA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +332,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB377E117710BDC00CE19FA /* SystemConfiguration.framework in Frameworks */,
 				DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */,
 				9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */,
 				9E90516A176161E60092807A /* CoreData.framework in Frameworks */,
@@ -406,6 +412,9 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
+				DDB377E8177111CD00CE19FA /* Reachability.h */,
+				DDB377E9177111CD00CE19FA /* Reachability.m */,
+				DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */,
 				DDB0D9C7176620D900D08E0F /* QuartzCore.framework */,
 				9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */,
 				9E905169176161E60092807A /* CoreData.framework */,
@@ -872,6 +881,7 @@
 				9E397B8E176E911F0021DB65 /* Sushi.m in Sources */,
 				9E397B91176E97DC0021DB65 /* SushiDetailFullPictureViewController.m in Sources */,
 				9ED6E74B176FD65900F73837 /* SushiBadAnnotationView.m in Sources */,
+				DDB377EA177111CD00CE19FA /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

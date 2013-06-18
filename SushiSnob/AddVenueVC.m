@@ -78,7 +78,7 @@
     
     self.venueTextField.text = selectedSushiVenue;
 
-    [self.venueDelegate updateVenueLabel:self.venueTextField.text];
+    [self.venueDelegate updateVenueLabel:selectedSushiVenue];
 
     NSLog(@"the selected object is: %@", selectedSushiVenue);
  

@@ -132,10 +132,10 @@
         self.locationManager = [[CLLocationManager alloc] init];
         
         self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         
         // Set a movement threshold for new events.
-        self.locationManager.distanceFilter = 500;
+        self.locationManager.distanceFilter = kCLDistanceFilterNone;
         
         [self.locationManager startUpdatingLocation];
         

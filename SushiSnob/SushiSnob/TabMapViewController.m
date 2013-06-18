@@ -32,6 +32,7 @@
 VenueObject *selectedVenue;
 float refreshedLatitude;
 float refreshedLongitude;
+bool refreshButtonActive;
 
 
 
@@ -51,6 +52,7 @@ float refreshedLongitude;
 {
     [super viewDidLoad];
     [self setMapZoom];
+    refreshButtonActive = YES;
 }
 
 -(void) setMapZoom
@@ -167,22 +169,29 @@ float refreshedLongitude;
     distanceSortedArray = nil;
     [self refreshVenueLocations];
     
+    
 }
 
 -(void)refreshVenueLocations
 {
+    self.refreshButton.enabled = NO;
+
+    
     self.locationManager = [[CLLocationManager alloc] init];
 
     self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
     // Set a movement threshold for new events.
-    self.locationManager.distanceFilter = 500;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
     
     self.venueMapView.delegate = self;
     [self.locationManager startUpdatingLocation];
 
-}
+} 
+        
+        
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
@@ -198,6 +207,7 @@ float refreshedLongitude;
     
     
     //searches 4S for nearby sushi restaurants based on the current location
+    refreshButtonActive = NO;
     NSString *urlString = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%@&query=sushi&oauth_token=R0LICVP1OPDRVUGDTBAY4YQDCCRZKQ20BLR4SNG5XVKZ5T5M", currentUserCoordForURL];
     NSLog(@"The search URL is%@", urlString);
     NSURL *url = [NSURL URLWithString: urlString];
@@ -229,6 +239,7 @@ float refreshedLongitude;
          }
         
          [self sortVenuesByDistance];
+         self.refreshButton.enabled = YES;
 
          
      }];

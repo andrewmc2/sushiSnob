@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 
 - (IBAction)refreshLocationButton:(id)sender;
 

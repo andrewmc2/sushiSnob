@@ -116,7 +116,7 @@
 //    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
 //    if (abs(howRecent) < 15.0) {
     if (startLocation.coordinate.latitude == 0 && startLocation.coordinate.longitude == 0) {
-        NSLog(@"Location is 0,0.");
+       // NSLog(@"Location is 0,0.");
         return;
     }
     
@@ -147,10 +147,10 @@
     float c = (2 * atan2f(srootA, srootoneMinusA));
     
     float distBetweenStartandVenueMeters = (c * 6371*1000); //radius of earth
-    NSLog (@"the distance it's logging in m is %f", distBetweenStartandVenueMeters);
+//    NSLog (@"the distance it's logging in m is %f", distBetweenStartandVenueMeters);
     
     float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters*3.281);
-    NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
+//    NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
    // float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
 //    NSLog (@"%f", distBetweenStartandVenueKilometers);
     
@@ -161,11 +161,27 @@
     
    // float distPlaceHolder = [thisNearPlace.distance floatValue];
     int rounding = (distBetweenStartandVenueFeet);
+    NSString *distLabel = [[NSString alloc] init];
+    if (distBetweenStartandVenueFeet > 10000) {
+        distLabel = [NSString stringWithFormat:@"Calculating..."];
+                     }
     
-    NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
+   // if (distBetweenStartandVenueFeet < 75) {
+     //   distLabel = [NSString stringWithFormat: @"Less than 100 feet, you're here, look up."];
+        
+   // }
+        else
+     
+        {
+            distLabel = [NSString stringWithFormat:@"%i feet", rounding];
+    }
+    
+   // NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
     self.theDistance = distLabel;
     
 }
+
+
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
@@ -231,7 +247,7 @@
     theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     //theAnimation.fromValue = [NSNumber numberWithFloat:0];
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
-    theAnimation.duration = 1.2f;
+    theAnimation.duration = .8f;
     self.closeSushiLabel.text = nearPlaceName;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);

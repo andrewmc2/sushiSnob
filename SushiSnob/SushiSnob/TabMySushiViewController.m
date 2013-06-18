@@ -75,26 +75,26 @@
 
 -(void)setupFetchedResults
 {
-//    self.imageArray = [[NSMutableArray alloc]init];
-//    
-//    NSEntityDescription *entity = [NSEntityDescription
-//                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    [fetchRequest setEntity:entity];
-//    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
-//    
-//    NSError *error;
-//    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    
-//    for (int i = 0; i < self.fetchedSushiResults.count; i++) {
-//        Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
-//        NSString *fileName = sushiInfo.sushiImageURL;
-//        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-//        UIImage *image = [UIImage imageWithContentsOfFile:[localImageURL path]];
-//        [self.imageArray addObject:image];
-   // }
+    self.imageArray = [[NSMutableArray alloc]init];
     
-    //[self.tableView reloadData];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
+    
+    NSError *error;
+    self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    for (int i = 0; i < self.fetchedSushiResults.count; i++) {
+        Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
+        NSString *fileName = sushiInfo.sushiImageURL;
+        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+        UIImage *image = [UIImage imageWithContentsOfFile:[localImageURL path]];
+        [self.imageArray addObject:image];
+    }
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -233,30 +233,30 @@
 {
     
     //first entry
-//    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
-//    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
-//    [newSushi setValue:@"Spider Roll" forKey:@"name"];
-//    [newSushi setValue:[NSDate date] forKey:@"date"];
-//    [newSushi setValue:@"Union Sushi" forKey:@"venue"];
-//    [newSushi setValue:[NSNumber numberWithBool:0] forKey:@"isRatedGood"];
-//    [newSushi setValue:[NSNumber numberWithFloat:41.938846] forKey:@"latitude"];
-//    [newSushi setValue:[NSNumber numberWithFloat:-87.642625] forKey:@"longitude"];
-//    [newSushi setValue:@"カリフォルニアロール" forKey:@"japaneseName"];
-//    [newSushi setValue:@"Los Angeles" forKey:@"city"];
-//    [newSushi setValue:@"chopsticksTV.png" forKey:@"sushiDescription"];
-//    
-//    //image
-//    NSString *sushiImageURLString = @"caliRoll";
-//    NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];
-//    NSString *fileName = [sushiImageURL lastPathComponent];
-//    [newSushi setValue:fileName forKey:@"sushiImageURL"];
-//    NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-//    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"californiaRollSmall.png"]);
-//    [imageData writeToURL:localImageURL atomically:YES];
-//    
-//    NSError *error;
-//    [self.managedObjectContext save:&error];
-//    [self setupFetchedResults];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Sushi" inManagedObjectContext:self.managedObjectContext];
+    NSManagedObject *newSushi = [[NSManagedObject alloc]initWithEntity:entityDescription insertIntoManagedObjectContext:self.managedObjectContext];
+    [newSushi setValue:@"Spider Roll" forKey:@"name"];
+    [newSushi setValue:[NSDate date] forKey:@"date"];
+    [newSushi setValue:@"Union Sushi" forKey:@"venue"];
+    [newSushi setValue:[NSNumber numberWithBool:0] forKey:@"isRatedGood"];
+    [newSushi setValue:[NSNumber numberWithFloat:41.938846] forKey:@"latitude"];
+    [newSushi setValue:[NSNumber numberWithFloat:-87.642625] forKey:@"longitude"];
+    [newSushi setValue:@"カリフォルニアロール" forKey:@"japaneseName"];
+    [newSushi setValue:@"Los Angeles" forKey:@"city"];
+    [newSushi setValue:@"chopsticksTV.png" forKey:@"sushiDescription"];
+    
+    //image
+    NSString *sushiImageURLString = @"caliRoll";
+    NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];
+    NSString *fileName = [sushiImageURL lastPathComponent];
+    [newSushi setValue:fileName forKey:@"sushiImageURL"];
+    NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+    NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"californiaRollSmall.png"]);
+    [imageData writeToURL:localImageURL atomically:YES];
+    
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    [self setupFetchedResults];
 }
 
 @end

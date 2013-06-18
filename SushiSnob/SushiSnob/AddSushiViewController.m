@@ -103,6 +103,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     UITapGestureRecognizer *singleTapOther = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(otherViewTapped:)];
     [self.otherView addGestureRecognizer:singleTapOther];
+    
+    //sushi default pic
+    self.selectedImage = [UIImage imageNamed:@"sushi.jpeg"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,7 +119,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (IBAction)doneAddingSushi:(id)sender {
     //do this later after all inputs are setup
     [self dismissViewControllerAnimated:YES completion:nil];
-
+    
     dispatch_queue_t delegateQueue = dispatch_queue_create("for delegate", NULL);
     dispatch_async(delegateQueue, ^{
         [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsGood addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription addSushiCityName:self.sushiCityName addLatitude:picLatitude addLongitude:picLongitude];
@@ -317,14 +320,14 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             resultsArray = [objectsDict objectForKey:@"results"];
             NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
             NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
-//            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
-            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
-//            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
-            NSString *cityName = [cityDict objectForKey:@"long_name"];
+            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
+//            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
+            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
+//            NSString *cityName = [cityDict objectForKey:@"long_name"];
             
             dispatch_async(dispatch_get_main_queue(), ^{
 //                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
-                self.sushiCityName = [NSString stringWithFormat:@"%@", cityName];
+                self.sushiCityName = [NSString stringWithFormat:@"%@", boroughName];
                 NSLog(@"city added to add VC");
             });
         }];

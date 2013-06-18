@@ -88,9 +88,15 @@
     
     for (int i = 0; i < self.fetchedSushiResults.count; i++) {
         Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
+        UIImage *image;
+        
         NSString *fileName = sushiInfo.sushiImageURL;
-        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-        UIImage *image = [UIImage imageWithContentsOfFile:[localImageURL path]];
+        if ([fileName isEqualToString:@""]) {
+            image = [UIImage imageNamed:@"sushi.jpeg"];
+        } else {
+            NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
+            image = [UIImage imageWithContentsOfFile:[localImageURL path]];
+        }
         [self.imageArray addObject:image];
     }
     
@@ -211,7 +217,8 @@
     NSString *fileName = [sushiImageURL lastPathComponent];
     [newSushi setValue:fileName forKey:@"sushiImageURL"];
     NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
-    NSData *imageData = UIImageJPEGRepresentation(sushiPicutre, 0.1);
+    NSData *imageData;
+    imageData = UIImageJPEGRepresentation(sushiPicutre, 0.1);
     [imageData writeToURL:localImageURL atomically:YES];
     
     //make japanese name

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E2154DB1770E95900D1380F /* navBarTrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2154D91770E95900D1380F /* navBarTrans.png */; };
+		9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2154DA1770E95900D1380F /* navBarTrans@2x.png */; };
 		9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3033401767C55300DD4579 /* SushiAnnotationView.m */; };
 		9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3033421767C6D800DD4579 /* checkMarkSmall.png */; };
 		9E397B41176E4E630021DB65 /* sashimiTV@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B3B176E4E630021DB65 /* sashimiTV@2x.png */; };
@@ -145,6 +147,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E2154D91770E95900D1380F /* navBarTrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarTrans.png; sourceTree = "<group>"; };
+		9E2154DA1770E95900D1380F /* navBarTrans@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarTrans@2x.png"; sourceTree = "<group>"; };
 		9E30333F1767C55200DD4579 /* SushiAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiAnnotationView.h; sourceTree = "<group>"; };
 		9E3033401767C55300DD4579 /* SushiAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiAnnotationView.m; sourceTree = "<group>"; };
 		9E3033421767C6D800DD4579 /* checkMarkSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMarkSmall.png; sourceTree = "<group>"; };
@@ -586,6 +590,8 @@
 		9E939C9B176D0B1C00F45B87 /* Nav Bar */ = {
 			isa = PBXGroup;
 			children = (
+				9E2154D91770E95900D1380F /* navBarTrans.png */,
+				9E2154DA1770E95900D1380F /* navBarTrans@2x.png */,
 				9E939C54176C0AB600F45B87 /* menubar.png */,
 				9E939C55176C0AB600F45B87 /* menubar@2x.png */,
 				9E939C9C176D0B6E00F45B87 /* button_normal.png */,
@@ -822,6 +828,8 @@
 				9E9CD82C176FA4B50061F57B /* thumbsUpPink.png in Resources */,
 				9E9CD82F176FB4DC0061F57B /* sushiRollTVPink.png in Resources */,
 				9E9CD830176FB4DC0061F57B /* sushiRollTVPink@2x.png in Resources */,
+				9E2154DB1770E95900D1380F /* navBarTrans.png in Resources */,
+				9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

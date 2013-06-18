@@ -19,7 +19,6 @@
     float picLatitude;
     float picLongitude;
     int countForDoneButton;
-     
 }
 
 - (IBAction)getLatLong:(id)sender;
@@ -181,28 +180,31 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     [UIView commitAnimations];
     
-    if (textField == self.sushiNameTextField) {
-        if (![self.sushiNameTextField.text isEqualToString:@""]) {
-            self.doneButton.enabled = YES;
-        } else {
-            self.doneButton.enabled = NO;
-        }
+    NSString *rawString = [textField text];
+    NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSString *trimmed = [rawString stringByTrimmingCharactersInSet:whitespace];
+    
+    if ([trimmed length] == 0) {
+        // Text was empty or only whitespace.
+        self.doneButton.enabled = NO;
+        self.addSushiNameImageView.image = [UIImage imageNamed:@"soySauce.png"];
+        self.sushiNameLabel.hidden = NO;
+        self.sushiNameTextField.hidden = YES;
+        self.sushiNameLabel.text = @"add sushi name";
+        self.sushiNameTextField.textColor = [UIColor colorWithRed:(250/255.f) green:(239/255.f) blue:(207/255.f) alpha:1];
+    } else {
+        self.doneButton.enabled = YES;
+        self.addSushiNameImageView.image = [UIImage imageNamed:@"soySaucePink.png"];
+        self.sushiNameLabel.text = self.sushiNameTextField.text;
+        self.sushiNameTextField.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+        self.sushiNameLabel.hidden = YES;
+        self.sushiNameTextField.hidden = NO;
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-//    self.sushiNameLabel.hidden = NO;
-//    self.sushiNameTextField.hidden = YES;
-//    self.sushiNameTextField.text = @"shit";
-    
-    if (![self.sushiNameTextField.text isEqualToString:@""]) {
-        //
-        self.addSushiNameImageView.image = [UIImage imageNamed:@"soySaucePink.png"];
-        self.sushiNameLabel.text = self.sushiNameTextField.text;
-        self.sushiNameTextField.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
-    }
     
     return YES;
 }

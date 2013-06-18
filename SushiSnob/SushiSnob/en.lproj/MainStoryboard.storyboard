@@ -152,7 +152,7 @@
                     <navigationItem key="navigationItem" id="Veu-Mz-r0P"/>
                     <connections>
                         <outlet property="venueFSWebView" destination="O3f-Gd-huU" id="4VP-Zu-7jg"/>
-                        <outlet property="webActivityIndicator" destination="ShM-YG-Cc5" id="i9H-hB-qUY"/>
+                        <outlet property="webActivityIndicator" destination="ShM-YG-Cc5" id="gfX-rk-qav"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJT-2d-dfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1058,6 +1058,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="webActivityIndicator" candidateClass="UIActivityIndicatorView"/>
             </relationships>
         </class>
         <class className="MySushiMapPictureViewController" superclassName="UIViewController">

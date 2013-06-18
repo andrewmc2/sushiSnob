@@ -116,7 +116,7 @@
 //    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
 //    if (abs(howRecent) < 15.0) {
     if (startLocation.coordinate.latitude == 0 && startLocation.coordinate.longitude == 0) {
-        NSLog(@"Location is 0,0.");
+       // NSLog(@"Location is 0,0.");
         return;
     }
     
@@ -147,10 +147,10 @@
     float c = (2 * atan2f(srootA, srootoneMinusA));
     
     float distBetweenStartandVenueMeters = (c * 6371*1000); //radius of earth
-    NSLog (@"the distance it's logging in m is %f", distBetweenStartandVenueMeters);
+//    NSLog (@"the distance it's logging in m is %f", distBetweenStartandVenueMeters);
     
     float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters*3.281);
-    NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
+//    NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
    // float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
 //    NSLog (@"%f", distBetweenStartandVenueKilometers);
     

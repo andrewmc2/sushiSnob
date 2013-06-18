@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSString *fourSquareVenueWebPage;
 @property (strong, nonatomic) id mkAnnotation;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *webActivityIndicator;
 
 
 

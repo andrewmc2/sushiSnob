@@ -226,7 +226,7 @@
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [self.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
-    self.closestVenue = [distanceSortedArray objectAtIndex:1];
+    self.closestVenue = [distanceSortedArray objectAtIndex:0];
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
    //NSLog(@"%@", distanceSortedArray);

@@ -181,6 +181,8 @@
     
 }
 
+
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
     if (!self.headingDidStartUpdating) {

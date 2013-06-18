@@ -14,19 +14,16 @@
                         <subviews>
                             <view contentMode="scaleToFill" id="y60-nT-MmH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="LGW-Qh-jSz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="NX3-kD-bh9" id="w2J-xQ-2C2"/>
                                 </connections>
                             </mapView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="Yjj-Rx-dvp">
                                 <rect key="frame" x="142" y="181" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -64,12 +61,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="darkWoodBG.png" id="agr-wC-4Rm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.14901960780000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="hHz-f8-KY0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -82,28 +77,24 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="VenueName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sp1-Ie-xzw">
                                                     <rect key="frame" x="20" y="8" width="199" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="18"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="VenueAddress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vxx-9U-0v9">
                                                     <rect key="frame" x="20" y="30" width="199" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QXg-4L-tGf">
                                                     <rect key="frame" x="165" y="21" width="119" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lineForTableCell.png" id="dlb-Rn-kst">
                                                     <rect key="frame" x="0.0" y="55" width="320" height="2"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -144,7 +135,6 @@
                         <subviews>
                             <webView contentMode="scaleToFill" id="O3f-Gd-huU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
@@ -187,17 +177,17 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="plate.png" id="Bm6-Nh-mEC">
-                                <rect key="frame" x="0.0" y="90" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="plate.png" id="Bm6-Nh-mEC">
+                                <rect key="frame" x="0.0" y="85" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" image="chopsticks.png" id="wsa-tc-jFU">
-                                <rect key="frame" x="112" y="95" width="100" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chopsticks.png" id="wsa-tc-jFU">
+                                <rect key="frame" x="112" y="90" width="100" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Retrieving Location..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mTm-c1-Fze">
-                                <rect key="frame" x="10" y="410" width="310" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="10" y="405" width="310" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
@@ -205,17 +195,17 @@
                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="バーベキューバー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="msF-dk-wDu">
-                                <rect key="frame" x="46" y="38" width="228" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Distance..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9DV-Gd-fPR">
+                                <rect key="frame" x="10" y="445" width="310" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Distance..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9DV-Gd-fPR">
-                                <rect key="frame" x="10" y="450" width="310" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                            <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="バーベキューバー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CSs-qk-oyf">
+                                <rect key="frame" x="48" y="27" width="228" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -225,7 +215,6 @@
                     <tabBarItem key="tabBarItem" title="Compass" id="bMa-9C-XOL"/>
                     <connections>
                         <outlet property="closeSushiLabel" destination="mTm-c1-Fze" id="baT-hw-hJM"/>
-                        <outlet property="japaneseNameLabel" destination="msF-dk-wDu" id="KiY-ss-n9w"/>
                         <outlet property="saiImage" destination="wsa-tc-jFU" id="pSl-yI-Q5Q"/>
                         <outlet property="theDistanceLabel" destination="9DV-Gd-fPR" id="5gI-Jl-1qm"/>
                         <segue destination="UAe-XH-zBK" kind="modal" identifier="fromCompassToFSWebView" id="Y57-ex-jCq"/>
@@ -245,7 +234,6 @@
                         <subviews>
                             <webView contentMode="scaleToFill" id="oAr-aj-lj7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="UAe-XH-zBK" id="wSP-60-zx8"/>
@@ -272,12 +260,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="darkWoodBG.png" id="7Yz-x8-9Xy">
                                 <rect key="frame" x="-1" y="0.0" width="322" height="455"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.14901960780000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZYa-1m-MCH">
                                 <rect key="frame" x="-1" y="0.0" width="322" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.14901960780000001" blue="0.1137254902" alpha="0.27000000000000002" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sushiCell" rowHeight="100" id="MaZ-uJ-esW" customClass="SushiCell">
@@ -289,39 +275,33 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="chopsticksTV.png" id="gGK-oA-nYB">
                                                     <rect key="frame" x="13" y="20" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5DT-Ff-SuY">
                                                     <rect key="frame" x="90" y="20" width="220" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aEf-Rw-Pc0">
                                                     <rect key="frame" x="13" y="6" width="262" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="restaurant name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ls-Eb-EdL">
                                                     <rect key="frame" x="200" y="72" width="102" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="14"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="japanese " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CgX-aX-1rz">
                                                     <rect key="frame" x="90" y="53" width="220" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="lineForTableCell.png" id="MUN-Lu-dNW">
                                                     <rect key="frame" x="0.0" y="98" width="320" height="2"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -345,14 +325,12 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="add sushi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qS8-Pn-YFx">
                                                     <rect key="frame" x="90" y="39" width="212" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                     <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="plusSignThin.png" id="Ukc-BJ-5T3">
                                                     <rect key="frame" x="13" y="20" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -400,22 +378,18 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="darkWoodBG.png" id="jnN-Dc-YZe">
                                 <rect key="frame" x="0.0" y="-56" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bCB-Un-PIp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="レストラン" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wvY-U1-3At">
                                         <rect key="frame" x="118" y="201" width="85" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView contentMode="scaleToFill" id="PXk-id-e3O">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="321" height="193"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="4Vi-Io-vt5" appends="YES" id="Iq3-Dg-I7O"/>
@@ -423,50 +397,42 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="fmY-l8-o7Z">
                                         <rect key="frame" x="251" y="123" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4HD-uT-bo3">
                                         <rect key="frame" x="24" y="222" width="273" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="YAz-qs-sTt">
                                         <rect key="frame" x="10" y="143" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="日付" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="glG-hh-erB">
                                         <rect key="frame" x="118" y="260" width="85" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P29-85-XdF">
                                         <rect key="frame" x="27" y="288" width="266" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="都市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOq-vJ-0tr">
                                         <rect key="frame" x="118" y="331" width="85" height="27"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jt8-vO-DwA">
                                         <rect key="frame" x="27" y="355" width="266" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" id="70M-qv-K47">
-                                        <rect key="frame" x="0.0" y="404" width="320" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <rect key="frame" x="0.0" y="404" width="321" height="300"/>
                                         <connections>
                                             <outlet property="delegate" destination="qvo-4g-th6" id="Wiz-NT-2M5"/>
                                         </connections>
@@ -508,7 +474,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="hvE-WH-viQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -532,27 +497,22 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="darkWoodBG.png" id="ZeE-i7-yRV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.14901960780000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="Izd-hT-u95">
-                                <rect key="frame" x="9" y="68" width="303" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="9" y="68" width="302" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="FOv-zI-UZx">
-                                        <rect key="frame" x="20" y="10" width="40" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <rect key="frame" x="20" y="10" width="39" height="36"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Compass.png" id="D7j-JZ-Qny">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="36"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="select restaurant below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78N-gF-odC">
-                                        <rect key="frame" x="62" y="17" width="221" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="61" y="17" width="221" height="31"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -562,7 +522,6 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="vcF-b9-Aaz">
                                 <rect key="frame" x="0.0" y="136" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" image="lineForTableCell.png" id="dkq-BW-BQI">
                                     <rect key="frame" x="0.0" y="86" width="320" height="2"/>
@@ -631,11 +590,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="darkWoodBG.png" id="E7v-lh-ig0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" id="FLq-cL-YTg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="S9Y-QU-g6p">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kET-13-SvJ">
@@ -653,26 +611,22 @@
                             </navigationBar>
                             <view contentMode="scaleToFill" id="PPb-KB-eKL" userLabel="Add Picture">
                                 <rect key="frame" x="20" y="58" width="290" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="jhS-Os-qO4">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="iKU-HQ-60i">
                                                 <rect key="frame" x="12" y="10" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="camera.png" id="fxj-tg-L2d">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="add sushi picture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ejR-qY-vxn">
                                                 <rect key="frame" x="76" y="18" width="194" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -685,33 +639,27 @@
                             </view>
                             <view contentMode="scaleToFill" id="ExW-8Z-2fU" userLabel="Add Sushi Name">
                                 <rect key="frame" x="20" y="136" width="290" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="uYv-8B-91x">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="dvS-Kk-ghG">
                                                 <rect key="frame" x="12" y="10" width="40" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="soySauce.png" id="9aD-Rz-Hyd">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="36"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="add sushi name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ecr-PF-e4H">
                                                 <rect key="frame" x="71" y="18" width="194" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ex: california roll" minimumFontSize="17" id="sPb-Jn-mks">
                                                 <rect key="frame" x="71" y="16" width="216" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -727,26 +675,21 @@
                             </view>
                             <view contentMode="scaleToFill" id="Mwy-oC-3Ed" userLabel="Add Venue Name">
                                 <rect key="frame" x="20" y="217" width="290" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="QpQ-1T-Kwi">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="wrP-xq-6hG">
                                                 <rect key="frame" x="12" y="10" width="40" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Compass.png" id="OD3-nk-5e0">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="36"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="add restaurant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rg1-Eg-ZrD">
                                                 <rect key="frame" x="71" y="17" width="194" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="19"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -759,33 +702,27 @@
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enjoy it?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czy-2m-cNS">
                                 <rect key="frame" x="28" y="318" width="121" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UQD-TO-Xre">
                                 <rect key="frame" x="28" y="440" width="142" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="25"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="M7b-LL-DCO" userLabel="Good">
                                 <rect key="frame" x="168" y="303" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="WlQ-H5-UPO">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="thumbsUp.png" id="Xfo-Ut-5YQ">
                                                 <rect key="frame" x="10" y="3" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Good!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SDd-pl-cLU">
                                                 <rect key="frame" x="9" y="44" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -798,19 +735,15 @@
                             </view>
                             <view contentMode="scaleToFill" id="VE9-Gr-gHT" userLabel="Bad">
                                 <rect key="frame" x="250" y="303" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="c4h-q2-Qdh">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="thumbsDown.png" id="hEq-D3-eBL">
                                                 <rect key="frame" x="10" y="3" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bad!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="75Q-TI-imB">
                                                 <rect key="frame" x="9" y="44" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -823,19 +756,15 @@
                             </view>
                             <view contentMode="scaleToFill" id="che-DX-zJB" userLabel="Roll">
                                 <rect key="frame" x="168" y="390" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="LrT-NF-hr0">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sushiRollTV.png" id="Op2-lP-Hfi">
                                                 <rect key="frame" x="10" y="3" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Roll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vnb-AR-ZdE">
                                                 <rect key="frame" x="9" y="44" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -848,19 +777,15 @@
                             </view>
                             <view contentMode="scaleToFill" id="zvD-by-Nqb" userLabel="Sushi">
                                 <rect key="frame" x="250" y="390" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="mbe-Dc-41V">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sushiTV.png" id="9mU-tH-OrB">
                                                 <rect key="frame" x="10" y="3" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sushi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5d3-se-Se2">
                                                 <rect key="frame" x="9" y="44" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -873,19 +798,15 @@
                             </view>
                             <view contentMode="scaleToFill" id="uDb-CI-uVg" userLabel="Sashimi">
                                 <rect key="frame" x="168" y="460" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="0Ke-t1-y5y">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sashimiTV.png" id="aaV-aY-HGf">
                                                 <rect key="frame" x="10" y="3" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sashimi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NYq-Ex-Lu3">
                                                 <rect key="frame" x="7" y="44" width="46" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -898,19 +819,15 @@
                             </view>
                             <view contentMode="scaleToFill" id="kq8-5s-zHV" userLabel="Other">
                                 <rect key="frame" x="250" y="460" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="09t-go-uLP">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chopsticksTV.png" id="tTK-Dh-nNm">
                                                 <rect key="frame" x="10" y="3" width="40" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Other" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oZv-1X-bPo">
                                                 <rect key="frame" x="9" y="44" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="12"/>
                                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -968,7 +885,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="WiH-eT-SE9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="9oe-W3-tlb" id="qlg-4H-b3E"/>
                                 </connections>
@@ -995,7 +911,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="qre-b8-BRh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1065,13 +980,169 @@
         <image name="thumbsDown.png" width="60" height="60"/>
         <image name="thumbsUp.png" width="60" height="60"/>
     </resources>
+    <classes>
+        <class className="AddSushiCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
+        </class>
+        <class className="AddSushiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="add4QVenue:"/>
+                <relationship kind="action" name="addName:"/>
+                <relationship kind="action" name="addVenue:"/>
+                <relationship kind="action" name="cancelAddingSushi:"/>
+                <relationship kind="action" name="doneAddingSushi:"/>
+                <relationship kind="action" name="getLatLong:"/>
+                <relationship kind="action" name="otherViewTapped:"/>
+                <relationship kind="action" name="rollViewTapped:"/>
+                <relationship kind="action" name="sashimiViewTapped:"/>
+                <relationship kind="action" name="sushiViewTapped:"/>
+                <relationship kind="action" name="takePicture:"/>
+                <relationship kind="action" name="thumbsDownViewTapped:"/>
+                <relationship kind="action" name="thumbsUpViewTapped:"/>
+                <relationship kind="outlet" name="addSushiNameImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="addSushiNameView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="addSushiPictureLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="addVenueView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="addVenueViewImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="enjoyItLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="otherImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="otherView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rollImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rollView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sashimiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sashimiView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiCityName" candidateClass="NSString"/>
+                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="takePictureView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="takePictureViewImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbsDownImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbsDownView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="thumbsUpImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="thumbsUpView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="venueLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="AddVenueVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddVenueVC.h"/>
+            <relationships>
+                <relationship kind="action" name="addVenueWithButton:"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="venueTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CompassWebiViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassWebiViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nearestVenueFSWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MapVenueWebViewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MySushiMapPictureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapPictureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MySushiMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mySushiMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SushiCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiIconView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiNameJapanese" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiRestauraunt" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SushiDetailFullPictureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailFullPictureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SushiDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tapTapped:"/>
+                <relationship kind="outlet" name="checkMarkImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sushiDetailCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiDetailGoodOrBad" candidateClass="UIView"/>
+                <relationship kind="outlet" name="sushiDetailImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiDetailMapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="sushiDetailVenue" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sushiThumbsUp" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="sushiType" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="viewTest" candidateClass="UIView"/>
+                <relationship kind="outlet" name="xImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TabCompassViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="closeSushiLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="japaneseNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="saiImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TabMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshLocationButton:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="TabMySushiViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="VenueCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueDistance" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="venueName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="VenueTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="venueTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="fkm-tp-K0J"/>
         <segue reference="sk7-Qh-l8Q"/>
-        <segue reference="CKf-wm-ciy"/>
     </inferredMetricsTieBreakers>
 </document>

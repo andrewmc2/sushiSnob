@@ -230,7 +230,12 @@
     [self.locationManager stopUpdatingLocation];
     [self.locationManager stopUpdatingHeading];
    //NSLog(@"%@", distanceSortedArray);
-   NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
+    
+   //NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
+
+    //NSString * distanceFScheck = self.closestVenue.distance;
+    
+    NSLog(@"distance from foursquare is %@", self.closestVenue.distance);
 
 }
 

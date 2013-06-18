@@ -29,6 +29,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *japaneseNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *theDistanceLabel;
 @property (strong, nonatomic) NSString * theDistance;
+@property (strong, nonatomic) CLLocation *currentLoc;
+
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @end

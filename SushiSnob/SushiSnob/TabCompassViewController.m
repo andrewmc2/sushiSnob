@@ -23,6 +23,7 @@
     VenueObject *selectedVenue;
     NSMutableArray * allItems1;
     AppDelegate *appDelegate ;
+
 }
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
@@ -32,14 +33,19 @@
 @property (nonatomic, strong) NSString * strLongitude;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) BOOL headingDidStartUpdating;
+//@property (nonatomic, strong) 
 
 @end
 
 @implementation TabCompassViewController
 
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:(NSCoder *)aDecoder];
+    if (self) {
+        appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    }
     
     return self;
 }
@@ -47,14 +53,13 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
+ 
     return self;
 }
 
 - (void)viewDidLoad{
-    [super viewDidLoad];
+     [super viewDidLoad];
+    [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
     
 
@@ -66,13 +71,21 @@
 
 {
     VenueObject * thisNearPlace = [[VenueObject alloc] init];
-    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     thisNearPlace = appDelegate.closestVenue;
     
     NSString *nearPlaceName = thisNearPlace.title;
-//    NSLog(@"%@", nearPlaceName);
-    self.closeSushiLabel.text = nearPlaceName;
+//    NSNumber *temporaryDistancefromFS = thisNearPlace.distance;
+//    NSString *distLabel = [NSString stringWithFormat:@"%@",temporaryDistancefromFS];
+   
+    self.theDistanceLabel.text = @"Calculating";
+    self.theDistanceLabel.text = @"Calculating.";
+    self.theDistanceLabel.text = @"Calculating..";
+    self.theDistanceLabel.text = @"Calculating...";
+//    self.theDistanceLabel.text = distLabel;
+    //self.c//nearPlaceName;
+    //self.theDistanceLabel.text = distLabel;
     
 
 
@@ -102,7 +115,12 @@
 //    NSDate* eventDate = startLocation.timestamp;
 //    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
 //    if (abs(howRecent) < 15.0) {
-        ourPhoneFloatLat = startLocation.coordinate.latitude;
+    if (startLocation.coordinate.latitude == 0 && startLocation.coordinate.longitude == 0) {
+        NSLog(@"Location is 0,0.");
+        return;
+    }
+    
+    ourPhoneFloatLat = startLocation.coordinate.latitude;
         ourPhoneFloatLong = startLocation.coordinate.longitude;
         self.strLatitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.latitude];
         self.strLongitude = [NSString stringWithFormat: @"%f", startLocation.coordinate.longitude];
@@ -123,45 +141,29 @@
     float deltDistLong = (DistRadthisVenueLong - DistRadCurrentLong);
     
     float a = (sinf(deltDistLat/2) * sinf(deltDistLat/2)) + ((sinf(deltDistLong/2) * sinf(deltDistLong/2)) * cosf(DistRadCurrentLat) * cosf(DistRadthisVenueLat));
-//    NSLog(@"%f", a);
-    
     float srootA = sqrtf(a);
     float srootoneMinusA = sqrtf((1-a));
     
     float c = (2 * atan2f(srootA, srootoneMinusA));
     
-    float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
+    float distBetweenStartandVenueMeters = (c * 6371*1000); //radius of earth
+    NSLog (@"the distance it's logging in m is %f", distBetweenStartandVenueMeters);
+    
+    float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters*3.281);
+    NSLog(@"the distance from foursquare is %@", appDelegate.closestVenue.distance);
+   // float distBetweenStartandVenueKilometers = (c * 6371); //radius of earth
 //    NSLog (@"%f", distBetweenStartandVenueKilometers);
     
-    float distBetweenStartandVenueFeet = (distBetweenStartandVenueKilometers/3281);
+    //float distBetweenStartandVenueFeet = (distBetweenStartandVenueMeters/3281);
     
 //    NSLog (@"%f", distBetweenStartandVenueFeet);
     self.theDistance = [[NSString alloc] init];
-    self.theDistance = [NSString stringWithFormat:@"%f", distBetweenStartandVenueKilometers];
     
-    self.theDistanceLabel.text = self.theDistance;
+   // float distPlaceHolder = [thisNearPlace.distance floatValue];
+    int rounding = (distBetweenStartandVenueFeet);
     
-    //    var R = 6371; // km
-//    var dLat = (lat2-lat1).toRad();
-//    var dLon = (lon2-lon1).toRad();
-//    var lat1 = lat1.toRad();
-//    var lat2 = lat2.toRad();
-//    
-//    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-//    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
-//    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-//    var d = R * c;
-//    
-//    //(acos(sin()));
-//    
-    
-//    -(double)distanceFilter:(double) latitude2 :(double)lang{
-//        double distance=(((acos(sin((latitude*M_PI/180)) * sin((latitude2*M_PI/180))+cos((latitude*M_PI/180)) * cos((latitude2*M_PI/180)) * cos(((longitude- lang)*M_PI/180))))*180/M_PI)*60*1.1515*1.609344);
-//        
-//        return distance;
-//    }
-//    
-//    }
+    NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
+    self.theDistance = distLabel;
     
 }
 
@@ -200,13 +202,12 @@
 
    // NSLog(@"Initial bearing/initial angle rotation from north in degrees is = %f", VenueBearDeg);
     VenueObject * thisNearPlace = [[VenueObject alloc] init];
-    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     
     thisNearPlace = appDelegate.closestVenue;
 
     
     NSString *nearPlaceName = thisNearPlace.title;
-//    NSLog(@"%@", nearPlaceName);
     self.closeSushiLabel.text = nearPlaceName;
 
     //trig calculations necessary to display additional navigation information (distance, etc, spherical of cosines).
@@ -234,6 +235,21 @@
     self.closeSushiLabel.text = nearPlaceName;
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
+    
+    //NSNumber *distY = thisNearPlace.distance;
+    
+    // NSLog (@"the distance it's logging in km is %f", distBetweenStartandVenueMeters);
+    
+    float distPlaceHolder = [thisNearPlace.distance floatValue];
+    //int rounding = (distBetweenStartandVenueMeters);
+    
+    //NSNumber *disttemp = roundf(distPlaceHolder);
+//    NSString *distLabel = [NSString stringWithFormat:@"%i",rounding];
+//    NSLog(@"%@", distLabel);
+//    self.theDistance = distLabel;
+//
+//    
+    self.theDistanceLabel.text = self.theDistance;
     //NSLog(@"true heading is %f", newHeading.trueHeading);
 
 }

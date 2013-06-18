@@ -182,8 +182,10 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     [UIView commitAnimations];
     
     if (textField == self.sushiNameTextField) {
-        if (self.sushiNameTextField != nil) {
+        if (![self.sushiNameTextField.text isEqualToString:@""]) {
             self.doneButton.enabled = YES;
+        } else {
+            self.doneButton.enabled = NO;
         }
     }
 }

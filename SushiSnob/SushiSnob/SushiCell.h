@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *sushiRestauraunt;
 @property (strong, nonatomic) IBOutlet UILabel *sushiNameJapanese;
 @property (strong, nonatomic) IBOutlet UIImageView *sushiImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *sushiIconView;
 
 -(void)addPicture:(Sushi*)sushi
       atIndexPath:(NSIndexPath*)indexPath;

@@ -19,6 +19,7 @@
     float picLatitude;
     float picLongitude;
     int countForDoneButton;
+     
 }
 
 - (IBAction)getLatLong:(id)sender;
@@ -26,6 +27,14 @@
 -(IBAction)takePicture:(id)sender;
 -(IBAction)addName:(id)sender;
 -(IBAction)addVenue:(id)sender;
+
+-(IBAction)thumbsUpViewTapped:(id)sender;
+-(IBAction)thumbsDownViewTapped:(id)sender;
+
+-(IBAction)rollViewTapped:(id)sender;
+-(IBAction)sushiViewTapped:(id)sender;
+-(IBAction)sashimiViewTapped:(id)sender;
+-(IBAction)otherViewTapped:(id)sender;
 
 @end
 
@@ -65,8 +74,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 	// Do any additional setup after loading the view.
     [LocationManagerSingleton sharedSingleton];
     
-    self.sushiIsBad = YES;
+    self.sushiIsGood = YES;
     self.doneButton.enabled = NO;
+    self.sushiDescription = @"chopsticksTV.png";
     
     UITapGestureRecognizer *singleTapPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takePicture:)];
     [self.takePictureView addGestureRecognizer:singleTapPicture];
@@ -77,8 +87,23 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     UITapGestureRecognizer *singleTapVenue = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addVenue:)];
     [self.addVenueView addGestureRecognizer:singleTapVenue];
     
-    UITapGestureRecognizer *singleTapGood = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goodTapped:)];
-    //[self.addVenueView addGestureRecognizer:<#(UIGestureRecognizer *)#>]
+    UITapGestureRecognizer *singleTapThumbsUp = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thumbsUpViewTapped:)];
+    [self.thumbsUpView addGestureRecognizer:singleTapThumbsUp];
+    
+    UITapGestureRecognizer *singleTapThumbsDown = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(thumbsDownViewTapped:)];
+    [self.thumbsDownView addGestureRecognizer:singleTapThumbsDown];
+    
+    UITapGestureRecognizer *singleTapRoll = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rollViewTapped:)];
+    [self.rollView addGestureRecognizer:singleTapRoll];
+    
+    UITapGestureRecognizer *singleTapSushi = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sushiViewTapped:)];
+    [self.sushiView addGestureRecognizer:singleTapSushi];
+    
+    UITapGestureRecognizer *singleTapSashimi = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sashimiViewTapped:)];
+    [self.sashimiView addGestureRecognizer:singleTapSashimi];
+    
+    UITapGestureRecognizer *singleTapOther = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(otherViewTapped:)];
+    [self.otherView addGestureRecognizer:singleTapOther];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +120,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 
     dispatch_queue_t delegateQueue = dispatch_queue_create("for delegate", NULL);
     dispatch_async(delegateQueue, ^{
-        [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsBad addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription.text addSushiCityName:self.sushiCityName.text addLatitude:picLatitude addLongitude:picLongitude];
+        [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsGood addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription addSushiCityName:self.sushiCityName addLatitude:picLatitude addLongitude:picLongitude];
     });
 }
 
@@ -191,7 +216,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     }
     //touch on screen to resign keyboard
     [self.sushiNameTextField resignFirstResponder];
-    [self.sushiDescription resignFirstResponder];
+    //[self.sushiDescription resignFirstResponder];
 }
 
 -(void)createActionSheet
@@ -295,7 +320,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             
             dispatch_async(dispatch_get_main_queue(), ^{
 //                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
-                self.sushiCityName.text = [NSString stringWithFormat:@"%@", cityName];
+                self.sushiCityName = [NSString stringWithFormat:@"%@", cityName];
                 NSLog(@"city added to add VC");
             });
         }];
@@ -385,6 +410,8 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 - (IBAction)getLatLong:(id)sender {
 }
 
+#pragma mark actions for touching views
+
 -(IBAction)takePicture:(id)sender
 {
     [self createActionSheet];
@@ -402,6 +429,99 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 {
     NSLog(@"%@",NSStringFromSelector(_cmd));
     [self performSegueWithIdentifier: @"add4SSushiVenue" sender: self];
+}
+
+-(IBAction)thumbsUpViewTapped:(id)sender{
+    self.sushiIsGood = YES;
+    self.thumbsUpView.alpha = 1;
+    self.thumbsUpImageView.image = [UIImage imageNamed:@"thumbsUpPink.png"];
+    self.thumbsDownImageView.image = [UIImage imageNamed:@"thumbsDown.png"];
+    self.thumbsDownView.alpha = 0.5;
+    NSLog(@"%c",self.sushiIsGood);
+    self.enjoyItLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+}
+-(IBAction)thumbsDownViewTapped:(id)sender
+{
+    self.sushiIsGood = NO;
+    self.thumbsUpView.alpha = 0.5;
+    self.thumbsUpImageView.image = [UIImage imageNamed:@"thumbsUp.png"];
+    self.thumbsDownImageView.image = [UIImage imageNamed:@"thumbsDownPink.png"];
+    self.thumbsDownView.alpha = 1;
+    NSLog(@"%c",self.sushiIsGood);
+    self.enjoyItLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+}
+
+-(IBAction)rollViewTapped:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    self.sushiDescription = @"sushiRollTV.png";
+    
+    self.rollImageView.image = [UIImage imageNamed:@"sushiRollTVPink.png"];
+    self.rollView.alpha = 1;
+    self.sushiImageView.image = [UIImage imageNamed:@"sushiTV.png"];
+    self.sushiView.alpha = 0.5;
+    self.sashimiImageView.image = [UIImage imageNamed:@"sashimiTV.png"];
+    self.sashimiView.alpha = 0.5;
+    self.otherImageView.image = [UIImage imageNamed:@"chopsticksTV.png"];
+    self.otherView.alpha = 0.5;
+    
+    self.sushiTypeLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+
+    NSLog(@"%@",self.sushiDescription);
+}
+
+-(IBAction)sushiViewTapped:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    self.sushiDescription = @"sushiTV.png";
+    
+    self.rollImageView.image = [UIImage imageNamed:@"sushiRollTV.png"];
+    self.rollView.alpha = 0.5;
+    self.sushiImageView.image = [UIImage imageNamed:@"sushiTVPink.png"];
+    self.sushiView.alpha = 1;
+    self.sashimiImageView.image = [UIImage imageNamed:@"sashimiTV.png"];
+    self.sashimiView.alpha = 0.5;
+    self.otherImageView.image = [UIImage imageNamed:@"chopsticksTV.png"];
+    self.otherView.alpha = 0.5;
+    
+    self.sushiTypeLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+    NSLog(@"%@",self.sushiDescription);
+}
+
+-(IBAction)sashimiViewTapped:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    self.sushiDescription = @"sashimiTV.png";
+    
+    self.rollImageView.image = [UIImage imageNamed:@"sushiRollTV.png"];
+    self.rollView.alpha = 0.5;
+    self.sushiImageView.image = [UIImage imageNamed:@"sushiTV.png"];
+    self.sushiView.alpha = 0.5;
+    self.sashimiImageView.image = [UIImage imageNamed:@"sashimiTVPink.png"];
+    self.sashimiView.alpha = 1;
+    self.otherImageView.image = [UIImage imageNamed:@"chopsticksTV.png"];
+    self.otherView.alpha = 0.5;
+    
+    self.sushiTypeLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+    NSLog(@"%@",self.sushiDescription);
+}
+
+-(IBAction)otherViewTapped:(id)sender
+{
+    NSLog(@"%@",NSStringFromSelector(_cmd));
+    self.sushiDescription = @"chopsticksTV.png";
+    
+    self.rollImageView.image = [UIImage imageNamed:@"sushiRollTV.png"];
+    self.rollView.alpha = 0.5;
+    self.sushiImageView.image = [UIImage imageNamed:@"sushiTV.png"];
+    self.sushiView.alpha = 0.5;
+    self.sashimiImageView.image = [UIImage imageNamed:@"sashimiTV.png"];
+    self.sashimiView.alpha = 0.5;
+    self.otherImageView.image = [UIImage imageNamed:@"chopsticksTVPink.png"];
+    self.otherView.alpha = 1;
+    
+    self.sushiTypeLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
+    NSLog(@"%@",self.sushiDescription);
 }
 
 @end

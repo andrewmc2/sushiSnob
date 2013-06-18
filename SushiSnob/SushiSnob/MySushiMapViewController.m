@@ -68,8 +68,13 @@
         sushiDetailMKAnnotation.title = currentSushi.name;
         sushiDetailMKAnnotation.subtitle = currentSushi.venue;
         sushiDetailMKAnnotation.coordinate = CLLocationCoordinate2DMake([currentSushi.latitude doubleValue], [currentSushi.longitude doubleValue]);
+//        sushiDetailMKAnnotation.isRatedGood =  [NSNumber number:currentSushi.isRatedGood];
+//        BOOL sushiGood = currentSushi.isRatedGood;
+//        sushiDetailMKAnnotation.isRatedGood = sushiGood;
+//        BOOL susshiMK = sushiDetailMKAnnotation.isRatedGood;
         
         NSString *fileName = currentSushi.sushiImageURL;
+        
         if (fileName != nil) {
             sushiDetailMKAnnotation.selectedFileName = fileName;
         } else {
@@ -86,10 +91,10 @@
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:reuseID];
     
     if (annotationView == nil) {
+        
         annotationView = [[SushiAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseID];
         annotationView.canShowCallout = YES;
         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        
         NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:((SushiDetailMKAnnotation*)(annotation)).selectedFileName];
         UIImageView *myImageView = [[UIImageView alloc] init];
         myImageView.frame = CGRectMake(0, 0, 31, 31);

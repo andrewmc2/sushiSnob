@@ -138,6 +138,11 @@
             }
             
             cell.sushiNameJapanese.text = sushiInfo.japaneseName;
+            NSLog(@"%@",sushiInfo.description);
+            
+            NSString *imageName = sushiInfo.sushiDescription;
+            
+            cell.sushiImageView.image = [UIImage imageNamed:imageName];
             
             //cell.sushiImageView.image = [self.imageArray objectAtIndex:indexPath.row];
         }
@@ -238,6 +243,7 @@
     [newSushi setValue:[NSNumber numberWithFloat:-87.642625] forKey:@"longitude"];
     [newSushi setValue:@"カリフォルニアロール" forKey:@"japaneseName"];
     [newSushi setValue:@"Los Angeles" forKey:@"city"];
+    [newSushi setValue:@"chopsticksTV.png" forKey:@"sushiDescription"];
     
     //image
     NSString *sushiImageURLString = @"caliRoll";

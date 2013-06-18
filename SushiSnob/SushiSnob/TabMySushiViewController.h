@@ -23,6 +23,6 @@
 //for writing pics to disk
 @property (strong, nonatomic) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *documentsDirectory;
-
 @property (strong, nonatomic) NSMutableArray *imageArray;
+
 @end

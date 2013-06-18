@@ -16,6 +16,7 @@
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) UIImage *image;
 @property (strong, nonatomic) NSString *selectedFileName;
+@property (nonatomic) BOOL isRatedGood;
 
 
 @end

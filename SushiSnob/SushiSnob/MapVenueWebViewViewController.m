@@ -30,9 +30,12 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.venueFSWebView loadRequest:request];
     
-    
-    
 }
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    self.webActivityIndicator.hidden = YES;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

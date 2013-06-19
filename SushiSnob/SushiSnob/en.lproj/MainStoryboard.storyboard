@@ -29,7 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FEe-Ly-1fa">
-                        <barButtonItem key="leftBarButtonItem" image="currentLocation.png" width="30" style="plain" id="kpT-Uv-YGT">
+                        <barButtonItem key="leftBarButtonItem" image="currentLocation.png" width="30" id="kpT-Uv-YGT">
                             <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <connections>
                                 <action selector="refreshLocationButton:" destination="NX3-kD-bh9" id="7p6-Q6-xCy"/>
@@ -211,9 +211,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Distance..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9DV-Gd-fPR">
-                                <rect key="frame" x="10" y="445" width="310" height="40"/>
+                                <rect key="frame" x="5" y="437" width="310" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="16"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -225,7 +225,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="2g6-ki-UE1">
-                                <rect key="frame" x="282" y="412" width="18" height="19"/>
+                                <rect key="frame" x="276" y="431" width="18" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -263,27 +263,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="oAr-aj-lj7">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="UAe-XH-zBK" id="wSP-60-zx8"/>
                                 </connections>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Hc-wy-ev8">
-                                <rect key="frame" x="20" y="20" width="59" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="back">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButton:" destination="UAe-XH-zBK" eventType="touchUpInside" id="83o-KT-CRE"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" id="1dN-bQ-T0i">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="ngD-c9-R8U">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="rea-2s-Ffb">
+                                            <connections>
+                                                <action selector="backButton:" destination="UAe-XH-zBK" id="LLM-NE-Mlo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1025,167 +1023,6 @@
         <image name="thumbsDown.png" width="60" height="60"/>
         <image name="thumbsUp.png" width="60" height="60"/>
     </resources>
-    <classes>
-        <class className="AddSushiCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiCell.h"/>
-        </class>
-        <class className="AddSushiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddSushiViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="add4QVenue:"/>
-                <relationship kind="action" name="addName:"/>
-                <relationship kind="action" name="addVenue:"/>
-                <relationship kind="action" name="cancelAddingSushi:"/>
-                <relationship kind="action" name="doneAddingSushi:"/>
-                <relationship kind="action" name="getLatLong:"/>
-                <relationship kind="action" name="otherViewTapped:"/>
-                <relationship kind="action" name="rollViewTapped:"/>
-                <relationship kind="action" name="sashimiViewTapped:"/>
-                <relationship kind="action" name="sushiViewTapped:"/>
-                <relationship kind="action" name="takePicture:"/>
-                <relationship kind="action" name="thumbsDownViewTapped:"/>
-                <relationship kind="action" name="thumbsUpViewTapped:"/>
-                <relationship kind="outlet" name="addSushiNameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="addSushiNameView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="addSushiPictureLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="addVenueView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="addVenueViewImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="enjoyItLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="otherImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="otherView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="rollImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rollView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sashimiImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sashimiView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sushiCityName" candidateClass="NSString"/>
-                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="sushiPic" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiPictureViewHolder" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sushiTypeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="takePictureView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="takePictureViewImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="thumbsDownImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="thumbsDownView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="thumbsUpImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="thumbsUpView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="venueLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AddVenueVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddVenueVC.h"/>
-            <relationships>
-                <relationship kind="action" name="addVenueWithButton:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="venueTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CompassWebiViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompassWebiViewViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="nearestVenueFSWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="MapVenueWebViewViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapVenueWebViewViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueFSWebView" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="webActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="MySushiMapPictureViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapPictureViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MySushiMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MySushiMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mySushiMapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SushiCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="sushiDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiIconView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiNameJapanese" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiRestauraunt" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SushiDetailFullPictureViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailFullPictureViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SushiDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SushiDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="tapTapped:"/>
-                <relationship kind="outlet" name="checkMarkImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="sushiAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDetailDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiDetailGoodOrBad" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sushiDetailImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiDetailMapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="sushiDetailVenue" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sushiThumbsUp" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="sushiType" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="viewTest" candidateClass="UIView"/>
-                <relationship kind="outlet" name="xImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="TabCompassViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabCompassViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="fSVenuePageButton:"/>
-                <relationship kind="outlet" name="closeSushiLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="japaneseNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="saiImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="theDistanceLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TabMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshLocationButton:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="venueMapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="TabMySushiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabMySushiViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="VenueCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueAddress" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="venueDistance" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="venueName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="VenueTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenueTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueTableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

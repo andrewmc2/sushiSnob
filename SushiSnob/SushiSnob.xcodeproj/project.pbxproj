@@ -10,7 +10,6 @@
 		9E2154DB1770E95900D1380F /* navBarTrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2154D91770E95900D1380F /* navBarTrans.png */; };
 		9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2154DA1770E95900D1380F /* navBarTrans@2x.png */; };
 		9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3033401767C55300DD4579 /* SushiAnnotationView.m */; };
-		9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3033421767C6D800DD4579 /* checkMarkSmall.png */; };
 		9E397B41176E4E630021DB65 /* sashimiTV@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B3B176E4E630021DB65 /* sashimiTV@2x.png */; };
 		9E397B42176E4E630021DB65 /* sashimiTV.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B3C176E4E630021DB65 /* sashimiTV.png */; };
 		9E397B43176E4E630021DB65 /* sushiTV@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B3D176E4E630021DB65 /* sushiTV@2x.png */; };
@@ -29,8 +28,6 @@
 		9E397B95176EB0150021DB65 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B93176EB0140021DB65 /* camera.png */; };
 		9E397B98176EB20A0021DB65 /* soySauce.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B96176EB2090021DB65 /* soySauce.png */; };
 		9E397B99176EB20A0021DB65 /* soySauce@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E397B97176EB2090021DB65 /* soySauce@2x.png */; };
-		9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */; };
-		9E7CBE4E176D42CF00082F60 /* californiaRollSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7CBE4D176D42CF00082F60 /* californiaRollSmall.png */; };
 		9E7CBE51176D556800082F60 /* darkWoodBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7CBE4F176D556800082F60 /* darkWoodBG.png */; };
 		9E7CBE52176D556800082F60 /* darkWoodBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7CBE50176D556800082F60 /* darkWoodBG@2x.png */; };
 		9E9050AE1760E93D0092807A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9050AD1760E93D0092807A /* UIKit.framework */; };
@@ -39,9 +36,6 @@
 		9E9050B81760E93D0092807A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050B61760E93D0092807A /* InfoPlist.strings */; };
 		9E9050BA1760E93D0092807A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050B91760E93D0092807A /* main.m */; };
 		9E9050BE1760E93D0092807A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050BD1760E93D0092807A /* AppDelegate.m */; };
-		9E9050C01760E93D0092807A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050BF1760E93D0092807A /* Default.png */; };
-		9E9050C21760E93D0092807A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050C11760E93D0092807A /* Default@2x.png */; };
-		9E9050C41760E93D0092807A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050C31760E93D0092807A /* Default-568h@2x.png */; };
 		9E9050C71760E93D0092807A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9050C51760E93D0092807A /* MainStoryboard.storyboard */; };
 		9E9050D61760EB150092807A /* TabMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050D51760EB150092807A /* TabMapViewController.m */; };
 		9E9050D91760EB340092807A /* TabCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9050D81760EB340092807A /* TabCompassViewController.m */; };
@@ -62,8 +56,6 @@
 		9E90516A176161E60092807A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E905169176161E60092807A /* CoreData.framework */; };
 		9E939C4D176C027100F45B87 /* chopsticks.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C4C176C027100F45B87 /* chopsticks.png */; };
 		9E939C4F176C042A00F45B87 /* plate.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C4E176C042A00F45B87 /* plate.png */; };
-		9E939C51176C06A800F45B87 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C50176C06A800F45B87 /* appIcon.png */; };
-		9E939C53176C06CA00F45B87 /* appIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C52176C06CA00F45B87 /* appIconRetina.png */; };
 		9E939C56176C0AB600F45B87 /* menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C54176C0AB600F45B87 /* menubar.png */; };
 		9E939C57176C0AB600F45B87 /* menubar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C55176C0AB600F45B87 /* menubar@2x.png */; };
 		9E939C5D176CE5E100F45B87 /* tabBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939C59176CE5E100F45B87 /* tabBar.png */; };
@@ -89,16 +81,18 @@
 		9E939CA8176D27EA00F45B87 /* currentLocation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939CA6176D27EA00F45B87 /* currentLocation@2x.png */; };
 		9E939CA9176D27EA00F45B87 /* currentLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E939CA7176D27EA00F45B87 /* currentLocation.png */; };
 		9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F5391764EC3B0083E23E /* sushi.jpeg */; };
-		9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */; };
-		9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */; };
-		9E99F57D1764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5751764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m */; };
-		9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F5781764F1CB0083E23E /* NSString+Extend.m */; };
-		9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F57A1764F1CB0083E23E /* NSXMLParser+Taged.m */; };
 		9E99F58317653B680083E23E /* SushiDetailMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F58217653B680083E23E /* SushiDetailMKAnnotation.m */; };
-		9E99F58617653F690083E23E /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F58417653F690083E23E /* x.png */; };
-		9E99F58717653F690083E23E /* checkMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E99F58517653F690083E23E /* checkMark.png */; };
 		9E99F58B17657F2F0083E23E /* MySushiMapMKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F58A17657F2F0083E23E /* MySushiMapMKAnnotation.m */; };
 		9E99F58E176581AB0083E23E /* PictureAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E99F58D176581AB0083E23E /* PictureAnnotationView.m */; };
+		9E9AE4871771F91F00332EE0 /* AddVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9AE4861771F91F00332EE0 /* AddVenueVC.m */; };
+		9E9AE48B1771F95300332EE0 /* MySushiMapPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9AE48A1771F95300332EE0 /* MySushiMapPictureViewController.m */; };
+		9E9AE48E1771F96A00332EE0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9AE48D1771F96A00332EE0 /* Reachability.m */; };
+		9E9AE4911771F98100332EE0 /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E9AE4901771F98100332EE0 /* VenueCell.m */; };
+		9E9AE4951771F9F500332EE0 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9AE4931771F9F500332EE0 /* appIcon.png */; };
+		9E9AE4961771F9F500332EE0 /* appIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9AE4941771F9F500332EE0 /* appIconRetina.png */; };
+		9E9AE49B1771FA1F00332EE0 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9AE4981771FA1F00332EE0 /* Default.png */; };
+		9E9AE49C1771FA1F00332EE0 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9AE4991771FA1F00332EE0 /* Default@2x.png */; };
+		9E9AE49E1772088000332EE0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9AE49D1772088000332EE0 /* Default-568h@2x.png */; };
 		9E9CD7FF176F4AA40061F57B /* lineForTableCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD7FD176F4AA40061F57B /* lineForTableCell.png */; };
 		9E9CD800176F4AA40061F57B /* lineForTableCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD7FE176F4AA40061F57B /* lineForTableCell@2x.png */; };
 		9E9CD803176F4D9B0061F57B /* plusSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD801176F4D9B0061F57B /* plusSign.png */; };
@@ -125,32 +119,14 @@
 		9E9CD82C176FA4B50061F57B /* thumbsUpPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD828176FA4B50061F57B /* thumbsUpPink.png */; };
 		9E9CD82F176FB4DC0061F57B /* sushiRollTVPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD82D176FB4DC0061F57B /* sushiRollTVPink.png */; };
 		9E9CD830176FB4DC0061F57B /* sushiRollTVPink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD82E176FB4DC0061F57B /* sushiRollTVPink@2x.png */; };
-		9EB42D6B1771709E009388CF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB42D6917716FFF009388CF /* Default.png */; };
-		9EB42D6D1771722D009388CF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB42D6C1771722C009388CF /* Default@2x.png */; };
-		9EB42D6F17717230009388CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB42D6E17717230009388CF /* Default-568h@2x.png */; };
 		9ED6E74B176FD65900F73837 /* SushiBadAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6E74A176FD65900F73837 /* SushiBadAnnotationView.m */; };
-		9EEFF190177110F60085D928 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEFF18F177110F60085D928 /* gradient.png */; };
 		9EEFF1961771130B0085D928 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEFF1951771130B0085D928 /* Sushi.m */; };
 		9EEFF19C1771431B0085D928 /* backButtonSolid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEFF19B1771431B0085D928 /* backButtonSolid.png */; };
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
-		C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861EF17678A0F0007C71F /* AddVenueVC.m */; };
-		C7E4853E176D1A4500D9AAFB /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4853D176D1A4500D9AAFB /* VenueCell.m */; };
 		DDB0D9C8176620D900D08E0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB0D9C7176620D900D08E0F /* QuartzCore.framework */; };
-		DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */; };
-		DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */; };
-		DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E61766BB5D00D08E0F /* OpenSans-BoldItalic.ttf */; };
-		DDB0D9F21766BB5D00D08E0F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E71766BB5D00D08E0F /* OpenSans-ExtraBold.ttf */; };
-		DDB0D9F31766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E81766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf */; };
-		DDB0D9F41766BB5D00D08E0F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9E91766BB5D00D08E0F /* OpenSans-Italic.ttf */; };
-		DDB0D9F51766BB5D00D08E0F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EA1766BB5D00D08E0F /* OpenSans-Light.ttf */; };
-		DDB0D9F61766BB5D00D08E0F /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EB1766BB5D00D08E0F /* OpenSans-LightItalic.ttf */; };
-		DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EC1766BB5D00D08E0F /* OpenSans-Regular.ttf */; };
-		DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */; };
-		DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */; };
 		DDB377E117710BDC00CE19FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */; };
-		DDB377EA177111CD00CE19FA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB377E9177111CD00CE19FA /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,7 +134,6 @@
 		9E2154DA1770E95900D1380F /* navBarTrans@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarTrans@2x.png"; sourceTree = "<group>"; };
 		9E30333F1767C55200DD4579 /* SushiAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiAnnotationView.h; sourceTree = "<group>"; };
 		9E3033401767C55300DD4579 /* SushiAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiAnnotationView.m; sourceTree = "<group>"; };
-		9E3033421767C6D800DD4579 /* checkMarkSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMarkSmall.png; sourceTree = "<group>"; };
 		9E397B3B176E4E630021DB65 /* sashimiTV@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sashimiTV@2x.png"; sourceTree = "<group>"; };
 		9E397B3C176E4E630021DB65 /* sashimiTV.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sashimiTV.png; sourceTree = "<group>"; };
 		9E397B3D176E4E630021DB65 /* sushiTV@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sushiTV@2x.png"; sourceTree = "<group>"; };
@@ -178,8 +153,6 @@
 		9E397B93176EB0140021DB65 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9E397B96176EB2090021DB65 /* soySauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soySauce.png; sourceTree = "<group>"; };
 		9E397B97176EB2090021DB65 /* soySauce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soySauce@2x.png"; sourceTree = "<group>"; };
-		9E4C66F41767FF2B00CD2027 /* MySushiMapPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySushiMapPictureViewController.h; path = ../MySushiMapPictureViewController.h; sourceTree = "<group>"; };
-		9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySushiMapPictureViewController.m; path = ../MySushiMapPictureViewController.m; sourceTree = "<group>"; };
 		9E7CBE4D176D42CF00082F60 /* californiaRollSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = californiaRollSmall.png; sourceTree = "<group>"; };
 		9E7CBE4F176D556800082F60 /* darkWoodBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkWoodBG.png; sourceTree = "<group>"; };
 		9E7CBE50176D556800082F60 /* darkWoodBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkWoodBG@2x.png"; sourceTree = "<group>"; };
@@ -193,9 +166,6 @@
 		9E9050BB1760E93D0092807A /* SushiSnob-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SushiSnob-Prefix.pch"; sourceTree = "<group>"; };
 		9E9050BC1760E93D0092807A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9E9050BD1760E93D0092807A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9E9050BF1760E93D0092807A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		9E9050C11760E93D0092807A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9E9050C31760E93D0092807A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E9050C61760E93D0092807A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9E9050D41760EB150092807A /* TabMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabMapViewController.h; sourceTree = "<group>"; };
 		9E9050D51760EB150092807A /* TabMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabMapViewController.m; sourceTree = "<group>"; };
@@ -227,8 +197,6 @@
 		9E905169176161E60092807A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9E939C4C176C027100F45B87 /* chopsticks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chopsticks.png; sourceTree = "<group>"; };
 		9E939C4E176C042A00F45B87 /* plate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plate.png; sourceTree = "<group>"; };
-		9E939C50176C06A800F45B87 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIcon.png; path = ../appIcon.png; sourceTree = "<group>"; };
-		9E939C52176C06CA00F45B87 /* appIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appIconRetina.png; path = ../appIconRetina.png; sourceTree = "<group>"; };
 		9E939C54176C0AB600F45B87 /* menubar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubar.png; sourceTree = "<group>"; };
 		9E939C55176C0AB600F45B87 /* menubar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar@2x.png"; sourceTree = "<group>"; };
 		9E939C59176CE5E100F45B87 /* tabBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar.png; sourceTree = "<group>"; };
@@ -255,25 +223,26 @@
 		9E939CA6176D27EA00F45B87 /* currentLocation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "currentLocation@2x.png"; sourceTree = "<group>"; };
 		9E939CA7176D27EA00F45B87 /* currentLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = currentLocation.png; sourceTree = "<group>"; };
 		9E99F5391764EC3B0083E23E /* sushi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sushi.jpeg; sourceTree = "<group>"; };
-		9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateAccessTokenRequester.h; sourceTree = "<group>"; };
-		9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateAccessTokenRequester.m; sourceTree = "<group>"; };
-		9E99F5721764F1CB0083E23E /* MSTranslateVendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTranslateVendor.h; sourceTree = "<group>"; };
-		9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTranslateVendor.m; sourceTree = "<group>"; };
-		9E99F5741764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+WebServiceExtend.h"; sourceTree = "<group>"; };
-		9E99F5751764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+WebServiceExtend.m"; sourceTree = "<group>"; };
-		9E99F5761764F1CB0083E23E /* NSObject+Subscripts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Subscripts.h"; sourceTree = "<group>"; };
-		9E99F5771764F1CB0083E23E /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
-		9E99F5781764F1CB0083E23E /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
-		9E99F5791764F1CB0083E23E /* NSXMLParser+Taged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLParser+Taged.h"; sourceTree = "<group>"; };
-		9E99F57A1764F1CB0083E23E /* NSXMLParser+Taged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLParser+Taged.m"; sourceTree = "<group>"; };
 		9E99F58117653B670083E23E /* SushiDetailMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiDetailMKAnnotation.h; sourceTree = "<group>"; };
 		9E99F58217653B680083E23E /* SushiDetailMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiDetailMKAnnotation.m; sourceTree = "<group>"; };
-		9E99F58417653F690083E23E /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
-		9E99F58517653F690083E23E /* checkMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMark.png; sourceTree = "<group>"; };
 		9E99F58917657F2F0083E23E /* MySushiMapMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySushiMapMKAnnotation.h; sourceTree = "<group>"; };
 		9E99F58A17657F2F0083E23E /* MySushiMapMKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySushiMapMKAnnotation.m; sourceTree = "<group>"; };
 		9E99F58C176581AB0083E23E /* PictureAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAnnotationView.h; sourceTree = "<group>"; };
 		9E99F58D176581AB0083E23E /* PictureAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAnnotationView.m; sourceTree = "<group>"; };
+		9E9AE4851771F91F00332EE0 /* AddVenueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVenueVC.h; sourceTree = "<group>"; };
+		9E9AE4861771F91F00332EE0 /* AddVenueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVenueVC.m; sourceTree = "<group>"; };
+		9E9AE4881771F93700332EE0 /* AddSushiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSushiDelegate.h; sourceTree = "<group>"; };
+		9E9AE4891771F95300332EE0 /* MySushiMapPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySushiMapPictureViewController.h; sourceTree = "<group>"; };
+		9E9AE48A1771F95300332EE0 /* MySushiMapPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySushiMapPictureViewController.m; sourceTree = "<group>"; };
+		9E9AE48C1771F96A00332EE0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9E9AE48D1771F96A00332EE0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9E9AE48F1771F98100332EE0 /* VenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCell.h; sourceTree = "<group>"; };
+		9E9AE4901771F98100332EE0 /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCell.m; sourceTree = "<group>"; };
+		9E9AE4931771F9F500332EE0 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
+		9E9AE4941771F9F500332EE0 /* appIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIconRetina.png; sourceTree = "<group>"; };
+		9E9AE4981771FA1F00332EE0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9E9AE4991771FA1F00332EE0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9E9AE49D1772088000332EE0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9E9CD7FD176F4AA40061F57B /* lineForTableCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineForTableCell.png; sourceTree = "<group>"; };
 		9E9CD7FE176F4AA40061F57B /* lineForTableCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineForTableCell@2x.png"; sourceTree = "<group>"; };
 		9E9CD801176F4D9B0061F57B /* plusSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusSign.png; sourceTree = "<group>"; };
@@ -300,12 +269,8 @@
 		9E9CD828176FA4B50061F57B /* thumbsUpPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUpPink.png; sourceTree = "<group>"; };
 		9E9CD82D176FB4DC0061F57B /* sushiRollTVPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sushiRollTVPink.png; sourceTree = "<group>"; };
 		9E9CD82E176FB4DC0061F57B /* sushiRollTVPink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sushiRollTVPink@2x.png"; sourceTree = "<group>"; };
-		9EB42D6917716FFF009388CF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		9EB42D6C1771722C009388CF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9EB42D6E17717230009388CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9ED6E749176FD65800F73837 /* SushiBadAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiBadAnnotationView.h; sourceTree = "<group>"; };
 		9ED6E74A176FD65900F73837 /* SushiBadAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiBadAnnotationView.m; sourceTree = "<group>"; };
-		9EEDB2EC176282B600266890 /* AddSushiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSushiDelegate.h; sourceTree = "<group>"; };
 		9EEFF18F177110F60085D928 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		9EEFF1941771130B0085D928 /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
 		9EEFF1951771130B0085D928 /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
@@ -315,11 +280,6 @@
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
 		C79861521763F2C90007C71F /* VenueTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueTableViewController.h; sourceTree = "<group>"; };
 		C79861531763F2C90007C71F /* VenueTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueTableViewController.m; sourceTree = "<group>"; };
-		C79861EE17678A0F0007C71F /* AddVenueVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddVenueVC.h; path = ../AddVenueVC.h; sourceTree = "<group>"; };
-		C79861EF17678A0F0007C71F /* AddVenueVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddVenueVC.m; path = ../AddVenueVC.m; sourceTree = "<group>"; };
-		C79861F117678A2D0007C71F /* VenueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VenueDelegate.h; path = ../VenueDelegate.h; sourceTree = "<group>"; };
-		C7E4853C176D1A4500D9AAFB /* VenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VenueCell.h; path = ../VenueCell.h; sourceTree = "<group>"; };
-		C7E4853D176D1A4500D9AAFB /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VenueCell.m; path = ../VenueCell.m; sourceTree = "<group>"; };
 		DDB0D9C7176620D900D08E0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DDB0D9E41766BB5D00D08E0F /* Apache License Version 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License Version 2.txt"; sourceTree = "<group>"; };
 		DDB0D9E51766BB5D00D08E0F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -333,8 +293,6 @@
 		DDB0D9ED1766BB5D00D08E0F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		DDB0D9EE1766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		DDB377E8177111CD00CE19FA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		DDB377E9177111CD00CE19FA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,11 +380,6 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
-				9EB42D6E17717230009388CF /* Default-568h@2x.png */,
-				9EB42D6C1771722C009388CF /* Default@2x.png */,
-				9EB42D6917716FFF009388CF /* Default.png */,
-				DDB377E8177111CD00CE19FA /* Reachability.h */,
-				DDB377E9177111CD00CE19FA /* Reachability.m */,
 				DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */,
 				DDB0D9C7176620D900D08E0F /* QuartzCore.framework */,
 				9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */,
@@ -478,21 +431,13 @@
 			isa = PBXGroup;
 			children = (
 				9E939C99176D089200F45B87 /* Pictures */,
-				9E939C52176C06CA00F45B87 /* appIconRetina.png */,
-				9E939C50176C06A800F45B87 /* appIcon.png */,
-				9E3033421767C6D800DD4579 /* checkMarkSmall.png */,
 				9E939C4C176C027100F45B87 /* chopsticks.png */,
-				9E99F58417653F690083E23E /* x.png */,
 				9E939C4E176C042A00F45B87 /* plate.png */,
-				9E99F58517653F690083E23E /* checkMark.png */,
 				9E99F5391764EC3B0083E23E /* sushi.jpeg */,
 				9E9050B51760E93D0092807A /* SushiSnob-Info.plist */,
 				9E9050B61760E93D0092807A /* InfoPlist.strings */,
 				9E9050B91760E93D0092807A /* main.m */,
 				9E9050BB1760E93D0092807A /* SushiSnob-Prefix.pch */,
-				9E9050BF1760E93D0092807A /* Default.png */,
-				9E9050C11760E93D0092807A /* Default@2x.png */,
-				9E9050C31760E93D0092807A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -508,8 +453,8 @@
 				9E9050DE1760EF3E0092807A /* MapVenueWebViewViewController.m */,
 				C79861521763F2C90007C71F /* VenueTableViewController.h */,
 				C79861531763F2C90007C71F /* VenueTableViewController.m */,
-				C7E4853C176D1A4500D9AAFB /* VenueCell.h */,
-				C7E4853D176D1A4500D9AAFB /* VenueCell.m */,
+				9E9AE48F1771F98100332EE0 /* VenueCell.h */,
+				9E9AE4901771F98100332EE0 /* VenueCell.m */,
 				9E939C7C176CFB2E00F45B87 /* SushiVenueAnnotationView.h */,
 				9E939C7D176CFB2E00F45B87 /* SushiVenueAnnotationView.m */,
 			);
@@ -554,6 +499,8 @@
 			children = (
 				9E9051261761212D0092807A /* LocationManagerSingleton.h */,
 				9E9051271761212D0092807A /* LocationManagerSingleton.m */,
+				9E9AE48C1771F96A00332EE0 /* Reachability.h */,
+				9E9AE48D1771F96A00332EE0 /* Reachability.m */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -561,7 +508,6 @@
 		9E90512F176141130092807A /* TabMySushiViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9E99F56F1764F1CB0083E23E /* MSTranslateVendor */,
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
 				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
 				9EEFF1941771130B0085D928 /* Sushi.h */,
@@ -577,6 +523,7 @@
 		9E939C99176D089200F45B87 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				9E9AE4921771F9A800332EE0 /* Icon and Splash */,
 				9E397B3A176E471D0021DB65 /* Texture */,
 				9E7CBE4C176D421300082F60 /* Original Sushi Pics */,
 				9E939C9B176D0B1C00F45B87 /* Nav Bar */,
@@ -626,24 +573,6 @@
 			name = "Nav Bar";
 			sourceTree = "<group>";
 		};
-		9E99F56F1764F1CB0083E23E /* MSTranslateVendor */ = {
-			isa = PBXGroup;
-			children = (
-				9E99F5701764F1CB0083E23E /* MSTranslateAccessTokenRequester.h */,
-				9E99F5711764F1CB0083E23E /* MSTranslateAccessTokenRequester.m */,
-				9E99F5721764F1CB0083E23E /* MSTranslateVendor.h */,
-				9E99F5731764F1CB0083E23E /* MSTranslateVendor.m */,
-				9E99F5741764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.h */,
-				9E99F5751764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m */,
-				9E99F5761764F1CB0083E23E /* NSObject+Subscripts.h */,
-				9E99F5771764F1CB0083E23E /* NSString+Extend.h */,
-				9E99F5781764F1CB0083E23E /* NSString+Extend.m */,
-				9E99F5791764F1CB0083E23E /* NSXMLParser+Taged.h */,
-				9E99F57A1764F1CB0083E23E /* NSXMLParser+Taged.m */,
-			);
-			path = MSTranslateVendor;
-			sourceTree = "<group>";
-		};
 		9E99F58017652B2E0083E23E /* SushiDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,8 +584,6 @@
 				9E397B90176E97DB0021DB65 /* SushiDetailFullPictureViewController.m */,
 				9E9051291761408E0092807A /* MySushiMapViewController.h */,
 				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
-				9E4C66F41767FF2B00CD2027 /* MySushiMapPictureViewController.h */,
-				9E4C66F51767FF2B00CD2027 /* MySushiMapPictureViewController.m */,
 				9E30333F1767C55200DD4579 /* SushiAnnotationView.h */,
 				9E3033401767C55300DD4579 /* SushiAnnotationView.m */,
 				9ED6E749176FD65800F73837 /* SushiBadAnnotationView.h */,
@@ -674,8 +601,22 @@
 				9E90512A1761408E0092807A /* MySushiMapViewController.m */,
 				9E99F58917657F2F0083E23E /* MySushiMapMKAnnotation.h */,
 				9E99F58A17657F2F0083E23E /* MySushiMapMKAnnotation.m */,
+				9E9AE4891771F95300332EE0 /* MySushiMapPictureViewController.h */,
+				9E9AE48A1771F95300332EE0 /* MySushiMapPictureViewController.m */,
 			);
 			name = MySushiMapViewController;
+			sourceTree = "<group>";
+		};
+		9E9AE4921771F9A800332EE0 /* Icon and Splash */ = {
+			isa = PBXGroup;
+			children = (
+				9E9AE4981771FA1F00332EE0 /* Default.png */,
+				9E9AE4991771FA1F00332EE0 /* Default@2x.png */,
+				9E9AE49D1772088000332EE0 /* Default-568h@2x.png */,
+				9E9AE4931771F9F500332EE0 /* appIcon.png */,
+				9E9AE4941771F9F500332EE0 /* appIconRetina.png */,
+			);
+			name = "Icon and Splash";
 			sourceTree = "<group>";
 		};
 		9EEDB2EB1762824000266890 /* TabAddSushiViewController */ = {
@@ -683,10 +624,9 @@
 			children = (
 				9E9050E31760F09E0092807A /* AddSushiViewController.h */,
 				9E9050E41760F09E0092807A /* AddSushiViewController.m */,
-				9EEDB2EC176282B600266890 /* AddSushiDelegate.h */,
-				C79861EE17678A0F0007C71F /* AddVenueVC.h */,
-				C79861EF17678A0F0007C71F /* AddVenueVC.m */,
-				C79861F117678A2D0007C71F /* VenueDelegate.h */,
+				9E9AE4851771F91F00332EE0 /* AddVenueVC.h */,
+				9E9AE4861771F91F00332EE0 /* AddVenueVC.m */,
+				9E9AE4881771F93700332EE0 /* AddSushiDelegate.h */,
 			);
 			name = TabAddSushiViewController;
 			sourceTree = "<group>";
@@ -761,29 +701,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9050B81760E93D0092807A /* InfoPlist.strings in Resources */,
-				9E9050C01760E93D0092807A /* Default.png in Resources */,
-				9E9050C21760E93D0092807A /* Default@2x.png in Resources */,
-				9E9050C41760E93D0092807A /* Default-568h@2x.png in Resources */,
 				9E9050C71760E93D0092807A /* MainStoryboard.storyboard in Resources */,
 				9E99F53A1764EC3B0083E23E /* sushi.jpeg in Resources */,
-				9E99F58617653F690083E23E /* x.png in Resources */,
-				9E99F58717653F690083E23E /* checkMark.png in Resources */,
-				DDB0D9EF1766BB5D00D08E0F /* Apache License Version 2.txt in Resources */,
-				DDB0D9F01766BB5D00D08E0F /* OpenSans-Bold.ttf in Resources */,
-				DDB0D9F11766BB5D00D08E0F /* OpenSans-BoldItalic.ttf in Resources */,
-				DDB0D9F21766BB5D00D08E0F /* OpenSans-ExtraBold.ttf in Resources */,
-				DDB0D9F31766BB5D00D08E0F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				DDB0D9F41766BB5D00D08E0F /* OpenSans-Italic.ttf in Resources */,
-				DDB0D9F51766BB5D00D08E0F /* OpenSans-Light.ttf in Resources */,
-				DDB0D9F61766BB5D00D08E0F /* OpenSans-LightItalic.ttf in Resources */,
-				DDB0D9F71766BB5D00D08E0F /* OpenSans-Regular.ttf in Resources */,
-				DDB0D9F81766BB5D00D08E0F /* OpenSans-Semibold.ttf in Resources */,
-				DDB0D9F91766BB5D00D08E0F /* OpenSans-SemiboldItalic.ttf in Resources */,
-				9E3033431767C6D800DD4579 /* checkMarkSmall.png in Resources */,
 				9E939C4D176C027100F45B87 /* chopsticks.png in Resources */,
 				9E939C4F176C042A00F45B87 /* plate.png in Resources */,
-				9E939C51176C06A800F45B87 /* appIcon.png in Resources */,
-				9E939C53176C06CA00F45B87 /* appIconRetina.png in Resources */,
 				9E939C56176C0AB600F45B87 /* menubar.png in Resources */,
 				9E939C57176C0AB600F45B87 /* menubar@2x.png in Resources */,
 				9E939C5D176CE5E100F45B87 /* tabBar.png in Resources */,
@@ -807,7 +728,6 @@
 				9E939CA1176D107A00F45B87 /* button_back.png in Resources */,
 				9E939CA8176D27EA00F45B87 /* currentLocation@2x.png in Resources */,
 				9E939CA9176D27EA00F45B87 /* currentLocation.png in Resources */,
-				9E7CBE4E176D42CF00082F60 /* californiaRollSmall.png in Resources */,
 				9E7CBE51176D556800082F60 /* darkWoodBG.png in Resources */,
 				9E7CBE52176D556800082F60 /* darkWoodBG@2x.png in Resources */,
 				9E397B41176E4E630021DB65 /* sashimiTV@2x.png in Resources */,
@@ -854,11 +774,12 @@
 				9E9CD830176FB4DC0061F57B /* sushiRollTVPink@2x.png in Resources */,
 				9E2154DB1770E95900D1380F /* navBarTrans.png in Resources */,
 				9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */,
-				9EEFF190177110F60085D928 /* gradient.png in Resources */,
 				9EEFF19C1771431B0085D928 /* backButtonSolid.png in Resources */,
-				9EB42D6B1771709E009388CF /* Default.png in Resources */,
-				9EB42D6D1771722D009388CF /* Default@2x.png in Resources */,
-				9EB42D6F17717230009388CF /* Default-568h@2x.png in Resources */,
+				9E9AE4951771F9F500332EE0 /* appIcon.png in Resources */,
+				9E9AE4961771F9F500332EE0 /* appIconRetina.png in Resources */,
+				9E9AE49B1771FA1F00332EE0 /* Default.png in Resources */,
+				9E9AE49C1771FA1F00332EE0 /* Default@2x.png in Resources */,
+				9E9AE49E1772088000332EE0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -884,24 +805,19 @@
 				9E905132176148720092807A /* SushiCell.m in Sources */,
 				C79861511762A0C90007C71F /* VenueObject.m in Sources */,
 				C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */,
-				9E99F57B1764F1CB0083E23E /* MSTranslateAccessTokenRequester.m in Sources */,
-				9E99F57C1764F1CB0083E23E /* MSTranslateVendor.m in Sources */,
-				9E99F57D1764F1CB0083E23E /* NSMutableURLRequest+WebServiceExtend.m in Sources */,
-				9E99F57E1764F1CB0083E23E /* NSString+Extend.m in Sources */,
-				9E99F57F1764F1CB0083E23E /* NSXMLParser+Taged.m in Sources */,
 				9E99F58317653B680083E23E /* SushiDetailMKAnnotation.m in Sources */,
 				9E99F58B17657F2F0083E23E /* MySushiMapMKAnnotation.m in Sources */,
 				9E99F58E176581AB0083E23E /* PictureAnnotationView.m in Sources */,
-				C79861F017678A0F0007C71F /* AddVenueVC.m in Sources */,
 				9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */,
-				9E4C66F61767FF2B00CD2027 /* MySushiMapPictureViewController.m in Sources */,
-				C7E4853E176D1A4500D9AAFB /* VenueCell.m in Sources */,
 				9E939C7E176CFB2E00F45B87 /* SushiVenueAnnotationView.m in Sources */,
 				9E397B8B176E902E0021DB65 /* SushiSnob.xcdatamodeld in Sources */,
 				9E397B91176E97DC0021DB65 /* SushiDetailFullPictureViewController.m in Sources */,
 				9ED6E74B176FD65900F73837 /* SushiBadAnnotationView.m in Sources */,
 				9EEFF1961771130B0085D928 /* Sushi.m in Sources */,
-				DDB377EA177111CD00CE19FA /* Reachability.m in Sources */,
+				9E9AE4871771F91F00332EE0 /* AddVenueVC.m in Sources */,
+				9E9AE48B1771F95300332EE0 /* MySushiMapPictureViewController.m in Sources */,
+				9E9AE48E1771F96A00332EE0 /* Reachability.m in Sources */,
+				9E9AE4911771F98100332EE0 /* VenueCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

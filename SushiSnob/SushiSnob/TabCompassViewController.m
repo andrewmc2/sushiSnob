@@ -32,7 +32,7 @@
 
 @property (nonatomic, strong) NSString * strLatitude;
 @property (nonatomic, strong) NSString * strLongitude;
-@property (strong, nonatomic) CLLocationManager *locationManager;
+//@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) BOOL headingDidStartUpdating;
 //@property (nonatomic, strong) 
 
@@ -105,7 +105,7 @@
     
     thisNearPlace = appDelegate.closestVenue;
     
-    NSString *nearPlaceName = thisNearPlace.title;
+    //NSString *nearPlaceName = thisNearPlace.title;
 //    NSNumber *temporaryDistancefromFS = thisNearPlace.distance;
 //    NSString *distLabel = [NSString stringWithFormat:@"%@",temporaryDistancefromFS];
    
@@ -287,7 +287,7 @@
     
     // NSLog (@"the distance it's logging in km is %f", distBetweenStartandVenueMeters);
     
-    float distPlaceHolder = [thisNearPlace.distance floatValue];
+    //float distPlaceHolder = [thisNearPlace.distance floatValue];
     //int rounding = (distBetweenStartandVenueMeters);
     
     //NSNumber *disttemp = roundf(distPlaceHolder);

@@ -33,7 +33,7 @@ VenueObject *selectedVenue;
 float refreshedLatitude;
 float refreshedLongitude;
 bool refreshButtonActive;
-
+int count;
 
 
 
@@ -127,7 +127,7 @@ bool refreshButtonActive;
         annotationView.frame = CGRectMake(annotationView.frame.origin.x, annotationView.frame.origin.y - self.view.frame.size.height, annotationView.frame.size.width, annotationView.frame.size.height);
         
         //animate drop
-        [UIView animateWithDuration:0.5 delay:0.04 * [views indexOfObject:annotationView] options:UIViewAnimationCurveLinear animations:^{
+        [UIView animateWithDuration:0.5 delay:0.04 * [views indexOfObject:annotationView] options:UIViewAnimationOptionCurveEaseOut animations:^{
             annotationView.frame = endFrame;
         } completion:^(BOOL finished) {
             if (finished) {
@@ -141,7 +141,10 @@ bool refreshButtonActive;
             }
         }];
     }
+    
+    self.refreshButton.enabled = YES;
 }
+
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
@@ -243,7 +246,7 @@ bool refreshButtonActive;
          }
         
          [self sortVenuesByDistance];
-         self.refreshButton.enabled = YES;
+         
 
          
      }];

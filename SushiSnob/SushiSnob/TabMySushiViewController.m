@@ -11,9 +11,6 @@
 #import "AddSushiCell.h"
 #import "SushiCell.h"
 #import "Sushi.h"
-//translate tools
-#import "MSTranslateAccessTokenRequester.h"
-#import "MSTranslateVendor.h"
 //to detail
 #import "SushiDetailViewController.h"
 

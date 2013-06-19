@@ -79,10 +79,10 @@
         self.closeSushiLabel.text = @":(";
         self.saiImage.alpha = 0;
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        self.theDistanceLabel.text = @"No Signal";
-        self.closeSushiLabel.text = @":(";
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alert show];
+//        self.theDistanceLabel.text = @"No Signal";
+//        self.closeSushiLabel.text = @":(";
         
     }
     else {

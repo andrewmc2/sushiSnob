@@ -9,6 +9,7 @@
 #import "TabCompassViewController.h"
 #import "VenueObject.h"
 #import "AppDelegate.h"
+#import "CompassWebiViewViewController.h"
 
 @interface TabCompassViewController ()
 
@@ -313,5 +314,34 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)fSVenuePageButton:(id)sender {
+    NSString * stringUrlForFS = [[NSString alloc] init];
+    stringUrlForFS = appDelegate.closestVenue.fourSquareVenuePage;
+    if (stringUrlForFS == NULL || stringUrlForFS == nil) {
+        stringUrlForFS = @"www.foursquare.com";
+    }
+        else
+        {
+            stringUrlForFS = appDelegate.closestVenue.fourSquareVenuePage;
+            
+    }
+    NSLog(@"this is the url for the restuarant returned from AppDel/Parse:  %@", stringUrlForFS);
+    self.tempFSVenuePageUrl = stringUrlForFS;
+    
+    [self performSegueWithIdentifier:@"fromCompassToFSWebView" sender:self];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"fromCompassToFSWebView"]) {
+        CompassWebiViewViewController *compassWebbyViewController = segue.destinationViewController;
+       
+        compassWebbyViewController.fSVenueWebPage = self.tempFSVenuePageUrl;
+    }
+    
+}
+
 
 @end

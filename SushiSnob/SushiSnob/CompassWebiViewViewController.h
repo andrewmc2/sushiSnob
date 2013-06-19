@@ -10,5 +10,6 @@
 
 @interface CompassWebiViewViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIWebView *nearestVenueFSWebView;
+@property (strong, nonatomic) NSString *fSVenueWebPage;
 
 @end

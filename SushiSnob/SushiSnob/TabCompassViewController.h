@@ -24,6 +24,7 @@
     float thisDistVenueLat;
     float thisDistVenueLong;
 }
+- (IBAction)fSVenuePageButton:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *saiImage;
@@ -32,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *theDistanceLabel;
 @property (strong, nonatomic) NSString * theDistance;
 @property (strong, nonatomic) CLLocation *currentLoc;
+@property (strong, nonatomic) NSString * tempFSVenuePageUrl;
 
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

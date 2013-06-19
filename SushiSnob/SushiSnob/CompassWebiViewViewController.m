@@ -26,8 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    NSURL *url = [NSURL URLWithString:self.fSVenueWebPage];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.nearestVenueFSWebView loadRequest:request];
+    
 }
+
+//- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  //  self.webActivityIndicator.hidden = YES;
+//}
+
 
 - (void)didReceiveMemoryWarning
 {

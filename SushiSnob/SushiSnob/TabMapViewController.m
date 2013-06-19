@@ -274,7 +274,7 @@ int count;
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [appDelegate1.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
-    appDelegate1.closestVenue = [distanceSortedArray objectAtIndex:1];
+    appDelegate1.closestVenue = [distanceSortedArray objectAtIndex:0];
         //NSLog(@"%@", distanceSortedArray);
     NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
     [self.venueMapView addAnnotations:appDelegate1.fourSquareVenueObjectsArray];

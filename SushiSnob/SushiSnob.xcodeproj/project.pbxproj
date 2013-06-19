@@ -125,6 +125,9 @@
 		9E9CD82C176FA4B50061F57B /* thumbsUpPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD828176FA4B50061F57B /* thumbsUpPink.png */; };
 		9E9CD82F176FB4DC0061F57B /* sushiRollTVPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD82D176FB4DC0061F57B /* sushiRollTVPink.png */; };
 		9E9CD830176FB4DC0061F57B /* sushiRollTVPink@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E9CD82E176FB4DC0061F57B /* sushiRollTVPink@2x.png */; };
+		9EB42D6B1771709E009388CF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB42D6917716FFF009388CF /* Default.png */; };
+		9EB42D6D1771722D009388CF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB42D6C1771722C009388CF /* Default@2x.png */; };
+		9EB42D6F17717230009388CF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB42D6E17717230009388CF /* Default-568h@2x.png */; };
 		9ED6E74B176FD65900F73837 /* SushiBadAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6E74A176FD65900F73837 /* SushiBadAnnotationView.m */; };
 		9EEFF190177110F60085D928 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEFF18F177110F60085D928 /* gradient.png */; };
 		9EEFF1961771130B0085D928 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEFF1951771130B0085D928 /* Sushi.m */; };
@@ -297,6 +300,9 @@
 		9E9CD828176FA4B50061F57B /* thumbsUpPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbsUpPink.png; sourceTree = "<group>"; };
 		9E9CD82D176FB4DC0061F57B /* sushiRollTVPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sushiRollTVPink.png; sourceTree = "<group>"; };
 		9E9CD82E176FB4DC0061F57B /* sushiRollTVPink@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sushiRollTVPink@2x.png"; sourceTree = "<group>"; };
+		9EB42D6917716FFF009388CF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9EB42D6C1771722C009388CF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9EB42D6E17717230009388CF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9ED6E749176FD65800F73837 /* SushiBadAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiBadAnnotationView.h; sourceTree = "<group>"; };
 		9ED6E74A176FD65900F73837 /* SushiBadAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SushiBadAnnotationView.m; sourceTree = "<group>"; };
 		9EEDB2EC176282B600266890 /* AddSushiDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddSushiDelegate.h; sourceTree = "<group>"; };
@@ -416,6 +422,9 @@
 		9E9050A11760E93D0092807A = {
 			isa = PBXGroup;
 			children = (
+				9EB42D6E17717230009388CF /* Default-568h@2x.png */,
+				9EB42D6C1771722C009388CF /* Default@2x.png */,
+				9EB42D6917716FFF009388CF /* Default.png */,
 				DDB377E8177111CD00CE19FA /* Reachability.h */,
 				DDB377E9177111CD00CE19FA /* Reachability.m */,
 				DDB377E017710BDC00CE19FA /* SystemConfiguration.framework */,
@@ -847,6 +856,9 @@
 				9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */,
 				9EEFF190177110F60085D928 /* gradient.png in Resources */,
 				9EEFF19C1771431B0085D928 /* backButtonSolid.png in Resources */,
+				9EB42D6B1771709E009388CF /* Default.png in Resources */,
+				9EB42D6D1771722D009388CF /* Default@2x.png in Resources */,
+				9EB42D6F17717230009388CF /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

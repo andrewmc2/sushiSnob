@@ -32,6 +32,13 @@
 
 @implementation TabMySushiViewController 
 
+- (BOOL)connected
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return !(networkStatus == NotReachable);
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"addSushi"]) {
@@ -60,6 +67,18 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    if (![self connected]) {
+        NSLog(@"shishit");
+        self.doneButton.enabled = NO;
+        
+    }
+    else {
+        self.doneButton.enabled = YES;
+    }
 }
 
 - (void)viewDidLoad
@@ -183,7 +202,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    if (![self connected]){
+        return 1;
+    } else {
+        return 2;
+    }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

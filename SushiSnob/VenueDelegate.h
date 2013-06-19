@@ -10,6 +10,6 @@
 
 @protocol VenueDelegate <NSObject>
 
--(void)updateVenueLabel:(NSString *)venue;
+-(void)updateVenueLabel:(NSString *)venue address:(NSString*)address;
 
 @end

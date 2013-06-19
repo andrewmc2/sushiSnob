@@ -38,7 +38,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 700)];
+    [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, 568)];
     
     //title
     self.title = self.selectedSushi.name;
@@ -60,21 +60,17 @@
     } else if ([boolString isEqualToString:@"0"])  {
         self.sushiType.image = [UIImage imageNamed:@"thumbsDown.png"];
     }
-//    self.sushiThumbsUp.image = [UIImage imageNamed:@"thumbsUp.png"];
     
     //venue
     self.sushiDetailVenue.text = self.selectedSushi.venue;
     
+    //address
+    self.sushiAddress.text = self.selectedSushi.address;
+    
     //date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy:MM:dd"];
+    [dateFormatter setDateFormat:@"MM.dd.yyyy"];
     self.sushiDetailDate.text = [dateFormatter stringFromDate:self.selectedSushi.date];
-    
-    //do city later after updating core data file
-    self.sushiDetailCity.text = self.selectedSushi.city;
-    
-    self.sushiDetailMapView.userInteractionEnabled = NO;
-    [self setMapZoom];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapTapped:)];
     [self.sushiDetailImage addGestureRecognizer:singleTap];

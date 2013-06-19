@@ -24,3 +24,4 @@
 @end
 
 NSString *selectedSushiVenue;
+NSString *sushiAddress;

@@ -28,7 +28,7 @@
 
 @end
 
-@implementation TabMySushiViewController
+@implementation TabMySushiViewController 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -85,6 +85,7 @@
     
     NSError *error;
     self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
     
     for (int i = 0; i < self.fetchedSushiResults.count; i++) {
         Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
@@ -143,7 +144,7 @@
                 cell.sushiDate.text = @"added recently";
             }
             
-            cell.sushiNameJapanese.text = sushiInfo.japaneseName;
+            cell.sushiNameJapanese.text = sushiInfo.venue;
             NSLog(@"%@",sushiInfo.description);
             
             NSString *imageName = sushiInfo.sushiDescription;
@@ -154,6 +155,7 @@
         }
         
         return cell;
+        
     }
     
     if (indexPath.section == 1){
@@ -196,7 +198,7 @@
     return 100;
 }
 
--(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiVenue: (NSString*) sushiVenue addSushiDescription:(NSString *)sushiDescription addSushiCityName:(NSString *)sushiCityName addLatitude:(float)latitude addLongitude:(float)longitude
+-(void)addSushiName:(NSString *)sushiName addSushiPicture:(UIImage *)sushiPicutre addSushiDate:(NSDate *)sushiDate addSushiGoodOrNot:(BOOL)sushiGoodOrNot addSushiVenue:(NSString *)sushiVenue addSushiDescription:(NSString *)sushiDescription addSushiAddress:(NSString *)sushiAddress addLatitude:(float)latitude addLongitude:(float)longitude
 {
     
     //save coreData
@@ -205,11 +207,11 @@
     [newSushi setValue:sushiName forKey:@"name"];
     [newSushi setValue:sushiDate forKey:@"date"];
     [newSushi setValue:sushiVenue forKey:@"venue"];
+    [newSushi setValue:sushiAddress forKey:@"address"];
     [newSushi setValue:[NSNumber numberWithBool:sushiGoodOrNot] forKey:@"isRatedGood"];
     [newSushi setValue:sushiDescription forKey:@"sushiDescription"];
     [newSushi setValue:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
-    [newSushi setValue:sushiCityName forKey:@"city"];
     
     //save image
     NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
@@ -221,20 +223,12 @@
     imageData = UIImageJPEGRepresentation(sushiPicutre, 0.1);
     [imageData writeToURL:localImageURL atomically:YES];
     
-    //make japanese name
-    [[MSTranslateAccessTokenRequester sharedRequester] requestSynchronousAccessToken:CLIENT_ID clientSecret:CLIENT_SECRET];
-    MSTranslateVendor *vendor = [[MSTranslateVendor alloc] init];
-    [vendor requestTranslate:sushiName from:@"en" to:@"ja" blockWithSuccess:^(NSString *translatedText) {
-        [newSushi setValue:translatedText forKey:@"japaneseName"];
-        NSLog(@"%@", translatedText);
-        NSLog(@"%@", sushiName);
-        NSError *error;
-        [self.managedObjectContext save:&error];
-        [self setupFetchedResults];
-    } failure:^(NSError *error) {
-        //error
-    }];
-}
+    //save to core
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    [self setupFetchedResults];
+
+   }
 
 -(void)createOriginalSushiEntries
 {
@@ -248,8 +242,6 @@
     [newSushi setValue:[NSNumber numberWithBool:0] forKey:@"isRatedGood"];
     [newSushi setValue:[NSNumber numberWithFloat:41.938846] forKey:@"latitude"];
     [newSushi setValue:[NSNumber numberWithFloat:-87.642625] forKey:@"longitude"];
-    [newSushi setValue:@"カリフォルニアロール" forKey:@"japaneseName"];
-    [newSushi setValue:@"Los Angeles" forKey:@"city"];
     [newSushi setValue:@"chopsticksTV.png" forKey:@"sushiDescription"];
     
     //image
@@ -263,7 +255,6 @@
     
     NSError *error;
     [self.managedObjectContext save:&error];
-    [self setupFetchedResults];
+    //[self setupFetchedResults];
 }
-
 @end

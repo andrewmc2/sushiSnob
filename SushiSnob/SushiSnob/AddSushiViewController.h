@@ -39,6 +39,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *venueLabel;
 @property (weak, nonatomic) IBOutlet UIView *addVenueView;
 @property (weak, nonatomic) IBOutlet UIImageView *addVenueViewImageView;
+@property (strong, nonatomic) NSString *sushiAddress;
 
 //good or bad
 @property (weak, nonatomic) IBOutlet UIView *thumbsUpView;

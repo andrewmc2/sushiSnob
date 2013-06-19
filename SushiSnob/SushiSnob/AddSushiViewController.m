@@ -122,7 +122,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     
     dispatch_queue_t delegateQueue = dispatch_queue_create("for delegate", NULL);
     dispatch_async(delegateQueue, ^{
-        [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsGood addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription addSushiCityName:self.sushiCityName addLatitude:picLatitude addLongitude:picLongitude];
+        if ([self.venueLabel.text isEqualToString:@"add restaurant"]) {
+            self.venueLabel.text = @"";
+        }
+        
+        [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsGood addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription addSushiAddress:self.sushiAddress addLatitude:picLatitude addLongitude:picLongitude];
     });
 }
 
@@ -407,9 +411,11 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     return gps;
 }
 
--(void)updateVenueLabel:(NSString *)venue;
+-(void)updateVenueLabel:(NSString *)venue address:(NSString*)address
 {
     self.venueLabel.text = venue;
+    self.sushiAddress = address;
+    NSLog(@"%@",address);
     self.venueLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
     self.addVenueViewImageView.image = [UIImage imageNamed:@"compassPink.png"];
 }

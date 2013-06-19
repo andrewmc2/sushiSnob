@@ -75,10 +75,11 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     VenueObject *selectedVenue = [distanceSortedArray objectAtIndex:indexPath.row];
     selectedSushiVenue = selectedVenue.title;
+    sushiAddress = selectedVenue.subtitle;
     
     self.venueTextField.text = selectedSushiVenue;
 
-    [self.venueDelegate updateVenueLabel:selectedSushiVenue];
+    [self.venueDelegate updateVenueLabel:selectedSushiVenue address:sushiAddress];
 
     NSLog(@"the selected object is: %@", selectedSushiVenue);
  
@@ -91,7 +92,7 @@
 
 
 - (IBAction)addVenueWithButton:(id)sender {
-    [self.venueDelegate updateVenueLabel:self.venueTextField.text];
+    [self.venueDelegate updateVenueLabel:self.venueTextField.text address:sushiAddress];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }

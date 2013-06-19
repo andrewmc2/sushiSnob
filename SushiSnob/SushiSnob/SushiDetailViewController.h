@@ -28,7 +28,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *sushiDetailVenue;
 @property (strong, nonatomic) IBOutlet UILabel *sushiDetailDate;
 
-@property (strong, nonatomic) IBOutlet UILabel *sushiDetailCity;
+@property (weak, nonatomic) IBOutlet UILabel *sushiAddress;
 
 @property (strong, nonatomic) IBOutlet UIImageView *checkMarkImage;
 @property (strong, nonatomic) IBOutlet UIImageView *xImage;

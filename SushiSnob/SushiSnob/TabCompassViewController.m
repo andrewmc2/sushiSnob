@@ -79,24 +79,20 @@
         self.closeSushiLabel.text = @":(";
         self.saiImage.alpha = 0;
         
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        //        [alert show];
-//        self.theDistanceLabel.text = @"No Signal";
-//        self.closeSushiLabel.text = @":(";
-        //[alert show];
-        self.theDistanceLabel.text = @"No Signal";
-        self.closeSushiLabel.text = @":(";
+ UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+        return;
     }
     else {
      [super viewDidLoad];
-        self.saiImage.alpha = 1;
+    self.saiImage.alpha = 1;
     [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
     
     }
 
-    
 }
+
 
 -(void)setupCompassObjectsAndLabels
 
@@ -111,11 +107,11 @@
 //    NSNumber *temporaryDistancefromFS = thisNearPlace.distance;
 //    NSString *distLabel = [NSString stringWithFormat:@"%@",temporaryDistancefromFS];
    
-    self.theDistanceLabel.text = @"Calculating";
-    self.theDistanceLabel.text = @"Calculating.";
-    self.theDistanceLabel.text = @"Calculating..";
-    self.theDistanceLabel.text = @"Calculating...";
-    return;
+    //self.theDistanceLabel.text = @"Calculating";
+    //self.theDistanceLabel.text = @"Calculating.";
+   // self.theDistanceLabel.text = @"Calculating..";
+   // self.theDistanceLabel.text = @"Calculating...";
+    //return;
 //    self.theDistanceLabel.text = distLabel;
     //self.c//nearPlaceName;
     //self.theDistanceLabel.text = distLabel;
@@ -197,6 +193,7 @@
     NSString *distLabel = [[NSString alloc] init];
     if (distBetweenStartandVenueFeet > 10000) {
         distLabel = [NSString stringWithFormat:@"Calculating..."];
+//        self.saiImage.alpha = 0;
                      }
     
    // if (distBetweenStartandVenueFeet < 75) {
@@ -207,6 +204,7 @@
      
         {
             distLabel = [NSString stringWithFormat:@"%i feet", rounding];
+            self.saiImage.alpha = 1;
     }
     
    // NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
@@ -282,8 +280,14 @@
     //theAnimation.toValue=[NSNumber numberWithFloat:radAngleCalc];
     theAnimation.duration = .8f;
     self.closeSushiLabel.text = nearPlaceName;
+    self.theDistanceLabel.text = self.theDistance;
+
     [self.saiImage.layer addAnimation:theAnimation forKey:@"animateMyRotation"];
     self.saiImage.transform = CGAffineTransformMakeRotation(radAngleCalc);
+    if (![self connected]) {
+        self.theDistanceLabel.text = @"No Signal";
+        self.closeSushiLabel.text = @":(";
+    }
     
     //NSNumber *distY = thisNearPlace.distance;
     
@@ -298,8 +302,7 @@
 //    self.theDistance = distLabel;
 //
 //    
-    self.theDistanceLabel.text = self.theDistance;
-    //NSLog(@"true heading is %f", newHeading.trueHeading);
+       //NSLog(@"true heading is %f", newHeading.trueHeading);
 
 }
 

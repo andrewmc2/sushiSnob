@@ -120,12 +120,24 @@
     [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"MySushi_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"MySushi.png"]];
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIColor colorWithRed:250/255.0 green:239/255.0 blue:207/255.0 alpha:1.0], UITextAttributeTextColor,
+                                                       [UIColor colorWithRed:250/255.0 green:239/255.0 blue:207/255.0 alpha:1.0], UITextAttributeTextColor, [UIFont fontWithName:@"HiraKakuProN-W6" size:8.5], UITextAttributeFont,
                                                        nil] forState:UIControlStateNormal];
     UIColor *titleHighlightedColor = [UIColor colorWithRed:239/255.0 green:109/255.0 blue:34/255.0 alpha:1.0];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       titleHighlightedColor, UITextAttributeTextColor,
+                                                       titleHighlightedColor, UITextAttributeTextColor, [UIFont fontWithName:@"HiraKakuProN-W6" size:8.5], UITextAttributeFont,
                                                        nil] forState:UIControlStateHighlighted];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes: @{
+                                UITextAttributeTextColor: [UIColor colorWithRed:239/255.0 green:109/255.0 blue:34/255.0 alpha:1.0],
+                                     UITextAttributeFont: [UIFont fontWithName:@"HiraKakuProN-W3" size:20.0f]
+     }];
+    
+//    [[UITabBarItem appearance] setTitleTextAttributes:
+//     [NSDictionary dictionaryWithObjectsAndKeys:
+//      [UIColor blackColor], UITextAttributeTextColor,
+//      [UIFont fontWithName:@"HiraKakuProN-W3" size:8.0], UITextAttributeFont,
+//      nil]
+//                                             forState:UIControlStateHighlighted];
     
     return YES;
 }

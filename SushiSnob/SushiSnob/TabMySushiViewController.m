@@ -22,6 +22,8 @@
     //make global in order to toss over to SushiDetailViewController
     UIImage *sushiCellImage;
     SushiCell *sushiCellClass;
+    
+    int numberOfRowsInTableView;
 }
 
 @property (strong, nonatomic) NSOperationQueue *backgroundOperationQueue;
@@ -67,10 +69,11 @@
     self.fileManager = [NSFileManager defaultManager];
     self.documentsDirectory = [self.fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
     
+//    [self createOriginalSushiEntries];
+    
     [self setupFetchedResults];
     
     //sushiCellClass = [[SushiCell alloc] init];
-    [self createOriginalSushiEntries];
 }
 
 -(void)setupFetchedResults
@@ -187,6 +190,8 @@
 {
     if (section == 0) {
         NSLog(@"sections");
+        numberOfRowsInTableView = section;
+        NSLog(@"number of rows: %i",section);
         return self.fetchedSushiResults.count;
     } else {
         return 1;
@@ -227,7 +232,6 @@
     NSError *error;
     [self.managedObjectContext save:&error];
     [self setupFetchedResults];
-
    }
 
 -(void)createOriginalSushiEntries

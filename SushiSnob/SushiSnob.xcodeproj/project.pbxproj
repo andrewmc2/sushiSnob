@@ -128,6 +128,7 @@
 		9ED6E74B176FD65900F73837 /* SushiBadAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6E74A176FD65900F73837 /* SushiBadAnnotationView.m */; };
 		9EEFF190177110F60085D928 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEFF18F177110F60085D928 /* gradient.png */; };
 		9EEFF1961771130B0085D928 /* Sushi.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EEFF1951771130B0085D928 /* Sushi.m */; };
+		9EEFF19C1771431B0085D928 /* backButtonSolid.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEFF19B1771431B0085D928 /* backButtonSolid.png */; };
 		9EFF3F751763F1EB00DE1234 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */; };
 		C79861511762A0C90007C71F /* VenueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861501762A0C90007C71F /* VenueObject.m */; };
 		C79861541763F2C90007C71F /* VenueTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79861531763F2C90007C71F /* VenueTableViewController.m */; };
@@ -302,6 +303,7 @@
 		9EEFF18F177110F60085D928 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		9EEFF1941771130B0085D928 /* Sushi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sushi.h; sourceTree = "<group>"; };
 		9EEFF1951771130B0085D928 /* Sushi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sushi.m; sourceTree = "<group>"; };
+		9EEFF19B1771431B0085D928 /* backButtonSolid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButtonSolid.png; sourceTree = "<group>"; };
 		9EFF3F741763F1EB00DE1234 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		C798614F1762A0C90007C71F /* VenueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueObject.h; sourceTree = "<group>"; };
 		C79861501762A0C90007C71F /* VenueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueObject.m; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 		9E939C9B176D0B1C00F45B87 /* Nav Bar */ = {
 			isa = PBXGroup;
 			children = (
+				9EEFF19B1771431B0085D928 /* backButtonSolid.png */,
 				9EEFF18F177110F60085D928 /* gradient.png */,
 				9E2154D91770E95900D1380F /* navBarTrans.png */,
 				9E2154DA1770E95900D1380F /* navBarTrans@2x.png */,
@@ -843,6 +846,7 @@
 				9E2154DB1770E95900D1380F /* navBarTrans.png in Resources */,
 				9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */,
 				9EEFF190177110F60085D928 /* gradient.png in Resources */,
+				9EEFF19C1771431B0085D928 /* backButtonSolid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

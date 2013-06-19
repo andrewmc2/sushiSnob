@@ -406,15 +406,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="料亭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wvY-U1-3At">
-                                        <rect key="frame" x="18" y="217" width="85" height="27"/>
-                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
-                                        <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView contentMode="scaleAspectFill" id="PXk-id-e3O">
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="193"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="4Vi-Io-vt5" appends="YES" id="Iq3-Dg-I7O"/>
@@ -423,32 +417,40 @@
                                     <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" id="fmY-l8-o7Z">
                                         <rect key="frame" x="206" y="342" width="102" height="102"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="料亭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wvY-U1-3At">
+                                        <rect key="frame" x="18" y="242" width="85" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
+                                        <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="rest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4HD-uT-bo3">
-                                        <rect key="frame" x="20" y="236" width="288" height="40"/>
+                                        <rect key="frame" x="20" y="260" width="288" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="日付" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="glG-hh-erB">
-                                        <rect key="frame" x="18" y="367" width="85" height="27"/>
+                                        <rect key="frame" x="18" y="372" width="85" height="27"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P29-85-XdF">
-                                        <rect key="frame" x="23" y="387" width="285" height="41"/>
+                                        <rect key="frame" x="23" y="392" width="285" height="41"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="住所" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dOq-vJ-0tr">
-                                        <rect key="frame" x="20" y="293" width="85" height="27"/>
+                                        <rect key="frame" x="20" y="303" width="85" height="27"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="17"/>
                                         <color key="textColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jt8-vO-DwA">
-                                        <rect key="frame" x="20" y="312" width="288" height="41"/>
+                                        <rect key="frame" x="20" y="322" width="288" height="41"/>
                                         <fontDescription key="fontDescription" name="HiraKakuProN-W3" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                         <color key="textColor" red="0.98039215690000003" green="0.93725490199999995" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -486,13 +488,18 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="darkWoodBG.png" id="XS5-qU-LRi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="hvE-WH-viQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3tO-hM-5wO"/>
+                    <navigationItem key="navigationItem" id="3tO-hM-5wO">
+                        <barButtonItem key="backBarButtonItem" title="back" id="oLt-um-4lv"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="hvE-WH-viQ" id="qAk-Pb-REJ"/>
                     </connections>
@@ -811,7 +818,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="uDb-CI-uVg" userLabel="Sashimi">
-                                <rect key="frame" x="168" y="460" width="60" height="60"/>
+                                <rect key="frame" x="168" y="468" width="60" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="0Ke-t1-y5y">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -832,7 +839,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="kq8-5s-zHV" userLabel="Other">
-                                <rect key="frame" x="250" y="460" width="60" height="60"/>
+                                <rect key="frame" x="250" y="468" width="60" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="09t-go-uLP">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -1158,7 +1165,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fkm-tp-K0J"/>
         <segue reference="sk7-Qh-l8Q"/>
+        <segue reference="CKf-wm-ciy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -231,6 +231,7 @@
          
      }];
         didRunFourSquareParse = YES;
+
     } else {NSLog(@"array already ran");};
 } 
 

@@ -68,14 +68,14 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    if (![self connected]) {
-        NSLog(@"shishit");
-        self.doneButton.enabled = NO;
-        
-    }
-    else {
-        self.doneButton.enabled = YES;
-    }
+//    if (![self connected]) {
+//        NSLog(@"shishit");
+//        self.doneButton.enabled = NO;
+//        
+//    }
+//    else {
+//        self.doneButton.enabled = YES;
+//    }
 }
 
 - (void)viewDidLoad
@@ -199,12 +199,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (![self connected]){
-        return 1;
-    } else {
-        return 2;
-    }
-    
+//    if (![self connected]){
+//        return 1;
+//    } else {
+//        return 2;
+//    }
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

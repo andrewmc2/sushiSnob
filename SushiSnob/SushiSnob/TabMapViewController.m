@@ -48,10 +48,10 @@ int count;
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [self viewDidLoad];
-}
+//-(void)viewDidAppear:(BOOL)animated
+//{
+ //   [self viewDidLoad];
+//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

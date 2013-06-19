@@ -313,28 +313,28 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
             }
         }];
     
-        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
-        NSLog(@"%@",stringForGoogleAPI);
-        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        
-        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSMutableArray *resultsArray = [NSMutableArray array];
-            resultsArray = [objectsDict objectForKey:@"results"];
-            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
-            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
-            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
-//            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
-            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
-//            NSString *cityName = [cityDict objectForKey:@"long_name"];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-//                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
-                self.sushiCityName = [NSString stringWithFormat:@"%@", boroughName];
-                NSLog(@"city added to add VC");
-            });
-        }];
+//        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
+//        NSLog(@"%@",stringForGoogleAPI);
+//        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
+//        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+//        
+//        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
+//            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//            NSMutableArray *resultsArray = [NSMutableArray array];
+//            resultsArray = [objectsDict objectForKey:@"results"];
+//            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
+//            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
+//            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
+////            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
+//            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
+////            NSString *cityName = [cityDict objectForKey:@"long_name"];
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+////                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
+//                self.sushiCityName = [NSString stringWithFormat:@"%@", boroughName];
+//                NSLog(@"city added to add VC");
+//            });
+//        }];
         
     });//dispatch end
     
@@ -344,9 +344,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         self.addSushiPictureLabel.text = @"picture added";
         self.addSushiPictureLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
         
-        if (![self.sushiNameLabel.text isEqual: @"add sushi name"]) {
-            [self.sushiNameTextField becomeFirstResponder];
-        } 
+//        if (![self.sushiNameLabel.text isEqual: @"add sushi name"]) {
+//            [self.sushiNameTextField becomeFirstResponder];
+//        } 
     }];
 }
 

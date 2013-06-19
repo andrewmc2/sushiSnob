@@ -15,6 +15,7 @@
 #import "VenueObject.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "Reachability.h"
+#import "CompassLoadingViewController.h"
 
 @interface TabCompassViewController : UIViewController<CLLocationManagerDelegate>
 {
@@ -25,6 +26,7 @@
     float thisDistVenueLong;
 }
 - (IBAction)fSVenuePageButton:(id)sender;
+- (IBAction)webViewTapAreaTapped:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *saiImage;
@@ -34,6 +36,8 @@
 @property (strong, nonatomic) NSString * theDistance;
 @property (strong, nonatomic) CLLocation *currentLoc;
 @property (strong, nonatomic) NSString * tempFSVenuePageUrl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIView *webviewTapArea;
 
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

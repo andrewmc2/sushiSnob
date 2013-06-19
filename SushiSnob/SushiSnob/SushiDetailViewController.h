@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "Sushi.h"
+#import <Social/Social.h>
 
 @interface SushiDetailViewController : UIViewController
 

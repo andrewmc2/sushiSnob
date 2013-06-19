@@ -29,6 +29,7 @@
     NSURL *url = [NSURL URLWithString:self.fSVenueWebPage];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.nearestVenueFSWebView loadRequest:request];
+    [self.activityIndicator startAnimating];
     
 }
 
@@ -47,5 +48,10 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.activityIndicator stopAnimating];
 }
 @end

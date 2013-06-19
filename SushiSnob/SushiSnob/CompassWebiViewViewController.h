@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIWebView *nearestVenueFSWebView;
 @property (strong, nonatomic) NSString *fSVenueWebPage;
 - (IBAction)backButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

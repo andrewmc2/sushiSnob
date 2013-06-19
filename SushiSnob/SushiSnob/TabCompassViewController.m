@@ -24,7 +24,8 @@
     VenueObject *selectedVenue;
     NSMutableArray * allItems1;
     AppDelegate *appDelegate ;
-
+    BOOL activityIndicatorStopped;
+    CompassWebiViewViewController *compassWebbyViewController;
 }
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
@@ -92,10 +93,13 @@
         self.saiImage.alpha = 1;
     [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
-    
+    [self.activityIndicator startAnimating];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    UITapGestureRecognizer *singleTapWebview = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(webViewTapAreaTapped:)];
+        [self.webviewTapArea addGestureRecognizer:singleTapWebview];
     }
 
-    
+
 }
 
 -(void)setupCompassObjectsAndLabels
@@ -218,6 +222,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
+    [self.activityIndicator stopAnimating];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+
     if (!self.headingDidStartUpdating) {
         [self setupCompassObjectsAndLabels];
         self.headingDidStartUpdating = YES;
@@ -338,11 +345,28 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"fromCompassToFSWebView"]) {
-        CompassWebiViewViewController *compassWebbyViewController = segue.destinationViewController;
-       
+        compassWebbyViewController = segue.destinationViewController;
         compassWebbyViewController.fSVenueWebPage = self.tempFSVenuePageUrl;
+        NSLog(@"%@",self.tempFSVenuePageUrl);
+        
     }
     
+}
+- (IBAction)webViewTapAreaTapped:(id)sender{
+    NSString * stringUrlForFS = [[NSString alloc] init];
+    stringUrlForFS = appDelegate.closestVenue.fourSquareVenuePage;
+    if (stringUrlForFS == NULL || stringUrlForFS == nil) {
+        stringUrlForFS = @"www.foursquare.com";
+    }
+    else
+    {
+        stringUrlForFS = appDelegate.closestVenue.fourSquareVenuePage;
+        
+    }
+    NSLog(@"this is the url for the restuarant returned from AppDel/Parse:  %@", stringUrlForFS);
+    self.tempFSVenuePageUrl = stringUrlForFS;
+    
+    [self performSegueWithIdentifier:@"fromCompassToFSWebView" sender:self];
 }
 
 

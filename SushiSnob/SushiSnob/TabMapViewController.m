@@ -48,6 +48,10 @@ bool refreshButtonActive;
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self viewDidLoad];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -267,7 +271,7 @@ bool refreshButtonActive;
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     distanceSortedArray = [[NSArray alloc] init];
     distanceSortedArray = [appDelegate1.fourSquareVenueObjectsArray sortedArrayUsingDescriptors:sortDescriptors];
-    appDelegate1.closestVenue = [distanceSortedArray objectAtIndex:0];
+    appDelegate1.closestVenue = [distanceSortedArray objectAtIndex:1];
         //NSLog(@"%@", distanceSortedArray);
     NSLog(@"nearest venue: %@", [distanceSortedArray objectAtIndex:0]);
     [self.venueMapView addAnnotations:appDelegate1.fourSquareVenueObjectsArray];

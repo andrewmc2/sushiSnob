@@ -13,6 +13,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "VenueObject.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "Reachability.h"
 
 @interface TabCompassViewController : UIViewController<CLLocationManagerDelegate>
 {

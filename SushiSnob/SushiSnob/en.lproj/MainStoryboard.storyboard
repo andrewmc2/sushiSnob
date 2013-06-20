@@ -309,7 +309,7 @@
             </objects>
             <point key="canvasLocation" x="1284" y="95"/>
         </scene>
-        <!--Tab My Sushi View Controller-->
+        <!--Tab My Sushi View Controller - Add Sushi-->
         <scene sceneID="8wj-0g-vbg">
             <objects>
                 <viewController id="9ko-oZ-8hj" customClass="TabMySushiViewController" sceneMemberID="viewController">
@@ -385,7 +385,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yDH-Al-hGt">
+                    <navigationItem key="navigationItem" title="Add Sushi" id="yDH-Al-hGt">
                         <barButtonItem key="leftBarButtonItem" title="Map" id="56m-gz-Ff3">
                             <connections>
                                 <segue destination="9oe-W3-tlb" kind="push" identifier="sushiMap" id="sS4-yO-Lvr"/>

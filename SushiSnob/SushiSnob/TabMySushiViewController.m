@@ -134,7 +134,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *sushiCell = @"sushiCell";
-    NSString *addSushiCellIdentifier = @"addSushiCell";
+    //NSString *addSushiCellIdentifier = @"addSushiCell";
     
     if (indexPath.section == 0){
         
@@ -179,14 +179,14 @@
     
     if (indexPath.section == 1){
         
-        AddSushiCell *cell = [tableView dequeueReusableCellWithIdentifier:addSushiCellIdentifier];
-        if (cell == nil) {
-            cell = [[AddSushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addSushiCellIdentifier];
-        }
+//        AddSushiCell *cell = [tableView dequeueReusableCellWithIdentifier:addSushiCellIdentifier];
+//        if (cell == nil) {
+//            cell = [[AddSushiCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addSushiCellIdentifier];
+//        }
 
 //        cell.textLabel.text = @"Add Sushi";
         
-        return cell;
+//        return cell;
     }
     return nil;
 }
@@ -204,7 +204,7 @@
 //    } else {
 //        return 2;
 //    }
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

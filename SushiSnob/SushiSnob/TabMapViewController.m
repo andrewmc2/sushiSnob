@@ -22,6 +22,7 @@
 #import "VenueTableViewController.h"
 #import "AppDelegate.h"
 #import "SushiVenueAnnotationView.h"
+#import "Reachability.h"
 
 @interface TabMapViewController ()
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -48,15 +49,26 @@ int count;
     return self;
 }
 
+- (BOOL)connected
+{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return !(networkStatus == NotReachable);
+}
+
 //-(void)viewDidAppear:(BOOL)animated
 //{
  //   [self viewDidLoad];
 //}
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    [self setMapZoom];
-    refreshButtonActive = YES;
+    if (![self connected]) {
+        //self.refreshButton.enabled = NO;
+    } else {
+        [super viewDidLoad];
+        [self setMapZoom];
+        refreshButtonActive = YES;
+    }
 }
 
 -(void) setMapZoom

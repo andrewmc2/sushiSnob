@@ -245,9 +245,17 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     
-    if (buttonIndex == 0) {
+    BOOL cameraAvailable = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+    
+    if (buttonIndex == 0 && !cameraAvailable){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Camera Unavailable" message:@"Please Select Photo from Library" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+    if (buttonIndex == 0 && cameraAvailable) {
         imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         [self presentViewController:imagePickerController animated:YES completion:nil];
+        
     } else if (buttonIndex == 1) {
         imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         [self presentViewController:imagePickerController animated:YES completion:nil];

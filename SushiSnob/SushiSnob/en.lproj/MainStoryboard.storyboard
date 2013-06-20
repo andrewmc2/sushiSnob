@@ -932,10 +932,10 @@
             </objects>
             <point key="canvasLocation" x="1405" y="1820"/>
         </scene>
-        <!--My Sushi Map View Controller-->
+        <!--My Sushi Map View Controller - My Sushi Map-->
         <scene sceneID="fOb-6d-DTH">
             <objects>
-                <viewController id="9oe-W3-tlb" customClass="MySushiMapViewController" sceneMemberID="viewController">
+                <viewController title="My Sushi Map" id="9oe-W3-tlb" customClass="MySushiMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cZP-u1-b1w">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

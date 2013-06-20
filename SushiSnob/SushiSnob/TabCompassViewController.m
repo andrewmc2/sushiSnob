@@ -91,8 +91,8 @@
     self.sadSushiImage.alpha = 0;
     [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
-    [self.activityIndicator startAnimating];
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    //[self.activityIndicator startAnimating];
+    //[[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     UITapGestureRecognizer *singleTapWebview = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(webViewTapAreaTapped:)];
         [self.webviewTapArea addGestureRecognizer:singleTapWebview];
     }
@@ -220,8 +220,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     
-    [self.activityIndicator stopAnimating];
-    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    //[self.activityIndicator stopAnimating];
+    //[[UIApplication sharedApplication] endIgnoringInteractionEvents];
 
     if (!self.headingDidStartUpdating) {
         [self setupCompassObjectsAndLabels];

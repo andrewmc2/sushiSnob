@@ -79,6 +79,7 @@
         self.theDistanceLabel.text = @"No Signal";
         self.closeSushiLabel.text = @":(";
         self.saiImage.alpha = 0;
+        self.sadSushiImage.alpha = 1;
         
  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
@@ -87,10 +88,11 @@
     else {
      [super viewDidLoad];
     self.saiImage.alpha = 1;
+    self.sadSushiImage.alpha = 0;
     [self setupCompassObjectsAndLabels];
     [self startStandardLocationServices];
-    [self.activityIndicator startAnimating];
-    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    //[self.activityIndicator startAnimating];
+    //[[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     UITapGestureRecognizer *singleTapWebview = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(webViewTapAreaTapped:)];
         [self.webviewTapArea addGestureRecognizer:singleTapWebview];
     }
@@ -208,14 +210,13 @@
         {
             distLabel = [NSString stringWithFormat:@"%i feet", rounding];
             self.saiImage.alpha = 1;
+            self.sadSushiImage.alpha = 0;
     }
     
    // NSString *distLabel = [NSString stringWithFormat:@"%i feet",rounding];
     self.theDistance = distLabel;
     
 }
-
-
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     

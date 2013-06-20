@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E04892917729FEF00E305E4 /* sadSushi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E04892717729FEF00E305E4 /* sadSushi.png */; };
+		9E04892A17729FEF00E305E4 /* sadSushi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E04892817729FEF00E305E4 /* sadSushi@2x.png */; };
 		9E2154DB1770E95900D1380F /* navBarTrans.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2154D91770E95900D1380F /* navBarTrans.png */; };
 		9E2154DC1770E95900D1380F /* navBarTrans@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E2154DA1770E95900D1380F /* navBarTrans@2x.png */; };
 		9E3033411767C55300DD4579 /* SushiAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3033401767C55300DD4579 /* SushiAnnotationView.m */; };
@@ -131,6 +133,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E04892717729FEF00E305E4 /* sadSushi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sadSushi.png; sourceTree = "<group>"; };
+		9E04892817729FEF00E305E4 /* sadSushi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sadSushi@2x.png"; sourceTree = "<group>"; };
 		9E2154D91770E95900D1380F /* navBarTrans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarTrans.png; sourceTree = "<group>"; };
 		9E2154DA1770E95900D1380F /* navBarTrans@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBarTrans@2x.png"; sourceTree = "<group>"; };
 		9E30333F1767C55200DD4579 /* SushiAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SushiAnnotationView.h; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 		9E7CBE4C176D421300082F60 /* Original Sushi Pics */ = {
 			isa = PBXGroup;
 			children = (
+				9E04892717729FEF00E305E4 /* sadSushi.png */,
+				9E04892817729FEF00E305E4 /* sadSushi@2x.png */,
 				9E9CD82D176FB4DC0061F57B /* sushiRollTVPink.png */,
 				9E9CD82E176FB4DC0061F57B /* sushiRollTVPink@2x.png */,
 				9E9CD825176FA4B50061F57B /* thumbsDownPink@2x.png */,
@@ -781,6 +787,8 @@
 				9E9AE49B1771FA1F00332EE0 /* Default.png in Resources */,
 				9E9AE49C1771FA1F00332EE0 /* Default@2x.png in Resources */,
 				9E9AE49E1772088000332EE0 /* Default-568h@2x.png in Resources */,
+				9E04892917729FEF00E305E4 /* sadSushi.png in Resources */,
+				9E04892A17729FEF00E305E4 /* sadSushi@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

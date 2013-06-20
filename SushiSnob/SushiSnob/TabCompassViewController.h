@@ -27,6 +27,7 @@
 }
 - (IBAction)fSVenuePageButton:(id)sender;
 - (IBAction)webViewTapAreaTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *sadSushiImage;
 
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *saiImage;

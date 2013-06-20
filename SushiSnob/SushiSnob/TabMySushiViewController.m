@@ -19,7 +19,6 @@
     //make global in order to toss over to SushiDetailViewController
     UIImage *sushiCellImage;
     SushiCell *sushiCellClass;
-    
     int numberOfRowsInTableView;
 }
 
@@ -220,20 +219,37 @@
     }
 }
 
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // Return YES if you want the specified item to be editable.
-//    return YES;
-//}
-//
-//// Override to support editing the table view.
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        //add code here for when you hit delete
-//        [self.tableView beginUpdates];
-//        
-//        self.managedObjectContext deleteObject:<#(NSManagedObject *)#>
-//    }
-//}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    
+    if (indexPath.section == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //add code here for when you hit delete
+        //[self.tableView beginUpdates];
+        //self.fetchedSushiResults dele
+        
+        [self.managedObjectContext deleteObject:[self.fetchedSushiResults objectAtIndex:indexPath.row]];
+        
+        NSError *error = nil;
+        
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"fuck you");
+            return;
+        }
+        
+    //[self.fetchedSushiResults removeObjectAtIndex:indexPath.row];
+    [self setupFetchedResults];
+        //[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -296,7 +312,7 @@
     
     NSError *error;
     [self.managedObjectContext save:&error];
-    //[self setupFetchedResults];
-    [self.tableView reloadData];
+    [self setupFetchedResults];
+//    [self.tableView reloadData];
 }
 @end

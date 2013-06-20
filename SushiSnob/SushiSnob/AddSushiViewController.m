@@ -120,14 +120,14 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
     //do this later after all inputs are setup
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    dispatch_queue_t delegateQueue = dispatch_queue_create("for delegate", NULL);
-    dispatch_async(delegateQueue, ^{
+    //dispatch_queue_t delegateQueue = dispatch_queue_create("for delegate", NULL);
+    //dispatch_async(delegateQueue, ^{
         if ([self.venueLabel.text isEqualToString:@"add restaurant"]) {
             self.venueLabel.text = @"";
         }
         
         [self.addSushiDelegate addSushiName:self.sushiNameTextField.text addSushiPicture:self.selectedImage addSushiDate:[NSDate date] addSushiGoodOrNot:self.sushiIsGood addSushiVenue:self.venueLabel.text addSushiDescription:self.sushiDescription addSushiAddress:self.sushiAddress addLatitude:picLatitude addLongitude:picLongitude];
-    });
+    //});
 }
 
 - (IBAction)cancelAddingSushi:(id)sender {
@@ -279,74 +279,12 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         
         [pictureOriginalMetadata setObject:gpsDataDictionary forKey:(NSString*)kCGImagePropertyGPSDictionary];
         
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        [library addAssetsGroupAlbumWithName:@"Sushi" resultBlock:^(ALAssetsGroup *group) {
-            
-        } failureBlock:^(NSError *error) {
-            
-        }];
-        
-        //why?
-        __block ALAssetsGroup *assetsGroup;
-        
-        [library enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-            if ([[group valueForProperty:ALAssetsGroupPropertyName] isEqualToString:@"Sushi"]) {
-                assetsGroup = group;
-            }
-        } failureBlock:^(NSError *error) {
-            NSLog(@"fail");
-        }];
-        
-        CGImageRef img = [imageTaken CGImage];
-        
-        [library writeImageToSavedPhotosAlbum:img metadata:pictureOriginalMetadata completionBlock:^(NSURL *assetURL, NSError *error) {
-            if (error.code == 0) {
-                [library assetForURL:assetURL resultBlock:^(ALAsset *asset) {
-                    [assetsGroup addAsset:asset];
-                    NSLog(@"picGeoDone");
-                } failureBlock:^(NSError *error) {
-                    NSLog(@"fail");
-                    
-                }];
-            } else {
-                NSLog(@"fail");
-            }
-        }];
-    
-//        NSString *stringForGoogleAPI = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=false",pictureLatitude, pictureLongitude];
-//        NSLog(@"%@",stringForGoogleAPI);
-//        NSURL *url = [NSURL URLWithString:stringForGoogleAPI];
-//        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-//        
-//        [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *urlResponse, NSData *data, NSError *error) {
-//            NSMutableDictionary *objectsDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//            NSMutableArray *resultsArray = [NSMutableArray array];
-//            resultsArray = [objectsDict objectForKey:@"results"];
-//            NSMutableDictionary *zeroDict = [resultsArray objectAtIndex:0];
-//            NSMutableArray *addressComponentsArray = [zeroDict objectForKey:@"address_components"];
-//            NSMutableDictionary *boroughDict = [addressComponentsArray objectAtIndex:3];
-////            NSMutableDictionary *cityDict = [addressComponentsArray objectAtIndex:4];
-//            NSString *boroughName = [boroughDict objectForKey:@"long_name"];
-////            NSString *cityName = [cityDict objectForKey:@"long_name"];
-//            
-//            dispatch_async(dispatch_get_main_queue(), ^{
-////                self.sushiCityName.text = [NSString stringWithFormat:@"%@, %@", boroughName, cityName];
-//                self.sushiCityName = [NSString stringWithFormat:@"%@", boroughName];
-//                NSLog(@"city added to add VC");
-//            });
-//        }];
-        
     });//dispatch end
-    
-    NSLog(@"log after dispatch");
     
     [self dismissViewControllerAnimated:YES completion:^{
         self.addSushiPictureLabel.text = @"picture added";
         self.addSushiPictureLabel.textColor = [UIColor colorWithRed:(242/255.f) green:(111/255.f) blue:(74/255.f) alpha:1];
         
-//        if (![self.sushiNameLabel.text isEqual: @"add sushi name"]) {
-//            [self.sushiNameTextField becomeFirstResponder];
-//        } 
     }];
 }
 

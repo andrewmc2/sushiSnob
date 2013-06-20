@@ -94,11 +94,6 @@
     UITapGestureRecognizer *singleTapWebview = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(webViewTapAreaTapped:)];
         [self.webviewTapArea addGestureRecognizer:singleTapWebview];
     }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 33f285c1709e5780b7a622a9a59ffcdd419d2c44
 }
 
 

@@ -71,7 +71,7 @@
 //    if (![self connected]) {
 //        NSLog(@"shishit");
 //        self.doneButton.enabled = NO;
-//        
+//
 //    }
 //    else {
 //        self.doneButton.enabled = YES;
@@ -220,6 +220,21 @@
     }
 }
 
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    // Return YES if you want the specified item to be editable.
+//    return YES;
+//}
+//
+//// Override to support editing the table view.
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        //add code here for when you hit delete
+//        [self.tableView beginUpdates];
+//        
+//        self.managedObjectContext deleteObject:<#(NSManagedObject *)#>
+//    }
+//}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
@@ -282,5 +297,6 @@
     NSError *error;
     [self.managedObjectContext save:&error];
     //[self setupFetchedResults];
+    [self.tableView reloadData];
 }
 @end

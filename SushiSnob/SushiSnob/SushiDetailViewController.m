@@ -12,7 +12,11 @@
 #import "SushiDetailFullPictureViewController.h"
 
 @interface SushiDetailViewController ()
-
+{
+    //social stuff
+    SLComposeViewController *slComposeViewController;
+    UIActivityViewController *uiActivityViewController;
+}
 @end
 
 @implementation SushiDetailViewController
@@ -106,6 +110,17 @@
     }
     
     return annotationView;
+}
+
+- (IBAction)shareToSocial:(id)sender {
+    NSString *someText = [NSString stringWithFormat:@"check out #SushiSnob! this is a %@, looks delicious!",self.selectedSushi.name];
+    NSArray *dataToShare = @[someText, self.sushiDetailImage.image];
+    
+    uiActivityViewController = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
+    uiActivityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard,UIActivityTypePostToWeibo, UIActivityTypeAssignToContact];
+    [self presentViewController:uiActivityViewController animated:YES completion:^{
+        //stuff
+    }];
 }
 
 - (IBAction)tapTapped:(id)sender {

@@ -39,6 +39,10 @@
 @property (strong, nonatomic) NSFileManager *fileManager;
 @property (strong, nonatomic) NSURL *documentsDirectory;
 
+
+
+- (IBAction)shareToSocial:(id)sender;
+
 - (IBAction)tapTapped:(id)sender;
 
 

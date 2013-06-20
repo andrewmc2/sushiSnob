@@ -240,12 +240,16 @@
         //[self.tableView beginUpdates];
         //self.fetchedSushiResults dele
         
+        NSString *sushiName = ((Sushi*)([self.fetchedSushiResults objectAtIndex:indexPath.row])).sushiImageURL;
+        NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:sushiName];
+        [self.fileManager removeItemAtURL:localImageURL error:nil];
+        
         [self.managedObjectContext deleteObject:[self.fetchedSushiResults objectAtIndex:indexPath.row]];
         
         NSError *error = nil;
         
         if (![self.managedObjectContext save:&error]) {
-            NSLog(@"fuck you");
+            NSLog(@"error");
             return;
         }
         
@@ -276,8 +280,12 @@
     [newSushi setValue:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
     
     //save image
-    NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-    NSURL *sushiImageURL = [NSURL URLWithString:sushiImageURLString];
+    //NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyyMMddmmssss"];
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+//    NSString *sushiImageURLString = [sushiName stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    NSURL *sushiImageURL = [NSURL URLWithString:dateString];
     NSString *fileName = [sushiImageURL lastPathComponent];
     [newSushi setValue:fileName forKey:@"sushiImageURL"];
     NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];

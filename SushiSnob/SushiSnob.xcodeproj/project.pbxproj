@@ -336,6 +336,13 @@
 			name = Texture;
 			sourceTree = "<group>";
 		};
+		9E78411617734DE2009FEB57 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		9E7CBE4C176D421300082F60 /* Original Sushi Pics */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +531,7 @@
 			children = (
 				9E9050DA1760EB420092807A /* TabMySushiViewController.h */,
 				9E9050DB1760EB420092807A /* TabMySushiViewController.m */,
+				9E78411617734DE2009FEB57 /* New Group */,
 				9EEFF1941771130B0085D928 /* Sushi.h */,
 				9EEFF1951771130B0085D928 /* Sushi.m */,
 				9E905130176148720092807A /* SushiCell.h */,

@@ -113,11 +113,11 @@
 }
 
 - (IBAction)shareToSocial:(id)sender {
-    NSString *someText = [NSString stringWithFormat:@"check out #SushiSnob! this is a %@, looks delicious!",self.selectedSushi.name];
+    NSString *someText = [NSString stringWithFormat:@"check out this %@. found with #sushisnob",self.selectedSushi.name];
     NSArray *dataToShare = @[someText, self.sushiDetailImage.image];
     
     uiActivityViewController = [[UIActivityViewController alloc] initWithActivityItems:dataToShare applicationActivities:nil];
-    uiActivityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard,UIActivityTypePostToWeibo, UIActivityTypeAssignToContact];
+    uiActivityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeMessage, UIActivityTypeCopyToPasteboard,UIActivityTypePostToWeibo, UIActivityTypeAssignToContact];
     [self presentViewController:uiActivityViewController animated:YES completion:^{
         //stuff
     }];

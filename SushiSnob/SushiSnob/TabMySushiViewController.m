@@ -104,7 +104,11 @@
     
     NSError *error;
     self.fetchedSushiResults = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
+    if (self.fetchedSushiResults.count == 0) {
+        self.sushiArrow.alpha = 0.5;
+    } else {
+        self.sushiArrow.alpha = 0;
+    }
     
     for (int i = 0; i < self.fetchedSushiResults.count; i++) {
         Sushi *sushiInfo = [self.fetchedSushiResults objectAtIndex:i];
@@ -117,7 +121,7 @@
             NSURL *localImageURL = [self.documentsDirectory URLByAppendingPathComponent:fileName];
             image = [UIImage imageWithContentsOfFile:[localImageURL path]];
         }
-        [self.imageArray addObject:image];
+        //[self.imageArray addObject:image];
     }
     
     [self.tableView reloadData];

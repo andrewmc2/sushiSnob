@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSArray *fetchedSushiResults;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UIImageView *sushiArrow;
 
 
 //for writing pics to disk

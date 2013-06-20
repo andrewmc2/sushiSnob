@@ -198,7 +198,7 @@
     NSString *distLabel = [[NSString alloc] init];
     if (distBetweenStartandVenueFeet > 10000) {
         distLabel = [NSString stringWithFormat:@"Calculating..."];
-//        self.saiImage.alpha = 0;
+
                      }
     
    // if (distBetweenStartandVenueFeet < 75) {
@@ -294,6 +294,8 @@
     if (![self connected]) {
         self.theDistanceLabel.text = @"No Signal";
         self.closeSushiLabel.text = @":(";
+//        self.saiImage.alpha = 0;
+//        self.sadSushiImage.alpha = 1;
     }
     
     //NSNumber *distY = thisNearPlace.distance;

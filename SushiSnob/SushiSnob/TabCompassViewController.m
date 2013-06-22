@@ -196,7 +196,7 @@
    // float distPlaceHolder = [thisNearPlace.distance floatValue];
     int rounding = (distBetweenStartandVenueFeet);
     NSString *distLabel = [[NSString alloc] init];
-    if (distBetweenStartandVenueFeet > 10000) {
+    if (distBetweenStartandVenueFeet > 200000) {
         distLabel = [NSString stringWithFormat:@"Calculating..."];
 
                      }

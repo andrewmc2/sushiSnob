@@ -164,7 +164,7 @@
 		9E397B97176EB2090021DB65 /* soySauce@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soySauce@2x.png"; sourceTree = "<group>"; };
 		9E7CBE4F176D556800082F60 /* darkWoodBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkWoodBG.png; sourceTree = "<group>"; };
 		9E7CBE50176D556800082F60 /* darkWoodBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkWoodBG@2x.png"; sourceTree = "<group>"; };
-		9E9050AA1760E93D0092807A /* SushiSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E9050AA1760E93D0092807A /* sushiSnob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sushiSnob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9050AD1760E93D0092807A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9E9050AF1760E93D0092807A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E9050B11760E93D0092807A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -417,7 +417,7 @@
 		9E9050AB1760E93D0092807A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9E9050AA1760E93D0092807A /* SushiSnob.app */,
+				9E9050AA1760E93D0092807A /* sushiSnob.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -687,7 +687,7 @@
 			);
 			name = SushiSnob;
 			productName = SushiSnob;
-			productReference = 9E9050AA1760E93D0092807A /* SushiSnob.app */;
+			productReference = 9E9050AA1760E93D0092807A /* sushiSnob.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -912,7 +912,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Rehmat Qadir (M39YS7QV6X)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Rehmat Qadir (M39YS7QV6X)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -920,6 +921,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "CE642AFA-CA0E-45B6-8428-605CD5451540";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CE642AFA-CA0E-45B6-8428-605CD5451540";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -931,7 +934,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SushiSnob/SushiSnob-Prefix.pch";
 				INFOPLIST_FILE = "SushiSnob/SushiSnob-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = sushiSnob;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -942,7 +945,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SushiSnob/SushiSnob-Prefix.pch";
 				INFOPLIST_FILE = "SushiSnob/SushiSnob-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = sushiSnob;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
